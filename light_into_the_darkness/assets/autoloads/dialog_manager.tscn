@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dmdkk8dsyslgh"]
+
+[ext_resource type="Script" uid="uid://d1jgkvdl4wdws" path="res://assets/autoloads/dialog_manager.gd" id="1_1h5df"]
+[ext_resource type="Script" uid="uid://crj0tpny4o0m" path="res://assets/ui/dialog/dialog_box.gd" id="2_xdpvw"]
+
+[node name="DialogManager" type="Node" unique_id=517957820]
+script = ExtResource("1_1h5df")
+
+[node name="DialogBox" type="CanvasLayer" parent="." unique_id=613208437]
+script = ExtResource("2_xdpvw")
+
+[node name="TextureRect2" type="TextureRect" parent="DialogBox" unique_id=50374665]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -400.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="RichTextLabel" parent="DialogBox/TextureRect2" unique_id=1052021863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Du bist XXX, du hast ein Problem: du weisst nicht mehr wer du bist.
+Du verspürst einen inneren Antrieb Licht ins Dunkle zu bringen, dich auf die Suche nach deiner verlorenen Identität zu machen."
+autowrap_mode = 2

@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://bajm7x53jbj07"]
 
-[ext_resource type="Script" uid="uid://o52hwfds5h44" path="res://assets/scenes/player.gd" id="1_s027a"]
+[ext_resource type="Script" uid="uid://o52hwfds5h44" path="res://assets/resources/player.gd" id="1_s027a"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwm0n"]
 load_path = "res://.godot/imported/Character.png-d1bb1b747ad2291a72a332d36284dfe2.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysycn"]
-radius = 4.0
-height = 8.0
+radius = 5.0
+height = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xlmi"]
 
 [sub_resource type="Animation" id="Animation_14505"]
 resource_name = "idle"
@@ -86,6 +88,14 @@ frame = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_ysycn")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1886363270]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1954901672]
+position = Vector2(10, -2)
+shape = SubResource("RectangleShape2D_2xlmi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=443111147]
 position = Vector2(0, -2)
