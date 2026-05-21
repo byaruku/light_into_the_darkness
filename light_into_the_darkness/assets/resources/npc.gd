@@ -14,7 +14,7 @@ var state:= State.IDLE
 func interact() -> void:
 	if state != State.IDLE:
 		return
-		
-	state = State.DIALOG
-	await DialogManager.show_dialog(dialog)
-	state = State.IDLE
+	if dialog != null:
+		state = State.DIALOG
+		await DialogManager.show_dialog(dialog)
+		state = State.IDLE

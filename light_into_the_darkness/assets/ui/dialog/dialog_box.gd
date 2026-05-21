@@ -1,6 +1,13 @@
 extends CanvasLayer
 
-@onready var text_label = $TextureRect2/Label
+@onready var portrait_rect = $TextureRect2/HBoxContainer/SpeakerInfo/TextureRect
+@onready var name_label = $TextureRect2/HBoxContainer/SpeakerInfo/Label
+@onready var text_label = $TextureRect2/HBoxContainer/TextLabel
+
+
+func set_speaker(name_string: String, portrait: Texture2D):
+	name_label.text = name_string
+	portrait_rect.texture = portrait
 
 
 func type_dialog(text: String) -> void:

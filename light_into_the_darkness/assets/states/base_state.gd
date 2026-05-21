@@ -1,7 +1,7 @@
 class_name BaseState
 extends RefCounted
 
-func enter(owner):
+func enter(_owner):
 	pass
 
 
@@ -9,5 +9,5 @@ func exit():
 	pass
 
 
-func execute(delta):
+func execute(_delta):
 	pass

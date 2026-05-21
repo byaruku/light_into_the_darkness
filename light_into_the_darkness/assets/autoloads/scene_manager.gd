@@ -7,7 +7,7 @@ func _ready() -> void:
 	load_main_menu("game_start")
 
 
-func load_main_menu(origin: String) -> void:
+func load_main_menu(_origin: String) -> void:
 	var main_menu: Control = main_menu_packed.instantiate()
 	main_menu.new_game_pressed.connect(new_game)
 	main_menu.settings_pressed.connect(settings_open)

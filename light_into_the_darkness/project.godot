@@ -20,6 +20,12 @@ GameManager="*uid://bbl6jvmw6x6t0"
 DialogManager="*uid://dmdkk8dsyslgh"
 AudioManager="*uid://bdrqtay7q71fy"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+
 [input]
 
 left={

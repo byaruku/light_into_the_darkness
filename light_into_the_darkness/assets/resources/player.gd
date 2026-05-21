@@ -23,7 +23,7 @@ func _ready() -> void:
 	animation_tree.set_active(true)
 
 
-func handle_update(delta) -> void:
+func handle_update(_delta) -> void:
 	movement_loop()
 	
 	if Input.is_action_just_pressed("interact"):
@@ -65,7 +65,6 @@ func update_animation() -> void:
 
 
 func update_facing_direction():
-
 	if abs(move_direction.x) > abs(move_direction.y):
 		if move_direction.x > 0:
 			facing_direction = Vector2.RIGHT
@@ -94,11 +93,11 @@ func try_interact():
 	var areas = interaction_area.get_overlapping_areas()
 	
 	if areas.is_empty():
-		print("Empty")
 		return
 	
 	var interactable = areas[0]
 	
 	if interactable is Interactable:
-		print("Interact")
+		state = State.IDLE
+		update_animation()
 		await interactable.interact()

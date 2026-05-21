@@ -2,7 +2,7 @@ class_name PauseState
 extends BaseState
 
 
-func enter(owner):
+func enter(_owner):
 	print("Pause enter")
 
 

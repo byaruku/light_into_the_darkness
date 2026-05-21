@@ -2,7 +2,7 @@ class_name DialogState
 extends BaseState
 
 
-func enter(owner):
+func enter(_owner):
 	print("Dialog enter")
 
 
