@@ -19,8 +19,7 @@ func type_dialog(text: String) -> void:
 		text_label.text += letter
 
 		await get_tree().create_timer(
-			1.0 / 30
-			#1.0 / GlobalSetting.i.letters_per_second
+			1.0 / 60
 		).timeout
 	
 	GameManager.state_machine.pop()
@@ -29,6 +28,6 @@ func type_dialog(text: String) -> void:
 func wait_for_accept() -> void:
 	while true:
 		await get_tree().process_frame
-
+		
 		if Input.is_action_just_pressed("jump"):
 			return

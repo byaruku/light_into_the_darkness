@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://d0xljghkfa0h5"]
 
-[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/resources/player.tscn" id="1_4lu8a"]
-[ext_resource type="PackedScene" uid="uid://ic8uwfj0tvbr" path="res://assets/resources/npc.tscn" id="2_2oh85"]
-[ext_resource type="Script" uid="uid://cg8vtm4kddibg" path="res://assets/ui/dialog/dialog.gd" id="3_5t332"]
-[ext_resource type="Script" uid="uid://catdy5cidt1c" path="res://assets/ui/dialog/dialog_line.gd" id="3_gxn3h"]
-[ext_resource type="Script" uid="uid://c78l7trwcps5s" path="res://assets/ui/dialog/dialog_choice.gd" id="4_me3om"]
+[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/resources/player.tscn" id="1_wy546"]
+[ext_resource type="PackedScene" uid="uid://ic8uwfj0tvbr" path="res://assets/resources/npc.tscn" id="2_wdvqp"]
+[ext_resource type="Script" uid="uid://catdy5cidt1c" path="res://assets/ui/dialog/dialog_line.gd" id="3_3ixy5"]
+[ext_resource type="Script" uid="uid://c78l7trwcps5s" path="res://assets/ui/dialog/dialog_choice.gd" id="4_q5l3y"]
+[ext_resource type="Script" uid="uid://cg8vtm4kddibg" path="res://assets/ui/dialog/dialog.gd" id="5_bmrp6"]
+[ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="6_cw122"]
 
 [sub_resource type="TileSet" id="TileSet_ay3hf"]
 
@@ -35,38 +36,40 @@ physics_layer_0/collision_mask = 0
 [sub_resource type="TileSet" id="TileSet_v6f10"]
 
 [sub_resource type="Resource" id="Resource_wu4up"]
-script = ExtResource("3_gxn3h")
+script = ExtResource("3_3ixy5")
 speaker_name = "NPC"
 text = "Das ist schön zu hören.w"
 metadata/_custom_type_script = "uid://catdy5cidt1c"
 
 [sub_resource type="Resource" id="Resource_krdgs"]
-script = ExtResource("3_5t332")
-lines = Array[ExtResource("3_gxn3h")]([SubResource("Resource_wu4up")])
+script = ExtResource("5_bmrp6")
+lines = Array[ExtResource("3_3ixy5")]([SubResource("Resource_wu4up")])
 metadata/_custom_type_script = "uid://cg8vtm4kddibg"
 
 [sub_resource type="Resource" id="Resource_adcfg"]
-script = ExtResource("4_me3om")
+script = ExtResource("4_q5l3y")
 text = "Ja"
 next_dialog = SubResource("Resource_krdgs")
 metadata/_custom_type_script = "uid://c78l7trwcps5s"
 
 [sub_resource type="Resource" id="Resource_koaxc"]
-script = ExtResource("4_me3om")
+script = ExtResource("4_q5l3y")
 text = "Nein"
 metadata/_custom_type_script = "uid://c78l7trwcps5s"
 
 [sub_resource type="Resource" id="Resource_g22os"]
-script = ExtResource("3_gxn3h")
+script = ExtResource("3_3ixy5")
 speaker_name = "NPC"
 text = "Hallo mein Freund, soll ich dir ein bisschen was erzählen?"
-choices = Array[ExtResource("4_me3om")]([SubResource("Resource_adcfg"), SubResource("Resource_koaxc")])
+choices = Array[ExtResource("4_q5l3y")]([SubResource("Resource_adcfg"), SubResource("Resource_koaxc")])
 metadata/_custom_type_script = "uid://catdy5cidt1c"
 
 [sub_resource type="Resource" id="Resource_tyrkv"]
-script = ExtResource("3_5t332")
-lines = Array[ExtResource("3_gxn3h")]([SubResource("Resource_g22os")])
+script = ExtResource("5_bmrp6")
+lines = Array[ExtResource("3_3ixy5")]([SubResource("Resource_g22os")])
 metadata/_custom_type_script = "uid://cg8vtm4kddibg"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy546"]
 
 [node name="TestMap" type="Node2D" unique_id=797532986]
 y_sort_enabled = true
@@ -94,8 +97,20 @@ tile_set = SubResource("TileSet_fqtp6")
 z_index = 2
 tile_set = SubResource("TileSet_v6f10")
 
-[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_4lu8a")]
+[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_wy546")]
 
-[node name="NPC" parent="." unique_id=1732662322 instance=ExtResource("2_2oh85")]
+[node name="NPC" parent="." unique_id=1732662322 instance=ExtResource("2_wdvqp")]
 position = Vector2(193, 38)
 dialog = SubResource("Resource_tyrkv")
+
+[node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_cw122")]
+position = Vector2(-160, 0)
+target_scene = "uid://ccjo8cdqdc021"
+target_portal_id = 1
+spawn_marker = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=765623854]
+shape = SubResource("RectangleShape2D_wy546")
+
+[node name="Marker2D" type="Marker2D" parent="Portal" unique_id=785121068]
+position = Vector2(50, 0)

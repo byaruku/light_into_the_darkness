@@ -19,15 +19,15 @@ func show_choices(new_choices: Array[DialogChoice]):
 	active = true
 	choices = new_choices
 	selected_index = 0
-
+	
 	clear_slots()
-
+	
 	for choice in choices:
 		var slot = slot_scene.instantiate()
 		self.add_child(slot)
 		slot.set_text(choice.text)
 		slots.append(slot)
-
+	
 	update_selection()
 
 

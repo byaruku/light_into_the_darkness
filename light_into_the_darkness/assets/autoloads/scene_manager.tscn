@@ -1,40 +1,12 @@
 [gd_scene format=3 uid="uid://cvy3huu52nnua"]
 
 [ext_resource type="Script" uid="uid://b5hudjp3kgk6y" path="res://assets/autoloads/scene_manager.gd" id="1_af6ij"]
-[ext_resource type="Script" uid="uid://doowg78b45wik" path="res://assets/resources/main_menu.gd" id="2_35kgl"]
-[ext_resource type="PackedScene" uid="uid://d0xljghkfa0h5" path="res://assets/resources/testMap.tscn" id="3_ko1sj"]
-
-[sub_resource type="PackedScene" id="PackedScene_fkr2o"]
-_bundled = {
-"conn_count": 4,
-"conns": PackedInt32Array(1073741835, 1073741834, 89, 88, 2, 0, 0, 1073741837, 1073741836, 91, 90, 2, 0, 0, 1073741839, 1073741838, 93, 92, 2, 0, 0, 1073741841, 1073741840, 95, 94, 2, 0, 0),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("MainMenu", "Control", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "script", "VBoxContainer", "VBoxContainer", "layout_mode", "offset_right", "offset_bottom", "theme_override_constants/separation", "alignment", "NewGame", "TextureButton", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "theme_override_font_sizes/font_size", "text", "horizontal_alignment", "vertical_alignment", "Settings", "TextureButton", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "theme_override_font_sizes/font_size", "text", "horizontal_alignment", "vertical_alignment", "About", "TextureButton", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "theme_override_font_sizes/font_size", "text", "horizontal_alignment", "vertical_alignment", "Spacer", "Control", "custom_minimum_size", "layout_mode", "Exit", "TextureButton", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "theme_override_font_sizes/font_size", "text", "horizontal_alignment", "vertical_alignment", "_on_new_game_pressed", "pressed", "_on_settings_pressed", "pressed", "_on_about_pressed", "pressed", "_on_exit_pressed", "pressed"),
-"node_count": 11,
-"node_ids": PackedInt32Array(961549512, 2050423747, 1124076894, 1543779229, 1244306876, 1480189364, 1232969104, 909095445, 1284559275, 648811769, 1938187306),
-"node_paths": [NodePath("."), NodePath("./VBoxContainer"), NodePath("./VBoxContainer/NewGame"), NodePath("./VBoxContainer"), NodePath("./VBoxContainer/Settings"), NodePath("./VBoxContainer"), NodePath("./VBoxContainer/About"), NodePath("./VBoxContainer"), NodePath("./VBoxContainer"), NodePath("./VBoxContainer/Exit"), NodePath("."), NodePath("VBoxContainer/NewGame"), NodePath("."), NodePath("VBoxContainer/Settings"), NodePath("."), NodePath("VBoxContainer/About"), NodePath("."), NodePath("VBoxContainer/Exit")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 7, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 0, 1073741824, 0, 10, 9, -1, 5, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 0, 1073741825, 0, 17, 16, -1, 3, 18, 12, 19, 13, 20, 14, 0, 1073741826, 0, 22, 21, -1, 10, 23, 15, 24, 16, 25, 17, 26, 18, 27, 19, 28, 20, 29, 21, 30, 22, 31, 23, 32, 24, 0, 1073741827, 0, 34, 33, -1, 3, 35, 25, 36, 26, 37, 27, 0, 1073741828, 0, 39, 38, -1, 10, 40, 28, 41, 29, 42, 30, 43, 31, 44, 32, 45, 33, 46, 34, 47, 35, 48, 36, 49, 37, 0, 1073741829, 0, 51, 50, -1, 3, 52, 38, 53, 39, 54, 40, 0, 1073741830, 0, 56, 55, -1, 10, 57, 41, 58, 42, 59, 43, 60, 44, 61, 45, 62, 46, 63, 47, 64, 48, 65, 49, 66, 50, 0, 1073741831, 0, 68, 67, -1, 2, 69, 51, 70, 52, 0, 1073741832, 0, 72, 71, -1, 3, 73, 53, 74, 54, 75, 55, 0, 1073741833, 0, 77, 76, -1, 10, 78, 56, 79, 57, 80, 58, 81, 59, 82, 60, 83, 61, 84, 62, 85, 63, 86, 64, 87, 65, 0),
-"variants": [3, 15, 1.0, 1.0, 2, 2, ExtResource("2_35kgl"), 0, 600.0, 1080.0, 25, 1, Vector2(450, 150), 2, 4, 1, 15, 1.0, 1.0, 2, 2, 64, "New Game", 1, 1, Vector2(450, 150), 2, 4, 1, 15, 1.0, 1.0, 2, 2, 64, "Settings", 1, 1, Vector2(450, 150), 2, 4, 1, 15, 1.0, 1.0, 2, 2, 64, "About", 1, 1, Vector2(0, 50), 2, Vector2(450, 150), 2, 4, 1, 15, 1.0, 1.0, 2, 2, 64, "Exit", 1, 1],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_dws5d"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array()],
-"names": PackedStringArray("GameScene", "Node2D", "TestMap"),
-"node_count": 2,
-"node_ids": PackedInt32Array(1700474636, 797532986),
-"node_paths": [NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 2147483647, 2, 0, 0, 0),
-"variants": [ExtResource("3_ko1sj")],
-"version": 3
-}
+[ext_resource type="PackedScene" uid="uid://1semeg3ksa1h" path="res://assets/resources/main_menu.tscn" id="2_af6ij"]
+[ext_resource type="PackedScene" uid="uid://kdkpckt2r1gk" path="res://assets/resources/game_scene.tscn" id="3_af6ij"]
 
 [node name="SceneManager" type="Node" unique_id=1363815216]
 script = ExtResource("1_af6ij")
-main_menu_packed = SubResource("PackedScene_fkr2o")
-game_scene_packed = SubResource("PackedScene_dws5d")
+main_menu_packed = ExtResource("2_af6ij")
+game_scene_packed = ExtResource("3_af6ij")
+
+[node name="CurrentSceneContainer" type="Node" parent="." unique_id=1140696747]

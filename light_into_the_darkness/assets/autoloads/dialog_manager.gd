@@ -11,21 +11,18 @@ func _ready() -> void:
 	dialog_box.hide()
 
 func show_dialog(dialog: Dialog) -> void:
-
 	await get_tree().process_frame
 
-	on_show_dialog.emit()
-
-	dialog_box.show()
+	if (dialog_box.visible == false):
+		on_show_dialog.emit()
+		dialog_box.show()
 
 	for line in dialog.lines:
-		#AudioManager.i.play_sfx(AudioID.UI_SELECT)
 		dialog_box.set_speaker(line.speaker_name, line.portrait)
 
 		await dialog_box.type_dialog(line.text)
 
 		if line.choices.size() > 0:
-			
 			choice_box.show()
 			choice_box.show_choices(line.choices)
 			
@@ -36,8 +33,8 @@ func show_dialog(dialog: Dialog) -> void:
 			
 			if next_dialog:
 				await show_dialog(next_dialog)
-				
-			break
+				#
+			#break
 		else:
 			await dialog_box.wait_for_accept()
 

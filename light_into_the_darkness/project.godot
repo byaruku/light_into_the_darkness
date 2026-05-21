@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="light_into_the_darkness"
-run/main_scene="uid://cvy3huu52nnua"
+run/main_scene="uid://da3oy4aylmnrb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
+SceneManager="*uid://cvy3huu52nnua"
 GameManager="*uid://bbl6jvmw6x6t0"
 DialogManager="*uid://dmdkk8dsyslgh"
 AudioManager="*uid://bdrqtay7q71fy"
+Fader="*uid://2xchwovf1ssg"
 
 [display]
 

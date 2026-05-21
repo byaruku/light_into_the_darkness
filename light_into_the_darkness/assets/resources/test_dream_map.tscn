@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ccjo8cdqdc021"]
+
+[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/resources/player.tscn" id="1_sgdeh"]
+[ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="6_aa1lm"]
+
+[sub_resource type="TileSet" id="TileSet_ay3hf"]
+
+[sub_resource type="TileSet" id="TileSet_n5x6c"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Ground 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+
+[sub_resource type="TileSet" id="TileSet_mrbpc"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+
+[sub_resource type="TileSet" id="TileSet_un4qs"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Plateau"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Cliffs"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+
+[sub_resource type="TileSet" id="TileSet_fqtp6"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+
+[sub_resource type="TileSet" id="TileSet_v6f10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qcxn"]
+
+[node name="TestDreamMap" type="Node2D" unique_id=797532986]
+y_sort_enabled = true
+
+[node name="Water" type="TileMapLayer" parent="." unique_id=978092309]
+tile_set = SubResource("TileSet_ay3hf")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1937404508]
+tile_set = SubResource("TileSet_n5x6c")
+
+[node name="PropsGround" type="TileMapLayer" parent="." unique_id=695554330]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_mrbpc")
+
+[node name="Plateau" type="TileMapLayer" parent="." unique_id=755402895]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_un4qs")
+
+[node name="PropsPlateau" type="TileMapLayer" parent="." unique_id=1455006764]
+z_index = 1
+y_sort_enabled = true
+tile_set = SubResource("TileSet_fqtp6")
+
+[node name="Clouds" type="TileMapLayer" parent="." unique_id=522149057]
+z_index = 2
+tile_set = SubResource("TileSet_v6f10")
+
+[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_sgdeh")]
+
+[node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_aa1lm")]
+position = Vector2(-160, -1)
+target_scene = "uid://d0xljghkfa0h5"
+portal_id = 1
+spawn_marker = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=1993115200]
+shape = SubResource("RectangleShape2D_8qcxn")
+
+[node name="Marker2D" type="Marker2D" parent="Portal" unique_id=141211429]
+position = Vector2(67, 1)

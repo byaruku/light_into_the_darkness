@@ -3,33 +3,74 @@ extends Node
 @export var main_menu_packed: PackedScene
 @export var game_scene_packed: PackedScene
 
-func _ready() -> void:
-	load_main_menu("game_start")
+@onready var current_scene_container = $CurrentSceneContainer
+
+var main_menu
+var current_scene
 
 
-func load_main_menu(_origin: String) -> void:
-	var main_menu: Control = main_menu_packed.instantiate()
+func _ready():
+	load_main_menu()
+
+
+func load_main_menu():
+	main_menu = main_menu_packed.instantiate()
 	main_menu.new_game_pressed.connect(new_game)
 	main_menu.settings_pressed.connect(settings_open)
 	main_menu.about_pressed.connect(about_open)
 	main_menu.exit_pressed.connect(exit_game)
-	add_child(main_menu)
+	current_scene_container.add_child(main_menu)
 
 
-func new_game(origin: String) -> void:
-	if origin == "main_menu":
-		get_node("MainMenu").queue_free()
-	var game_scene: Node2D = game_scene_packed.instantiate()
-	add_child(game_scene)
+func new_game():
+	main_menu.queue_free()
+	
+	current_scene = game_scene_packed.instantiate()
+	current_scene_container.add_child(current_scene)
 
 
-func settings_open(_origin: String) -> void:
+func settings_open():
 	pass
 
 
-func about_open(_origin: String) -> void:
+func about_open():
 	pass
 
 
-func exit_game(_origin: String) -> void:
+func exit_game():
 	get_tree().quit()
+
+
+func change_scene(target_scene_path: String, destination: Portal.Destination):
+	GameManager.state_machine.push(PauseState.new())
+	
+	await Fader.fade_in(1.0)
+	
+	if current_scene:
+		current_scene.queue_free()
+	
+	var packed = load(target_scene_path)
+	current_scene = packed.instantiate()
+	current_scene_container.add_child(current_scene)
+
+	await get_tree().process_frame
+	await get_tree().process_frame
+
+	var portal = find_destination_portal(destination)
+
+	if portal:
+		GameManager.player.global_position = (portal.spawn_marker.global_position)
+
+	await Fader.fade_out(1.0)
+
+	GameManager.state_machine.pop()
+
+
+func find_destination_portal(destination: Portal.Destination):
+	var portals = get_tree().get_nodes_in_group("portals")
+
+	for portal in portals:
+		if portal.target_portal_id == destination:
+			return portal
+
+	return null
