@@ -14,3 +14,6 @@ func execute(delta):
 		return
 	
 	game_manager.player.handle_update(delta)
+	
+	if Input.is_action_just_pressed("pause"):
+		SceneManager.return_to_main_menu()

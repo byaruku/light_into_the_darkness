@@ -20,6 +20,6 @@ func _ready() -> void:
 
 func _on_body_entered(body):
 	if body is Player:
-		body.state = Player.State.IDLE
+		body.movement_state = Player.MovementState.IDLE
 		body.update_animation()
 		SceneManager.change_scene(target_scene, target_portal_id)

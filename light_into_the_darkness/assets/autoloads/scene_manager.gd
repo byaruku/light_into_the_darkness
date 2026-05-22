@@ -13,6 +13,18 @@ func _ready():
 	load_main_menu()
 
 
+func return_to_main_menu():
+	await Fader.fade_in(0.5)
+	
+	if current_scene:
+		current_scene.queue_free()
+
+	GameManager.player = null
+	load_main_menu()
+	
+	await Fader.fade_out(0.5)
+
+
 func load_main_menu():
 	main_menu = main_menu_packed.instantiate()
 	main_menu.new_game_pressed.connect(new_game)
