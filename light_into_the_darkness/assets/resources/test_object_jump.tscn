@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://7t5jdkorf3iq"]
+
+[ext_resource type="Script" uid="uid://dbp0s03mkf8rx" path="res://assets/resources/jump_platform.gd" id="1_scvf6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_btxos"]
+load_path = "res://.godot/imported/basic_colors.png-6d97a44ec8c769853aeca66149e3e63f.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoa8n"]
+size = Vector2(16, 16)
+
+[node name="TestObject" type="StaticBody2D" unique_id=1292080107]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_scvf6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023484231]
+texture = SubResource("CompressedTexture2D_btxos")
+hframes = 2
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446186585]
+shape = SubResource("RectangleShape2D_yoa8n")

@@ -76,6 +76,11 @@ pause={
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="NPC"
 2d_physics/layer_3="Interactable"
+2d_physics/layer_4="Crouch"
+2d_physics/layer_5="Ground"
+2d_physics/layer_6="Height1"
+2d_physics/layer_7="Height2"
+2d_physics/layer_8="Height3"
 
 [physics]
 

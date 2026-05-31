@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://c78l7trwcps5s" path="res://assets/ui/dialog/dialog_choice.gd" id="4_q5l3y"]
 [ext_resource type="Script" uid="uid://cg8vtm4kddibg" path="res://assets/ui/dialog/dialog.gd" id="5_bmrp6"]
 [ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="6_cw122"]
+[ext_resource type="PackedScene" uid="uid://7t5jdkorf3iq" path="res://assets/resources/test_object_jump.tscn" id="7_3ixy5"]
+[ext_resource type="PackedScene" uid="uid://be4k5i35unxlx" path="res://assets/resources/test_object_crouch.tscn" id="7_wdvqp"]
+[ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground.tscn" id="9_q5l3y"]
 
 [sub_resource type="TileSet" id="TileSet_ay3hf"]
 
@@ -38,7 +41,7 @@ physics_layer_0/collision_mask = 0
 [sub_resource type="Resource" id="Resource_wu4up"]
 script = ExtResource("3_3ixy5")
 speaker_name = "NPC"
-text = "Das ist schön zu hören.w"
+text = "Das ist schön zu hören."
 metadata/_custom_type_script = "uid://catdy5cidt1c"
 
 [sub_resource type="Resource" id="Resource_krdgs"]
@@ -114,3 +117,23 @@ shape = SubResource("RectangleShape2D_wy546")
 
 [node name="Marker2D" type="Marker2D" parent="Portal" unique_id=785121068]
 position = Vector2(50, 0)
+
+[node name="TestObject2" parent="." unique_id=1292080107 instance=ExtResource("7_3ixy5")]
+position = Vector2(84, 76)
+
+[node name="TestObject" parent="." unique_id=329289114 instance=ExtResource("7_wdvqp")]
+position = Vector2(147, -35)
+
+[node name="FloorGround" parent="." unique_id=415817742 instance=ExtResource("9_q5l3y")]
+position = Vector2(84, 60)
+scale = Vector2(3, 1)
+
+[node name="FloorGround4" parent="." unique_id=1722221887 instance=ExtResource("9_q5l3y")]
+position = Vector2(84, 92)
+scale = Vector2(3, 1)
+
+[node name="FloorGround2" parent="." unique_id=5033427 instance=ExtResource("9_q5l3y")]
+position = Vector2(68, 76)
+
+[node name="FloorGround3" parent="." unique_id=591668902 instance=ExtResource("9_q5l3y")]
+position = Vector2(100, 76)

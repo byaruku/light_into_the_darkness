@@ -10,6 +10,13 @@ radius = 5.0
 height = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xlmi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eitfq"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxat"]
+size = Vector2(5, 5)
 
 [sub_resource type="Animation" id="Animation_2xlmi"]
 length = 0.001
@@ -179,7 +186,12 @@ states/run/position = Vector2(540, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_o5c66"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_tc801"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_60g6h"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_ipexx"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_luojb"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_jyxat"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_23bvh"), "idle", "crouch_idle", SubResource("AnimationNodeStateMachineTransition_2kl4g"), "crouch_idle", "idle", SubResource("AnimationNodeStateMachineTransition_lcev0"), "run", "crouch_walk", SubResource("AnimationNodeStateMachineTransition_itunx"), "crouch_walk", "run", SubResource("AnimationNodeStateMachineTransition_kej7o")]
 
 [node name="Player" type="CharacterBody2D" unique_id=1705600323]
+collision_mask = 127
 script = ExtResource("1_s027a")
+speed = null
+crouch_speed = null
+jump_distance = null
+jump_duration = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
 texture_filter = 1
@@ -194,12 +206,28 @@ position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_ysycn")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1886363270]
+position = Vector2(0, -2)
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1954901672]
-position = Vector2(10, -2)
 shape = SubResource("RectangleShape2D_2xlmi")
+
+[node name="StandCheckArea" type="Area2D" parent="." unique_id=1186561357]
+position = Vector2(0, -2)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandCheckArea" unique_id=609291351]
+shape = SubResource("RectangleShape2D_eitfq")
+
+[node name="JumpCheckArea" type="Area2D" parent="." unique_id=183415535]
+position = Vector2(0, -2)
+collision_layer = 0
+collision_mask = 240
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpCheckArea" unique_id=573719366]
+shape = SubResource("RectangleShape2D_jyxat")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=443111147]
 offset = Vector2(0, -2)

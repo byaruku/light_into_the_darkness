@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://deyjndogalkq1"]
+
+[ext_resource type="Script" uid="uid://dbp0s03mkf8rx" path="res://assets/resources/jump_platform.gd" id="1_rl5d2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53hk6"]
+load_path = "res://.godot/imported/basic_colors.png-6d97a44ec8c769853aeca66149e3e63f.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfnqy"]
+size = Vector2(16, 16)
+
+[node name="FloorGround" type="StaticBody2D" unique_id=415817742]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_rl5d2")
+height_level = 0
+allow_jump_on = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1725102457]
+modulate = Color(1, 1, 1, 0.39215687)
+texture = SubResource("CompressedTexture2D_53hk6")
+hframes = 2
+vframes = 2
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1733986032]
+shape = SubResource("RectangleShape2D_xfnqy")
