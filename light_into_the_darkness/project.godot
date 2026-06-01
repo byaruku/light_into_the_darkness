@@ -36,7 +36,7 @@ enabled=PackedStringArray("res://addons/yarn_spinner/plugin.cfg")
 [importer_defaults]
 
 yarn_spinner.project={
-&"ysc_path": "C:/Users/bjark/.dotnet/tools/ysc.exe",
+&"ysc_path": "res://tools/ysc.exe",
 &"ysls_scan_path": "res://dialogue/"
 }
 
