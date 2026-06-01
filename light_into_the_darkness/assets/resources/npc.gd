@@ -1,7 +1,7 @@
 class_name NPC
 extends CharacterBody2D
 
-@export var dialog: Dialog
+@export var yarn_node: String
 
 enum State {
 	IDLE,
@@ -14,7 +14,7 @@ var state:= State.IDLE
 func interact() -> void:
 	if state != State.IDLE:
 		return
-	if dialog != null:
-		state = State.DIALOG
-		await DialogManager.show_dialog(dialog)
-		state = State.IDLE
+		
+	state = State.DIALOG
+	await DialogueManager.start_dialogue(yarn_node)
+	state = State.IDLE

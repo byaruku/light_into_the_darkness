@@ -1,0 +1,11 @@
+title: Start
+---
+TestNPC: Hallo.
+
+-> Wer bist du?
+	TestNPC: Ich bin der Älteste.
+	-> Auf Wiedersehen.
+		TestNPC: Bis bald.
+-> Auf Wiedersehen.
+	TestNPC: Bis dann.
+===

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dmdkk8dsyslgh"]
+
+[ext_resource type="Script" uid="uid://d1jgkvdl4wdws" path="res://assets/autoloads/dialogue_manager.gd" id="1_lq6ii"]
+[ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="2_lq6ii"]
+[ext_resource type="Resource" uid="uid://b2bf6avy0p2kt" path="res://dialogue/game_dialogue.yarnproject" id="3_cwl88"]
+[ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="3_jssry"]
+[ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="4_egk5t"]
+
+[node name="DialogueManager" type="Node" unique_id=517957820]
+script = ExtResource("1_lq6ii")
+
+[node name="YarnDialogueRunner" type="Node" parent="." unique_id=766232703 node_paths=PackedStringArray("presenters")]
+script = ExtResource("2_lq6ii")
+yarn_project = ExtResource("3_cwl88")
+presenters = [NodePath("../CanvasLayer/LinePresenter"), NodePath("../CanvasLayer/OptionsPresenter")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=613208437]
+
+[node name="LinePresenter" type="PanelContainer" parent="CanvasLayer" unique_id=1911022089 node_paths=PackedStringArray("text_label", "character_label", "continue_indicator")]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -250.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_jssry")
+text_label = NodePath("VBoxContainer/TextLabel")
+character_label = NodePath("VBoxContainer/CharacterLabel")
+continue_indicator = NodePath("VBoxContainer/ContinueIndicator")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LinePresenter" unique_id=1028087553]
+clip_contents = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="CharacterLabel" type="Label" parent="CanvasLayer/LinePresenter/VBoxContainer" unique_id=2113882298]
+custom_minimum_size = Vector2(250, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "TestNPC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextLabel" type="RichTextLabel" parent="CanvasLayer/LinePresenter/VBoxContainer" unique_id=1052021863]
+custom_minimum_size = Vector2(650, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 32
+text = "Du bist XXX, du hast ein Problem: du weisst nicht mehr wer du bist.
+Du verspürst einen inneren Antrieb Licht ins Dunkle zu bringen, dich auf die Suche nach deiner verlorenen Identität zu machen."
+scroll_active = false
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="ContinueIndicator" type="Label" parent="CanvasLayer/LinePresenter/VBoxContainer" unique_id=1450195842]
+custom_minimum_size = Vector2(250, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsPresenter" type="PanelContainer" parent="CanvasLayer" unique_id=943553704 node_paths=PackedStringArray("options_container")]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_egk5t")
+options_container = NodePath("OptionsContainer")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPresenter" unique_id=2081797218]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1

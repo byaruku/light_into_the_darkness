@@ -10,12 +10,12 @@ func  _ready() -> void:
 	state_machine = StateMachine.new(self)
 	state_machine.change_state(FreeRoamState.new())
 	
-	DialogManager.on_show_dialog.connect(
+	DialogueManager.on_show_dialog.connect(
 		func():
-			state_machine.push(DialogState.new())
+			state_machine.push(DialogueState.new())
 	)
 	
-	DialogManager.on_dialog_finished.connect(
+	DialogueManager.on_dialog_finished.connect(
 		func():
 			state_machine.pop()
 	)
