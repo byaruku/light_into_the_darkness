@@ -19,8 +19,9 @@ const LAYER_JUMP_HEIGHT2 = 7
 const LAYER_JUMP_HEIGHT3 = 8
 
 @export_category("Stats")
-@export var speed := 100
-@export var crouch_speed := 25
+@export var speed := 100.0
+@export var crouch_speed := 25.0
+@export var jump_height := 1
 @export var jump_distance := 16
 @export var jump_duration := 0.2
 
@@ -34,15 +35,23 @@ var jump_direction := Vector2.ZERO
 var current_height := 0
 var current_platform: JumpPlatform = null
 
+var can_break_walls := false
+
+@onready var mask_manager: MaskManager = $MaskManager
+@onready var scare_area: Area2D = $ScareArea
+@onready var scare_collision: CollisionShape2D = $ScareArea/CollisionShape2D
+
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var stand_check_area: Area2D = $StandCheckArea
 @onready var jump_check_area: Area2D = $JumpCheckArea
+
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_playback: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
 
 
 func _ready() -> void:
 	GameManager.player = self
+	mask_manager.player = self
 	animation_tree.active = true
 	update_height_layer()
 
@@ -73,6 +82,20 @@ func handle_action_input() -> void:
 				set_action_state(ActionState.NORMAL)
 			else:
 				set_action_state(ActionState.CROUCH)
+	
+	if Input.is_action_just_pressed("mask_1"):
+		var mask = mask_manager.get_mask(MaskManager.MaskType.RAGE)
+		if mask and mask_manager.can_use(mask):
+			mask_manager.use_mask(mask)
+		else:
+			print("Can't use RageMask")
+
+	if Input.is_action_just_pressed("mask_2"):
+		var mask = mask_manager.get_mask(MaskManager.MaskType.JOY)
+		if mask and mask_manager.can_use(mask):
+			mask_manager.use_mask(mask)
+		else:
+			print("Can't use JoyMask")
 
 func set_action_state(new_state):
 	if action_state == new_state:
@@ -172,12 +195,11 @@ func start_jump():
 	
 	# Jump on and of plattform
 	if target_platform:
-		if target_platform.height_level > current_height:
-			jump_to_platform(target_platform)
-			return
-
-		elif target_platform.height_level < current_height:
+		if target_platform.height_level < current_height:
 			jump_down(target_platform)
+			return
+		elif target_platform.height_level <= current_height + jump_height and not target_platform.height_level == current_height:
+			jump_to_platform(target_platform)
 			return
 	
 	normal_jump()

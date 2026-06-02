@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://bajm7x53jbj07"]
 
 [ext_resource type="Script" uid="uid://o52hwfds5h44" path="res://assets/resources/player.gd" id="1_s027a"]
+[ext_resource type="Script" uid="uid://dbkgu6o2hwqnk" path="res://assets/resources/mask_manager.gd" id="2_eitfq"]
+[ext_resource type="Script" uid="uid://c4i5kdoisu5lk" path="res://assets/masks/mask_ability.gd" id="3_ipexx"]
+[ext_resource type="Script" uid="uid://dxhm2dhiiw4vv" path="res://assets/masks/rage_mask.gd" id="4_luojb"]
+[ext_resource type="Script" uid="uid://nvpfbw77fe0t" path="res://assets/masks/joy_mask.gd" id="5_2kl4g"]
+
+[sub_resource type="Resource" id="Resource_lcev0"]
+script = ExtResource("4_luojb")
+mask_name = "Wut"
+metadata/_custom_type_script = "uid://dxhm2dhiiw4vv"
+
+[sub_resource type="Resource" id="Resource_itunx"]
+script = ExtResource("5_2kl4g")
+mask_name = "Freude"
+mask_type = 1
+metadata/_custom_type_script = "uid://nvpfbw77fe0t"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwm0n"]
 load_path = "res://.godot/imported/Character.png-d1bb1b747ad2291a72a332d36284dfe2.ctex"
@@ -8,6 +23,9 @@ load_path = "res://.godot/imported/Character.png-d1bb1b747ad2291a72a332d36284dfe
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysycn"]
 radius = 5.0
 height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipexx"]
+radius = 135.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xlmi"]
 size = Vector2(16, 16)
@@ -188,10 +206,10 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 [node name="Player" type="CharacterBody2D" unique_id=1705600323]
 collision_mask = 127
 script = ExtResource("1_s027a")
-speed = null
-crouch_speed = null
-jump_distance = null
-jump_duration = null
+
+[node name="MaskManager" type="Node" parent="." unique_id=760642046]
+script = ExtResource("2_eitfq")
+masks = Array[ExtResource("3_ipexx")]([SubResource("Resource_lcev0"), SubResource("Resource_itunx")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
 texture_filter = 1
@@ -204,6 +222,15 @@ frame = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_ysycn")
+
+[node name="ScareArea" type="Area2D" parent="." unique_id=1316055121]
+position = Vector2(0, -2)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScareArea" unique_id=354865293]
+shape = SubResource("CircleShape2D_ipexx")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1886363270]
 position = Vector2(0, -2)
