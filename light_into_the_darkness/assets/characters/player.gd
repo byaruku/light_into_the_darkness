@@ -349,3 +349,11 @@ func set_height_collision(layer: int):
 	
 	if action_state != ActionState.CROUCH:
 		set_collision_mask_value(LAYER_CROUCH, true)
+
+
+func enable_joy_vision():
+	get_tree().call_group("joy_visible", "show_for_joy")
+
+
+func disable_joy_vision():
+	get_tree().call_group("joy_visible", "hide_for_joy")
