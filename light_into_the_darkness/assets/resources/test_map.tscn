@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ic8uwfj0tvbr" path="res://assets/resources/npc.tscn" id="2_wdvqp"]
 [ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="6_cw122"]
 [ext_resource type="PackedScene" uid="uid://7t5jdkorf3iq" path="res://assets/resources/test_object_jump.tscn" id="7_3ixy5"]
+[ext_resource type="PackedScene" uid="uid://bm10gty1sih7x" path="res://assets/resources/breakable_object.tscn" id="7_q5l3y"]
 [ext_resource type="PackedScene" uid="uid://be4k5i35unxlx" path="res://assets/resources/test_object_crouch.tscn" id="7_wdvqp"]
 [ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground.tscn" id="9_q5l3y"]
 
@@ -100,3 +101,6 @@ position = Vector2(68, 76)
 
 [node name="FloorGround3" parent="." unique_id=591668902 instance=ExtResource("9_q5l3y")]
 position = Vector2(100, 76)
+
+[node name="BreakableObject" parent="." unique_id=2015296434 instance=ExtResource("7_q5l3y")]
+position = Vector2(50, -45)

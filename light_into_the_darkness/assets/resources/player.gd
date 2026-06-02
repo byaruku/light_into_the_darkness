@@ -35,7 +35,7 @@ var jump_direction := Vector2.ZERO
 var current_height := 0
 var current_platform: JumpPlatform = null
 
-var can_break_walls := false
+var can_break_objects := false
 
 @onready var mask_manager: MaskManager = $MaskManager
 @onready var scare_area: Area2D = $ScareArea
@@ -134,6 +134,8 @@ func movement_loop(_delta: float) -> void:
 	
 	velocity = move_direction * current_speed
 	move_and_slide()
+	
+	break_object()
 	
 	# sprite flip
 	if move_direction.x < 0:
@@ -285,6 +287,17 @@ func try_interact():
 		movement_state = MovementState.IDLE
 		update_animation()
 		await interactable.interact()
+
+
+func break_object():
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+
+		if collision.get_collider() is BreakableObject:
+			var object: BreakableObject = collision.get_collider()
+
+			if can_break_objects:
+				object.break_object()
 
 
 func update_height_layer():
