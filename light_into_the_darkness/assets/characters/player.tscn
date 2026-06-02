@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bajm7x53jbj07"]
 
-[ext_resource type="Script" uid="uid://o52hwfds5h44" path="res://assets/resources/player.gd" id="1_s027a"]
-[ext_resource type="Script" uid="uid://dbkgu6o2hwqnk" path="res://assets/resources/mask_manager.gd" id="2_eitfq"]
+[ext_resource type="Script" uid="uid://o52hwfds5h44" path="res://assets/characters/player.gd" id="1_s027a"]
+[ext_resource type="Script" uid="uid://dbkgu6o2hwqnk" path="res://assets/masks/mask_manager.gd" id="2_eitfq"]
 [ext_resource type="Script" uid="uid://c4i5kdoisu5lk" path="res://assets/masks/mask_ability.gd" id="3_ipexx"]
 [ext_resource type="Script" uid="uid://dxhm2dhiiw4vv" path="res://assets/masks/rage_mask.gd" id="4_luojb"]
 [ext_resource type="Script" uid="uid://nvpfbw77fe0t" path="res://assets/masks/joy_mask.gd" id="5_2kl4g"]
@@ -226,7 +226,7 @@ shape = SubResource("CapsuleShape2D_ysycn")
 [node name="ScareArea" type="Area2D" parent="." unique_id=1316055121]
 position = Vector2(0, -2)
 collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScareArea" unique_id=354865293]
@@ -266,3 +266,5 @@ libraries/ = SubResource("AnimationLibrary_8sknh")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=999536838]
 tree_root = SubResource("AnimationNodeStateMachine_hrrj1")
 anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="body_entered" from="ScareArea" to="." method="_on_scare_area_body_entered"]

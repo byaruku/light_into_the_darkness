@@ -4,7 +4,7 @@ var state_machine : StateMachine
 
 var player: Player
 var current_scene
-
+var town_scene_path := "res://assets/scenes/test_map.tscn"
 
 func  _ready() -> void:
 	state_machine = StateMachine.new(self)
@@ -23,3 +23,7 @@ func  _ready() -> void:
 
 func _process(delta: float) -> void:
 	state_machine.execute(delta)
+
+
+func fail_memory():
+	SceneManager.change_scene(town_scene_path, Portal.Destination.TOWN)

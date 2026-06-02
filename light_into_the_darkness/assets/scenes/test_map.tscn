@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0xljghkfa0h5"]
 
-[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/resources/player.tscn" id="1_wy546"]
-[ext_resource type="PackedScene" uid="uid://ic8uwfj0tvbr" path="res://assets/resources/npc.tscn" id="2_wdvqp"]
+[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="1_wy546"]
+[ext_resource type="PackedScene" uid="uid://ic8uwfj0tvbr" path="res://assets/characters/npc.tscn" id="2_wdvqp"]
 [ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="6_cw122"]
 [ext_resource type="PackedScene" uid="uid://7t5jdkorf3iq" path="res://assets/resources/test_object_jump.tscn" id="7_3ixy5"]
 [ext_resource type="PackedScene" uid="uid://bm10gty1sih7x" path="res://assets/resources/breakable_object.tscn" id="7_q5l3y"]

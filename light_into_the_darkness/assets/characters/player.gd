@@ -97,6 +97,7 @@ func handle_action_input() -> void:
 		else:
 			print("Can't use JoyMask")
 
+
 func set_action_state(new_state):
 	if action_state == new_state:
 		return
@@ -148,6 +149,7 @@ func movement_loop(_delta: float) -> void:
 		movement_state = MovementState.IDLE
 	else:
 		movement_state = MovementState.RUN
+
 
 func update_animation() -> void:
 	# jump has highest priority
@@ -292,12 +294,17 @@ func try_interact():
 func break_object():
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
-
+		
 		if collision.get_collider() is BreakableObject:
 			var object: BreakableObject = collision.get_collider()
-
+			
 			if can_break_objects:
 				object.break_object()
+
+
+func _on_scare_area_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		body.flee_from(global_position)
 
 
 func update_height_layer():
@@ -337,8 +344,8 @@ func set_height_collision(layer: int):
 	set_collision_mask_value(LAYER_JUMP_HEIGHT1, true)
 	set_collision_mask_value(LAYER_JUMP_HEIGHT2, true)
 	set_collision_mask_value(LAYER_JUMP_HEIGHT3, true)
-
+	
 	set_collision_mask_value(layer, false)
-
+	
 	if action_state != ActionState.CROUCH:
 		set_collision_mask_value(LAYER_CROUCH, true)

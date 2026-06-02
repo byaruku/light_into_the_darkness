@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ccjo8cdqdc021"]
 
-[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/resources/player.tscn" id="1_sgdeh"]
-[ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="6_aa1lm"]
+[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="1_luc0d"]
+[ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="2_osiof"]
+[ext_resource type="PackedScene" uid="uid://2m4jo8blj8pt" path="res://assets/characters/enemy.tscn" id="3_osiof"]
 
 [sub_resource type="TileSet" id="TileSet_ay3hf"]
 
@@ -59,9 +60,9 @@ tile_set = SubResource("TileSet_fqtp6")
 z_index = 2
 tile_set = SubResource("TileSet_v6f10")
 
-[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_sgdeh")]
+[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_luc0d")]
 
-[node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_aa1lm")]
+[node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("2_osiof")]
 position = Vector2(-160, -1)
 target_scene = "uid://d0xljghkfa0h5"
 portal_id = 1
@@ -72,3 +73,6 @@ shape = SubResource("RectangleShape2D_8qcxn")
 
 [node name="Marker2D" type="Marker2D" parent="Portal" unique_id=141211429]
 position = Vector2(67, 1)
+
+[node name="Enemy" parent="." unique_id=1973020385 instance=ExtResource("3_osiof")]
+position = Vector2(191, -86)

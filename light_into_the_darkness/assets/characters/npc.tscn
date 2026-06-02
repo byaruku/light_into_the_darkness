@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ic8uwfj0tvbr"]
 
-[ext_resource type="Script" uid="uid://tjh1gb5dopuc" path="res://assets/resources/npc.gd" id="1_qx2m1"]
-[ext_resource type="Script" uid="uid://cjbjxwibnud8v" path="res://assets/resources/npc_interactable.gd" id="2_4gcbp"]
+[ext_resource type="Script" uid="uid://tjh1gb5dopuc" path="res://assets/characters/npc.gd" id="1_qx2m1"]
+[ext_resource type="Script" uid="uid://cjbjxwibnud8v" path="res://assets/characters/npc_interactable.gd" id="2_4gcbp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwm0n"]
 load_path = "res://.godot/imported/Character.png-d1bb1b747ad2291a72a332d36284dfe2.ctex"

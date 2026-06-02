@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bm10gty1sih7x"]
 
-[ext_resource type="Script" uid="uid://dfyjn64yfe0sy" path="res://breakable_object.gd" id="1_hnkto"]
+[ext_resource type="Script" uid="uid://dfyjn64yfe0sy" path="res://assets/resources/breakable_object.gd" id="1_hnkto"]
 [ext_resource type="Texture2D" uid="uid://54gc5ce7jg77" path="res://assets/art/basic_colors.png" id="2_3qqhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybp44"]
