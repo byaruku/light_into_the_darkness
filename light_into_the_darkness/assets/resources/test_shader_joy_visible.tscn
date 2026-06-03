@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://duypx81neex42"]
+
+[ext_resource type="Script" uid="uid://cqbulbi7knktm" path="res://assets/resources/joy_visible_shader.gd" id="1_kqrtn"]
+
+[node name="TestShaderJoyVisible" type="Node2D" unique_id=1971010466]
+script = ExtResource("1_kqrtn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=869339750]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1120965830]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.2, 1.1, 0.8, 0.1)
