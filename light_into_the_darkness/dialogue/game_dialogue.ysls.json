@@ -7,6 +7,14 @@
       "language": "gdscript",
       "parameters": [],
       "yarnName": "change_scene"
+    },
+    {
+      "async": false,
+      "definitionName": "add_charge",
+      "fileName": "mask_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "add_charge"
     }
   ],
   "functions": [],

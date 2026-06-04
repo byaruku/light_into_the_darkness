@@ -2,7 +2,8 @@ title: Start
 ---
 Ein Mann, mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 
--> Verdammt, kannst du mit sagen, wo ich bin? // Rage
+-> Verdammt, kannst du mit sagen, wo ich bin?
+	<<add_charge RAGE>>
 	Mann: Beruhige dich. Alles geht seinen Gang, wenn du bereit bist.
 	-> Ich weiss, weder warum ich hier bin, noch wo genau... leichter gesagt als getan!
 		Mann: Ich freue mich dich hier zu treffen.
@@ -10,7 +11,8 @@ Ein Mann, mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 	-> *du atmest tief ein* Entschuldige, das war ein bisschen schroff.
 		Mann: Schon in Ordnung. Du erinnerst dich wirklich nicht an mich...
 		<<jump Unknown>>
--> Endlich jemand mit dem ich sprechen kann! // Joy
+-> Endlich jemand mit dem ich sprechen kann!
+	<<add_charge JOY>>
 	Mann: Ich freue mich dich hier zu treffen.
 	*Er mustert dich genau*
 	Mann: Wie mir scheint, erinnerst du dich wirklich nicht an mich.
@@ -24,12 +26,14 @@ title: Unknown
 	-> Wovon sprichst du?
 		Mann: Wir haben viel zusammen erlebt, Maigo.
 		<<jump Maigo>>
-	-> Das alles ist doch ein Albtraum. // Rage
+	-> Das alles ist doch ein Albtraum.
+		<<add_charge RAGE>>
 		Mann: Es ist das was du daraus machst. Es hat das Potential dich verstehen zu lassen, was zu all dem hier geführt hat, Maigo.
 		<<jump Maigo>>
 -> Du bist mir leider total fremd.
 	Mann: Ich habe das Gefühl, dass sich das ändern wird. Bist du bereit zu handeln?
-	-> Es gibt also Hoffnung? Verdammt, ja! // Joy
+	-> Es gibt also Hoffnung? Verdammt, ja!
+		<<add_charge JOY>>
 		Mann: Es gibt immer Hoffnung. Wo ein Wille ist, ist ein Weg, Maigo.
 		<<jump Maigo>>
 	-> Was heißt hier handeln? Ich bin hier im Nirgendwo gestrandet und rede mit einem Fremden, der in Rätseln spricht. // Rage
