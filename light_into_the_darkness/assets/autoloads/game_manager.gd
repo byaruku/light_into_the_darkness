@@ -4,6 +4,10 @@ var state_machine : StateMachine
 
 var player: Player
 var current_scene
+var mask_charges := {
+	MaskManager.MaskType.RAGE: 0,
+	MaskManager.MaskType.JOY: 0
+}
 
 func  _ready() -> void:
 	state_machine = StateMachine.new(self)
@@ -18,6 +22,8 @@ func  _ready() -> void:
 		func():
 			state_machine.pop()
 	)
+	
+	DialogueManager.dialogue_runner.add_command("add_charge", add_mask_charge)
 
 
 func _process(delta: float) -> void:
@@ -26,3 +32,7 @@ func _process(delta: float) -> void:
 
 func fail_memory():
 	SceneManager.change_scene(Portal.Destination.TOWN)
+
+
+func add_mask_charge(mask_type_name: String):
+	player.mask_manager.add_charge(mask_type_name)

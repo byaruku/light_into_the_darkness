@@ -12,15 +12,7 @@ signal mask_ended(mask)
 @export var masks: Array[MaskAbility]
 
 var active_mask: MaskAbility
-var mask_charges := {}
 var player: Player
-
-
-func _ready():
-	DialogueManager.dialogue_runner.add_command("add_charge", add_charge)
-	
-	for mask in masks:
-		mask_charges[mask.mask_type] = 0
 
 
 func use_mask(mask: MaskAbility):
@@ -46,7 +38,7 @@ func get_mask(mask_type: MaskType) -> MaskAbility:
 
 
 func can_use(mask: MaskAbility) -> bool:
-	return mask_charges[mask.mask_type] > 0 && active_mask == null
+	return GameManager.mask_charges[mask.mask_type] > 0 && active_mask == null
 
 
 func add_charge(mask_type_name: String):
@@ -57,5 +49,5 @@ func add_charge(mask_type_name: String):
 		"JOY":
 			mask = get_mask(MaskType.JOY)
 	
-	mask_charges[mask.mask_type] += 1
-	print(mask.mask_name, " ", mask_charges[mask.mask_type])
+	GameManager.mask_charges[mask.mask_type] += 1
+	print(mask.mask_name, " ", GameManager.mask_charges[mask.mask_type])

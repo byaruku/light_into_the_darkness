@@ -11,7 +11,7 @@
     {
       "async": false,
       "definitionName": "add_charge",
-      "fileName": "mask_manager.gd",
+      "fileName": "game_manager.gd",
       "language": "gdscript",
       "parameters": [],
       "yarnName": "add_charge"
