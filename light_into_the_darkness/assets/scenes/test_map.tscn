@@ -107,7 +107,7 @@ position = Vector2(100, 76)
 [node name="BreakableObject" parent="." unique_id=2015296434 instance=ExtResource("7_q5l3y")]
 position = Vector2(50, -45)
 
+[node name="TestShaderJoyVisible" parent="." unique_id=1783663572 instance=ExtResource("9_gkppe")]
+
 [node name="TestObjectJoyVisible" parent="." unique_id=1971010466 instance=ExtResource("8_nq0es")]
 position = Vector2(-66, -47)
-
-[node name="TestObjectJoyVisible" parent="TestObjectJoyVisible" unique_id=1783663572 instance=ExtResource("9_gkppe")]
