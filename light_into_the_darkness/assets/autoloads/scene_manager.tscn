@@ -8,5 +8,7 @@
 script = ExtResource("1_af6ij")
 main_menu_packed = ExtResource("2_af6ij")
 game_scene_packed = ExtResource("3_af6ij")
+town_scene = "uid://d0xljghkfa0h5"
+memory_1_scene = "uid://ccjo8cdqdc021"
 
 [node name="CurrentSceneContainer" type="Node" parent="." unique_id=1140696747]

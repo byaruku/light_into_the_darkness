@@ -1,5 +1,14 @@
 {
-  "commands": [],
+  "commands": [
+    {
+      "async": false,
+      "definitionName": "change_scene",
+      "fileName": "dialogue_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "change_scene"
+    }
+  ],
   "functions": [],
   "version": 1
 }

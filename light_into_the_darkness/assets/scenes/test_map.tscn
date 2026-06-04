@@ -74,7 +74,6 @@ yarn_node = "Start"
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_cw122")]
 position = Vector2(-160, 0)
-target_scene = "uid://ccjo8cdqdc021"
 target_portal_id = 1
 spawn_marker = NodePath("Marker2D")
 

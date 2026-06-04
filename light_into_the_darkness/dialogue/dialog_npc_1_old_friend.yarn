@@ -51,5 +51,5 @@ title: Memory
 Mann: Wir haben zusammen viel erlebt. Kleine und große Abenteuer
 Maigo: Abenteuer sagst du?
 Mann: Ich weiss noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, die Vögel geheime Spione, die Baumhäuser unsere Burgen...
-// Memory_1 begin
+<<change_scene MEMORY_1>>
 ===
