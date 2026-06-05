@@ -13,8 +13,14 @@ var player: Player
 
 var state := State.WANDER
 var wander_target := Vector2.ZERO
-var flee_timer := 0.0
+
+var chase_direction := Vector2.ZERO
+var chase_timer := 0.0
+
 var flee_source: Vector2
+var flee_timer := 0.0
+var flee_direction := Vector2.ZERO
+var flee_retarget_timer := 0.0
 
 
 func _ready():
@@ -36,15 +42,18 @@ func _physics_process(delta: float) -> void:
 				state = State.CHASE
 		
 		State.CHASE:
-			chase_player()
+			chase_player(delta)
 		
 		State.FLEE:
-			var dir = (global_position - flee_source).normalized()
-			velocity = dir * speed * 2
-			
-			move_and_slide()
-			
 			flee_timer -= delta
+			flee_retarget_timer -= delta
+			
+			if flee_retarget_timer <= 0:
+				update_flee_direction()
+				flee_retarget_timer = randf_range(0.3, 0.8)
+			
+			velocity = flee_direction * speed * 2
+			move_and_slide()
 			
 			if flee_timer <= 0:
 				state = State.CHASE
@@ -62,15 +71,16 @@ func _on_touch_area_body_entered(body: Node2D) -> void:
 		GameManager.fail_memory()
 
 
-func chase_player():
-	var random_offset := Vector2(
-		randf_range(-24, 24),
-		randf_range(-24, 24)
-	)
+func chase_player(delta):
+	chase_timer -= delta
 	
-	var target = player.global_position + random_offset
-	velocity = (target - global_position).normalized() * speed
+	if chase_timer <= 0:
+		var dir = (player.global_position - global_position).normalized()
+		var angle_offset = deg_to_rad(randf_range(-45.0, 45.0))
+		chase_direction = dir.rotated(angle_offset)
+		chase_timer = randf_range(0.5, 1.5)
 	
+	velocity = chase_direction * speed
 	move_and_slide()
 
 
@@ -78,3 +88,12 @@ func flee_from(source: Vector2):
 	state = State.FLEE
 	flee_timer = 3.0
 	flee_source = source
+	
+	update_flee_direction()
+	flee_retarget_timer = 0.0
+
+
+func update_flee_direction():
+	var dir = (global_position - flee_source).normalized()
+	var angle_offset = deg_to_rad(randf_range(-45.0, 45.0))
+	flee_direction = dir.rotated(angle_offset)
