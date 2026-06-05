@@ -1,4 +1,11 @@
 title: Start
+when: always
+---
+Mann: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
+===
+
+title: Start
+when: once
 ---
 Ein Mann, mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 
