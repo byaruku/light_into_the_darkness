@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://boxbqj8s17sdq"]
+
+[ext_resource type="Script" uid="uid://b2xixwykgbxae" path="res://assets/autoloads/identity_manager.gd" id="1_c05bd"]
+[ext_resource type="Texture2D" uid="uid://54gc5ce7jg77" path="res://assets/art/basic_colors.png" id="2_i2b03"]
+[ext_resource type="Script" uid="uid://ceweed3uanr58" path="res://assets/autoloads/texture_progress_bar.gd" id="2_xkbur"]
+
+[node name="IdentityManager" type="Node" unique_id=100065473]
+script = ExtResource("1_c05bd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1902596486]
+
+[node name="IdentityBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=247312584]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+nine_patch_stretch = true
+texture_progress = ExtResource("2_i2b03")
+script = ExtResource("2_xkbur")

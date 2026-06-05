@@ -10,6 +10,14 @@
     },
     {
       "async": false,
+      "definitionName": "identity",
+      "fileName": "dialogue_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "identity"
+    },
+    {
+      "async": false,
       "definitionName": "add_charge",
       "fileName": "game_manager.gd",
       "language": "gdscript",

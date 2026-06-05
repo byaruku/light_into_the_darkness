@@ -33,6 +33,7 @@ func return_to_main_menu():
 
 
 func load_main_menu():
+	GameManager.state_machine.push(MainMenuState.new())
 	main_menu = main_menu_packed.instantiate()
 	main_menu.new_game_pressed.connect(new_game)
 	main_menu.settings_pressed.connect(settings_open)
@@ -42,6 +43,7 @@ func load_main_menu():
 
 
 func new_game():
+	GameManager.state_machine.pop()
 	main_menu.queue_free()
 	
 	current_scene = game_scene_packed.instantiate()
