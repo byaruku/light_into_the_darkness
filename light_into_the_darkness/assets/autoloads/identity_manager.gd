@@ -13,6 +13,11 @@ var current_identity := 0
 func _ready() -> void:
 	identity_bar.visible = false
 
+
+func clear_data():
+	add_progress(-max_identity)
+	current_identity = 0
+
 func add_progress(amount: int):
 	current_identity = clamp(
 		current_identity + amount,

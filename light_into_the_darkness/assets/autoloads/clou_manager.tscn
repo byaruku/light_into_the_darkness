@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxrggd2h3igrq"]
+
+[ext_resource type="Script" uid="uid://dqt0c7f2pf61m" path="res://assets/autoloads/clou_manager.gd" id="1_ejprk"]
+
+[node name="ClouManager" type="Node" unique_id=927959313]
+script = ExtResource("1_ejprk")

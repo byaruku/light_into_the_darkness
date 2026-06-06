@@ -41,13 +41,7 @@ func can_use(mask: MaskAbility) -> bool:
 	return GameManager.mask_charges[mask.mask_type] > 0 && active_mask == null
 
 
-func add_charge(mask_type_name: String):
-	var mask: MaskAbility
-	match mask_type_name:
-		"RAGE":
-			mask = get_mask(MaskType.RAGE)
-		"JOY":
-			mask = get_mask(MaskType.JOY)
-	
-	GameManager.mask_charges[mask.mask_type] += 1
+func add_charge(mask_type: MaskType, amount: int = 1):
+	var mask = get_mask(mask_type)
+	GameManager.mask_charges[mask.mask_type] += amount
 	print(mask.mask_name, " ", GameManager.mask_charges[mask.mask_type])

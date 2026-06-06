@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ce1oyuaw6rg5a"]
+
+[ext_resource type="Script" uid="uid://ehqntcyoiicp" path="res://assets/resources/clou.gd" id="1_jebn6"]
+[ext_resource type="Script" uid="uid://chr2cppbycm41" path="res://assets/resources/clou_interactable.gd" id="2_e6gww"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkst0"]
+
+[node name="Clou" type="Node2D" unique_id=590297839]
+script = ExtResource("1_jebn6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163796564]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=786390034]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("2_e6gww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=94941176]
+shape = SubResource("CircleShape2D_qkst0")

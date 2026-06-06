@@ -30,6 +30,7 @@ func return_to_main_menu():
 		current_scene.queue_free()
 
 	GameManager.player = null
+	GameManager.clear_data()
 	load_main_menu()
 	
 	await Fader.fade_out(0.5)

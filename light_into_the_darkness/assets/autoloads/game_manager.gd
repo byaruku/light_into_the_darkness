@@ -31,9 +31,17 @@ func _process(delta: float) -> void:
 	state_machine.execute(delta)
 
 
+func clear_data():
+	mask_charges = {
+		MaskManager.MaskType.RAGE: 0,
+		MaskManager.MaskType.JOY: 0
+	}
+	ClouManager.clear_data()
+	IdentityManager.clear_data()
+
 func fail_memory():
 	SceneManager.change_scene(Portal.Destination.TOWN)
 
 
-func add_mask_charge(mask_type_name: String):
-	player.mask_manager.add_charge(mask_type_name)
+func add_mask_charge(mask_type: String):
+	player.mask_manager.add_charge(int(mask_type))

@@ -1,66 +1,74 @@
-title: Start
+title: Npc_1
 when: always
 ---
 Mann: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
 ===
 
-title: Start
+title: Npc_1
 when: once
 ---
 Ein Mann, mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 
 -> Verdammt, kannst du mit sagen, wo ich bin?
-	<<add_charge RAGE>>
+	<<add_charge 0>>
 	Mann: Beruhige dich. Alles geht seinen Gang, wenn du bereit bist.
 	-> Ich weiss, weder warum ich hier bin, noch wo genau... leichter gesagt als getan!
 		Mann: Ich freue mich dich hier zu treffen.
-		<<jump Unknown>>
+		<<jump Npc_1_Unknown>>
 	-> *du atmest tief ein* Entschuldige, das war ein bisschen schroff.
 		Mann: Schon in Ordnung. Du erinnerst dich wirklich nicht an mich...
-		<<jump Unknown>>
+		<<jump Npc_1_Unknown>>
 -> Endlich jemand mit dem ich sprechen kann!
-	<<add_charge JOY>>
+	<<add_charge 1>>
 	Mann: Ich freue mich dich hier zu treffen.
 	*Er mustert dich genau*
 	Mann: Wie mir scheint, erinnerst du dich wirklich nicht an mich.
-	<<jump Unknown>>
+	<<jump Npc_1_Unknown>>
 ===
 
-title: Unknown
+title: Npc_1_Unknown
 ---
 -> Wir kennen uns?
 	Mann: Ja, wir haben viel zusammen erlebt.
 	-> Wovon sprichst du?
 		Mann: Wir haben viel zusammen erlebt, Maigo.
-		<<jump Maigo>>
+		<<jump Npc_1_Maigo>>
 	-> Das alles ist doch ein Albtraum.
-		<<add_charge RAGE>>
+		<<add_charge 0>>
 		Mann: Es ist das was du daraus machst. Es hat das Potential dich verstehen zu lassen, was zu all dem hier geführt hat, Maigo.
-		<<jump Maigo>>
+		<<jump Npc_1_Maigo>>
 -> Du bist mir leider total fremd.
 	Mann: Ich habe das Gefühl, dass sich das ändern wird. Bist du bereit zu handeln?
 	-> Es gibt also Hoffnung? Verdammt, ja!
-		<<add_charge JOY>>
+		<<add_charge 1>>
 		Mann: Es gibt immer Hoffnung. Wo ein Wille ist, ist ein Weg, Maigo.
-		<<jump Maigo>>
+		<<jump Npc_1_Maigo>>
 	-> Was heißt hier handeln? Ich bin hier im Nirgendwo gestrandet und rede mit einem Fremden, der in Rätseln spricht. // Rage
 		Mann: Es sind nur solange Rätsel bis du Licht ins Dunkle bringst, Maigo.
-		<<jump Maigo>>
+		<<jump Npc_1_Maigo>>
 ===
 
-title: Maigo
+title: Npc_1_Maigo
 ---
 -> Maigo... das ist mein Name. Glaube ich.
 	Mann: So haben wir dich immer gerufen, wenn wir 'Verstecken' spielten.
-	<<jump Memory>>
+	<<jump Npc_1_Memory>>
 -> Maigo? Was bedeutet das alles?
-	<<jump Memory>>
+	<<jump Npc_1_Memory>>
 ===
 
-title: Memory
+title: Npc_1_Memory
 ---
 Mann: Wir haben zusammen viel erlebt. Kleine und große Abenteuer
 Maigo: Abenteuer sagst du?
 Mann: Ich weiss noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, die Vögel geheime Spione, die Baumhäuser unsere Burgen...
-<<change_scene MEMORY_1>>
+<<change_scene 1>>
+===
+
+
+
+title: Clou_1
+---
+Ein halb verbrannter Brief.
+Jemand wollte die Wahrheit verschwinden lassen.
 ===
