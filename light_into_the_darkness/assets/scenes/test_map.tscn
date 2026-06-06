@@ -86,22 +86,27 @@ position = Vector2(50, 0)
 [node name="TestObject2" parent="." unique_id=1292080107 instance=ExtResource("7_3ixy5")]
 position = Vector2(84, 76)
 
+[node name="TestObject3" parent="." unique_id=2134135108 instance=ExtResource("7_3ixy5")]
+position = Vector2(100, 76)
+collision_layer = 64
+height_level = 2
+
 [node name="TestObject" parent="." unique_id=329289114 instance=ExtResource("7_wdvqp")]
 position = Vector2(147, -35)
 
 [node name="FloorGround" parent="." unique_id=415817742 instance=ExtResource("9_q5l3y")]
-position = Vector2(84, 60)
-scale = Vector2(3, 1)
+position = Vector2(92, 60)
+scale = Vector2(4, 1)
 
 [node name="FloorGround4" parent="." unique_id=1722221887 instance=ExtResource("9_q5l3y")]
-position = Vector2(84, 92)
-scale = Vector2(3, 1)
+position = Vector2(92, 92)
+scale = Vector2(4, 1)
 
 [node name="FloorGround2" parent="." unique_id=5033427 instance=ExtResource("9_q5l3y")]
 position = Vector2(68, 76)
 
 [node name="FloorGround3" parent="." unique_id=591668902 instance=ExtResource("9_q5l3y")]
-position = Vector2(100, 76)
+position = Vector2(116, 76)
 
 [node name="BreakableObject" parent="." unique_id=2015296434 instance=ExtResource("7_q5l3y")]
 position = Vector2(50, -45)

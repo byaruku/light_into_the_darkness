@@ -199,11 +199,14 @@ func start_jump():
 	
 	# Jump on and of plattform
 	if target_platform:
-		if target_platform.height_level < current_height:
-			jump_down(target_platform)
-			return
-		elif target_platform.height_level <= current_height + jump_height and not target_platform.height_level == current_height:
+		var height_diff = target_platform.height_level - current_height
+		
+		if height_diff > 0 and height_diff <= jump_height:
 			jump_to_platform(target_platform)
+			return
+		
+		if height_diff < 0 and abs(height_diff) <= jump_height:
+			jump_down(target_platform)
 			return
 	
 	normal_jump()
@@ -246,7 +249,7 @@ func jump_down(platform: JumpPlatform):
 	
 	velocity = Vector2.ZERO
 	
-	current_height = max(current_height - 1, 0)
+	current_height = platform.height_level
 	
 	if current_height == 0:
 		current_platform = null
