@@ -11,6 +11,9 @@ extends Node
 var main_menu
 var current_scene
 
+var previous_scene_destination: Portal.Destination
+var current_scene_destination: Portal.Destination
+
 var scene_paths := {}
 
 
@@ -34,12 +37,16 @@ func return_to_main_menu():
 
 func load_main_menu():
 	GameManager.state_machine.push(MainMenuState.new())
+	
 	main_menu = main_menu_packed.instantiate()
+	
 	main_menu.new_game_pressed.connect(new_game)
 	main_menu.settings_pressed.connect(settings_open)
 	main_menu.about_pressed.connect(about_open)
 	main_menu.exit_pressed.connect(exit_game)
+	
 	current_scene_container.add_child(main_menu)
+	main_menu.show_menu()
 
 
 func new_game():
@@ -48,6 +55,8 @@ func new_game():
 	
 	current_scene = game_scene_packed.instantiate()
 	current_scene_container.add_child(current_scene)
+	current_scene_destination = Portal.Destination.TOWN
+	GameManager.state_machine.push(FreeRoamState.new())
 
 
 func settings_open():
@@ -68,11 +77,13 @@ func change_scene(destination: Portal.Destination):
 	await Fader.fade_in(1.0)
 	
 	if current_scene:
+		previous_scene_destination = current_scene_destination
 		current_scene.queue_free()
 	
 	var packed = load(scene_paths[destination])
 	current_scene = packed.instantiate()
 	current_scene_container.add_child(current_scene)
+	current_scene_destination = destination
 
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -81,6 +92,8 @@ func change_scene(destination: Portal.Destination):
 
 	if portal:
 		GameManager.player.global_position = (portal.spawn_marker.global_position)
+
+	GameManager.is_in_memory = destination > 0
 
 	await Fader.fade_out(1.0)
 
@@ -95,3 +108,7 @@ func find_destination_portal(destination: Portal.Destination):
 			return portal
 
 	return null
+
+
+func leave_memory():
+	change_scene(previous_scene_destination)

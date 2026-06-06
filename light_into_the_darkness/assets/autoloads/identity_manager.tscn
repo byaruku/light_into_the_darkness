@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2xixwykgbxae" path="res://assets/autoloads/identity_manager.gd" id="1_c05bd"]
 [ext_resource type="Texture2D" uid="uid://54gc5ce7jg77" path="res://assets/art/basic_colors.png" id="2_i2b03"]
-[ext_resource type="Script" uid="uid://ceweed3uanr58" path="res://assets/autoloads/texture_progress_bar.gd" id="2_xkbur"]
+[ext_resource type="Script" uid="uid://ceweed3uanr58" path="res://assets/ui/texture_progress_bar.gd" id="2_xkbur"]
 
 [node name="IdentityManager" type="Node" unique_id=100065473]
 script = ExtResource("1_c05bd")

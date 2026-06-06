@@ -1,10 +1,13 @@
 extends Control
 
+signal new_game_pressed()
+signal settings_pressed()
+signal about_pressed()
+signal exit_pressed()
 
-signal new_game_pressed(origin: String)
-signal settings_pressed(origin: String)
-signal about_pressed(origin: String)
-signal exit_pressed(origin: String)
+
+func show_menu():
+	$MarginContainer/VBoxContainer/NewGameButton.grab_focus()
 
 
 func _on_new_game_pressed() -> void:

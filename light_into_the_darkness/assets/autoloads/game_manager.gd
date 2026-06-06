@@ -3,7 +3,9 @@ extends Node
 var state_machine : StateMachine
 
 var player: Player
-var current_scene
+
+var is_in_memory := false
+
 var mask_charges := {
 	MaskManager.MaskType.RAGE: 0,
 	MaskManager.MaskType.JOY: 0
@@ -11,7 +13,6 @@ var mask_charges := {
 
 func  _ready() -> void:
 	state_machine = StateMachine.new(self)
-	state_machine.change_state(FreeRoamState.new())
 	
 	DialogueManager.on_show_dialog.connect(
 		func():

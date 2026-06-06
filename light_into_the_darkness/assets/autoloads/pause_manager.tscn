@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dmgqceknk860s"]
+
+[ext_resource type="Script" uid="uid://bh7wutvpq23" path="res://assets/autoloads/pause_manager.gd" id="1_pulwy"]
+[ext_resource type="PackedScene" uid="uid://dpsqoyuqa0dir" path="res://assets/ui/pause_menu.tscn" id="2_ade5b"]
+[ext_resource type="PackedScene" uid="uid://cjxbwcun7n8d3" path="res://assets/ui/confirm_dialogue.tscn" id="3_1k8cp"]
+
+[node name="PauseManager" type="Node" unique_id=1519981051]
+script = ExtResource("1_pulwy")
+pause_menu_scene = ExtResource("2_ade5b")
+confirm_dialog_scene = ExtResource("3_1k8cp")
