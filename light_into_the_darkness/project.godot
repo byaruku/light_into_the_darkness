@@ -16,18 +16,21 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
-SceneManager="*uid://cvy3huu52nnua"
-DialogueManager="*uid://dmdkk8dsyslgh"
-GameManager="*uid://bbl6jvmw6x6t0"
-AudioManager="*uid://bdrqtay7q71fy"
-Fader="*uid://2xchwovf1ssg"
 YarnSpinner="*uid://bhiw7fae5n1e8"
+Fader="*uid://2xchwovf1ssg"
+PauseManager="*uid://dmgqceknk860s"
+IdentityManager="*uid://boxbqj8s17sdq"
+DialogueManager="*uid://dmdkk8dsyslgh"
+AudioManager="*uid://bdrqtay7q71fy"
+GameManager="*uid://bbl6jvmw6x6t0"
+SceneManager="*uid://cvy3huu52nnua"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=160
+window/size/viewport_height=144
 window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

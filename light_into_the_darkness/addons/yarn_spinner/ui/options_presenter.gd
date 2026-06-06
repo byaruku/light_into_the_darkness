@@ -284,8 +284,8 @@ func _create_option_buttons() -> void:
 			# Only apply default styling when no custom button scene is set.
 			# When using a custom scene, respect its existing theme/size.
 			if option_button_scene == null:
-				button.custom_minimum_size = Vector2(0, 80)
-				button.add_theme_font_size_override("font_size", 40)
+				button.add_theme_font_size_override("font_size", 6)
+				button.autowrap_mode = TextServer.AUTOWRAP_WORD
 		elif button.has_method("set_option_text"):
 			button.set_option_text(option.get_plain_text())
 

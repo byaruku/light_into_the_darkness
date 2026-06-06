@@ -258,7 +258,6 @@ shape = SubResource("RectangleShape2D_jyxat")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=443111147]
 offset = Vector2(0, -2)
-zoom = Vector2(4, 4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022185426]
 libraries/ = SubResource("AnimationLibrary_8sknh")
