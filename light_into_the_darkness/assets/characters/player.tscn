@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://o52hwfds5h44" path="res://assets/characters/player.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://dbkgu6o2hwqnk" path="res://assets/masks/mask_manager.gd" id="2_eitfq"]
+[ext_resource type="PackedScene" uid="uid://52x1sqracaon" path="res://assets/ui/mask_overlay.tscn" id="2_sqwyp"]
 [ext_resource type="Script" uid="uid://c4i5kdoisu5lk" path="res://assets/masks/mask_ability.gd" id="3_ipexx"]
 [ext_resource type="Script" uid="uid://dxhm2dhiiw4vv" path="res://assets/masks/rage_mask.gd" id="4_luojb"]
 [ext_resource type="Script" uid="uid://nvpfbw77fe0t" path="res://assets/masks/joy_mask.gd" id="5_2kl4g"]
@@ -210,6 +211,8 @@ script = ExtResource("1_s027a")
 [node name="MaskManager" type="Node" parent="." unique_id=760642046]
 script = ExtResource("2_eitfq")
 masks = Array[ExtResource("3_ipexx")]([SubResource("Resource_lcev0"), SubResource("Resource_itunx")])
+
+[node name="MaskOverlay" parent="." unique_id=1505904625 instance=ExtResource("2_sqwyp")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
 texture_filter = 1

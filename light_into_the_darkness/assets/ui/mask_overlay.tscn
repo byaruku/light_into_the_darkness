@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://52x1sqracaon"]
+
+[ext_resource type="Script" uid="uid://r62v08lker45" path="res://assets/ui/mask_slot.gd" id="1_hwib1"]
+[ext_resource type="Script" uid="uid://df5vj4onsx86b" path="res://assets/ui/mask_overlay.gd" id="1_kxkdx"]
+[ext_resource type="Texture2D" uid="uid://54gc5ce7jg77" path="res://assets/art/basic_colors.png" id="3_ho6i1"]
+
+[node name="MaskOverlay" type="CanvasLayer" unique_id=1505904625]
+script = ExtResource("1_kxkdx")
+
+[node name="Pulse" type="ColorRect" parent="." unique_id=802304909]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.64787495, 0.13540646, 0.12832874, 0.08627451)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1826779773]
+offset_right = 20.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1846207896]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="RageSlot" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1530455870]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("1_hwib1")
+
+[node name="Highlight" type="TextureRect" parent="MarginContainer/HBoxContainer/RageSlot" unique_id=1803522197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="MarginContainer/HBoxContainer/RageSlot" unique_id=1176750822]
+scale = Vector2(1.5999999, 1.5999999)
+texture = ExtResource("3_ho6i1")
+centered = false
+hframes = 3
+vframes = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/RageSlot" unique_id=1474179650]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JoySlot" type="Control" parent="MarginContainer/HBoxContainer" unique_id=2045734915]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("1_hwib1")
+mask_type = 1
+
+[node name="Highlight" type="TextureRect" parent="MarginContainer/HBoxContainer/JoySlot" unique_id=2051336519]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="MarginContainer/HBoxContainer/JoySlot" unique_id=73403872]
+scale = Vector2(1.5999999, 1.5999999)
+texture = ExtResource("3_ho6i1")
+centered = false
+hframes = 3
+vframes = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/JoySlot" unique_id=2118356631]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1

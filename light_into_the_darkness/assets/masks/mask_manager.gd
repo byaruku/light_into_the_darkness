@@ -8,6 +8,7 @@ enum MaskType {
 
 signal mask_started(mask)
 signal mask_ended(mask)
+signal charges_changed(mask_type, charges)
 
 @export var masks: Array[MaskAbility]
 
@@ -20,6 +21,8 @@ func use_mask(mask: MaskAbility):
 		return
 	
 	active_mask = mask
+	GameManager.mask_charges[mask.mask_type] -= 1
+	charges_changed.emit(mask.mask_type, GameManager.mask_charges[mask.mask_type])
 	mask.activate(player)
 	mask_started.emit(mask)
 	
@@ -44,4 +47,5 @@ func can_use(mask: MaskAbility) -> bool:
 func add_charge(mask_type: MaskType, amount: int = 1):
 	var mask = get_mask(mask_type)
 	GameManager.mask_charges[mask.mask_type] += amount
+	charges_changed.emit(mask_type, GameManager.mask_charges[mask.mask_type])
 	print(mask.mask_name, " ", GameManager.mask_charges[mask.mask_type])
