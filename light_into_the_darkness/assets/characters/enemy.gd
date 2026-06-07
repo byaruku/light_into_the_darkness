@@ -29,6 +29,9 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	if GameManager.state_machine.current_state is PauseState:
+		return
+	
 	match state:
 		State.WANDER:
 			if global_position.distance_to(wander_target) < 10:
