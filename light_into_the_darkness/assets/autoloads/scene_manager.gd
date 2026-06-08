@@ -61,7 +61,7 @@ func new_game():
 
 
 func settings_open():
-	pass
+	PauseManager.settings()
 
 
 func about_open():

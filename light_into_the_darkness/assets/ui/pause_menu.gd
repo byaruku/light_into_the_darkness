@@ -12,6 +12,7 @@ signal main_menu_pressed
 	$Panel/MarginContainer/VBoxContainer/MainMenuButton
 ]
 
+
 func _ready() -> void:
 	hide()
 
