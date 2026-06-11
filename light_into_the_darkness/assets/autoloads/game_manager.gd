@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 
 
 func clear_data():
+	is_in_memory = false
 	mask_charges = {
 		MaskManager.MaskType.RAGE: 1,
 		MaskManager.MaskType.JOY: 1

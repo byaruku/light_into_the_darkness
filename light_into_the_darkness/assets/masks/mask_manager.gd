@@ -13,6 +13,8 @@ signal charges_changed(mask_type, charges)
 @export var masks: Array[MaskAbility]
 
 var active_mask: MaskAbility
+var active_mask_time_left := 0.0
+
 var player: Player
 
 
@@ -21,16 +23,23 @@ func use_mask(mask: MaskAbility):
 		return
 	
 	active_mask = mask
+	active_mask_time_left = mask.duration
+	
 	GameManager.mask_charges[mask.mask_type] -= 1
 	charges_changed.emit(mask.mask_type, GameManager.mask_charges[mask.mask_type])
+	
 	mask.activate(player)
 	mask_started.emit(mask)
 	
-	await get_tree().create_timer(mask.duration).timeout
+	while active_mask_time_left > 0:
+		await get_tree().process_frame
+		active_mask_time_left -= get_process_delta_time()
 	
 	mask.deactivate(player)
 	mask_ended.emit(mask)
+	
 	active_mask = null
+	active_mask_time_left = 0.0
 
 
 func get_mask(mask_type: MaskType) -> MaskAbility:
