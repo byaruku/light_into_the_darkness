@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c4i5kdoisu5lk" path="res://assets/masks/mask_ability.gd" id="3_ipexx"]
 [ext_resource type="Script" uid="uid://dxhm2dhiiw4vv" path="res://assets/masks/rage_mask.gd" id="4_luojb"]
 [ext_resource type="Script" uid="uid://nvpfbw77fe0t" path="res://assets/masks/joy_mask.gd" id="5_2kl4g"]
+[ext_resource type="Texture2D" uid="uid://1avst2gwe12f" path="res://assets/characters/Maigo/Maigo_comp3.png" id="7_5rkq3"]
 
 [sub_resource type="Resource" id="Resource_lcev0"]
 script = ExtResource("4_luojb")
@@ -17,9 +18,6 @@ script = ExtResource("5_2kl4g")
 mask_name = "Freude"
 mask_type = 1
 metadata/_custom_type_script = "uid://nvpfbw77fe0t"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwm0n"]
-load_path = "res://.godot/imported/Character.png-d1bb1b747ad2291a72a332d36284dfe2.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysycn"]
 radius = 5.0
@@ -53,9 +51,81 @@ tracks/0/keys = {
 "values": [4]
 }
 
-[sub_resource type="Animation" id="Animation_23bvh"]
-resource_name = "crouch_idle"
-length = 0.1
+[sub_resource type="Animation" id="Animation_5refc"]
+resource_name = "crouch A"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [31, 32]
+}
+
+[sub_resource type="Animation" id="Animation_c7pp8"]
+resource_name = "crouch D"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_m3ey1"]
+resource_name = "crouch S"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [25, 26]
+}
+
+[sub_resource type="Animation" id="Animation_nwtm7"]
+resource_name = "crouch W"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [28, 29]
+}
+
+[sub_resource type="Animation" id="Animation_5rkq3"]
+resource_name = "crouch idle A"
+length = 0.5
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -68,12 +138,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [8]
+"values": [30]
 }
 
-[sub_resource type="Animation" id="Animation_eitfq"]
-resource_name = "crouch_walk"
-length = 0.4
+[sub_resource type="Animation" id="Animation_nempf"]
+resource_name = "crouch idle D"
+length = 0.5
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -83,15 +153,105 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [9, 10, 11, 8]
+"values": [33]
+}
+
+[sub_resource type="Animation" id="Animation_40r61"]
+resource_name = "crouch idle S"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
+[sub_resource type="Animation" id="Animation_skp7j"]
+resource_name = "crouch idle W"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [27]
+}
+
+[sub_resource type="Animation" id="Animation_gpudx"]
+resource_name = "idle A"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+
+[sub_resource type="Animation" id="Animation_o7p4c"]
+resource_name = "idle D"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [17]
 }
 
 [sub_resource type="Animation" id="Animation_14505"]
 resource_name = "idle"
-length = 0.1
+length = 2.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_1we82"]
+resource_name = "idle W"
+length = 0.5
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -104,12 +264,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [11]
 }
 
-[sub_resource type="Animation" id="Animation_jyxat"]
-resource_name = "jump"
-length = 0.2
+[sub_resource type="Animation" id="Animation_2c6rj"]
+resource_name = "jump A"
+length = 0.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -121,12 +281,63 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [22]
 }
 
-[sub_resource type="Animation" id="Animation_4wcc8"]
-resource_name = "run"
-length = 0.4
+[sub_resource type="Animation" id="Animation_ryiip"]
+resource_name = "jump D"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [23]
+}
+
+[sub_resource type="Animation" id="Animation_ufose"]
+resource_name = "jump S"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+
+[sub_resource type="Animation" id="Animation_8jsyl"]
+resource_name = "jump W"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [21]
+}
+
+[sub_resource type="Animation" id="Animation_kk33c"]
+resource_name = "run A"
+length = 0.3
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -136,36 +347,181 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [5, 6, 7, 4]
+"values": [15, 16]
+}
+
+[sub_resource type="Animation" id="Animation_drrhh"]
+resource_name = "run D"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_aw78p"]
+resource_name = "run S"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_7868f"]
+resource_name = "run W"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_5uaii"]
+resource_name = "walk A"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [15, 16]
+}
+
+[sub_resource type="Animation" id="Animation_np0ee"]
+resource_name = "walk D"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_svkqu"]
+resource_name = "walk S"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_2qap7"]
+resource_name = "walk W"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 13]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8sknh"]
 _data = {
 &"RESET": SubResource("Animation_2xlmi"),
-&"crouch_idle": SubResource("Animation_23bvh"),
-&"crouch_walk": SubResource("Animation_eitfq"),
-&"idle": SubResource("Animation_14505"),
-&"jump": SubResource("Animation_jyxat"),
-&"run": SubResource("Animation_4wcc8")
+&"crouch A": SubResource("Animation_5refc"),
+&"crouch D": SubResource("Animation_c7pp8"),
+&"crouch S": SubResource("Animation_m3ey1"),
+&"crouch W": SubResource("Animation_nwtm7"),
+&"crouch idle A": SubResource("Animation_5rkq3"),
+&"crouch idle D": SubResource("Animation_nempf"),
+&"crouch idle S": SubResource("Animation_40r61"),
+&"crouch idle W": SubResource("Animation_skp7j"),
+&"idle A": SubResource("Animation_gpudx"),
+&"idle D": SubResource("Animation_o7p4c"),
+&"idle S": SubResource("Animation_14505"),
+&"idle W": SubResource("Animation_1we82"),
+&"jump A": SubResource("Animation_2c6rj"),
+&"jump D": SubResource("Animation_ryiip"),
+&"jump S": SubResource("Animation_ufose"),
+&"jump W": SubResource("Animation_8jsyl"),
+&"run A": SubResource("Animation_kk33c"),
+&"run D": SubResource("Animation_drrhh"),
+&"run S": SubResource("Animation_aw78p"),
+&"run W": SubResource("Animation_7868f"),
+&"walk A": SubResource("Animation_5uaii"),
+&"walk D": SubResource("Animation_np0ee"),
+&"walk S": SubResource("Animation_svkqu"),
+&"walk W": SubResource("Animation_2qap7")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2xlmi"]
-animation = &"crouch_idle"
+animation = &"crouch idle S"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eitfq"]
-animation = &"crouch_walk"
+animation = &"crouch D"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0gfpk"]
-animation = &"idle"
+animation = &"idle S"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_23bvh"]
-animation = &"jump"
+animation = &"jump S"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0hrit"]
-animation = &"run"
+animation = &"walk D"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o5c66"]
 advance_mode = 2
@@ -203,6 +559,7 @@ states/jump/position = Vector2(447.6, 10.4)
 states/run/node = SubResource("AnimationNodeAnimation_0hrit")
 states/run/position = Vector2(540, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_o5c66"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_tc801"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_60g6h"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_ipexx"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_luojb"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_jyxat"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_23bvh"), "idle", "crouch_idle", SubResource("AnimationNodeStateMachineTransition_2kl4g"), "crouch_idle", "idle", SubResource("AnimationNodeStateMachineTransition_lcev0"), "run", "crouch_walk", SubResource("AnimationNodeStateMachineTransition_itunx"), "crouch_walk", "run", SubResource("AnimationNodeStateMachineTransition_kej7o")]
+graph_offset = Vector2(97.019966, 0)
 
 [node name="Player" type="CharacterBody2D" unique_id=1705600323]
 collision_mask = 127
@@ -216,10 +573,10 @@ masks = Array[ExtResource("3_ipexx")]([SubResource("Resource_lcev0"), SubResourc
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
 texture_filter = 1
-texture = SubResource("CompressedTexture2D_rwm0n")
+texture = ExtResource("7_5rkq3")
 offset = Vector2(0, -10)
-hframes = 4
-vframes = 4
+hframes = 6
+vframes = 6
 frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
@@ -264,6 +621,7 @@ offset = Vector2(0, -2)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022185426]
 libraries/ = SubResource("AnimationLibrary_8sknh")
+autoplay = &"idle S"
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=999536838]
 tree_root = SubResource("AnimationNodeStateMachine_hrrj1")
