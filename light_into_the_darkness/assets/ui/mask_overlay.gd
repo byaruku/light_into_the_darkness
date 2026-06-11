@@ -23,6 +23,14 @@ func _ready() -> void:
 	update_ui()
 
 
+func _process(_delta: float) -> void:
+	var enabled = GameManager.is_in_memory
+	
+	for mask in mask_manager.masks:
+		var slot = get_slot(mask.mask_type)
+		slot.modulate.a = 1.0 if enabled else 0.3
+
+
 func update_ui():
 	for mask in mask_manager.masks:
 		var slot = get_slot(mask.mask_type)

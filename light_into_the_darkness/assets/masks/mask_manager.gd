@@ -41,7 +41,13 @@ func get_mask(mask_type: MaskType) -> MaskAbility:
 
 
 func can_use(mask: MaskAbility) -> bool:
-	return GameManager.mask_charges[mask.mask_type] > 0 && active_mask == null
+	if not GameManager.is_in_memory:
+		return false
+	
+	if active_mask:
+		return false
+	
+	return GameManager.mask_charges[mask.mask_type] > 0
 
 
 func add_charge(mask_type: MaskType, amount: int = 1):
@@ -49,3 +55,12 @@ func add_charge(mask_type: MaskType, amount: int = 1):
 	GameManager.mask_charges[mask.mask_type] += amount
 	charges_changed.emit(mask_type, GameManager.mask_charges[mask.mask_type])
 	print(mask.mask_name, " ", GameManager.mask_charges[mask.mask_type])
+
+
+func force_end_mask():
+	if active_mask == null:
+		return
+	
+	active_mask.deactivate(player)
+	mask_ended.emit(active_mask)
+	active_mask = null
