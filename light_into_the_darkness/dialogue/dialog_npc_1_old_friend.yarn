@@ -68,15 +68,6 @@ Mann: Ich weiss noch, wie wir damals als Kinder im Wald gespielt haben – Die B
 
 
 
-title: Clou_1
----
-Ein halb verbrannter Brief.
-Jemand wollte die Wahrheit verschwinden lassen.
-<<add_charge 0>>
-===
-
-
-
 title: Hikari
 ---
 Mädchen: Hi... was machst du denn hier?
@@ -163,4 +154,30 @@ Hikari: Mein Aufpasser. Bei all den Girlanden und Leckereien war ich total abgel
 Hikari: Du hattest gar keine Lust.
 Hikari: Am Anfang war es total lustig durch die Gänge zu laufen, aber als ich dann verstecken spielen wollte...
 <<change_scene 1>>
+===
+
+
+
+title: Clou_Diary
+---
+Du findest ein altes Buch mit einem geöffneten Schloss.
+Es ist abgegriffen und beklebt mit verschiedenen Stickern von Nu-Metal Bands.
+Moment… dieses Buch kommt dir bekannt vor...!
+Maigo: Wow! Das ist doch... mein altes Tagebuch!
+Maigo: Das ist doch eigentlich bei einem Umzug verloren gegangen...!
+Maigo: Hikari hatte es damals aufgebrochen und gelesen.
+Maigo: Das war ihre fiese Rache für einen ziemlich guten Streich, den ich ihr vor ihren Freundinnen gespielt hatte...
+Maigo: Ich war jedenfalls tierisch sauer.
+Maigo: Sie hatte alles gelesen... mein Schmachten über meine damals große Liebe Sakura... und mehr.
+Maigo: Ich habe 2 Wochen nicht mehr mit Hikari gesprochen.
+===
+
+title: Clou_Pizza_Box
+---
+Ein Pizza Karton...? Moment mal! Darin ist eine warme Pizza mit deinem Lieblingsbelag (Ananas mit Schinken).
+Du greifst zu.
+Maigo: Verdammt lecker... Das weckt Erinnerungen, an unser Sonntagsritual!
+Maigo: Abends Fernsehen und dabei Pizza essen...
+Maigo: Mama und Papa haben immer eine Pizza für uns springen lassen. Später habe ich sie selbst von meinem Gehalt bezahlt.
+Maigo: Ich vermisse das, Hikari.
 ===
