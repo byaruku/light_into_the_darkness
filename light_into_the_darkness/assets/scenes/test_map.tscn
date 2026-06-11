@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground.tscn" id="9_q5l3y"]
 [ext_resource type="PackedScene" uid="uid://ce1oyuaw6rg5a" path="res://assets/resources/clou.tscn" id="10_yf0ng"]
 [ext_resource type="Script" uid="uid://o2t7b8wepgv8" path="res://assets/resources/clou_data.gd" id="11_u7u4q"]
-[ext_resource type="PackedScene" uid="uid://bsnkw5n5w1sre" path="res://assets/music/main_area_music.tscn" id="12_u7u4q"]
+[ext_resource type="AudioStream" uid="uid://bkvfu0r4rx24g" path="res://assets/audio/music/Prototyp_Main_Area.mp3" id="12_u7u4q"]
 
 [sub_resource type="TileSet" id="TileSet_ay3hf"]
 
@@ -51,6 +51,13 @@ metadata/_custom_type_script = "uid://o2t7b8wepgv8"
 
 [node name="TestMap" type="Node2D" unique_id=797532986]
 y_sort_enabled = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1473442285]
+stream = ExtResource("12_u7u4q")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [node name="Water" type="TileMapLayer" parent="." unique_id=978092309]
 tile_set = SubResource("TileSet_ay3hf")
@@ -128,6 +135,3 @@ position = Vector2(-66, -47)
 [node name="Clou" parent="." unique_id=590297839 instance=ExtResource("10_yf0ng")]
 position = Vector2(0, 52)
 data = SubResource("Resource_rudby")
-
-[node name="AudioStreamPlayer2D" parent="." unique_id=1116755345 instance=ExtResource("12_u7u4q")]
-autoplay = true
