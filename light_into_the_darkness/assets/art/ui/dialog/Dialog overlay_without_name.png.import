@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1avst2gwe12f"
-path="res://.godot/imported/Maigo_comp3.png-a444cdfa260e662043b4810503ed8fb6.ctex"
+uid="uid://bnprmuw8j78b8"
+path="res://.godot/imported/Dialog overlay_without_name.png-3223f322d125c23401f4df134c7f1821.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Maigo/Maigo_comp3.png"
-dest_files=["res://.godot/imported/Maigo_comp3.png-a444cdfa260e662043b4810503ed8fb6.ctex"]
+source_file="res://assets/art/ui/dialog/Dialog overlay_without_name.png"
+dest_files=["res://.godot/imported/Dialog overlay_without_name.png-3223f322d125c23401f4df134c7f1821.ctex"]
 
 [params]
 
