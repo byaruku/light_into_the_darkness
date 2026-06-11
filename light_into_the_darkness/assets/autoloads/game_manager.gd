@@ -40,6 +40,7 @@ func clear_data():
 	ClouManager.clear_data()
 	IdentityManager.clear_data()
 
+
 func leave_memory():
 	GameManager.player.mask_manager.force_end_mask()
 	SceneManager.change_scene(Portal.Destination.TOWN)

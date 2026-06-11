@@ -43,7 +43,8 @@ title: Npc_1_Unknown
 		<<add_charge 1>>
 		Mann: Es gibt immer Hoffnung. Wo ein Wille ist, ist ein Weg, Maigo.
 		<<jump Npc_1_Maigo>>
-	-> Was heißt hier handeln? Ich bin hier im Nirgendwo gestrandet und rede mit einem Fremden, der in Rätseln spricht. // Rage
+	-> Was heißt hier handeln? Ich bin hier im Nirgendwo gestrandet und rede mit einem Fremden, der in Rätseln spricht.
+		<<add_charge 0>>
 		Mann: Es sind nur solange Rätsel bis du Licht ins Dunkle bringst, Maigo.
 		<<jump Npc_1_Maigo>>
 ===
@@ -59,7 +60,7 @@ title: Npc_1_Maigo
 
 title: Npc_1_Memory
 ---
-Mann: Wir haben zusammen viel erlebt. Kleine und große Abenteuer
+Mann: Wir haben zusammen viel erlebt. Kleine und große Abenteuer.
 Maigo: Abenteuer sagst du?
 Mann: Ich weiss noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, die Vögel geheime Spione, die Baumhäuser unsere Burgen...
 <<change_scene 1>>
@@ -71,4 +72,95 @@ title: Clou_1
 ---
 Ein halb verbrannter Brief.
 Jemand wollte die Wahrheit verschwinden lassen.
+<<add_charge 0>>
+===
+
+
+
+title: Hikari
+---
+Mädchen: Hi... was machst du denn hier?
+Mädchen: Du siehst eeeecht komisch aus!
+-> Komisch? Soll ich dir die Ohren langziehen?
+	<<add_charge 0>>
+	Mädchen: Du bist gemein Maigo! Das sag ich Mami!
+	Maigo: *erstaunt* Du kennst meinen Namen...
+	<<jump Hikari_Brother>>
+-> Das ist ja nicht sehr nett... Was ich hier mache?
+	Maigo: Ich weiß es selbst nicht ganz genau. Und warum "komisch"?
+	Mädchen: Entschuldige... Aber du siehstecht verplant aus.
+	Mädchen: Und bist es scheinbar auch, Maigo.
+	Maigo: Maigo? Woher weißt du meinen Namen?
+	<<jump Hikari_Brother>>
+===
+
+title:Hikari_Brother
+---
+Mädchen: Natürlich kenne ich deinen Namen – du bist mein Brunder!
+	Maigo: Ich... ich... habe eine kleine Schwester?
+	Mädchen: Klein? Du bist echt gemein, Maigo. Jetzt sag mir nicht, du hast auch noch meinen Namen vergessen.
+	-> Na hör mal, du bist ganz schön frech für dein Alter!
+		<<add_charge 0>>
+		Mädchen: Beruhig dich lieber, das ist nicht gut für deinen Blutdruck.
+		Mädchen: Also hast du keine Ahnung wie ich heiße.
+		Mädchen: Na, fein. Ich bin Hikari.
+		Hikari: Und du hast wohl Gedächnisschwund, hm?
+		Maigo: Kann man wohl sagen...
+		<<jump Hikari_Forgotten>>
+	-> Uff... *kratzt sich den Kopf*
+		<<add_charge 1>>
+		Maigo: Ich bin gerade einfach nur froh, dass hier Menschen sind, die mir helfen können.
+		Mädchen: Du bist nicht wirklich allein, weißt du?
+		Mädchen: Deine Erinnerungen begleiten dich und bringen dich langsam zum Licht.
+		Mädchen: Das glaube ich zumindest...
+		Maigo: Ich hoffe du hast recht...
+		Maigo: Wie heißt du eigentlich?
+		Mädchen: Ich bin Hiakri.
+		Hikari: Du erinnerst dich wirklich gar nicht an unsere Vergangenheit zusammen?
+		Hikari: Armer Maigo...
+		<<jump Hikari_Forgotten>>
+===
+
+title: Hikari_Forgotten
+---
+Maigo: Ich weiß fast nichts mehr...
+Maigo: Ich treffe Menschen wie dich und erlebe plötzlich Dinge, als hätte ich sie schon einmal durchlebt.
+Maigo: Aber ich weiß nicht warum ich hier bin und wo ich bin.
+Maigo: Ich möchte das alles verstehen. Das ist mein Antrieb.
+Hikari: Du erlebst Dinge erneut?
+Maigo: Ich begegne Menschen wie dir... Menschen aus meiner Vergangenheit. Oder meinem Leben?
+Maigo: Und irgendwann endet das Gespräch plötzlich.
+Maigo: Alles wird dunkel und plötzlich bin ich wieder an einem neuen fremden Ort.
+Hikari: Nimm's mir nicht übel Brüderchen, aber das klingt echt verrückt.
+-> Was denkst du wie sich das anfühlt?
+	<<add_charge 0>>
+	Maigo: Ich habe gar keine Kontrolle darüber! Ich bin hier gelandet, Leute behaupten, dass sie mich kennen. Ich will dir ja glauben, aber verstehen tue ich NICHTS davon.
+	Hikari: Maigo... ich glaube du musst vielleicht lernen loszulassen anstatt dagegen zu kämpfen was mit dir geschieht?
+	Hikari: Vielleicht gehst du ja auf eine andere Ebene des Bewusstseins?
+	Maigo: Du kannst unmöglich ein Kind sein so wie du vor dich hin philosophierst...
+	Hikari: Na, hör mal! Was soll das heißen? Ich versuche dir doch zu helfen.
+	<<jump Hikari_Memory>>
+-> Ich weiß... aber wenn ich mich klug anstelle, gehe ich aus diesen Ebenen stärker hervor.
+	<<add_charge 1>>
+	Maigo: Ich habe die Hoffnung besser zu verstehen wer ich bin. Oder war?
+	Hikari: Das ist der Maigo den ich schon damals bewwunderte!
+	Hikari: Du gibst nicht auf und kämpfst dich durch. Vielleicht wirst du ja auf eine andere Ebene des Bewusstseins gebracht?
+	Hikari: Wenn es dir hilft zu verstehen, bist du auf einem gutem Weg.
+	Maigo: Hiakri, nimm's mir nicht übel, aber du kannst unmöglich ein Kind sein so wie du vor dich hin philosophierst...
+	Hikari: Pfff... In mir steckt viel mehr als alle denken.
+	Hikari: Und vielleicht kann ich dir helfen Brüderchen.
+	<<jump Hikari_Memory>>
+===
+
+title: Hikari_Memory
+---
+Maigo: Wie solltest du mir helfen können Hikari?
+Hikari: Ich könnte dir helfen, dich an uns zu erinnern...
+Hikari: Damals auf dem Frühlingsfest bei uns im Dorf, da sind wir zusammen auf dem Volksfest gewesen.
+Hikari: Es war so schön. Ich war noch echt klein...
+Hikari: Vielleicht 6 und du warst mein großer Bruder, gerade fertig mit der Schule.
+Hikari: Mein Aufpasser. Bei all den Girlanden und Leckereien war ich total abgelenkt und hab dich ins Mais-Labyrinth gezerrt.
+Hikari: Du hattest gar keine Lust.
+Hikari: Am Anfang war es total lustig durch die Gänge zu laufen, aber als ich dann verstecken spielen wollte...
+<<change_scene 1>>
 ===

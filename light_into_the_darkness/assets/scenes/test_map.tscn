@@ -86,7 +86,7 @@ tile_set = SubResource("TileSet_v6f10")
 
 [node name="NPC" parent="." unique_id=1732662322 instance=ExtResource("2_wdvqp")]
 position = Vector2(193, 38)
-yarn_node = "Npc_1"
+yarn_node = "Hikari"
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_cw122")]
 position = Vector2(-160, 0)
