@@ -1,7 +1,7 @@
 class_name MaskOverlay
 extends CanvasLayer
 
-@onready var pulse = $Pulse
+@onready var animation_playback = $AnimationPlayer
 
 @onready var rage_slot = $MarginContainer/HBoxContainer/RageSlot
 @onready var joy_slot = $MarginContainer/HBoxContainer/JoySlot
@@ -12,8 +12,6 @@ var last_warning_second := -1
 
 func _ready() -> void:
 	await get_tree().process_frame
-	
-	pulse.modulate.a = 0
 	
 	mask_manager = GameManager.player.mask_manager
 	
@@ -53,15 +51,14 @@ func _on_mask_started(mask):
 	rage_slot.set_active(false)
 	joy_slot.set_active(false)
 	get_slot(mask.mask_type).set_active(true)
-	play_mask_pulse()
+	play_mask_pulse(mask.mask_type)
 
 
-func play_mask_pulse():
-	var tween = create_tween()
-	
-	pulse.modulate.a = 0.5
-	
-	tween.tween_property(pulse, "modulate:a", 0.0, 0.5)
+func play_mask_pulse(mask_type: MaskManager.MaskType):
+	if mask_type == MaskManager.MaskType.RAGE:
+		animation_playback.play("hannya_pulse")
+	elif mask_type == MaskManager.MaskType.JOY:
+		animation_playback.play("okame_pulse")
 
 
 func _on_mask_ended(mask):
@@ -87,4 +84,4 @@ func check_mask_warning():
 	
 	if time_left != last_warning_second:
 		last_warning_second = time_left
-		play_mask_pulse()
+		play_mask_pulse(mask_manager.active_mask.mask_type)

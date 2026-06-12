@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhxvodc47fjin"
-path="res://.godot/imported/Okame.png-53160201bbd5c662edcd191566622212.ctex"
+uid="uid://p43t4jesgch0"
+path="res://.godot/imported/mask_overlays.png-d0f109aa3ea13ddab913d99b197deab6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/masks/Okame.png"
-dest_files=["res://.godot/imported/Okame.png-53160201bbd5c662edcd191566622212.ctex"]
+source_file="res://assets/art/ui/masks/mask_overlays.png"
+dest_files=["res://.godot/imported/mask_overlays.png-d0f109aa3ea13ddab913d99b197deab6.ctex"]
 
 [params]
 

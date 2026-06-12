@@ -171,8 +171,10 @@ func update_animation() -> void:
 		MovementState.IDLE:
 			animation_playback.travel("idle")
 		MovementState.RUN:
-			#if mask_manager.active_mask = 
-			animation_playback.travel("walk")
+			if mask_manager.active_mask != null && mask_manager.active_mask.mask_type == MaskManager.MaskType.JOY:
+				animation_playback.travel("run")
+			else:
+				animation_playback.travel("walk")
 
 
 func update_facing_direction():
