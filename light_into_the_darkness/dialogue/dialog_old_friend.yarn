@@ -1,10 +1,10 @@
-title: Old_Friend
+title: Npc_1
 when: always
 ---
 Mann: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
 ===
 
-title: Old_Friend
+title: Npc_1
 when: once
 ---
 Ein Mann, Mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
@@ -15,52 +15,52 @@ Ein Mann, Mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 	-> Leichter gesagt als getan!
 		Maigo: Ich weiß, weder warum ich hier bin noch wo genau...
 		Mann: Ich freue mich dich hier zu treffen.
-		<<jump Old_Friend_Unknown>>
+		<<jump Npc_1_Unknown>>
 	-> *du atmest tief ein* Entschuldige, das war ein bisschen schroff.
 		Mann: Schon in Ordnung. Du erinnerst dich wirklich nicht an mich...
-		<<jump Old_Friend_Unknown>>
+		<<jump Npc_1_Unknown>>
 -> Endlich jemand mit dem ich sprechen kann!
 	<<add_charge 1>>
 	Mann: Ich freue mich dich hier zu treffen.
 	*Er mustert dich genau*
 	Mann: Wie mir scheint, erinnerst du dich wirklich nicht an mich.
-	<<jump Old_Friend_Unknown>>
+	<<jump Npc_1_Unknown>>
 ===
 
-title: Old_Friend_Unknown
+title: Npc_1_Unknown
 ---
 -> Wir kennen uns?
 	Mann: Ja, wir haben viel zusammen erlebt.
 	-> Wovon sprichst du?
 		Mann: Wir haben viel zusammen erlebt, Maigo.
-		<<jump Old_Friend_Maigo>>
+		<<jump Npc_1_Maigo>>
 	-> Das alles ist doch ein Albtraum.
 		<<add_charge 0>>
 		Mann: Es ist das, was du daraus machst. Es hat das Potential dich verstehen zu lassen, was zu all dem hier geführt hat, Maigo.
-		<<jump Old_Friend_Maigo>>
+		<<jump Npc_1_Maigo>>
 -> Du bist mir leider total fremd.
 	Mann: Ich habe das Gefühl, dass sich das ändern wird. Bist du bereit zu handeln?
 	-> Es gibt also Hoffnung? Verdammt, ja!
 		<<add_charge 1>>
 		Mann: Es gibt immer Hoffnung. Wo ein Wille ist, ist ein Weg, Maigo.
-		<<jump Old_Friend_Maigo>>
+		<<jump Npc_1_Maigo>>
 	-> Was heißt hier handeln?
 		<<add_charge 0>>
 		Maigo: Ich bin hier im Nirgendwo gestrandet und rede mit einem Fremden, der in Rätseln spricht.
 		Mann: Es sind nur so lange Rätsel, bis du Licht ins Dunkle bringst, Maigo.
-		<<jump Old_Friend_Maigo>>
+		<<jump Npc_1_Maigo>>
 ===
 
-title: Old_Friend_Maigo
+title: Npc_1_Maigo
 ---
 -> Maigo... das ist mein Name. Glaube ich.
 	Mann: So haben wir dich immer gerufen, wenn wir 'Verstecken' spielten.
-	<<jump Old_Friend_Memory>>
+	<<jump Npc_1_Memory>>
 -> Maigo? Was bedeutet das alles?
-	<<jump Old_Friend_Memory>>
+	<<jump Npc_1_Memory>>
 ===
 
-title: Old_Friend_Memory
+title: Npc_1_Memory
 ---
 Mann: Wir haben zusammen viel erlebt. Kleine und große Abenteuer.
 Maigo: Abenteuer sagst du?

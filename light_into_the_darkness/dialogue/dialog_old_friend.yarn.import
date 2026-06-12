@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarn_spinner.yarn_file"
+type="Resource"
+uid="uid://cye3jtb2kn6id"
+path="res://.godot/imported/dialog_old_friend.yarn-4752df0703e7f519f422353a4b624142.res"
+
+[deps]
+
+source_file="res://dialogue/dialog_old_friend.yarn"
+dest_files=["res://.godot/imported/dialog_old_friend.yarn-4752df0703e7f519f422353a4b624142.res"]
+
+[params]
+
