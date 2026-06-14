@@ -7,6 +7,8 @@ var collected := false
 
 
 func _ready() -> void:
+	$Sprite2D.texture = data.icon
+	
 	collected = data.clou_id in ClouManager.collected_clous
 	
 	if collected:
