@@ -16,6 +16,7 @@ height_level = 0
 allow_jump_on = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1725102457]
+visible = false
 modulate = Color(1, 1, 1, 0.39215687)
 texture = SubResource("CompressedTexture2D_53hk6")
 hframes = 2

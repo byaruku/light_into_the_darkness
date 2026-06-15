@@ -22,7 +22,7 @@ const LAYER_JUMP_HEIGHT3 = 8
 @export var speed := 100.0
 @export var crouch_speed := 25.0
 @export var jump_height := 1
-@export var jump_distance := 12
+@export var jump_distance := 8
 @export var jump_duration := 0.2
 
 var movement_state = MovementState.IDLE
