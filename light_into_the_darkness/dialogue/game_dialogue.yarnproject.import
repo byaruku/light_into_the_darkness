@@ -3,11 +3,12 @@
 importer="yarn_spinner.project"
 type="Resource"
 uid="uid://b2bf6avy0p2kt"
-valid=false
+path="res://.godot/imported/game_dialogue.yarnproject-a717835d50d5787a176129b0b67356eb.res"
 
 [deps]
 
 source_file="res://dialogue/game_dialogue.yarnproject"
+dest_files=["res://.godot/imported/game_dialogue.yarnproject-a717835d50d5787a176129b0b67356eb.res"]
 
 [params]
 
