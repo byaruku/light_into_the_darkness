@@ -71,7 +71,7 @@ func choose_new_target():
 
 func _on_touch_area_body_entered(body: Node2D) -> void:
 	if body is Player:
-		GameManager.fail_memory()
+		GameManager.leave_memory()
 
 
 func chase_player(delta):

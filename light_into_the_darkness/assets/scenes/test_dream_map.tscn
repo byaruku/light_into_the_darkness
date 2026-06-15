@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="1_luc0d"]
 [ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="2_osiof"]
-[ext_resource type="PackedScene" uid="uid://2m4jo8blj8pt" path="res://assets/characters/enemy.tscn" id="3_osiof"]
+[ext_resource type="PackedScene" uid="uid://ce1oyuaw6rg5a" path="res://assets/resources/clou.tscn" id="3_ed7ll"]
+[ext_resource type="Texture2D" uid="uid://c27s1qbmt0vtl" path="res://assets/art/clues/Pizzakarton 64_64.png" id="3_ytfr2"]
+[ext_resource type="Script" uid="uid://o2t7b8wepgv8" path="res://assets/resources/clou_data.gd" id="5_3pde1"]
+[ext_resource type="PackedScene" uid="uid://yidru62m2kre" path="res://assets/characters/npc_memory_hikari.tscn" id="5_p1why"]
 
 [sub_resource type="TileSet" id="TileSet_ay3hf"]
 
@@ -34,29 +37,40 @@ physics_layer_0/collision_mask = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qcxn"]
 
+[sub_resource type="Resource" id="Resource_p1why"]
+script = ExtResource("5_3pde1")
+clou_id = "Pizzabox"
+yarn_node = "Clou_Pizzabox"
+icon = ExtResource("3_ytfr2")
+identity_reward = 5
+boosted_mask = 1
+metadata/_custom_type_script = "uid://o2t7b8wepgv8"
+
 [node name="TestDreamMap" type="Node2D" unique_id=797532986]
 y_sort_enabled = true
 
-[node name="Water" type="TileMapLayer" parent="." unique_id=978092309]
+[node name="Layers" type="Node2D" parent="." unique_id=2119128366]
+
+[node name="Water" type="TileMapLayer" parent="Layers" unique_id=978092309]
 tile_set = SubResource("TileSet_ay3hf")
 
-[node name="Ground" type="TileMapLayer" parent="." unique_id=1937404508]
+[node name="Ground" type="TileMapLayer" parent="Layers" unique_id=1937404508]
 tile_set = SubResource("TileSet_n5x6c")
 
-[node name="PropsGround" type="TileMapLayer" parent="." unique_id=695554330]
+[node name="PropsGround" type="TileMapLayer" parent="Layers" unique_id=695554330]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_mrbpc")
 
-[node name="Plateau" type="TileMapLayer" parent="." unique_id=755402895]
+[node name="Plateau" type="TileMapLayer" parent="Layers" unique_id=755402895]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_un4qs")
 
-[node name="PropsPlateau" type="TileMapLayer" parent="." unique_id=1455006764]
+[node name="PropsPlateau" type="TileMapLayer" parent="Layers" unique_id=1455006764]
 z_index = 1
 y_sort_enabled = true
 tile_set = SubResource("TileSet_fqtp6")
 
-[node name="Clouds" type="TileMapLayer" parent="." unique_id=522149057]
+[node name="Clouds" type="TileMapLayer" parent="Layers" unique_id=522149057]
 z_index = 2
 tile_set = SubResource("TileSet_v6f10")
 
@@ -64,7 +78,6 @@ tile_set = SubResource("TileSet_v6f10")
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("2_osiof")]
 position = Vector2(-160, -1)
-target_scene = "uid://d0xljghkfa0h5"
 portal_id = 1
 spawn_marker = NodePath("Marker2D")
 
@@ -74,5 +87,13 @@ shape = SubResource("RectangleShape2D_8qcxn")
 [node name="Marker2D" type="Marker2D" parent="Portal" unique_id=141211429]
 position = Vector2(67, 1)
 
-[node name="Enemy" parent="." unique_id=1973020385 instance=ExtResource("3_osiof")]
-position = Vector2(191, -86)
+[node name="Clou_Diary" parent="." unique_id=590297839 instance=ExtResource("3_ed7ll")]
+position = Vector2(0, -76)
+data = SubResource("Resource_p1why")
+
+[node name="Clou_Pizzabox" parent="." unique_id=120665682 instance=ExtResource("3_ed7ll")]
+position = Vector2(0, 70)
+data = SubResource("Resource_p1why")
+
+[node name="NPC_Memory_Hikari" parent="." unique_id=856511750 instance=ExtResource("5_p1why")]
+position = Vector2(81, 0)

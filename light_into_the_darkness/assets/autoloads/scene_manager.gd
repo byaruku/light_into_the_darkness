@@ -94,7 +94,7 @@ func change_scene(destination: Portal.Destination):
 	var portal = find_destination_portal(destination)
 
 	if portal:
-		GameManager.player.global_position = (portal.spawn_marker.global_position)
+		GameManager.player.global_position = portal.spawn_marker.global_position
 
 	GameManager.is_in_memory = destination > 0
 
@@ -104,10 +104,8 @@ func change_scene(destination: Portal.Destination):
 
 
 func find_destination_portal(destination: Portal.Destination):
-	var portals = get_tree().get_nodes_in_group("portals")
-
-	for portal in portals:
-		if portal.target_portal_id == destination:
+	for portal in get_tree().get_nodes_in_group("portals"):
+		if portal.portal_id == destination:
 			return portal
 
 	return null

@@ -4,7 +4,10 @@
 [ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="2_lq6ii"]
 [ext_resource type="Resource" uid="uid://b2bf6avy0p2kt" path="res://dialogue/game_dialogue.yarnproject" id="3_cwl88"]
 [ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="3_jssry"]
+[ext_resource type="Texture2D" uid="uid://bnprmuw8j78b8" path="res://assets/art/ui/dialog/Dialog overlay_without_name.png" id="4_65wob"]
 [ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="4_egk5t"]
+[ext_resource type="Texture2D" uid="uid://cqwhkrufnc5qj" path="res://assets/art/ui/dialog/Dialog overlay_name_panel.png" id="6_4mclk"]
+[ext_resource type="Texture2D" uid="uid://bqelfbg5swxaj" path="res://assets/art/ui/dialog/Dialog overlay_groß_without_name.png" id="7_65wob"]
 
 [node name="DialogueManager" type="Node" unique_id=517957820]
 script = ExtResource("1_lq6ii")
@@ -16,56 +19,89 @@ presenters = [NodePath("../CanvasLayer/LinePresenter"), NodePath("../CanvasLayer
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=613208437]
 
-[node name="LinePresenter" type="PanelContainer" parent="CanvasLayer" unique_id=1911022089 node_paths=PackedStringArray("text_label", "character_label")]
+[node name="LinePresenter" type="TextureRect" parent="CanvasLayer" unique_id=1954899617 node_paths=PackedStringArray("text_label", "character_label", "character_container")]
 visible = false
+texture_filter = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -60.0
+offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
+texture = ExtResource("4_65wob")
+stretch_mode = 2
 script = ExtResource("3_jssry")
-text_label = NodePath("VBoxContainer/TextLabel")
-character_label = NodePath("VBoxContainer/CharacterLabel")
+text_label = NodePath("TextLabel")
+character_label = NodePath("CharacterContainer/CharacterLabel")
+character_container = NodePath("CharacterContainer")
 characters_per_second = 60.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LinePresenter" unique_id=1028087553]
-layout_mode = 2
-theme_override_constants/separation = 5
+[node name="CharacterContainer" type="TextureRect" parent="CanvasLayer/LinePresenter" unique_id=219708584]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -61.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_4mclk")
+stretch_mode = 3
 
-[node name="CharacterLabel" type="Label" parent="CanvasLayer/LinePresenter/VBoxContainer" unique_id=2113882298]
-layout_mode = 2
+[node name="CharacterLabel" type="Label" parent="CanvasLayer/LinePresenter/CharacterContainer" unique_id=2113882298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -4.5
+offset_right = 17.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 8
-text = "TestNPC"
+theme_override_font_sizes/font_size = 6
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextLabel" type="RichTextLabel" parent="CanvasLayer/LinePresenter/VBoxContainer" unique_id=1052021863]
+[node name="TextLabel" type="RichTextLabel" parent="CanvasLayer/LinePresenter" unique_id=1052021863]
 clip_contents = false
-layout_mode = 2
+layout_mode = 0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 145.0
+offset_bottom = 33.0
 size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 6
-text = "Du bist XXX, du hast ein Problem: du weisst nicht mehr wer du bist.
-Du verspürst einen inneren Antrieb Licht ins Dunkle zu bringen, dich auf die Suche nach deiner verlorenen Identität zu machen."
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 4
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 vertical_alignment = 1
 
-[node name="OptionsPresenter" type="PanelContainer" parent="CanvasLayer" unique_id=943553704 node_paths=PackedStringArray("options_container")]
+[node name="OptionsPresenter" type="TextureRect" parent="CanvasLayer" unique_id=1868289732 node_paths=PackedStringArray("options_container")]
 visible = false
+texture_filter = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -60.0
+offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
+texture = ExtResource("7_65wob")
+stretch_mode = 2
 script = ExtResource("4_egk5t")
 options_container = NodePath("OptionsContainer")
 
 [node name="OptionsContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPresenter" unique_id=2081797218]
-layout_mode = 2
+layout_mode = 0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 145.0
+offset_bottom = 45.0
 alignment = 1
