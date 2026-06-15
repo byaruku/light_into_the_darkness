@@ -7,8 +7,8 @@ var player: Player
 var is_in_memory := false
 
 var mask_charges := {
-	MaskManager.MaskType.RAGE: 0,
-	MaskManager.MaskType.JOY: 0
+	MaskManager.MaskType.RAGE: 1,
+	MaskManager.MaskType.JOY: 1
 }
 
 func  _ready() -> void:
@@ -32,14 +32,17 @@ func _process(delta: float) -> void:
 
 
 func clear_data():
+	is_in_memory = false
 	mask_charges = {
-		MaskManager.MaskType.RAGE: 0,
-		MaskManager.MaskType.JOY: 0
+		MaskManager.MaskType.RAGE: 1,
+		MaskManager.MaskType.JOY: 1
 	}
 	ClouManager.clear_data()
 	IdentityManager.clear_data()
 
-func fail_memory():
+
+func leave_memory():
+	GameManager.player.mask_manager.force_end_mask()
 	SceneManager.change_scene(Portal.Destination.TOWN)
 
 

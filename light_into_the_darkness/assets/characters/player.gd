@@ -138,12 +138,6 @@ func movement_loop(_delta: float) -> void:
 	
 	break_object()
 	
-	# sprite flip
-	if move_direction.x < 0:
-		$Sprite2D.flip_h = true
-	elif move_direction.x > 0:
-		$Sprite2D.flip_h = false
-	
 	# movement_state
 	if move_direction == Vector2.ZERO:
 		movement_state = MovementState.IDLE
@@ -152,6 +146,13 @@ func movement_loop(_delta: float) -> void:
 
 
 func update_animation() -> void:
+	animation_tree.set("parameters/idle/blend_position", facing_direction)
+	animation_tree.set("parameters/walk/blend_position", facing_direction)
+	animation_tree.set("parameters/run/blend_position", facing_direction)
+	animation_tree.set("parameters/crouch_idle/blend_position", facing_direction)
+	animation_tree.set("parameters/crouch/blend_position", facing_direction)
+	animation_tree.set("parameters/jump/blend_position", facing_direction)
+	
 	# jump has highest priority
 	if action_state == ActionState.JUMP:
 		animation_playback.travel("jump")
@@ -160,7 +161,7 @@ func update_animation() -> void:
 	# crouch
 	if action_state == ActionState.CROUCH:
 		if movement_state == MovementState.RUN:
-			animation_playback.travel("crouch_walk")
+			animation_playback.travel("crouch")
 		else:
 			animation_playback.travel("crouch_idle")
 		return
@@ -170,7 +171,10 @@ func update_animation() -> void:
 		MovementState.IDLE:
 			animation_playback.travel("idle")
 		MovementState.RUN:
-			animation_playback.travel("run")
+			if mask_manager.active_mask != null && mask_manager.active_mask.mask_type == MaskManager.MaskType.JOY:
+				animation_playback.travel("run")
+			else:
+				animation_playback.travel("walk")
 
 
 func update_facing_direction():

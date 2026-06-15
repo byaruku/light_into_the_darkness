@@ -14,6 +14,10 @@ config/name="light_into_the_darkness"
 run/main_scene="uid://da3oy4aylmnrb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="uid://du3u8jfqcfu7f"
+
 [autoload]
 
 YarnSpinner="*uid://bhiw7fae5n1e8"
