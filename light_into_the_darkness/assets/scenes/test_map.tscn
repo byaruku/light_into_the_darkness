@@ -83,14 +83,15 @@ yarn_node = "Npc_1"
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_cw122")]
 position = Vector2(-160, 0)
-target_portal_id = 1
+target_portal_id = 2
 spawn_marker = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=765623854]
+position = Vector2(120, 0)
 shape = SubResource("RectangleShape2D_wy546")
 
 [node name="Marker2D" type="Marker2D" parent="Portal" unique_id=785121068]
-position = Vector2(50, 0)
+position = Vector2(160, -1)
 
 [node name="TestObject2" parent="." unique_id=1292080107 instance=ExtResource("7_3ixy5")]
 position = Vector2(84, 76)
