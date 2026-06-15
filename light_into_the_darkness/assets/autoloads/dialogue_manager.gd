@@ -8,7 +8,7 @@ signal on_dialog_finished
 
 func _ready() -> void:
 	dialogue_runner.add_command("change_scene", change_scene)
-	dialogue_runner.add_command("identity", add_identity)
+	dialogue_runner.add_command("add_identity", add_identity)
 
 
 func start_dialogue(node_name: String) -> void:
@@ -26,5 +26,5 @@ func change_scene(destination: String) -> void:
 	SceneManager.change_scene(int(destination))
 
 
-func add_identity(amount: int):
-	IdentityManager.add_progress(amount)
+func add_identity(amount: String):
+	IdentityManager.add_progress(int(amount))

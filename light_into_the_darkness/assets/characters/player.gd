@@ -191,7 +191,7 @@ func update_facing_direction():
 
 
 func update_interaction_position():
-	interaction_area.position = facing_direction * 16
+	interaction_area.position = facing_direction * 8
 	jump_check_area.position = facing_direction * 8
 
 

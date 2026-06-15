@@ -10,11 +10,11 @@
     },
     {
       "async": false,
-      "definitionName": "identity",
+      "definitionName": "add_identity",
       "fileName": "dialogue_manager.gd",
       "language": "gdscript",
       "parameters": [],
-      "yarnName": "identity"
+      "yarnName": "add_identity"
     },
     {
       "async": false,

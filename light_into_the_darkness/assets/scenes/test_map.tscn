@@ -54,10 +54,12 @@ parameters/looping = true
 y_sort_enabled = true
 
 [node name="Water" type="TileMapLayer" parent="Layers" unique_id=978092309]
+z_index = -1
 texture_filter = 1
 tile_set = SubResource("TileSet_ay3hf")
 
 [node name="Ground" type="TileMapLayer" parent="Layers" unique_id=1937404508]
+z_index = -1
 texture_filter = 1
 tile_set = SubResource("TileSet_n5x6c")
 
