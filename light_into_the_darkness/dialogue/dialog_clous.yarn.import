@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarn_spinner.yarn_file"
+type="Resource"
+uid="uid://cv7k8frhrhgfn"
+path="res://.godot/imported/dialog_clous.yarn-34a102371b132ee7025690112b4bf212.res"
+
+[deps]
+
+source_file="res://dialogue/dialog_clous.yarn"
+dest_files=["res://.godot/imported/dialog_clous.yarn-34a102371b132ee7025690112b4bf212.res"]
+
+[params]
+

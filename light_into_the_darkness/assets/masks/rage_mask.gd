@@ -1,7 +1,7 @@
 class_name RageMask
 extends MaskAbility
 
-@export var scare_radius := 150.0
+@export var scare_radius := 80.0
 
 func activate(player: Player):
 	player.can_break_objects = true

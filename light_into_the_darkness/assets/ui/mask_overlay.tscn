@@ -2,18 +2,111 @@
 
 [ext_resource type="Script" uid="uid://r62v08lker45" path="res://assets/ui/mask_slot.gd" id="1_hwib1"]
 [ext_resource type="Script" uid="uid://df5vj4onsx86b" path="res://assets/ui/mask_overlay.gd" id="1_kxkdx"]
-[ext_resource type="Texture2D" uid="uid://54gc5ce7jg77" path="res://assets/art/basic_colors.png" id="3_ho6i1"]
+[ext_resource type="Texture2D" uid="uid://p43t4jesgch0" path="res://assets/art/ui/masks/mask_overlays.png" id="2_bws16"]
+[ext_resource type="Texture2D" uid="uid://j2pirsaw2qo2" path="res://assets/art/ui/masks/Hannya.png" id="4_j6w2g"]
+[ext_resource type="Texture2D" uid="uid://bhxvodc47fjin" path="res://assets/art/ui/masks/Okame.png" id="5_hsnym"]
+
+[sub_resource type="Animation" id="Animation_qvt2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pulse:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pulse:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xbn1v"]
+resource_name = "hannya_pulse"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pulse:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.175, 0.2, 0.225),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pulse:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bws16"]
+resource_name = "okame_pulse"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pulse:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.175, 0.2, 0.225),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9, 8, 7, 6, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pulse:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ve8lo"]
+_data = {
+&"RESET": SubResource("Animation_qvt2r"),
+&"hannya_pulse": SubResource("Animation_xbn1v"),
+&"okame_pulse": SubResource("Animation_bws16")
+}
 
 [node name="MaskOverlay" type="CanvasLayer" unique_id=1505904625]
 script = ExtResource("1_kxkdx")
 
-[node name="Pulse" type="ColorRect" parent="." unique_id=802304909]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.64787495, 0.13540646, 0.12832874, 0.08627451)
+[node name="Pulse" type="Sprite2D" parent="." unique_id=454514817]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_bws16")
+centered = false
+hframes = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1826779773]
 offset_right = 20.0
@@ -32,20 +125,21 @@ layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("1_hwib1")
 
-[node name="Highlight" type="TextureRect" parent="MarginContainer/HBoxContainer/RageSlot" unique_id=1803522197]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Highlight" type="Sprite2D" parent="MarginContainer/HBoxContainer/RageSlot" unique_id=1013099013]
+visible = false
+texture_filter = 1
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.10000001, 0.11111112)
+texture = ExtResource("2_bws16")
+centered = false
+hframes = 10
+frame = 4
 
 [node name="Icon" type="Sprite2D" parent="MarginContainer/HBoxContainer/RageSlot" unique_id=1176750822]
-scale = Vector2(1.5999999, 1.5999999)
-texture = ExtResource("3_ho6i1")
+texture_filter = 1
+texture = ExtResource("4_j6w2g")
 centered = false
-hframes = 3
-vframes = 3
+hframes = 9
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/RageSlot" unique_id=1474179650]
 layout_mode = 1
@@ -68,20 +162,21 @@ size_flags_vertical = 3
 script = ExtResource("1_hwib1")
 mask_type = 1
 
-[node name="Highlight" type="TextureRect" parent="MarginContainer/HBoxContainer/JoySlot" unique_id=2051336519]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Highlight" type="Sprite2D" parent="MarginContainer/HBoxContainer/JoySlot" unique_id=197298671]
+visible = false
+texture_filter = 1
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.10000001, 0.11111112)
+texture = ExtResource("2_bws16")
+centered = false
+hframes = 10
+frame = 9
 
 [node name="Icon" type="Sprite2D" parent="MarginContainer/HBoxContainer/JoySlot" unique_id=73403872]
-scale = Vector2(1.5999999, 1.5999999)
-texture = ExtResource("3_ho6i1")
+texture_filter = 1
+texture = ExtResource("5_hsnym")
 centered = false
-hframes = 3
-vframes = 3
+hframes = 9
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/JoySlot" unique_id=2118356631]
 layout_mode = 1
@@ -97,3 +192,6 @@ theme_override_font_sizes/font_size = 8
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1746204553]
+libraries/ = SubResource("AnimationLibrary_ve8lo")
