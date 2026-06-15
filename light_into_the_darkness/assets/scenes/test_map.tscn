@@ -51,28 +51,35 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="Layers" type="Node2D" parent="." unique_id=2074514701]
+y_sort_enabled = true
 
 [node name="Water" type="TileMapLayer" parent="Layers" unique_id=978092309]
+texture_filter = 1
 tile_set = SubResource("TileSet_ay3hf")
 
 [node name="Ground" type="TileMapLayer" parent="Layers" unique_id=1937404508]
+texture_filter = 1
 tile_set = SubResource("TileSet_n5x6c")
 
 [node name="PropsGround" type="TileMapLayer" parent="Layers" unique_id=695554330]
 y_sort_enabled = true
+texture_filter = 1
 tile_set = SubResource("TileSet_mrbpc")
 
 [node name="Plateau" type="TileMapLayer" parent="Layers" unique_id=755402895]
 y_sort_enabled = true
+texture_filter = 1
 tile_set = SubResource("TileSet_un4qs")
 
 [node name="PropsPlateau" type="TileMapLayer" parent="Layers" unique_id=1455006764]
 z_index = 1
 y_sort_enabled = true
+texture_filter = 1
 tile_set = SubResource("TileSet_fqtp6")
 
 [node name="Clouds" type="TileMapLayer" parent="Layers" unique_id=522149057]
 z_index = 2
+texture_filter = 1
 tile_set = SubResource("TileSet_v6f10")
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_cw122")]

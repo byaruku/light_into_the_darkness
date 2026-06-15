@@ -5,6 +5,7 @@ extends Node
 
 @export_file("*.tscn") var town_scene: String
 @export_file("*.tscn") var memory_1_scene: String
+@export_file("*.tscn") var memory_2_scene: String
 
 @onready var current_scene_container = $CurrentSceneContainer
 
@@ -21,6 +22,7 @@ func _ready():
 	load_main_menu()
 	scene_paths[Portal.Destination.TOWN] = town_scene
 	scene_paths[Portal.Destination.MEMORY_1] = memory_1_scene
+	scene_paths[Portal.Destination.MEMORY_2] = memory_2_scene
 
 
 func return_to_main_menu():

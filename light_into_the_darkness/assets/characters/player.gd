@@ -22,7 +22,7 @@ const LAYER_JUMP_HEIGHT3 = 8
 @export var speed := 100.0
 @export var crouch_speed := 25.0
 @export var jump_height := 1
-@export var jump_distance := 16
+@export var jump_distance := 12
 @export var jump_duration := 0.2
 
 var movement_state = MovementState.IDLE
@@ -325,7 +325,7 @@ func update_height_layer():
 		3:
 			set_height_collision(LAYER_JUMP_HEIGHT3)
 	
-	z_index = current_height * 100
+	z_index = current_height * 10
 
 
 func can_stand_up() -> bool:
