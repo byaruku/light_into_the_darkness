@@ -30,10 +30,10 @@ radius = 80.0
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eitfq"]
-size = Vector2(5, 4)
+size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxat"]
-size = Vector2(5, 4)
+size = Vector2(4, 4)
 
 [sub_resource type="Animation" id="Animation_2xlmi"]
 length = 0.001
