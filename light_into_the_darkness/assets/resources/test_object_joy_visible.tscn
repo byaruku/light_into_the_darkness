@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0s7w1re78upn"]
 
-[ext_resource type="Script" path="res://assets/resources/joy_visible.gd" id="1_54egt"]
+[ext_resource type="Script" uid="uid://ddhbh71ldp04p" path="res://assets/resources/joy_visible.gd" id="1_54egt"]
 [ext_resource type="Texture2D" uid="uid://54gc5ce7jg77" path="res://assets/art/basic_colors.png" id="2_j3ljq"]
 
 [node name="TestObjectJoyVisible" type="Node2D" unique_id=1971010466]
