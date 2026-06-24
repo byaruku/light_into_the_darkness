@@ -1,0 +1,30 @@
+{
+  "commands": [
+    {
+      "async": false,
+      "definitionName": "change_scene",
+      "fileName": "dialogue_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "change_scene"
+    },
+    {
+      "async": false,
+      "definitionName": "add_identity",
+      "fileName": "dialogue_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "add_identity"
+    },
+    {
+      "async": false,
+      "definitionName": "add_charge",
+      "fileName": "game_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "add_charge"
+    }
+  ],
+  "functions": [],
+  "version": 1
+}

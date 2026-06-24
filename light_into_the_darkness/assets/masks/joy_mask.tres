@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="JoyMask" format=3 uid="uid://cxaak0r6wja57"]
+
+[ext_resource type="Script" uid="uid://nvpfbw77fe0t" path="res://assets/masks/joy_mask.gd" id="1_te53m"]
+
+[resource]
+script = ExtResource("1_te53m")
+mask_name = "Freude"
+metadata/_custom_type_script = "uid://nvpfbw77fe0t"

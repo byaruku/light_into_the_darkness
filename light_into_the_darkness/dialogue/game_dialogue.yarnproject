@@ -1,0 +1,12 @@
+{
+    "baseLanguage": "en",
+    "projectFileVersion": 4,
+    "sourceFiles": [
+        "**/*.yarn"
+    ],
+    "editorOptions": {
+        "yarnScriptEditor": {
+            "previewFontSize": 10
+        }
+    }
+}

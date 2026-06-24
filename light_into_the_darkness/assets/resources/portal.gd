@@ -3,11 +3,10 @@ extends Area2D
 
 enum Destination {
 	TOWN,
-	DREAM
+	MEMORY_1,
+	MEMORY_2,
+	MEMORY_3
 }
-
-@export_file("*.tscn")
-var target_scene: String
 
 @export var portal_id: Destination
 @export var target_portal_id: Destination
@@ -22,4 +21,4 @@ func _on_body_entered(body):
 	if body is Player:
 		body.movement_state = Player.MovementState.IDLE
 		body.update_animation()
-		SceneManager.change_scene(target_scene, target_portal_id)
+		SceneManager.change_scene(target_portal_id)

@@ -1,0 +1,128 @@
+[gd_scene format=4 uid="uid://c4hyx1pkcoxx4"]
+
+[ext_resource type="Texture2D" uid="uid://f4mialb1qklk" path="res://assets/art/main_area_tile_map.png" id="1_up3ox"]
+[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="2_kxu4k"]
+[ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="3_g0a82"]
+[ext_resource type="PackedScene" uid="uid://dtkoc5w80bcpb" path="res://assets/characters/npc_hikari.tscn" id="4_kxu4k"]
+[ext_resource type="AudioStream" uid="uid://bkvfu0r4rx24g" path="res://assets/audio/music/Prototyp_Main_Area.mp3" id="4_up3ox"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8r15d"]
+texture = ExtResource("1_up3ox")
+2:1/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_up3ox"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_8r15d")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d3hr"]
+texture = ExtResource("1_up3ox")
+1:0/0 = 0
+1:0/0/z_index = 10
+1:1/0 = 0
+1:1/0/y_sort_origin = 5
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 4, 4, 4, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/y_sort_origin = 1
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 8, 0, 8, 8, -4, 8, -6, 6)
+5:2/0 = 0
+5:2/0/z_index = 10
+5:1/0 = 0
+5:1/0/z_index = 10
+5:0/0 = 0
+5:0/0/z_index = 10
+6:0/0 = 0
+6:0/0/z_index = 10
+6:1/0 = 0
+6:1/0/z_index = 10
+6:2/0 = 0
+6:2/0/z_index = 10
+6:3/0 = 0
+6:3/0/y_sort_origin = 1
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, -8, 0, -8, 8, 4, 8, 6, 6)
+
+[sub_resource type="TileSet" id="TileSet_we3bw"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_7d3hr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d3hr"]
+
+[sub_resource type="Gradient" id="Gradient_kxu4k"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kxu4k"]
+frequency = 0.0149
+fractal_gain = 2.305
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g0a82"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_kxu4k")
+color_ramp = SubResource("Gradient_kxu4k")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g0a82"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3rras"]
+noise = SubResource("FastNoiseLite_g0a82")
+
+[node name="Main_Area" type="Node2D" unique_id=712179779]
+y_sort_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1610638562]
+stream = ExtResource("4_up3ox")
+volume_db = -70.0
+autoplay = true
+bus = &"Music"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=707681322]
+z_index = -1
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD9/wEAAAADAAIAAAD+/wEAAAADAAIAAAD//wEAAAADAAIAAAAAAAEAAAADAAIAAAABAAEAAAADAAIAAAACAAEAAAADAAIAAAD9//j/AAADAAAAAAD+//j/AAADAAAAAAD///j/AAADAAAAAAAAAPj/AAADAAAAAAABAPj/AAADAAAAAAACAPj/AAADAAAAAAACAP//AAADAAEAAAACAAAAAAADAAEAAAABAAAAAAADAAEAAAAAAAAAAAADAAEAAAD//wAAAAADAAEAAAD+/wAAAAADAAEAAAD9/wAAAAADAAEAAAD9////AAADAAEAAAD+////AAADAAEAAAD/////AAADAAEAAAAAAP//AAADAAEAAAABAP//AAADAAEAAAABAP7/AAADAAEAAAAAAP7/AAADAAEAAAD///7/AAADAAEAAAD+//7/AAADAAEAAAD9//7/AAADAAEAAAACAP7/AAADAAEAAAACAP3/AAADAAEAAAABAP3/AAADAAEAAAABAPz/AAADAAEAAAAAAPz/AAADAAEAAAD///z/AAADAAEAAAD+//3/AAADAAEAAAD9//3/AAADAAEAAAD9//z/AAADAAEAAAD+//z/AAADAAEAAAAAAP3/AAADAAEAAAD///3/AAADAAEAAAACAPz/AAADAAEAAAACAPv/AAADAAEAAAABAPv/AAADAAEAAAAAAPv/AAADAAEAAAD///v/AAADAAEAAAD+//v/AAADAAEAAAD9//v/AAADAAEAAAD9//r/AAADAAEAAAD9//n/AAADAAEAAAD+//n/AAADAAEAAAD///n/AAADAAEAAAD///r/AAADAAEAAAD+//r/AAADAAEAAAAAAPr/AAADAAEAAAABAPr/AAADAAEAAAACAPr/AAADAAEAAAACAPn/AAADAAEAAAABAPn/AAADAAEAAAAAAPn/AAADAAEAAAAFAPj/AAAEAAAAAAAFAPn/AAAEAAEAAAAFAPr/AAAEAAEAAAAFAPv/AAAEAAEAAAAFAPz/AAAEAAEAAAAFAP3/AAAEAAEAAAAFAP7/AAAEAAEAAAAFAP//AAAEAAEAAAAFAAAAAAAEAAEAAAAFAAEAAAAEAAIAAAD6//j/AAACAAAAAAD6//n/AAACAAEAAAD6//r/AAACAAEAAAD6//v/AAACAAEAAAD6//z/AAACAAEAAAD6//3/AAACAAEAAAD6//7/AAACAAEAAAD6////AAACAAEAAAD6/wAAAAACAAEAAAD6/wEAAAACAAIAAAD7//j/AAADAAAAAAD7//n/AAADAAEAAAD7//r/AAADAAEAAAD7//v/AAADAAEAAAD7//z/AAADAAEAAAD7//3/AAADAAEAAAD7//7/AAADAAEAAAD7////AAADAAEAAAD7/wAAAAADAAEAAAD7/wEAAAADAAIAAAD8//j/AAADAAAAAAD8//n/AAADAAEAAAD8//r/AAADAAEAAAD8//v/AAADAAEAAAD8//z/AAADAAEAAAD8//3/AAADAAEAAAD8//7/AAADAAEAAAD8////AAADAAEAAAD8/wAAAAADAAEAAAD8/wEAAAADAAIAAAADAPj/AAADAAAAAAADAPn/AAADAAEAAAADAPr/AAADAAEAAAADAPv/AAADAAEAAAADAPz/AAADAAEAAAADAP3/AAADAAEAAAADAP7/AAADAAEAAAADAP//AAADAAEAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAAEAPj/AAADAAAAAAAEAPn/AAADAAEAAAAEAPr/AAADAAEAAAAEAPv/AAADAAEAAAAEAPz/AAADAAEAAAAEAP3/AAADAAEAAAAEAP7/AAADAAEAAAAEAP//AAADAAEAAAAEAAAAAAADAAEAAAAEAAEAAAADAAIAAAA=")
+tile_set = SubResource("TileSet_up3ox")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=2029050534]
+light_mask = 2
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAACAAAAAAABAAEAAAACAP//AAABAAAAAAACAPz/AAABAAAAAAACAP3/AAABAAEAAAD9//3/AAABAAEAAAD9//z/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAEAAAACAPf/AAAFAAAAAAACAPj/AAAFAAEAAAACAPn/AAAFAAIAAAACAPr/AAAFAAMAAAADAPf/AAAGAAAAAAADAPj/AAAGAAEAAAADAPn/AAAGAAIAAAADAPr/AAAGAAMAAAD8//f/AAAFAAAAAAD8//j/AAAFAAEAAAD8//n/AAAFAAIAAAD8//r/AAAFAAMAAAD9//f/AAAGAAAAAAD9//j/AAAGAAEAAAD9//n/AAAGAAIAAAD9//r/AAAGAAMAAAA=")
+tile_set = SubResource("TileSet_we3bw")
+
+[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("2_kxu4k")]
+light_mask = 4
+visibility_layer = 4
+
+[node name="NPC_Hikari" parent="." unique_id=1008199924 instance=ExtResource("4_kxu4k")]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, -110)
+
+[node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("3_g0a82")]
+position = Vector2(-165, -52)
+target_portal_id = 1
+spawn_marker = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=1757118151]
+position = Vector2(165, 95)
+shape = SubResource("RectangleShape2D_7d3hr")
+disabled = true
+
+[node name="Marker2D" type="Marker2D" parent="Portal" unique_id=39963701]
+position = Vector2(165, -44)
+
+[node name="GroundTexture" type="PointLight2D" parent="." unique_id=1901140501]
+visibility_layer = 0
+position = Vector2(0, -89)
+texture = SubResource("NoiseTexture2D_g0a82")
+
+[node name="PointLight2D" type="PointLight2D" parent="GroundTexture" unique_id=429773597]
+energy = 2.1
+blend_mode = 2
+texture = SubResource("NoiseTexture2D_3rras")

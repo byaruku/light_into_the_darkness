@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bnb4wtxsh5o4u"]
+
+[ext_resource type="Script" uid="uid://dfyjn64yfe0sy" path="res://assets/resources/breakable_object.gd" id="1_dw03x"]
+[ext_resource type="Texture2D" uid="uid://fecqoqrnyj61" path="res://assets/art/environment/Ext_Obj_022.png" id="2_dw03x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybp44"]
+size = Vector2(12, 6)
+
+[node name="BreakableObject" type="StaticBody2D" unique_id=2015296434]
+script = ExtResource("1_dw03x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1528850013]
+texture_filter = 1
+texture = ExtResource("2_dw03x")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182703706]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ybp44")

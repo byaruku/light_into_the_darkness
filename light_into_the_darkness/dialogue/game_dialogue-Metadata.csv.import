@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d1oqpvio1yh6a"
+
+[deps]
+
+files=["res://dialogue/game_dialogue-Metadata.node.translation", "res://dialogue/game_dialogue-Metadata.lineNumber.translation", "res://dialogue/game_dialogue-Metadata.tags.translation"]
+
+source_file="res://dialogue/game_dialogue-Metadata.csv"
+dest_files=["res://dialogue/game_dialogue-Metadata.node.translation", "res://dialogue/game_dialogue-Metadata.lineNumber.translation", "res://dialogue/game_dialogue-Metadata.tags.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

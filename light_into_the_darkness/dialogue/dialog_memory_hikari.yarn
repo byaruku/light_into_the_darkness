@@ -1,0 +1,20 @@
+title: Memory_Hikari
+---
+Maigo: Hikari!
+Hikari: Maigo!
+Hikari: *schluchzt* Du... du Blödmann!
+Maigo: Was?
+Hikari: Du solltest doch auf mich aufpassen! Ich hab nach dir gerufen und gerufen... und plötzlich warst du einfach weg!
+Maigo: Hikari, ich...
+Hikari: Ich dachte schon, ich finde nie wieder aus diesem blöden Labyrinth heraus... Es war überall gleich. Jeder Weg sah aus wie der andere. Und dann wurde es dunkel... Ich hatte solche Angst.
+Maigo: Tut mir leid. Ich hätte besser auf dich achten müssen.
+Hikari: Natürlich hättest du das! Aber... ich bin froh, dass du mich gefunden hast. Solange du da bist, fühlt sich alles irgendwie weniger gruselig an.
+Maigo: Dann gehen wir jetzt zusammen zurück.
+Hikari: Versprochen?
+Maigo: Versprochen.
+Hikari: Gut. Dann darfst du heute sogar entscheiden, was wir auf dem Fest als Nächstes machen.
+Maigo: Das ist aber großzügig.
+Hikari: Nur heute! Und nur, weil ich dich vermisst habe.
+<<add_identity 20>>
+<<change_scene 0>>
+===

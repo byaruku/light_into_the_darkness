@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RageMask" format=3 uid="uid://suyn5olri6ll"]
+
+[ext_resource type="Script" uid="uid://dxhm2dhiiw4vv" path="res://assets/masks/rage_mask.gd" id="1_e3w5q"]
+
+[resource]
+script = ExtResource("1_e3w5q")
+mask_name = "Wut"
+metadata/_custom_type_script = "uid://dxhm2dhiiw4vv"
