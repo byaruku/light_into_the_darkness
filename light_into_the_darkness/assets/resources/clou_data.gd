@@ -3,7 +3,7 @@ extends Resource
 
 @export var clou_id: String
 @export var yarn_node: String
-@export var icon: Texture
+@export var icon: Texture2D
 
 @export var identity_reward := 0
 

@@ -2,15 +2,58 @@
 
 [ext_resource type="Script" uid="uid://ehqntcyoiicp" path="res://assets/resources/clou.gd" id="1_jebn6"]
 [ext_resource type="Script" uid="uid://chr2cppbycm41" path="res://assets/resources/clou_interactable.gd" id="2_e6gww"]
+[ext_resource type="Texture2D" uid="uid://cq1umiiy2ybwe" path="res://assets/art/clues/clou_mark_16x16.png" id="2_qkst0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qkst0"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_4ay85"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mm3cn"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7tpb"]
+_data = {
+&"RESET": SubResource("Animation_4ay85"),
+&"idle": SubResource("Animation_mm3cn")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cueys"]
+animation = &"idle"
 
 [node name="Clou" type="Node2D" unique_id=590297839]
 script = ExtResource("1_jebn6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163796564]
 texture_filter = 1
-scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_qkst0")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="." unique_id=786390034]
 collision_layer = 4
@@ -20,3 +63,11 @@ script = ExtResource("2_e6gww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=94941176]
 shape = SubResource("CircleShape2D_qkst0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1175600665]
+libraries/ = SubResource("AnimationLibrary_g7tpb")
+autoplay = &"idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1024119430]
+tree_root = SubResource("AnimationNodeAnimation_cueys")
+anim_player = NodePath("../AnimationPlayer")
