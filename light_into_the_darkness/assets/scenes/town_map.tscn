@@ -56,6 +56,23 @@ sources/0 = SubResource("TileSetAtlasSource_7d3hr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7d3hr"]
 
+[sub_resource type="Gradient" id="Gradient_kxu4k"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kxu4k"]
+frequency = 0.0149
+fractal_gain = 2.305
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g0a82"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_kxu4k")
+color_ramp = SubResource("Gradient_kxu4k")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g0a82"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3rras"]
+noise = SubResource("FastNoiseLite_g0a82")
+
 [node name="Main_Area" type="Node2D" unique_id=712179779]
 y_sort_enabled = true
 
@@ -72,14 +89,19 @@ tile_map_data = PackedByteArray("AAD9/wEAAAADAAIAAAD+/wEAAAADAAIAAAD//wEAAAADAAI
 tile_set = SubResource("TileSet_up3ox")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=2029050534]
+light_mask = 2
 y_sort_enabled = true
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAAAAAABAAEAAAACAP//AAABAAAAAAACAPz/AAABAAAAAAACAP3/AAABAAEAAAD9//3/AAABAAEAAAD9//z/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAEAAAACAPf/AAAFAAAAAAACAPj/AAAFAAEAAAACAPn/AAAFAAIAAAACAPr/AAAFAAMAAAADAPf/AAAGAAAAAAADAPj/AAAGAAEAAAADAPn/AAAGAAIAAAADAPr/AAAGAAMAAAD8//f/AAAFAAAAAAD8//j/AAAFAAEAAAD8//n/AAAFAAIAAAD8//r/AAAFAAMAAAD9//f/AAAGAAAAAAD9//j/AAAGAAEAAAD9//n/AAAGAAIAAAD9//r/AAAGAAMAAAA=")
 tile_set = SubResource("TileSet_we3bw")
 
 [node name="Player" parent="." unique_id=1705600323 instance=ExtResource("2_kxu4k")]
+light_mask = 4
+visibility_layer = 4
 
 [node name="NPC_Hikari" parent="." unique_id=1008199924 instance=ExtResource("4_kxu4k")]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(0, -110)
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("3_g0a82")]
@@ -94,3 +116,13 @@ disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="Portal" unique_id=39963701]
 position = Vector2(165, -44)
+
+[node name="GroundTexture" type="PointLight2D" parent="." unique_id=1901140501]
+visibility_layer = 0
+position = Vector2(0, -89)
+texture = SubResource("NoiseTexture2D_g0a82")
+
+[node name="PointLight2D" type="PointLight2D" parent="GroundTexture" unique_id=429773597]
+energy = 2.1
+blend_mode = 2
+texture = SubResource("NoiseTexture2D_3rras")

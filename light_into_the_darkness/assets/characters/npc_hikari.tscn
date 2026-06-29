@@ -69,6 +69,7 @@ script = ExtResource("1_p54wm")
 yarn_node = "Hikari"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
+light_mask = 4
 texture_filter = 1
 texture = ExtResource("2_6xgmd")
 offset = Vector2(0, -8)
