@@ -23,6 +23,14 @@
       "language": "gdscript",
       "parameters": [],
       "yarnName": "add_charge"
+    },
+    {
+      "async": false,
+      "definitionName": "change_animation",
+      "fileName": "npc.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "change_animation"
     }
   ],
   "functions": [],

@@ -145,5 +145,6 @@ libraries/ = SubResource("AnimationLibrary_8sknh")
 autoplay = &"idle_Hikari"
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=999536838]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_hrrj1")
 anim_player = NodePath("../AnimationPlayer")
