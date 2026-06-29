@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c4j2i5638urmb" path="res://assets/ui/settings_menu.gd" id="1_bi2b0"]
 
-[node name="settings_menu" type="CanvasLayer" unique_id=2096278190]
+[node name="settings_menu" type="CanvasLayer" unique_id=2096278190 node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider", "fullscreen_button", "vsync_button")]
 script = ExtResource("1_bi2b0")
+master_slider = NodePath("Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterSlider")
+music_slider = NodePath("Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/MusicSlider")
+sfx_slider = NodePath("Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3/SfxSlider")
+fullscreen_button = NodePath("Control/VBoxContainer/FullscreenButton")
+vsync_button = NodePath("Control/VBoxContainer/VsyncButton")
 
 [node name="Control" type="Control" parent="." unique_id=510047150]
 layout_mode = 3
@@ -20,16 +25,68 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_position = Vector2(10, 0)
 alignment = 1
 
-[node name="MasterSlider" type="HSlider" parent="Control/VBoxContainer" unique_id=186345082]
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer" unique_id=690744628]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/MarginContainer" unique_id=1577740693]
 layout_mode = 2
 
-[node name="MusicSlider" type="HSlider" parent="Control/VBoxContainer" unique_id=1815058682]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/MarginContainer/VBoxContainer" unique_id=67238077]
 layout_mode = 2
 
-[node name="SfxSlider" type="HSlider" parent="Control/VBoxContainer" unique_id=1807091640]
+[node name="Label" type="Label" parent="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=179544508]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 8
+text = "Gesamt"
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=186345082]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_constants/center_grabber = 1
+value = 100.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1438644463]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=736184541]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 8
+text = "Musik"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1815058682]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/center_grabber = 1
+value = 100.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1217499069]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1848253562]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 8
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1807091640]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/center_grabber = 1
+value = 100.0
 
 [node name="FullscreenButton" type="CheckButton" parent="Control/VBoxContainer" unique_id=805717754]
 layout_mode = 2
@@ -49,9 +106,9 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 8
 text = "Speichern und zurück"
 
-[connection signal="value_changed" from="Control/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="Control/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="Control/VBoxContainer/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="Control/VBoxContainer/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="toggled" from="Control/VBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]
 [connection signal="pressed" from="Control/VBoxContainer/SaveAndBackButton" to="." method="_on_save_and_back_button_pressed"]
