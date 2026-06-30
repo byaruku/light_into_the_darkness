@@ -36,6 +36,7 @@ var current_height := 0
 var current_platform: JumpPlatform = null
 
 var can_break_objects := false
+var in_cutscene := false
 
 @onready var mask_manager: MaskManager = $MaskManager
 @onready var scare_area: Area2D = $ScareArea
@@ -57,6 +58,9 @@ func _ready() -> void:
 
 
 func handle_update(delta: float) -> void:
+	if in_cutscene:
+		return
+	
 	handle_action_input()
 	
 	movement_loop(delta)
@@ -178,15 +182,22 @@ func update_animation() -> void:
 
 
 func update_facing_direction():
-	if abs(move_direction.x) > abs(move_direction.y):
-		if move_direction.x > 0:
+	update_facing_direction_from_vector(move_direction)
+
+
+func update_facing_direction_from_vector(dir: Vector2):
+	if dir == Vector2.ZERO:
+		return
+
+	if abs(dir.x) > abs(dir.y):
+		if dir.x > 0:
 			facing_direction = Vector2.RIGHT
-		elif move_direction.x < 0:
+		else:
 			facing_direction = Vector2.LEFT
 	else:
-		if move_direction.y > 0:
+		if dir.y > 0:
 			facing_direction = Vector2.DOWN
-		elif move_direction.y < 0:
+		else:
 			facing_direction = Vector2.UP
 
 
@@ -373,3 +384,34 @@ func enable_joy_vision():
 
 func disable_joy_vision():
 	get_tree().call_group("joy_visible", "hide_for_joy")
+
+
+func start_cutscene():
+	in_cutscene = true
+	
+	velocity = Vector2.ZERO
+	
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
+
+
+func end_cutscene():
+	in_cutscene = false
+	
+	set_collision_layer_value(1, true)
+	set_collision_mask_value(1, true)
+
+
+func cutscene_walk_to(target_position: Vector2):
+	while global_position.distance_to(target_position) > 2:
+		var dir = (target_position - global_position).normalized()
+		
+		update_facing_direction_from_vector(dir)
+		
+		velocity = dir * speed
+		
+		move_and_slide()
+		
+		await  get_tree().physics_frame
+		
+	velocity = Vector2.ZERO

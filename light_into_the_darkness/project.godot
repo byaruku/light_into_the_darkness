@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://du3u8jfqcfu7f"
 
 YarnSpinner="*uid://bhiw7fae5n1e8"
 Fader="*uid://2xchwovf1ssg"
+CutsceneManager="*uid://bsbmf87v385du"
 PauseManager="*uid://dmgqceknk860s"
 IdentityManager="*uid://boxbqj8s17sdq"
 ClouManager="*uid://dqt0c7f2pf61m"
