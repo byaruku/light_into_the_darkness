@@ -7,6 +7,8 @@ extends Node
 @export_file("*.tscn") var memory_1_scene: String
 @export_file("*.tscn") var memory_2_scene: String
 
+@export var center_view: Vector2 = Vector2(80, 72)
+
 @onready var current_scene_container = $CurrentSceneContainer
 
 var main_menu
@@ -41,6 +43,8 @@ func return_to_main_menu():
 func load_main_menu():
 	GameManager.state_machine.push(MainMenuState.new())
 	
+	CameraManager.switch_to(center_view)
+	
 	main_menu = main_menu_packed.instantiate()
 	
 	main_menu.new_game_pressed.connect(new_game)
@@ -60,6 +64,8 @@ func new_game():
 	current_scene_container.add_child(current_scene)
 	current_scene_destination = Portal.Destination.TOWN
 	GameManager.state_machine.push(FreeRoamState.new())
+	CameraManager.switch_to(GameManager.player.global_position)
+	CameraManager.follow_node(GameManager.player)
 
 
 func settings_open():
@@ -97,6 +103,8 @@ func change_scene(destination: Portal.Destination):
 		GameManager.player.global_position = portal.spawn_marker.global_position
 
 	GameManager.is_in_memory = destination > 0
+	CameraManager.switch_to(GameManager.player.global_position)
+	CameraManager.follow_node(GameManager.player)
 
 	await Fader.fade_out(1.0)
 

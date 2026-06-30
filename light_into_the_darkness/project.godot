@@ -28,6 +28,7 @@ ClouManager="*uid://dqt0c7f2pf61m"
 DialogueManager="*uid://dmdkk8dsyslgh"
 AudioManager="*uid://bdrqtay7q71fy"
 SettingsManager="*uid://b82q8g3eclqyi"
+CameraManager="*uid://ca0mnj1ugq4j2"
 GameManager="*uid://bbl6jvmw6x6t0"
 SceneManager="*uid://cvy3huu52nnua"
 
