@@ -34,6 +34,13 @@ var current_platform: JumpPlatform = null
 var can_break_objects := false
 var in_cutscene := false
 
+var direction_offsets = {
+	Vector2.UP: Vector2(0, -16),
+	Vector2.DOWN: Vector2(0, 4),
+	Vector2.LEFT: Vector2(-12, 0),
+	Vector2.RIGHT: Vector2(12, 0)
+}
+
 @onready var mask_manager: MaskManager = $MaskManager
 @onready var scare_area: Area2D = $ScareArea
 @onready var scare_collision: CollisionShape2D = $ScareArea/CollisionShape2D
@@ -198,8 +205,9 @@ func update_facing_direction_from_vector(dir: Vector2):
 
 
 func update_interaction_position():
-	interaction_area.position = facing_direction * 8
-	jump_check_area.position = facing_direction * 8
+	var offset = direction_offsets[facing_direction] + Vector2(0, 8) if facing_direction == Vector2.DOWN and get_current_height() > 0 else direction_offsets[facing_direction]
+	interaction_area.position = offset
+	jump_check_area.position = offset
 
 
 func start_jump():
@@ -337,13 +345,18 @@ func get_current_height() -> int:
 
 
 func set_height_collision(layer: int):
-	if layer != 0:
+	if layer == 0:
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[0], false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[1], false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[2], false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[3], false)
+	else:
 		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[0], true)
 		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[1], true)
 		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[2], true)
 		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[3], true)
 	
-	set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[layer], false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[layer], false)
 	
 	if action_state != ActionState.CROUCH:
 		set_collision_mask_value(LAYER_CROUCH, true)
