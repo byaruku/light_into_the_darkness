@@ -1,7 +1,6 @@
 extends Node
 
 @export var main_menu_packed: PackedScene
-@export var game_scene_packed: PackedScene
 
 @export_file("*.tscn") var town_scene: String
 @export_file("*.tscn") var memory_1_scene: String
@@ -60,12 +59,8 @@ func new_game():
 	GameManager.state_machine.pop()
 	main_menu.queue_free()
 	
-	current_scene = game_scene_packed.instantiate()
-	current_scene_container.add_child(current_scene)
-	current_scene_destination = Portal.Destination.TOWN
 	GameManager.state_machine.push(FreeRoamState.new())
-	CameraManager.switch_to(GameManager.player.global_position)
-	CameraManager.follow_node(GameManager.player)
+	change_scene(Portal.Destination.TOWN)
 
 
 func settings_open():

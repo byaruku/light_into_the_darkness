@@ -6,7 +6,7 @@ extends CutsceneStep
 func execute():
 	var player = GameManager.player
 	
-	var marker = Engine.get_main_loop().current_scene.get_node_or_null(target_marker)
+	var marker = SceneManager.current_scene.get_node_or_null(target_marker)
 	
 	if marker == null:
 		push_error("MovePlayerStep: Marker not found.")

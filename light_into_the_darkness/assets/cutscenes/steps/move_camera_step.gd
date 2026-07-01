@@ -6,8 +6,12 @@ extends CutsceneStep
 
 
 func execute():
-	var target = Engine.get_main_loop().current_scene.get_node(marker)
+	var target = SceneManager.current_scene.get_node_or_null(marker)
 	
-	await CameraManager.move_to(target.position, duration)
+	if target == null:
+		push_error("MoveCameraStep: Marker not found.")
+		return
+	
+	await CameraManager.move_to(target.global_position, duration)
 	
 	CameraManager.resume_follow()
