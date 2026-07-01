@@ -13,10 +13,7 @@ enum ActionState {
 }
 
 const LAYER_CROUCH = 4
-const LAYER_JUMP_GROUND = 5
-const LAYER_JUMP_HEIGHT1 = 6
-const LAYER_JUMP_HEIGHT2 = 7
-const LAYER_JUMP_HEIGHT3 = 8
+
 
 @export_category("Stats")
 @export var speed := 100.0
@@ -32,7 +29,6 @@ var move_direction := Vector2.ZERO
 var facing_direction := Vector2.DOWN
 var jump_direction := Vector2.ZERO
 
-var current_height := 0
 var current_platform: JumpPlatform = null
 
 var can_break_objects := false
@@ -214,13 +210,13 @@ func start_jump():
 	
 	# Jump on and of plattform
 	if target_platform:
-		var height_diff = target_platform.height_level - current_height
+		var height_diff = target_platform.height_level - get_current_height()
 		
-		if height_diff > 0 and height_diff <= jump_height:
+		if height_diff > 0 and height_diff <= jump_height and target_platform.allow_jump_on:
 			jump_to_platform(target_platform)
 			return
 		
-		if height_diff < 0 and abs(height_diff) <= jump_height:
+		if height_diff < 0 and abs(height_diff) <= jump_height and target_platform.allow_jump_down:
 			jump_down(target_platform)
 			return
 	
@@ -230,46 +226,32 @@ func start_jump():
 func jump_to_platform(platform: JumpPlatform):
 	set_action_state(ActionState.JUMP)
 	
-	jump_direction = facing_direction.normalized()
-	
-	var target_position = global_position + jump_direction * jump_distance
-	
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", target_position, jump_duration)
+	tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
 	await tween.finished
 	
 	current_platform = platform
 	
 	velocity = Vector2.ZERO
 	
-	current_height = platform.height_level
 	update_height_layer()
 	
 	set_action_state(ActionState.NORMAL)
 
 
 func jump_down(platform: JumpPlatform):
-	if current_height <= 0:
+	if get_current_height() <= 0:
 		return
 	
 	set_action_state(ActionState.JUMP)
 	
-	jump_direction = facing_direction.normalized()
-	
-	var target_position = global_position + jump_direction * jump_distance
-	
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", target_position, jump_duration)
+	tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
 	await tween.finished
 	
 	velocity = Vector2.ZERO
 	
-	current_height = platform.height_level
-	
-	if current_height == 0:
-		current_platform = null
-	else:
-		current_platform = platform
+	current_platform = platform if platform.height_level > 0 else null
 	
 	update_height_layer()
 	
@@ -326,17 +308,8 @@ func _on_scare_area_body_entered(body: Node2D) -> void:
 
 
 func update_height_layer():
-	match current_height:
-		0:
-			set_height_collision(LAYER_JUMP_GROUND)
-		1:
-			set_height_collision(LAYER_JUMP_HEIGHT1)
-		2:
-			set_height_collision(LAYER_JUMP_HEIGHT2)
-		3:
-			set_height_collision(LAYER_JUMP_HEIGHT3)
-	
-	z_index = current_height * 10
+	set_height_collision(get_current_height())
+	z_index = get_current_height() * 10
 
 
 func can_stand_up() -> bool:
@@ -349,21 +322,28 @@ func can_jump_to(target_position: Vector2) -> bool:
 
 
 func get_jump_platform():
-	var bodies = jump_check_area.get_overlapping_bodies()
-	for body in bodies:
-		if body is JumpPlatform:
-			return body
-	
+	for body in jump_check_area.get_overlapping_bodies():
+		if body is PlatformLanding:
+			var platform = body.get_platform()
+			if platform.height_level != get_current_height():
+				return platform
 	return null
 
 
+func get_current_height() -> int:
+	if current_platform:
+		return current_platform.height_level
+	return 0
+
+
 func set_height_collision(layer: int):
-	set_collision_mask_value(LAYER_JUMP_GROUND, true)
-	set_collision_mask_value(LAYER_JUMP_HEIGHT1, true)
-	set_collision_mask_value(LAYER_JUMP_HEIGHT2, true)
-	set_collision_mask_value(LAYER_JUMP_HEIGHT3, true)
+	if layer != 0:
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[0], true)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[1], true)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[2], true)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[3], true)
 	
-	set_collision_mask_value(layer, false)
+	set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[layer], false)
 	
 	if action_state != ActionState.CROUCH:
 		set_collision_mask_value(LAYER_CROUCH, true)
