@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cawv6n80j82mx"]
+
+[ext_resource type="Script" uid="uid://cry8p1j5rynh8" path="res://assets/ui/firefly_ui.gd" id="1_r3tni"]
+[ext_resource type="PackedScene" uid="uid://cu0srux6wqeod" path="res://assets/resources/icon_firefly.tscn" id="2_s8tgs"]
+
+[node name="FireflyUI" type="CanvasLayer" unique_id=1925659896]
+script = ExtResource("1_r3tni")
+firefly_icon_scene = ExtResource("2_s8tgs")
+
+[node name="JarTextureRect" type="TextureRect" parent="." unique_id=1520716014]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 48.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1899229574]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 48.0
+grow_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="FireflyContainer" type="Control" parent="MarginContainer" unique_id=926648798]
+layout_mode = 2

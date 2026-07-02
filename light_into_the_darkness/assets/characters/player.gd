@@ -291,12 +291,11 @@ func try_interact():
 	if areas.is_empty():
 		return
 	
-	var interactable = areas[0]
-	
-	if interactable is Interactable:
-		movement_state = MovementState.IDLE
-		update_animation()
-		await interactable.interact()
+	for interactable in areas:
+		if interactable is Interactable:
+			movement_state = MovementState.IDLE
+			update_animation()
+			await interactable.interact()
 
 
 func break_object():
