@@ -98,6 +98,10 @@ func change_scene(destination: Portal.Destination):
 		GameManager.player.global_position = portal.spawn_marker.global_position
 
 	GameManager.is_in_memory = destination > 0
+	
+	if not GameManager.is_in_memory:
+		GameManager.player.global_position = GameManager.player_position
+	
 	CameraManager.switch_to(GameManager.player.global_position)
 	CameraManager.follow_node(GameManager.player)
 

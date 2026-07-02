@@ -40,6 +40,7 @@ func hide_portrait():
 
 func change_scene(destination: String) -> void:
 	SceneManager.change_scene(int(destination))
+	GameManager.player_position = GameManager.player.global_position
 
 
 func add_identity(amount: String):
