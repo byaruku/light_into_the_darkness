@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarn_spinner.yarn_file"
+type="Resource"
+uid="uid://cye3jtb2kn6id"
+path="res://.godot/imported/dialog_1_Daichi.yarn-24a3bfb296f8164b7fc509028a5bf37d.res"
+
+[deps]
+
+source_file="res://dialogue/dialog_1_Daichi.yarn"
+dest_files=["res://.godot/imported/dialog_1_Daichi.yarn-24a3bfb296f8164b7fc509028a5bf37d.res"]
+
+[params]
+
