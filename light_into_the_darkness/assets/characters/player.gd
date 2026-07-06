@@ -13,10 +13,7 @@ enum ActionState {
 }
 
 const LAYER_CROUCH = 4
-const LAYER_JUMP_GROUND = 5
-const LAYER_JUMP_HEIGHT1 = 6
-const LAYER_JUMP_HEIGHT2 = 7
-const LAYER_JUMP_HEIGHT3 = 8
+
 
 @export_category("Stats")
 @export var speed := 100.0
@@ -32,10 +29,17 @@ var move_direction := Vector2.ZERO
 var facing_direction := Vector2.DOWN
 var jump_direction := Vector2.ZERO
 
-var current_height := 0
 var current_platform: JumpPlatform = null
 
 var can_break_objects := false
+var in_cutscene := false
+
+var direction_offsets = {
+	Vector2.UP: Vector2(0, -16),
+	Vector2.DOWN: Vector2(0, 4),
+	Vector2.LEFT: Vector2(-12, 0),
+	Vector2.RIGHT: Vector2(12, 0)
+}
 
 @onready var mask_manager: MaskManager = $MaskManager
 @onready var scare_area: Area2D = $ScareArea
@@ -57,6 +61,9 @@ func _ready() -> void:
 
 
 func handle_update(delta: float) -> void:
+	if in_cutscene:
+		return
+	
 	handle_action_input()
 	
 	movement_loop(delta)
@@ -178,21 +185,29 @@ func update_animation() -> void:
 
 
 func update_facing_direction():
-	if abs(move_direction.x) > abs(move_direction.y):
-		if move_direction.x > 0:
+	update_facing_direction_from_vector(move_direction)
+
+
+func update_facing_direction_from_vector(dir: Vector2):
+	if dir == Vector2.ZERO:
+		return
+
+	if abs(dir.x) > abs(dir.y):
+		if dir.x > 0:
 			facing_direction = Vector2.RIGHT
-		elif move_direction.x < 0:
+		else:
 			facing_direction = Vector2.LEFT
 	else:
-		if move_direction.y > 0:
+		if dir.y > 0:
 			facing_direction = Vector2.DOWN
-		elif move_direction.y < 0:
+		else:
 			facing_direction = Vector2.UP
 
 
 func update_interaction_position():
-	interaction_area.position = facing_direction * 8
-	jump_check_area.position = facing_direction * 8
+	var offset = direction_offsets[facing_direction] + Vector2(0, 8) if facing_direction == Vector2.DOWN and get_current_height() > 0 else direction_offsets[facing_direction]
+	interaction_area.position = offset
+	jump_check_area.position = offset
 
 
 func start_jump():
@@ -203,13 +218,13 @@ func start_jump():
 	
 	# Jump on and of plattform
 	if target_platform:
-		var height_diff = target_platform.height_level - current_height
+		var height_diff = target_platform.height_level - get_current_height()
 		
-		if height_diff > 0 and height_diff <= jump_height:
+		if height_diff > 0 and height_diff <= jump_height and target_platform.allow_jump_on:
 			jump_to_platform(target_platform)
 			return
 		
-		if height_diff < 0 and abs(height_diff) <= jump_height:
+		if height_diff < 0 and abs(height_diff) <= jump_height and target_platform.allow_jump_down:
 			jump_down(target_platform)
 			return
 	
@@ -219,46 +234,32 @@ func start_jump():
 func jump_to_platform(platform: JumpPlatform):
 	set_action_state(ActionState.JUMP)
 	
-	jump_direction = facing_direction.normalized()
-	
-	var target_position = global_position + jump_direction * jump_distance
-	
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", target_position, jump_duration)
+	tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
 	await tween.finished
 	
 	current_platform = platform
 	
 	velocity = Vector2.ZERO
 	
-	current_height = platform.height_level
 	update_height_layer()
 	
 	set_action_state(ActionState.NORMAL)
 
 
 func jump_down(platform: JumpPlatform):
-	if current_height <= 0:
+	if get_current_height() <= 0:
 		return
 	
 	set_action_state(ActionState.JUMP)
 	
-	jump_direction = facing_direction.normalized()
-	
-	var target_position = global_position + jump_direction * jump_distance
-	
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", target_position, jump_duration)
+	tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
 	await tween.finished
 	
 	velocity = Vector2.ZERO
 	
-	current_height = platform.height_level
-	
-	if current_height == 0:
-		current_platform = null
-	else:
-		current_platform = platform
+	current_platform = platform if platform.height_level > 0 else null
 	
 	update_height_layer()
 	
@@ -290,12 +291,11 @@ func try_interact():
 	if areas.is_empty():
 		return
 	
-	var interactable = areas[0]
-	
-	if interactable is Interactable:
-		movement_state = MovementState.IDLE
-		update_animation()
-		await interactable.interact()
+	for interactable in areas:
+		if interactable is Interactable:
+			movement_state = MovementState.IDLE
+			update_animation()
+			await interactable.interact()
 
 
 func break_object():
@@ -315,17 +315,8 @@ func _on_scare_area_body_entered(body: Node2D) -> void:
 
 
 func update_height_layer():
-	match current_height:
-		0:
-			set_height_collision(LAYER_JUMP_GROUND)
-		1:
-			set_height_collision(LAYER_JUMP_HEIGHT1)
-		2:
-			set_height_collision(LAYER_JUMP_HEIGHT2)
-		3:
-			set_height_collision(LAYER_JUMP_HEIGHT3)
-	
-	z_index = current_height * 10
+	set_height_collision(get_current_height())
+	z_index = get_current_height() * 10
 
 
 func can_stand_up() -> bool:
@@ -338,21 +329,33 @@ func can_jump_to(target_position: Vector2) -> bool:
 
 
 func get_jump_platform():
-	var bodies = jump_check_area.get_overlapping_bodies()
-	for body in bodies:
-		if body is JumpPlatform:
-			return body
-	
+	for body in jump_check_area.get_overlapping_bodies():
+		if body is PlatformLanding:
+			var platform = body.get_platform()
+			if platform.height_level != get_current_height():
+				return platform
 	return null
 
 
+func get_current_height() -> int:
+	if current_platform:
+		return current_platform.height_level
+	return 0
+
+
 func set_height_collision(layer: int):
-	set_collision_mask_value(LAYER_JUMP_GROUND, true)
-	set_collision_mask_value(LAYER_JUMP_HEIGHT1, true)
-	set_collision_mask_value(LAYER_JUMP_HEIGHT2, true)
-	set_collision_mask_value(LAYER_JUMP_HEIGHT3, true)
+	if layer == 0:
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[0], false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[1], false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[2], false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[3], false)
+	else:
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[0], true)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[1], true)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[2], true)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[3], true)
 	
-	set_collision_mask_value(layer, false)
+		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[layer], false)
 	
 	if action_state != ActionState.CROUCH:
 		set_collision_mask_value(LAYER_CROUCH, true)
@@ -373,3 +376,34 @@ func enable_joy_vision():
 
 func disable_joy_vision():
 	get_tree().call_group("joy_visible", "hide_for_joy")
+
+
+func start_cutscene():
+	in_cutscene = true
+	
+	velocity = Vector2.ZERO
+	
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
+
+
+func end_cutscene():
+	in_cutscene = false
+	
+	set_collision_layer_value(1, true)
+	set_collision_mask_value(1, true)
+
+
+func cutscene_walk_to(target_position: Vector2):
+	while global_position.distance_to(target_position) > 2:
+		var dir = (target_position - global_position).normalized()
+		
+		update_facing_direction_from_vector(dir)
+		
+		velocity = dir * speed
+		
+		move_and_slide()
+		
+		await  get_tree().physics_frame
+		
+	velocity = Vector2.ZERO

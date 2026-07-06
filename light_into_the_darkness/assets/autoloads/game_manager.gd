@@ -4,6 +4,7 @@ var state_machine : StateMachine
 
 var player: Player
 
+var player_position : Vector2
 var is_in_memory := false
 
 var mask_charges := {

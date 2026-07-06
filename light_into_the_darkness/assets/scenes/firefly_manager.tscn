@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkpa6826ayhpr"]
+
+[ext_resource type="Script" uid="uid://bg2e1dw1uwjqj" path="res://assets/scenes/firefly_manager.gd" id="1_1dugb"]
+[ext_resource type="PackedScene" uid="uid://cawv6n80j82mx" path="res://assets/ui/firefly_ui.tscn" id="2_3wwyv"]
+
+[node name="FireflyManager" type="Node" unique_id=580464065]
+script = ExtResource("1_1dugb")
+
+[node name="FireflyUI" parent="." unique_id=1925659896 instance=ExtResource("2_3wwyv")]

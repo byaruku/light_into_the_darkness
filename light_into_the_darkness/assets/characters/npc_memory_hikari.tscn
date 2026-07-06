@@ -26,24 +26,6 @@ tracks/0/keys = {
 "values": [4]
 }
 
-[sub_resource type="Animation" id="Animation_4wcc8"]
-resource_name = "cry"
-length = 0.4
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7]
-}
-
 [sub_resource type="Animation" id="Animation_p54wm"]
 resource_name = "cry_calm_down"
 length = 6.5
@@ -62,9 +44,9 @@ tracks/0/keys = {
 "values": [0, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 }
 
-[sub_resource type="Animation" id="Animation_qomxx"]
+[sub_resource type="Animation" id="Animation_4wcc8"]
 resource_name = "idle"
-length = 6.0
+length = 0.4
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -74,25 +56,24 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 22]
+"values": [4, 5, 6, 7]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8sknh"]
 _data = {
 &"RESET": SubResource("Animation_ge753"),
-&"cry": SubResource("Animation_4wcc8"),
 &"cry_calm_down": SubResource("Animation_p54wm"),
-&"idle": SubResource("Animation_qomxx")
+&"idle": SubResource("Animation_4wcc8")
 }
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0hrit"]
-animation = &"cry"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p54wm"]
 animation = &"cry_calm_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0hrit"]
+animation = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6xgmd"]
 
@@ -101,11 +82,11 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hrrj1"]
 states/Start/position = Vector2(246, 100)
-states/cry/node = SubResource("AnimationNodeAnimation_0hrit")
-states/cry/position = Vector2(398, 100)
 states/cry_calm_down/node = SubResource("AnimationNodeAnimation_p54wm")
 states/cry_calm_down/position = Vector2(558, 100)
-transitions = ["cry", "cry_calm_down", SubResource("AnimationNodeStateMachineTransition_6xgmd"), "Start", "cry", SubResource("AnimationNodeStateMachineTransition_i1yub")]
+states/idle/node = SubResource("AnimationNodeAnimation_0hrit")
+states/idle/position = Vector2(398, 100)
+transitions = ["idle", "cry_calm_down", SubResource("AnimationNodeStateMachineTransition_6xgmd"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_i1yub")]
 
 [node name="NPC_Memory_Hikari" type="CharacterBody2D" unique_id=1705600323]
 collision_layer = 2
@@ -135,7 +116,7 @@ shape = SubResource("RectangleShape2D_mvr7h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022185426]
 libraries/ = SubResource("AnimationLibrary_8sknh")
-autoplay = &"cry"
+autoplay = &"idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=999536838]
 tree_root = SubResource("AnimationNodeStateMachine_hrrj1")

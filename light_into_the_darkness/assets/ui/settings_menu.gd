@@ -2,12 +2,12 @@ extends CanvasLayer
 
 signal closed
 
-@onready var master_slider = $Control/VBoxContainer/MasterSlider
-@onready var music_slider = $Control/VBoxContainer/MusicSlider
-@onready var sfx_slider = $Control/VBoxContainer/SfxSlider
+@export var master_slider: HSlider
+@export var music_slider: HSlider
+@export var sfx_slider: HSlider
 
-@onready var fullscreen_button = $Control/VBoxContainer/FullscreenButton
-@onready var vsync_button = $Control/VBoxContainer/VsyncButton
+@export var fullscreen_button: CheckButton
+@export var vsync_button: CheckButton
 
 
 func _ready() -> void:

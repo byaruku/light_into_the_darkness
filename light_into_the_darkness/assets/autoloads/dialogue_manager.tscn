@@ -8,9 +8,11 @@
 [ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="4_egk5t"]
 [ext_resource type="Texture2D" uid="uid://cqwhkrufnc5qj" path="res://assets/art/ui/dialog/Dialog overlay_name_panel.png" id="6_4mclk"]
 [ext_resource type="Texture2D" uid="uid://bqelfbg5swxaj" path="res://assets/art/ui/dialog/Dialog overlay_groß_without_name.png" id="7_65wob"]
+[ext_resource type="Texture2D" uid="uid://cl57w8vtc5746" path="res://assets/art/clues/background 64_64.png" id="9_4mclk"]
 
-[node name="DialogueManager" type="Node" unique_id=517957820]
+[node name="DialogueManager" type="Node" unique_id=517957820 node_paths=PackedStringArray("portrait_sprite")]
 script = ExtResource("1_lq6ii")
+portrait_sprite = NodePath("CanvasLayer/Portrait")
 
 [node name="YarnDialogueRunner" type="Node" parent="." unique_id=766232703 node_paths=PackedStringArray("presenters")]
 script = ExtResource("2_lq6ii")
@@ -105,3 +107,9 @@ offset_top = 9.0
 offset_right = 145.0
 offset_bottom = 45.0
 alignment = 1
+
+[node name="Portrait" type="Sprite2D" parent="CanvasLayer" unique_id=64440815]
+visible = false
+texture_filter = 1
+position = Vector2(80, 52)
+texture = ExtResource("9_4mclk")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ca0mnj1ugq4j2"]
+
+[ext_resource type="Script" uid="uid://c2bwsu36n2m5h" path="res://assets/autoloads/camera_manager.gd" id="1_vy70k"]
+
+[node name="CameraManager" type="Node2D" unique_id=2103666891]
+script = ExtResource("1_vy70k")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1048541098]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0

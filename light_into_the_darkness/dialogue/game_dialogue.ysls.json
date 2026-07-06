@@ -2,6 +2,22 @@
   "commands": [
     {
       "async": false,
+      "definitionName": "show_portrait",
+      "fileName": "dialogue_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "show_portrait"
+    },
+    {
+      "async": false,
+      "definitionName": "hide_portrait",
+      "fileName": "dialogue_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "hide_portrait"
+    },
+    {
+      "async": false,
       "definitionName": "change_scene",
       "fileName": "dialogue_manager.gd",
       "language": "gdscript",
@@ -23,6 +39,14 @@
       "language": "gdscript",
       "parameters": [],
       "yarnName": "add_charge"
+    },
+    {
+      "async": false,
+      "definitionName": "change_animation",
+      "fileName": "npc.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "change_animation"
     }
   ],
   "functions": [],
