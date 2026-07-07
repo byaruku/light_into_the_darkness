@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bm10gty1sih7x" path="res://assets/resources/breakable_object.tscn" id="7_q5l3y"]
 [ext_resource type="PackedScene" uid="uid://be4k5i35unxlx" path="res://assets/resources/test_object_crouch.tscn" id="7_wdvqp"]
 [ext_resource type="PackedScene" uid="uid://d0s7w1re78upn" path="res://assets/resources/test_object_joy_visible.tscn" id="8_nq0es"]
-[ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground.tscn" id="9_q5l3y"]
+[ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground_horizontal.tscn" id="9_q5l3y"]
+[ext_resource type="PackedScene" uid="uid://dkpa6826ayhpr" path="res://assets/scenes/firefly_manager.tscn" id="10_rpaqw"]
+[ext_resource type="PackedScene" uid="uid://dmuk55x83y0tn" path="res://assets/resources/firefly.tscn" id="10_yf0ng"]
 [ext_resource type="AudioStream" uid="uid://bkvfu0r4rx24g" path="res://assets/audio/music/Prototyp_Main_Area.mp3" id="12_u7u4q"]
 [ext_resource type="PackedScene" uid="uid://dtkoc5w80bcpb" path="res://assets/characters/npc_hikari.tscn" id="13_rudby"]
 
@@ -86,7 +88,7 @@ tile_set = SubResource("TileSet_v6f10")
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_cw122")]
 position = Vector2(-160, 0)
-target_portal_id = 1
+portal_id = 2
 spawn_marker = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=765623854]
@@ -96,6 +98,7 @@ shape = SubResource("RectangleShape2D_wy546")
 position = Vector2(50, 0)
 
 [node name="JumpHeight0" type="Node2D" parent="." unique_id=1748479337]
+y_sort_enabled = true
 
 [node name="FloorGround" parent="JumpHeight0" unique_id=415817742 instance=ExtResource("9_q5l3y")]
 position = Vector2(92, 60)
@@ -112,15 +115,16 @@ position = Vector2(68, 76)
 position = Vector2(116, 76)
 
 [node name="JumpHeight1" type="Node2D" parent="." unique_id=1254378555]
+y_sort_enabled = true
 
 [node name="TestObject2" parent="JumpHeight1" unique_id=1292080107 instance=ExtResource("7_3ixy5")]
 position = Vector2(84, 76)
 
 [node name="JumpHeight2" type="Node2D" parent="." unique_id=1743514163]
+y_sort_enabled = true
 
 [node name="TestObject3" parent="JumpHeight2" unique_id=2134135108 instance=ExtResource("7_3ixy5")]
 position = Vector2(100, 76)
-collision_layer = 64
 height_level = 2
 
 [node name="JumpHeight3" type="Node2D" parent="." unique_id=968313921]
@@ -144,3 +148,14 @@ position = Vector2(-66, -47)
 
 [node name="NPC_Hikari" parent="." unique_id=1075556312 instance=ExtResource("13_rudby")]
 position = Vector2(160, 0)
+
+[node name="FireflyManager" parent="." unique_id=580464065 instance=ExtResource("10_rpaqw")]
+
+[node name="Firefly" parent="FireflyManager" unique_id=352389905 instance=ExtResource("10_yf0ng")]
+position = Vector2(-82, 102)
+
+[node name="Firefly2" parent="FireflyManager" unique_id=632847897 instance=ExtResource("10_yf0ng")]
+position = Vector2(-95, 59)
+
+[node name="Firefly3" parent="FireflyManager" unique_id=1311071767 instance=ExtResource("10_yf0ng")]
+position = Vector2(-44, 111)

@@ -238,7 +238,14 @@ func jump_to_platform(platform: JumpPlatform):
 	tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
 	await tween.finished
 	
+	if current_platform:
+		get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", false)
+	else:
+		get_tree().call_group("Height" + str(0), "disable_static_body", false)
+	
 	current_platform = platform
+	
+	get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", true)
 	
 	velocity = Vector2.ZERO
 	
@@ -259,7 +266,14 @@ func jump_down(platform: JumpPlatform):
 	
 	velocity = Vector2.ZERO
 	
-	current_platform = platform if platform.height_level > 0 else null
+	get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", false)
+	
+	if platform.height_level > 0:
+		current_platform = platform
+		get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", true)
+	else:
+		current_platform = null
+		get_tree().call_group("Height" + str(0), "disable_static_body", true)
 	
 	update_height_layer()
 	

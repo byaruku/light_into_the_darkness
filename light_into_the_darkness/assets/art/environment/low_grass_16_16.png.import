@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k3vdooqcede0"
-path="res://.godot/imported/Ext_A2.png-453f2eb5ba5b1c1ace14b117ffa3772d.ctex"
+uid="uid://bmwygi337w4xy"
+path="res://.godot/imported/low_grass_16_16.png-3e679a35cea38e476f1a537d4132bd62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/environment/Ext_A2.png"
-dest_files=["res://.godot/imported/Ext_A2.png-453f2eb5ba5b1c1ace14b117ffa3772d.ctex"]
+source_file="res://assets/art/environment/low_grass_16_16.png"
+dest_files=["res://.godot/imported/low_grass_16_16.png-3e679a35cea38e476f1a537d4132bd62.ctex"]
 
 [params]
 

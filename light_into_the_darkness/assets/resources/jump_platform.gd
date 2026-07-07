@@ -14,6 +14,8 @@ const HEIGHT_TO_LAYER = {
 
 
 func _ready():
+	self.add_to_group("Height" + str(height_level))
+	
 	var body := $StaticBody2D
 	
 	if body:
@@ -30,7 +32,14 @@ func _ready():
 		landing.set_collision_layer_value(i, false)
 	landing.set_collision_layer_value(HEIGHT_TO_LAYER[height_level], true)
 	
+	disable_static_body(false)
+	
 
 
 func get_landing_position() -> Vector2:
 	return $Marker2D.global_position
+
+
+func disable_static_body(disable: bool):
+	$StaticBody2D/CollisionShape2D.disabled = disable
+	$Outline/CollisionPolygon2D.disabled = !disable

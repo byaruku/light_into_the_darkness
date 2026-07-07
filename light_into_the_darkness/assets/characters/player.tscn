@@ -19,9 +19,9 @@ mask_name = "Freude"
 mask_type = 1
 metadata/_custom_type_script = "uid://nvpfbw77fe0t"
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysycn"]
-radius = 2.0
-height = 10.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d62ch"]
+radius = 3.0
+height = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ipexx"]
 radius = 80.0
@@ -718,8 +718,9 @@ hframes = 6
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
+position = Vector2(0, 1)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_ysycn")
+shape = SubResource("CapsuleShape2D_d62ch")
 
 [node name="ScareArea" type="Area2D" parent="." unique_id=1316055121]
 collision_layer = 0

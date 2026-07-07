@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cjbjxwibnud8v" path="res://assets/characters/npc_interactable.gd" id="3_bv0pn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysycn"]
-radius = 4.0
+radius = 3.0
 height = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvr7h"]
@@ -131,6 +131,7 @@ frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
 position = Vector2(0, -2)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ysycn")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=537755715]
