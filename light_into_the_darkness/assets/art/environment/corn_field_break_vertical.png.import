@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fecqoqrnyj61"
-path="res://.godot/imported/Ext_Obj_022.png-b45f3462f2357c8a4b1fcb6a51839756.ctex"
+uid="uid://cjtyln62xju6n"
+path="res://.godot/imported/corn_field_break_vertical.png-7dfeba22f6b3a49d8d61a4be3d2d1095.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/environment/Ext_Obj_022.png"
-dest_files=["res://.godot/imported/Ext_Obj_022.png-b45f3462f2357c8a4b1fcb6a51839756.ctex"]
+source_file="res://assets/art/environment/corn_field_break_vertical.png"
+dest_files=["res://.godot/imported/corn_field_break_vertical.png-7dfeba22f6b3a49d8d61a4be3d2d1095.ctex"]
 
 [params]
 

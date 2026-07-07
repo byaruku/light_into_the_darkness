@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="3_g0a82"]
 [ext_resource type="PackedScene" uid="uid://dtkoc5w80bcpb" path="res://assets/characters/npc_hikari.tscn" id="4_kxu4k"]
 [ext_resource type="AudioStream" uid="uid://bkvfu0r4rx24g" path="res://assets/audio/music/Prototyp_Main_Area.mp3" id="4_up3ox"]
+[ext_resource type="PackedScene" uid="uid://da2fudnmw43ql" path="res://assets/characters/npc_ichika.tscn" id="6_g0a82"]
 
 [sub_resource type="Gradient" id="Gradient_kxu4k"]
 
@@ -113,6 +114,15 @@ visibility_layer = 4
 light_mask = 4
 visibility_layer = 4
 position = Vector2(0, -110)
+
+[node name="NPC_Ichika" parent="." unique_id=1166907774 instance=ExtResource("6_g0a82")]
+position = Vector2(-82, -49)
+
+[node name="NPC_Daichi" parent="." unique_id=583998857 instance=ExtResource("4_kxu4k")]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(74, -48)
+yarn_node = "Dialog_Daichi1"
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("3_g0a82")]
 position = Vector2(-165, -52)

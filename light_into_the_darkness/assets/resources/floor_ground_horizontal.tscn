@@ -34,6 +34,13 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1733986032]
 shape = SubResource("RectangleShape2D_xfnqy")
 
+[node name="Outline" type="StaticBody2D" parent="." unique_id=488755549]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Outline" unique_id=1733017248]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
 [node name="LandingBody" type="StaticBody2D" parent="." unique_id=462227031]
 script = ExtResource("2_53hk6")
 

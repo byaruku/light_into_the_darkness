@@ -1,8 +1,8 @@
 extends Node
 
-var master_volume := 1.0
-var music_volume := 1.0
-var sfx_volume := 1.0
+var master_volume := 100.0
+var music_volume := 100.0
+var sfx_volume := 100.0
 
 var fullscreen := true
 var vsync := true
@@ -84,19 +84,19 @@ func load_settings():
 	master_volume = config.get_value(
 		"audio",
 		"master",
-		1.0
+		100.0
 	)
 	
 	music_volume = config.get_value(
 		"audio",
 		"music",
-		1.0
+		100.0
 	)
 	
 	sfx_volume = config.get_value(
 		"audio",
 		"sfx",
-		1.0
+		100.0
 	)
 	
 	fullscreen = config.get_value(

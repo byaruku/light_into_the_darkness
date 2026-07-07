@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c7jrywen0n88l"]
+
+[ext_resource type="Script" uid="uid://dfyjn64yfe0sy" path="res://assets/resources/breakable_object.gd" id="1_38jnt"]
+[ext_resource type="Texture2D" uid="uid://d0kx0sc8ppaiq" path="res://assets/art/environment/corn_field_break_horizontal.png" id="2_38jnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybp44"]
+size = Vector2(20, 7)
+
+[node name="BreakableCorn" type="StaticBody2D" unique_id=2015296434]
+script = ExtResource("1_38jnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1528850013]
+texture_filter = 1
+texture = ExtResource("2_38jnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182703706]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_ybp44")

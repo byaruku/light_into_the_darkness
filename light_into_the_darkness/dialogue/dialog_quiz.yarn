@@ -1,0 +1,35 @@
+title: StartQuiz
+---
+<<declare $question = "text">>
+<<declare $answer0 = "text">>
+<<declare $answer1 = "text">>
+<<declare $answer2 = "text">>
+<<declare $answer3 = "text">>
+
+<<declare $correct = 0>>
+<<declare $selected = -1>>
+
+Ichika: {$question}
+-> {$answer0}
+	<<set $selected to 0>>
+	<<jump Result>>
+-> {$answer1}
+	<<set $selected to 1>>
+	<<jump Result>>
+-> {$answer2}
+	<<set $selected to 2>>
+	<<jump Result>>
+-> {$answer3}
+	<<set $selected to 3>>
+	<<jump Result>>
+===
+
+
+title: Result
+---
+<<if $selected is $correct>>
+	Ichika: Das ist richtig.
+<<else>>
+	Ichika: Leider falsch.
+<<endif>>
+===

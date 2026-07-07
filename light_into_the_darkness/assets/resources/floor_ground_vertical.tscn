@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cyh8b43sqtp5s"]
+
+[ext_resource type="Script" uid="uid://dbp0s03mkf8rx" path="res://assets/resources/jump_platform.gd" id="1_m6h3n"]
+[ext_resource type="Script" uid="uid://cqcqt1hpoq0rk" path="res://assets/resources/platform_landing.gd" id="2_qp8lp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53hk6"]
+load_path = "res://.godot/imported/basic_colors.png-6d97a44ec8c769853aeca66149e3e63f.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfnqy"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bndx"]
+size = Vector2(16, 16)
+
+[node name="FloorGround" type="Node2D" unique_id=325954821]
+script = ExtResource("1_m6h3n")
+height_level = 0
+allow_jump_on = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1725102457]
+visible = false
+modulate = Color(1, 1, 1, 0.39215687)
+texture = SubResource("CompressedTexture2D_53hk6")
+hframes = 2
+vframes = 2
+frame = 3
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=557944401]
+position = Vector2(0, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1479203135]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1733986032]
+shape = SubResource("RectangleShape2D_xfnqy")
+
+[node name="Outline" type="StaticBody2D" parent="." unique_id=488755549]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Outline" unique_id=1733017248]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
+[node name="LandingBody" type="StaticBody2D" parent="." unique_id=462227031]
+script = ExtResource("2_qp8lp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandingBody" unique_id=2124454194]
+shape = SubResource("RectangleShape2D_1bndx")
