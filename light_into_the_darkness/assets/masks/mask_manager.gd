@@ -33,7 +33,7 @@ func use_mask(mask: MaskAbility):
 	
 	while active_mask_time_left > 0:
 		await get_tree().process_frame
-		if GameManager.state_machine.current_state is not DialogueState:
+		if GameManager.state_machine.current_state is FreeRoamState:
 			active_mask_time_left -= get_process_delta_time()
 	
 	mask.deactivate(player)

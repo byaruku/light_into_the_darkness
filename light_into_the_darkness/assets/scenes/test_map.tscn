@@ -88,7 +88,7 @@ tile_set = SubResource("TileSet_v6f10")
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_cw122")]
 position = Vector2(-160, 0)
-portal_id = 2
+portal_id = 4
 spawn_marker = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=765623854]

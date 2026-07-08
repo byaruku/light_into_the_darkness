@@ -5,6 +5,9 @@ extends Node
 @export_file("*.tscn") var town_scene: String
 @export_file("*.tscn") var memory_1_scene: String
 @export_file("*.tscn") var memory_2_scene: String
+@export_file("*.tscn") var memory_3_scene: String
+@export_file("*.tscn") var test_scene: String
+@export_file("*.tscn") var test_memory_scene: String
 
 @export var center_view: Vector2 = Vector2(80, 72)
 
@@ -24,6 +27,9 @@ func _ready():
 	scene_paths[Portal.Destination.TOWN] = town_scene
 	scene_paths[Portal.Destination.MEMORY_1] = memory_1_scene
 	scene_paths[Portal.Destination.MEMORY_2] = memory_2_scene
+	scene_paths[Portal.Destination.MEMORY_3] = memory_3_scene
+	scene_paths[Portal.Destination.TEST] = test_scene
+	scene_paths[Portal.Destination.TEST_MEMORY] = test_memory_scene
 
 
 func return_to_main_menu():

@@ -1102,7 +1102,7 @@ tile_set = SubResource("TileSet_v6f10")
 [node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_luc0d")]
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("2_osiof")]
-portal_id = 1
+portal_id = 5
 spawn_marker = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=1993115200]

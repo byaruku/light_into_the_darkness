@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cqcqt1hpoq0rk" path="res://assets/resources/platform_landing.gd" id="2_vjbfl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uv1pw"]
-radius = 9.0
+radius = 8.0
 height = 24.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d62ch"]

@@ -7,7 +7,8 @@
 script = ExtResource("1_af6ij")
 main_menu_packed = ExtResource("2_af6ij")
 town_scene = "uid://c4hyx1pkcoxx4"
-memory_1_scene = "uid://ccjo8cdqdc021"
-memory_2_scene = "uid://d0xljghkfa0h5"
+memory_2_scene = "uid://bnhntpm7tdkm1"
+test_scene = "uid://d0xljghkfa0h5"
+test_memory_scene = "uid://ccjo8cdqdc021"
 
 [node name="CurrentSceneContainer" type="Node" parent="." unique_id=1140696747]

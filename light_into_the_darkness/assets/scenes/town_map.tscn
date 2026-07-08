@@ -126,7 +126,7 @@ yarn_node = "Dialog_Daichi1"
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("3_g0a82")]
 position = Vector2(-165, -52)
-target_portal_id = 1
+target_portal_id = 2
 spawn_marker = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=1757118151]
