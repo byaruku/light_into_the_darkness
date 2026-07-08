@@ -4,7 +4,7 @@ when: always
 Mann: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
 ===
 
-title: Old_Friend
+title: Dialog_Daichi1
 when: once
 ---
 Ein Mann, Mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
@@ -47,23 +47,25 @@ title: Old_Friend_Unknown
 	-> Was heißt hier handeln?
 		<<add_charge 0>>
 		Maigo: Ich bin hier im Nirgendwo gestrandet und rede mit einem Fremden, der in Rätseln spricht.
-		Mann: Es sind nur so lange Rätsel, bis du Licht ins Dunkle bringst, Maigo.
+		Mann: Es sind nur so lange Rätsel, bist du Licht ins Dunkle bringst, Maigo.
 		<<jump Old_Friend_Maigo>>
 ===
 
 title: Old_Friend_Maigo
 ---
 -> Maigo... das ist mein Name. Glaube ich.
-	Mann: So haben wir dich immer gerufen, wenn wir 'Verstecken' spielten.
-	<<jump Old_Friend_Memory>>
--> Maigo? Was bedeutet das alles?
-	<<jump Old_Friend_Memory>>
+	Mann: So habe ich dich immer gerufen, wenn wir draußen 'Verstecken' spielten. Wir haben viel zusammen erlebt. Kleine und große Abenteuer.
+	Maigo: Wie heißt du eigentlich?
+	Mann: Ich bin Daichi.
+	Maigo: Verflucht nochmal, ich erinnere mich nicht an dich. 'Abenteuer' sagtest du?
+	Daichi: Ich weiß noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, ...
+	Diachi: ... die Vögel geheime Spione, Baumhäuser unsere Burgen... Wir haben ständig versucht den anderen zu übertrumpfen...
+	Daichi: ... und je älter wir wurden, desto größer und gefährlicher wurden unsere Abenteuer... Du wirst bald sehen, was ich meine.
+	Daichi: Aber sei beruhigt, ich werde dich ein wenig an die Hand nehmen...
+	<<change_scene 1>>
 ===
 
-title: Old_Friend_Memory
+title: After_Memory
 ---
-Mann: Wir haben zusammen viel erlebt. Kleine und große Abenteuer.
-Maigo: Abenteuer sagst du?
-Mann: Ich weiß noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, die Vögel geheime Spione, die Baumhäuser unsere Burgen...
-<<change_scene 1>>
+Daichi: Bitte gib nicht auf Maigo, ich möchte mit dir noch viel mehr erleben. Beste Freunde lassen sich nie im Stich!
 ===

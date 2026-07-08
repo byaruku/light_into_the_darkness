@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarn_spinner.yarn_file"
+type="Resource"
+uid="uid://bp6lclfodtk8t"
+path="res://.godot/imported/dialog_2_Hikari.yarn-0ed0c4ef7ce25aa13e37fd1d45105114.res"
+
+[deps]
+
+source_file="res://dialogue/dialog_2_Hikari.yarn"
+dest_files=["res://.godot/imported/dialog_2_Hikari.yarn-0ed0c4ef7ce25aa13e37fd1d45105114.res"]
+
+[params]
+

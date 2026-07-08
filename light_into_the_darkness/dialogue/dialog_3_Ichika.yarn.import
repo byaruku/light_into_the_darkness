@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarn_spinner.yarn_file"
+type="Resource"
+uid="uid://drfg5gu8slq4m"
+path="res://.godot/imported/dialog_3_Ichika.yarn-a5882411c743e01c2e28b553cf59cb22.res"
+
+[deps]
+
+source_file="res://dialogue/dialog_3_Ichika.yarn"
+dest_files=["res://.godot/imported/dialog_3_Ichika.yarn-a5882411c743e01c2e28b553cf59cb22.res"]
+
+[params]
+
