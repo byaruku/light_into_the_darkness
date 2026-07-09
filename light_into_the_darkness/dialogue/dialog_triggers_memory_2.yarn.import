@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarn_spinner.yarn_file"
+type="Resource"
+uid="uid://723uhi28wgy6"
+path="res://.godot/imported/dialog_triggers_memory_2.yarn-d627761b4b11c70f2aa58a2a5b375f12.res"
+
+[deps]
+
+source_file="res://dialogue/dialog_triggers_memory_2.yarn"
+dest_files=["res://.godot/imported/dialog_triggers_memory_2.yarn-d627761b4b11c70f2aa58a2a5b375f12.res"]
+
+[params]
+

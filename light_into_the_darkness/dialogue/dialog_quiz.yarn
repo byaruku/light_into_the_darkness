@@ -24,7 +24,6 @@ Ichika: {$question}
 	<<jump Result>>
 ===
 
-
 title: Result
 ---
 <<if $selected is $correct>>

@@ -1,4 +1,76 @@
-title: Start
+title: Dialog_Ichika
+when: once
 ---
+Eine Frau, Anfang 30, blickt dich neugierig an, sie strahlt.
 
+Frau: Maigo! Ich freue mich so dich zu sehen!
+*Sie gibt dir eine lange, innige Umarmung*
+Frau: Es ist so lange her, dass wir miteinander sprechen konnten. Ich... ich habe jeden Tag dafür gebetet.
+Maigo: Ich... ich habe leider keine Ahnung, wer du bist...
+Frau: Hier ist keine Begegnung zufällig. Ich muss zugeben, es ist schmerzhaft, dich diese Frage stellen zu hören.
+-> Mein bester Freund, meine kleine Schwester...
+	Maigo: Ihnen bin ich schon begegnet. Es ist frustrierend nicht zu wissen, wer du bist. Aber du bist wichtig.
+	Frau: Das glaube ich. Aber das Licht naht. Ich weiß, du spürst das auch, Maigo. Ist denn alles, was du bis hierhin erlebt hast nur schlecht? Erinnere dich an das Gute.
+	<<jump Ichika_Keyword>>
+-> Ich kann das alles nicht mehr hören.
+	<<add_charge 0>>
+	Maigo: Ich wünschte dieser Alptraum hätte ein Ende!
+	Frau: Alptraum sagst du? Mir scheint du erwehrst dich noch gegen die Erkenntnis, dass das hier dein Weg zum Licht sein kann.
+	Maigo: Jede Gefahr fühlt sich so echt an... als hätte ich sie schon einmal erlebt und sei gezwungen sie noch einmal zu durchleben. Ist das nicht das, was man einen „Alptraum“ nennt?
+	Frau: Alpträume können dir helfen Emotionen zu verarbeiten... was zunächst lästig scheint, hilft dir am Ende. Ich bin mir sicher, dass es hier auch so ist.
+	-> Ich glaube ich erlebe Situationen aus meiner Vergangenheit.
+		Frau: Du meinst... Erinnerungen?
+		Maigo: Ja, genau. Stimmt!
+		Frau: ‚Erinnerungen‘. Das ist das Stichwort. Du bringst Licht ins Dunkle.
+		<<jump Ichika_Our_Part>>
+	-> Warum sollte man mich zwingen das noch einmal zu erleben?
+		Frau: Ist denn alles, was du bis hierhin erlebt hast nur schlecht, Maigo? Erinnere dich an das Gute.
+		<<jump Ichika_Keyword>>
 ===
+
+title: Ichika_Keyword
+---
+-> Es waren wirklich ein paar schöne... Erinnerungen dabei.
+	<<add_charge 1>>
+	Frau: Siehst du! ‚Erinnerungen‘. Das ist das Stichwort. Du bringst Licht ins Dunkle.
+-> Ich bin gerade fast in einem Fluss ertrunken...
+	<<add_charge 0>>
+	Maigo: Du hast leicht reden.
+	Frau: Ich verstehe deinen Frust, Maigo. Aber die Vergangenheit ist schon geschrieben. Du kannst nur die Zukunft beeinflussen.
+	<<jump Ichika_Our_Part>>
+===
+
+title: Ichika_Our_Part
+---
+Maigo: Das heißt... alles, was ich erlebe, ist Teil meiner Vergangenheit. Ihr seid Teil meiner Vergangenheit.
+Frau: Genauso wie du Teil unserer bist. Und wir wollen dich nicht loslassen Maigo. Wir glauben an eine gemeinsame Zukunft.
+Maigo: Gibt es für mich einen Weg, der mich von dieser seltsamen Ebene in die Realität zurückführt?
+Frau: Wenn du entschlossen bist, gibt es keine verschlossenen Türen für dich.
+-> Ich kann also wieder zu mir finden? Zu euch?
+	<<add_charge 1>>
+	Maigo: Du glaubst nicht, wie glücklich mich das gerade macht!
+	Frau: Ich würde alles dafür geben, dich wieder in den Armen zu halten, aber diesen Weg musst du allein gehen. Wir warten auf dich.
+	<<jump Ichika_Near>>
+-> Du sprichst schon wieder in Rätseln, Fremde.
+	<<add_charge 0>>
+	Maigo: Ich verliere langsam meine Geduld!
+	Frau: Du bist schon weit gekommen. Mache dir deine Gefühle zu Nutze, Maigo. Kämpfe wenn du kämpfen musst, aber sei auch dankbar, wenn du auf dein Leben zurückblickst.
+	Maigo: Ich versuche es. Aber es ist nicht leicht.
+	<<jump Ichika_Near>>
+===
+
+title: Ichika_Near
+---
+Maigo: Wir waren uns sehr nah?
+Frau: Maigo, nimm noch ein letztes Mal all deine Kräfte zusammen und dir wird sich einiges offenbaren. Du hast Rätsel immer geliebt. Mir gelang es nur selten dich darin zu schlagen.
+<<change_scene 3>>
+===
+
+title: After_Memory_Ichika
+---
+Frau: Du hast es geschafft!
+*Sie umarmt dich innig und flüstert in dein Ohr*
+Frau: Lass dich nun vom Licht zurückbringen zu uns, Genki.
+Maigo: Mein... Name ist... Genki. Und du bist meine Frau Ichika. Ich... ich erinnere mich!
+===
+
