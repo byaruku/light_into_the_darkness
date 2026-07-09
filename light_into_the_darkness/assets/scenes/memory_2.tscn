@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cyh8b43sqtp5s" path="res://assets/resources/floor_ground_vertical.tscn" id="14_dg584"]
 [ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground_horizontal.tscn" id="15_71p8w"]
 [ext_resource type="PackedScene" uid="uid://qda5bnu13g1c" path="res://assets/resources/jumpable_two_car_wheel.tscn" id="16_dwuyh"]
+[ext_resource type="PackedScene" uid="uid://bxkgop2wctqvx" path="res://assets/resources/trigger_area.tscn" id="17_mt1it"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfy5x"]
 texture = ExtResource("1_xyv71")
@@ -2483,3 +2484,16 @@ position = Vector2(0, 13)
 [node name="FloorGround3" parent="Jumpable/CarWheel108" unique_id=1972883905 instance=ExtResource("15_71p8w")]
 position = Vector2(-20, 1)
 scale = Vector2(1, 1.5)
+
+[node name="TriggerArea" parent="." unique_id=1692687319 instance=ExtResource("17_mt1it")]
+position = Vector2(120, 1432)
+node = "Labyrinth_Exit"
+one_shot = false
+has_collision = true
+
+[node name="TriggerArea2" parent="." unique_id=673106847 instance=ExtResource("17_mt1it")]
+position = Vector2(-8, 28)
+scale = Vector2(1, 1.5)
+node = "Labyrinth_Exit"
+one_shot = false
+has_collision = true
