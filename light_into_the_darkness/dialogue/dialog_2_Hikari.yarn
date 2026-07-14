@@ -34,7 +34,7 @@ Mädchen: Klein? Du bist echt gemein. Jetzt sag mir nicht, du hast auch noch mei
 	Maigo: Ich bin gerade einfach nur froh, dass hier Menschen sind, die mir helfen können.
 	Mädchen: Du bist nicht wirklich allein, weißt du? Deine Erinnerungen begleiten dich. Und sie bringen dich langsam zum Licht. Daran glaube ich zumindest...
 	Maigo: Ich hoffe du hast recht... Wie heißt du eigentlich?
-	Mädchen: Ich bin Hiakri.
+	Mädchen: Ich bin Hikari.
 	Hikari: Du erinnerst dich wirklich gar nicht an unsere Vergangenheit zusammen? Armer Maigo...
 	<<jump Hikari_Forgotten>>
 ===
