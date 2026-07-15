@@ -1,0 +1,227 @@
+[
+    {
+        "question": ["Zwei Menschen tragen dieselbe Last. Einer legt sie ab, der andere hält sie fest. Was unterscheidet sie?"],
+        "options": [
+            "Die Kraft",
+            "Die Vergebung",
+            "Das Alter",
+            "Die Erfahrung"
+        ],
+        "answer": "1"
+    },
+    {
+        "question": ["Was wird größer, je mehr man es verschenkt?"],
+        "options": [
+            "Der Besitz",
+            "Die Liebe",
+            "Die Zeit",
+            "Die Energie"
+        ],
+        "answer": "1"
+    },
+    {
+        "question": ["Was hält Menschen häufiger zurück als verschlossene Türen?"],
+        "options": [
+            "Der Regen",
+            "Die Müdigkeit",
+            "Die Angst",
+            "Das Pech"
+        ],
+        "answer": "2"
+    },
+    {
+        "question": ["Was kann man nie wieder zurücknehmen, obwohl es unsichtbar ist?"],
+        "options": [
+            "Die Gedanken",
+            "Die Worte",
+            "Die Erinnerungen",
+            "Die Träume"
+        ],
+        "answer": "1"
+    },
+    {
+        "question": ["Welcher Reichtum wird jedem geschenkt, aber niemand weiß, wie viel er davon besitzt?"],
+        "options": [
+            "Der Mut",
+            "Die Zeit",
+            "Die Hoffnung",
+            "Das Talent"
+        ],
+        "answer": "1"
+    },
+    {
+        "question": [
+            "Bevor du dich auf deine Weltreise begibst, musst du noch einige wichtige Besorgungen machen.",
+            "Du brauchst Rasierzeug und einen kleinen Koffer. Für den Einkauf und das Taxi hast du eine Ein-Pfund-Note mitgenommen.",
+            "Vier Viertelpennys ergeben einen Penny (1 d), zwei halbe Pennys ergeben ebenfalls einen Penny, 12 Pennys ergeben einen Schilling (1 s), und 20 Schillinge ergeben ein Pfund (£ 1).",
+            "Es kosten drei Rasierpinsel: 5 d und 1 halber Penny pro Pinsel, eine Rasiercreme: 8 d und ein Viertelpenny, ein kleiner Koffer: 10 s und 9 d und das Taxi: 1 s und 6 d.",
+            "Wie viel bleibt dir von dem Pfund übrig?"
+        ],
+        "options": [
+            "6 s, 2 d und 1 halber Penny",
+            "5 s, 11 d und 1 Viertelpenny",
+            "5 s, 8 d und 1 Viertelpenny",
+            "5 s, 9 d und 1 halber Penny"
+        ],
+        "answer": "2"
+    },
+    {
+        "question": [
+            "Goku war schon immer eine Art Überflieger gewesen, und jetzt war er im wahrsten Sinner des Wortes in neue Höhen aufgestiegen, ...",
+            "... denn er hatte einen Wettbewerb gewonnen, bei dem es darum ging, wer am höchsten Fliegen konnte.",
+            "Der Drittplatzierte hatte eine Höhe von 8 Metern über den Boden erreicht. Der Zweitplatzierte hatte 20 Prozent mehr erreicht, und Goku hatte dessen Ergebnis wiederum um 25 Prozent übertroffen.",
+            "Welche Höhe hat Goku erreicht?"
+        ],
+        "options": [
+            "12 Metern",
+            "13 Metern",
+            "14 Metern",
+            "15 Metern"
+        ],
+        "answer": "0"
+    },
+    {
+        "question": [
+            "Beniko hatte mit ihren reichen Schwestern Ibuki und Chibiusa eifrig die Welt bereist.",
+            "Doch der ständige Wechsel von Stadt zu Stadt und Land zu Land hatte ihr Zeitgefühl völlig durcheinandergebracht, und sie wusste nicht mehr, welcher Tag gerade war.",
+            "Sie fragte Chibiusa danach, und ihre schelmische Schwester gab ihr folgende Antwort:",
+            "'Der Tag nach vorgestern war Donnerstag, und der Tag vor übermorgen ist Samstag. Weißt du jetzt welchen Tag wir haben?'",
+            "Doch das brachte Beniko nur noch mehr durcheinander. Weißt du, um welchen Tag es sich handelt?"
+        ],
+        "options": [
+            "Donnerstag",
+            "Freitag",
+            "Samstag",
+            "Sonntag"
+        ],
+        "answer": "1"
+    },
+    {
+        "question": [
+            "Detectiv Conan und Daichi hatten auf dem Schiff gerade ausgibig zu Mittag gegessen. Da die See etaws unruhig war, hatte keiner der beiden Lust aufzustehen und den Kaffee zu holen.",
+            "Conan schlug vor, das Problem mit zwei Würfeln zu lösen:",
+            "'Wenn du mindestens eine Fünf oder Sechs würfelst, dann holst du den Kaffee, ansonsten mache ich es - ist das fair?'",
+            "Daichi nickte selbstgefällig, denn er dachte sich:",
+            "'Da ein Würfel sechs Ziffern hat, beträgt die Wahrscheinlichkeit, dass ich eine Fünf oder Sechs würfle, nur eins zu drei, und das erhöht meine Chancen.'",
+            "Doch wie hoch ist die Wahrscheinlichkeit, dassmindestens einer von zwei Würfeln auf einer Fünf oder Sechs landet, wirklich? Hat Daichi recht?"
+        ],
+        "options": [
+            "Ja, sie beträgt eins zu drei.",
+            "Nein, sie beträgt zwei zu drei.",
+            "Nein, sie beträgt eins zu neun.",
+            "Nein, sie beträgt fünf zu neun."
+        ],
+        "answer": "3"
+    },
+    {
+        "question": [
+            "Detectiv Conan machte sich kurze Notizen drüber, was du auf deiner Reise tatst und vor allem, wen du trafst. Das war nötig für den Fall, ...",
+            "... dass diese Bekanntschaften in einem Prozess eine Rolle spielten, der stattfinden könnte, nachdem es ihm endlich gelungen sein würde, ...",
+            "dich nach Nagasaki zu bringen und der Justiz zu übergeben.",
+            "Seine Notizen schrieb Conan in einem Code nieder, sodass niemand, der sie zufällig fand, herausfinden konnte, worum es ging.",
+            "Wenn DAICHI = ECLGMO und HIKARI = IKNEWO war, wie lautete dann der Code für dich in den Notizen?"
+        ],
+        "options": [
+            "NCLKT",
+            "NBJHP",
+            "NCJIP",
+            "HCLCI"
+        ],
+        "answer": "0"
+    },
+    {
+        "question": [
+            "Während Detectiv Conan dich und Daichi auf einer belebten Straße heimlich verfolgte, ...",
+            "... kam er ganz unerwartet mit einem Fremden ins Gespräch und stand ein paar Minuten mit ihm vor einem Café. Seine Zielperson verlor er derweil aus den Augen.",
+            "Um sich euch wieder zu nähren, lief er euch in einem Tempo von zehn Kilometern pro Stunde hinterher.",
+            "Doch nach einem Kilometer im Dauerlauf konnte er euch noch immer weder sehen noch hören.",
+            "Da er inzwischen Durst bekommen hatte, ging er traurig zu dem Café zurück, um etwas zu trinken.",
+            "Seine Geschwindigkeit beim Gehen betrug vier Kilometer pro Stunde. Wie lange war er also insgesamt gelaufen und gegangen?"
+        ],
+        "options": [
+            "21 Minuten",
+            "90 Minuten",
+            "40 Minuten",
+            "36 Minuten"
+        ],
+        "answer": "0"
+    },
+    {
+        "question": [
+            "Der ständige Druck durch den Zeitplan sowie die verschiednen Missgeschicke, die auf der Reise passierten, forderten ihren Tribut:",
+            "In immer neuen Betten und mit zahllosen Gedanken im Kopf konntest du zuweilen nicht einschlafen.",
+            "Eines Nachts beschlossst du daher, es mit der bewährten Methode des Schäfchenzahlens zu versuchen.",
+            "Aus der folgenden Zahlenreihe wird ersichtlich, wie viele Schäfchen du jeweils ohne Unterbrechung zähltest, bevor du einschliefst. Kennst du die nächste Zahl? 5, 11, 23, 47, 95."
+        ],
+        "options": [
+            "189",
+            "191",
+            "193",
+            "195"
+        ],
+        "answer": "1"
+    },
+    {
+        "question": [
+            "Im Verlauf des 19. Jahrunderts wurde die Idee der Weltreise immer populärer und beschäftigte die Fantasie zahlreicher unerschrockener Menschen.",
+            "Die erste rein touristische Weltreise fand 1872 statt, in dem Jahr, indem Yukichi Fukuzawa 'Gakumon no susume' ('Aufruf zum Lernen') veröffentlichte.",
+            "In der Meiji-Ära entstand in Windeseile immer neue Schienenstrecken, und das Reisen der Bahn wurde zu einem Teil des täglichen Lebens.",
+            "Ladenbesitzer Akindo beschloss, den Sommer im Badeort Okinawa zu verbringen.",
+            "Er wollte sehen, ob das Geschäft mit den Touristen dort lohnenswert genug war, um sein Imperium zu erweitern und einen zusätzlichen Laden zu eröffnen.",
+            "Am 2. Juni bestieg er den Zug und kehrte 79 Tage später zurück. An welchem Datum war das?"
+        ],
+        "options": [
+            "19. August",
+            "20. August",
+            "21. August",
+            "22. August"
+        ],
+        "answer": "1"
+    },
+    {
+        "question":[
+            "Die Elektrizität verbreitete sich in der Meiji-Ära mit großer Schnelligkeit. Gegen Ende des 19. Jahrhunderts bekam Tokio eine elektrische Straßenbeleuchtung.",
+            "Geht dir ein Licht auf, sodass du folgende Denksportaufgabe lösen kannst?",
+            "Am 3. September wurden 27 Straßenlaternen installiert. Das waren mehr als die 16, die am 2. August installiert wurden, aber weniger als die 54 vom 9. Juni.",
+            "Wie viele Laternen wurden am 5. September installiert?"
+        ],
+        "options": [
+            "27",
+            "45",
+            "49",
+            "52"
+        ],
+        "answer": "1"
+    },
+    {
+        "question": [
+            "Nachdem du im Reform Club eine ausgefallene Wette über 20000 Yen abgeschlossen hattest, bot dir ein Mitglied des Clubs eine weitere Wette an.",
+            "Sie war ganz einfach: Wenn du annahmst, solltest du 1000 Yen setzen, dann mit zwei Würfeln würfeln, und wenn die Summe der beiden gewürfelten Zahlen größer als sieben war, ...",
+            "... hättest du 2000 Yen gewonnen. Wenn nicht, wäre sein Einsatz verloren. Hast du eine Gewinnchance von 50 Prozent oder mehr, wenn du die Wette annimmst?"
+        ],
+        "options": [
+            "Ja, sie beträgt eins zu zwei.",
+            "Nein, sie beträgt fünf zu achtzehn.",
+            "Nein, sie beträgt fünf zu zwölf.",
+            "Nein, sie beträgt sieben zu zwölf."
+        ],
+        "answer": "3"
+    },
+    {
+        "question": [
+            "Kaum hatte Daichi das Haus seines neuen Freundes zum ersten Mal betreten, da war er auch schon eingeschüchtert durch die extreme Ordnung in deinem Leben.",
+            "Jede Hose, jeder Mantel, jede Weste hatte eine eigene Nummer. Und diese Nummer fand sich dann auch in einem speziellen Verzeichnis wieder, in dem aufgeführt war, ...",
+            "... wann das entsprechende Kleidungsstück weggelegt oder entnommen worden war und wann es das nächste Mal getragen werden sollte.",
+            "Im Gegensatz dazu waren die Sachen des soeben angekommenen Daichi bunt durcheinander in mehreren Taschen verstaut, die darauf warteten ausgepackt zu werden.",
+            "In seinem Sockenbeutel befanden sich sieben Paar blaue Socken, sechs Paar graue Sochen und zwölf Paar schwarze Socken.",
+            "Wenn er die Sockenpaare ohne hinzuschauen aus dem Beutel zog, wie viele Paare musste er dann herausziehen, um sicherzugehen, dass von jeder Farbe mindestens ein Paar dabei war?"
+        ],
+        "options": [
+            "14 Paare",
+            "19 Paare",
+            "20 Paare",
+            "25 Paare"
+        ],
+        "answer": "2"
+    }
+]
