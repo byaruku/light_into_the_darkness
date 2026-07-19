@@ -1,7 +1,7 @@
 class_name TriggerArea
 extends Area2D
 
-@export var node: String
+@export var yarn_node: String
 @export var one_shot := true
 @export var active := true
 @export var has_collision := false
@@ -11,10 +11,10 @@ var triggered := false
 
 func _ready() -> void:
 	if has_collision:
-		collision_layer = 1
+		$StaticBody2D/CollisionShape2D.disabled = false
 	else:
-		collision_layer = 0
-	collision_mask = 0
+		$StaticBody2D/CollisionShape2D.disabled = true
+	collision_mask = 1
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -27,5 +27,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		triggered = true
 
-		if node != "":
-			DialogueManager.dialogue_runner.start_dialogue(node)
+		if yarn_node != "":
+			DialogueManager.start_dialogue(yarn_node)
+			await DialogueManager.on_dialog_finished

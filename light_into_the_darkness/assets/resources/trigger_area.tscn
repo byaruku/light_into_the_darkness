@@ -5,11 +5,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cueys"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij7ks"]
+size = Vector2(14, 14)
+
 [node name="TriggerArea" type="Area2D" unique_id=1692687319]
-collision_mask = 0
 script = ExtResource("1_kdn6p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309611052]
 shape = SubResource("RectangleShape2D_cueys")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=41940096]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1386526366]
+shape = SubResource("RectangleShape2D_ij7ks")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

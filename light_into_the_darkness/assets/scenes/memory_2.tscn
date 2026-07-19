@@ -1091,6 +1091,19 @@ data = SubResource("Resource_cdkxu")
 [node name="NPC_Memory_Hikari" parent="." unique_id=856511750 instance=ExtResource("10_n2tq2")]
 position = Vector2(648, 328)
 
+[node name="TriggerArea" parent="." unique_id=1692687319 instance=ExtResource("17_mt1it")]
+position = Vector2(120, 1432)
+yarn_node = "Labyrinth_Exit"
+one_shot = false
+has_collision = true
+
+[node name="TriggerArea2" parent="." unique_id=673106847 instance=ExtResource("17_mt1it")]
+position = Vector2(-8, 28)
+scale = Vector2(1, 1.5)
+yarn_node = "Labyrinth_Exit"
+one_shot = false
+has_collision = true
+
 [node name="Breakable" type="Node2D" parent="." unique_id=1932325610]
 y_sort_enabled = true
 
@@ -2484,16 +2497,3 @@ position = Vector2(0, 13)
 [node name="FloorGround3" parent="Jumpable/CarWheel108" unique_id=1972883905 instance=ExtResource("15_71p8w")]
 position = Vector2(-20, 1)
 scale = Vector2(1, 1.5)
-
-[node name="TriggerArea" parent="." unique_id=1692687319 instance=ExtResource("17_mt1it")]
-position = Vector2(120, 1432)
-node = "Labyrinth_Exit"
-one_shot = false
-has_collision = true
-
-[node name="TriggerArea2" parent="." unique_id=673106847 instance=ExtResource("17_mt1it")]
-position = Vector2(-8, 28)
-scale = Vector2(1, 1.5)
-node = "Labyrinth_Exit"
-one_shot = false
-has_collision = true

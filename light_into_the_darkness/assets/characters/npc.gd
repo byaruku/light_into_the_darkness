@@ -26,7 +26,8 @@ func interact() -> void:
 		return
 		
 	state = State.DIALOG
-	await DialogueManager.start_dialogue(yarn_node)
+	DialogueManager.start_dialogue(yarn_node)
+	await DialogueManager.on_dialog_finished
 	state = State.IDLE
 
 

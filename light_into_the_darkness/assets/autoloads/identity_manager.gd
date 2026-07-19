@@ -5,13 +5,9 @@ signal identity_completed
 
 @export var max_identity := 100
 
-@onready var identity_bar := $CanvasLayer/IdentityBar
+@onready var identity_bar := $CanvasLayer/TextureRect
 
 var current_identity := 0
-
-
-func _ready() -> void:
-	identity_bar.visible = false
 
 
 func clear_data():

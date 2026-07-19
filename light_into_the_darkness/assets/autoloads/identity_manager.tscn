@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2xixwykgbxae" path="res://assets/autoloads/identity_manager.gd" id="1_c05bd"]
 [ext_resource type="Texture2D" uid="uid://54gc5ce7jg77" path="res://assets/art/basic_colors.png" id="2_i2b03"]
+[ext_resource type="Texture2D" uid="uid://kgdbxcyine14" path="res://assets/art/ui/identity bar/identity_bar.png" id="2_i2j3n"]
 [ext_resource type="Script" uid="uid://ceweed3uanr58" path="res://assets/ui/texture_progress_bar.gd" id="2_xkbur"]
 
 [node name="IdentityManager" type="Node" unique_id=100065473]
@@ -9,11 +10,30 @@ script = ExtResource("1_c05bd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1902596486]
 
-[node name="IdentityBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=247312584]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=915727755]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i2j3n")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect" unique_id=1362514940]
+layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 1.0
+offset_bottom = 10.0
 grow_horizontal = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="IdentityBar" type="TextureProgressBar" parent="CanvasLayer/TextureRect/MarginContainer" unique_id=247312584]
+texture_filter = 1
+layout_mode = 2
+value = 100.0
 nine_patch_stretch = true
 texture_progress = ExtResource("2_i2b03")
 script = ExtResource("2_xkbur")

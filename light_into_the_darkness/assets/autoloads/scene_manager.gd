@@ -33,7 +33,7 @@ func _ready():
 
 
 func return_to_main_menu():
-	await Fader.fade_in(0.5)
+	await Fader.fade_in(1.0)
 	
 	if current_scene:
 		current_scene.queue_free()
@@ -42,7 +42,7 @@ func return_to_main_menu():
 	GameManager.clear_data()
 	load_main_menu()
 	
-	await Fader.fade_out(0.5)
+	await Fader.fade_out(1.0)
 
 
 func load_main_menu():
@@ -62,6 +62,8 @@ func load_main_menu():
 
 
 func new_game():
+	await Fader.fade_in(1.0)
+	
 	GameManager.state_machine.pop()
 	main_menu.queue_free()
 	
