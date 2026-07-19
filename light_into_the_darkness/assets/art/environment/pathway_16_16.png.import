@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxf5wuiairo6f"
-path="res://.godot/imported/vegetation.png-6e3af74ac3dbacd679c65488173851d4.ctex"
+uid="uid://s8x8wenijlyb"
+path="res://.godot/imported/pathway_16_16.png-b320d11d50a3904269417e5a78d649f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/environment/vegetation.png"
-dest_files=["res://.godot/imported/vegetation.png-6e3af74ac3dbacd679c65488173851d4.ctex"]
+source_file="res://assets/art/environment/pathway_16_16.png"
+dest_files=["res://.godot/imported/pathway_16_16.png-b320d11d50a3904269417e5a78d649f9.ctex"]
 
 [params]
 
