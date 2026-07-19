@@ -33,6 +33,7 @@ func _ready():
 
 
 func return_to_main_menu():
+	GameManager.state_machine.push(PauseState.new())
 	await Fader.fade_in(1.0)
 	
 	if current_scene:
@@ -40,6 +41,7 @@ func return_to_main_menu():
 
 	GameManager.player = null
 	GameManager.clear_data()
+	GameManager.state_machine.pop()
 	load_main_menu()
 	
 	await Fader.fade_out(1.0)
