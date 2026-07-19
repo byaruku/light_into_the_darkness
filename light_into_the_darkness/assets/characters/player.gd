@@ -20,7 +20,7 @@ const LAYER_CROUCH = 4
 @export var crouch_speed := 25.0
 @export var jump_height := 1
 @export var jump_distance := 8
-@export var jump_duration := 0.2
+@export var jump_duration := 0.25
 
 var movement_state = MovementState.IDLE
 var action_state = ActionState.NORMAL
@@ -29,7 +29,7 @@ var move_direction := Vector2.ZERO
 var facing_direction := Vector2.DOWN
 var jump_direction := Vector2.ZERO
 
-var current_platform: JumpPlatform = null
+var current_surface: StandableSurface = null
 
 var can_break_objects := false
 var in_cutscene := false
@@ -220,7 +220,7 @@ func start_jump():
 	if target_platform:
 		var height_diff = target_platform.height_level - get_current_height()
 		
-		if height_diff > 0 and height_diff <= jump_height and target_platform.allow_jump_on:
+		if ((height_diff > 0 and height_diff <= jump_height) or target_platform is MovingLog) and target_platform.allow_jump_on:
 			jump_to_platform(target_platform)
 			return
 		
@@ -231,34 +231,53 @@ func start_jump():
 	normal_jump()
 
 
-func jump_to_platform(platform: JumpPlatform):
+func jump_to_platform(platform: StandableSurface):
 	set_action_state(ActionState.JUMP)
+	$CollisionShape2D.disabled = true
 	
-	var tween = create_tween()
-	tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
-	await tween.finished
+	if platform is MovingLog:
+		if platform.timer.is_stopped():
+			var tween = create_tween()
+			tween.tween_property(self, "global_position", platform.get_landing_position() + platform.flow_direction * platform.speed * jump_duration, jump_duration)
+			await tween.finished
+			
+			if current_surface is MovingLog:
+				current_surface.exited()
+			platform.entered()
+		else:
+			$CollisionShape2D.disabled = false
+			set_action_state(ActionState.NORMAL)
+			return
+	else:
+		var tween = create_tween()
+		tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
+		await tween.finished
 	
-	if current_platform:
-		get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", false)
+	if current_surface:
+		if current_surface is not MovingLog:
+			get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", false)
 	else:
 		get_tree().call_group("Height" + str(0), "disable_static_body", false)
 	
-	current_platform = platform
+	current_surface = platform
 	
-	get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", true)
+	if current_surface is not MovingLog:
+		get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", true)
 	
 	velocity = Vector2.ZERO
 	
 	update_height_layer()
 	
+	$CollisionShape2D.disabled = false
 	set_action_state(ActionState.NORMAL)
 
 
-func jump_down(platform: JumpPlatform):
+func jump_down(platform: StandableSurface):
 	if get_current_height() <= 0:
 		return
 	
 	set_action_state(ActionState.JUMP)
+	$CollisionShape2D.disabled = true
 	
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
@@ -266,17 +285,21 @@ func jump_down(platform: JumpPlatform):
 	
 	velocity = Vector2.ZERO
 	
-	get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", false)
+	if current_surface is MovingLog:
+		current_surface.exited()
+	else:
+		get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", false)
 	
 	if platform.height_level > 0:
-		current_platform = platform
-		get_tree().call_group("Height" + str(current_platform.height_level), "disable_static_body", true)
+		current_surface = platform
+		get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", true)
 	else:
-		current_platform = null
+		current_surface = null
 		get_tree().call_group("Height" + str(0), "disable_static_body", true)
 	
 	update_height_layer()
 	
+	$CollisionShape2D.disabled = false
 	set_action_state(ActionState.NORMAL)
 
 
@@ -346,30 +369,30 @@ func get_jump_platform():
 	for body in jump_check_area.get_overlapping_bodies():
 		if body is PlatformLanding:
 			var platform = body.get_platform()
-			if platform.height_level != get_current_height():
+			if platform.height_level != get_current_height() or (platform is MovingLog and platform != current_surface):
 				return platform
 	return null
 
 
 func get_current_height() -> int:
-	if current_platform:
-		return current_platform.height_level
+	if current_surface:
+		return current_surface.height_level
 	return 0
 
 
 func set_height_collision(layer: int):
 	if layer == 0:
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[0], false)
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[1], false)
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[2], false)
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[3], false)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[0], false)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[1], false)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[2], false)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[3], false)
 	else:
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[0], true)
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[1], true)
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[2], true)
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[3], true)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[0], true)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[1], true)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[2], true)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[3], true)
 	
-		set_collision_mask_value(JumpPlatform.HEIGHT_TO_LAYER[layer], false)
+		set_collision_mask_value(StandableSurface.HEIGHT_TO_LAYER[layer], false)
 	
 	if action_state != ActionState.CROUCH:
 		set_collision_mask_value(LAYER_CROUCH, true)

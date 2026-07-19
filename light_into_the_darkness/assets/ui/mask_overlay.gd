@@ -11,7 +11,8 @@ var last_warning_second := -1
 
 
 func _ready() -> void:
-	await get_tree().process_frame
+	while GameManager.player == null:
+		await get_tree().process_frame
 	
 	mask_manager = GameManager.player.mask_manager
 	
@@ -23,6 +24,12 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if mask_manager == null:
+		if GameManager.player:
+			mask_manager = GameManager.player.mask_manager
+	else:
+		return
+	
 	var enabled = GameManager.is_in_memory
 	
 	for mask in mask_manager.masks:

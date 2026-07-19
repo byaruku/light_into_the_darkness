@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://ccg1x30gs6s85"]
+
+[ext_resource type="Script" uid="uid://ob0i40mno78o" path="res://assets/resources/moving_log.gd" id="1_ijehs"]
+[ext_resource type="Texture2D" uid="uid://ycydk0lpoj5f" path="res://assets/art/environment/log.png" id="2_xorct"]
+[ext_resource type="Script" uid="uid://cqcqt1hpoq0rk" path="res://assets/resources/platform_landing.gd" id="3_xorct"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd6b8"]
+radius = 8.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij7ks"]
+radius = 8.0
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_xorct"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ijehs"]
+resource_name = "sink"
+length = 12.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xorct"]
+_data = {
+&"RESET": SubResource("Animation_xorct"),
+&"sink": SubResource("Animation_ijehs")
+}
+
+[node name="Log" type="AnimatableBody2D" unique_id=812997971]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ijehs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=17032625]
+texture_filter = 1
+texture = ExtResource("2_xorct")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1898930952]
+shape = SubResource("CapsuleShape2D_rd6b8")
+
+[node name="LandingBody" type="StaticBody2D" parent="." unique_id=686566334]
+collision_layer = 240
+collision_mask = 0
+script = ExtResource("3_xorct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandingBody" unique_id=1411836628]
+shape = SubResource("CapsuleShape2D_ij7ks")
+
+[node name="Outline" type="StaticBody2D" parent="." unique_id=523784671]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Outline" unique_id=1345883337]
+rotation = 1.5707964
+polygon = PackedVector2Array(21, 1.999999, 19, 4.999999, 17, 6.999999, 14, 7.9999995, -14, 8.000001, -17, 7.000001, -19, 5.000001, -21, 2.000001, -21, -1.999999, -19, -4.999999, -17, -6.999999, -14, -7.9999995, -14, -6.9999995, -17, -5.999999, -18, -4.999999, -20, -1.9999992, -20, 2.000001, -18, 5.000001, -17, 6.000001, -14, 7.0000005, 14, 6.9999995, 17, 5.999999, 18, 4.999999, 20, 1.9999992, 20, -2.000001, 18, -5.000001, 17, -6.000001, 14, -7.0000005, -14, -6.9999995, -14, -7.9999995, 14, -8.000001, 17, -7.000001, 19, -5.000001, 21, -2.000001)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2110656109]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=939794304]
+libraries/ = SubResource("AnimationLibrary_xorct")
+
+[node name="Timer" type="Timer" parent="." unique_id=1900645312]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
