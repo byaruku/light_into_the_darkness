@@ -241,8 +241,9 @@ func jump_to_platform(platform: StandableSurface):
 			tween.tween_property(self, "global_position", platform.get_landing_position() + platform.flow_direction * platform.speed * jump_duration, jump_duration)
 			await tween.finished
 			
-			if current_surface is MovingLog:
-				current_surface.exited()
+			if current_surface:
+				if current_surface is MovingLog:
+					current_surface.exited()
 			platform.entered()
 		else:
 			$CollisionShape2D.disabled = false

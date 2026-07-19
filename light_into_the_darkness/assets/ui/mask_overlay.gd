@@ -27,8 +27,6 @@ func _process(_delta: float) -> void:
 	if mask_manager == null:
 		if GameManager.player:
 			mask_manager = GameManager.player.mask_manager
-	else:
-		return
 	
 	var enabled = GameManager.is_in_memory
 	

@@ -3,11 +3,11 @@ extends Node2D
 
 @export var log_scene: PackedScene
 
-@export var min_spawn_time := 2.0
-@export var max_spawn_time := 6.0
+@export var min_spawn_time := 4.0
+@export var max_spawn_time := 8.0
 
-@export var min_speed := 30.0
-@export var max_speed := 50.0
+@export var min_speed := 50.0
+@export var max_speed := 70.0
 
 @export var flow_direction := Vector2.DOWN
 
