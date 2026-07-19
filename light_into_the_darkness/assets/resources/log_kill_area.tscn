@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://5bwj2w7irgwt"]
+
+[ext_resource type="Script" uid="uid://cvtyyxc0pvjci" path="res://assets/resources/log_kill_area.gd" id="1_tuakr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cueys"]
+size = Vector2(2, 2)
+
+[node name="LogKillArea" type="Area2D" unique_id=987369008]
+collision_layer = 0
+collision_mask = 240
+script = ExtResource("1_tuakr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1622845113]
+shape = SubResource("RectangleShape2D_cueys")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

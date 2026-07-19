@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://iih3plfx4fwd"]
+
+[ext_resource type="Script" uid="uid://hve4punerpg5" path="res://assets/resources/log_spawner.gd" id="1_4mspv"]
+[ext_resource type="PackedScene" uid="uid://ccg1x30gs6s85" path="res://assets/resources/moving_log.tscn" id="2_6vvcm"]
+
+[node name="LogSpawner" type="Node2D" unique_id=1325661905]
+script = ExtResource("1_4mspv")
+log_scene = ExtResource("2_6vvcm")
+
+[node name="Timer" type="Timer" parent="." unique_id=1725832190]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
