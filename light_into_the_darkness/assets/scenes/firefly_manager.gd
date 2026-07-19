@@ -1,8 +1,6 @@
 class_name FireflyManager
 extends Node
 
-signal finished
-
 @export var target_amount := 6
 
 @onready var firefly_ui = $FireflyUI
@@ -22,4 +20,4 @@ func _on_firefly_collected(_firefly):
 	firefly_ui.add_firefly()
 	
 	if collected >= target_amount:
-		finished.emit()
+		self.queue_free()

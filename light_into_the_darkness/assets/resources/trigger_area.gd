@@ -10,6 +10,8 @@ var triggered := false
 
 
 func _ready() -> void:
+	add_to_group("triggers")
+	
 	if has_collision:
 		$StaticBody2D/CollisionShape2D.disabled = false
 	else:

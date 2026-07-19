@@ -7,12 +7,13 @@ enum State {
 	FLEE
 }
 
-@export var speed := 50.0
-@export var detection_distance := 120
+@export var speed := 70.0
+
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+
 var player: Player
 
-var state := State.WANDER
-var wander_target := Vector2.ZERO
+var state := State.CHASE
 
 var chase_direction := Vector2.ZERO
 var chase_timer := 0.0
@@ -25,7 +26,6 @@ var flee_retarget_timer := 0.0
 
 func _ready():
 	player = GameManager.player
-	choose_new_target()
 
 
 func _physics_process(delta: float) -> void:
@@ -34,18 +34,9 @@ func _physics_process(delta: float) -> void:
 	
 	match state:
 		State.WANDER:
-			if global_position.distance_to(wander_target) < 10:
-				choose_new_target()
-			
-			velocity = (wander_target - global_position).normalized() * speed * 0.5
-			
-			move_and_slide()
-			
-			if global_position.distance_to(player.global_position) < detection_distance:
-				state = State.CHASE
-		
+			pass
 		State.CHASE:
-			chase_player(delta)
+			chase_player()
 		
 		State.FLEE:
 			flee_timer -= delta
@@ -62,28 +53,18 @@ func _physics_process(delta: float) -> void:
 				state = State.CHASE
 
 
-func choose_new_target():
-	wander_target = global_position + Vector2(
-		randf_range(-100, 100),
-		randf_range(-100, 100)
-	)
-
-
 func _on_touch_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		GameManager.leave_memory()
 
 
-func chase_player(delta):
-	chase_timer -= delta
+func chase_player():
+	navigation_agent.target_position = player.global_position
 	
-	if chase_timer <= 0:
-		var dir = (player.global_position - global_position).normalized()
-		var angle_offset = deg_to_rad(randf_range(-45.0, 45.0))
-		chase_direction = dir.rotated(angle_offset)
-		chase_timer = randf_range(0.5, 1.5)
+	var next_position = navigation_agent.get_next_path_position()
+	var direction = global_position.direction_to(next_position)
 	
-	velocity = chase_direction * speed
+	velocity = direction * speed
 	move_and_slide()
 
 

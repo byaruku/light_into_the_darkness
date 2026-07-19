@@ -63,6 +63,9 @@ title: Daichi_Maigo
 	Daichi: ... und je älter wir wurden, desto größer und gefährlicher wurden unsere Abenteuer... Du wirst bald sehen, was ich meine.
 	Daichi: Aber sei beruhigt, ich werde dich ein wenig an die Hand nehmen...
 	<<change_scene 1>>
+	<<wait 3>>
+	Daichi: Du warst der Überzeugung mich diesmal zu besiegen im Glühwürmchen fangen...
+	Daichi: Mein Rekord lag bei 5!
 ===
 
 title: Daichi_After_Memory
