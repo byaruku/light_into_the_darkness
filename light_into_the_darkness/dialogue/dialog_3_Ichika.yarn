@@ -1,4 +1,10 @@
 title: Dialog_Ichika
+when: always
+---
+Ichika: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
+===
+
+title: Dialog_Ichika
 when: once
 ---
 Eine Frau, Anfang 30, blickt dich neugierig an, sie strahlt.
@@ -33,6 +39,7 @@ title: Ichika_Keyword
 -> Es waren wirklich ein paar schöne... Erinnerungen dabei.
 	<<add_charge 1>>
 	Frau: Siehst du! ‚Erinnerungen‘. Das ist das Stichwort. Du bringst Licht ins Dunkle.
+	<<jump Ichika_Our_Part>>
 -> Ich bin gerade fast in einem Fluss ertrunken...
 	<<add_charge 0>>
 	Maigo: Du hast leicht reden.
@@ -63,14 +70,16 @@ title: Ichika_Near
 ---
 Maigo: Wir waren uns sehr nah?
 Frau: Maigo, nimm noch ein letztes Mal all deine Kräfte zusammen und dir wird sich einiges offenbaren. Du hast Rätsel immer geliebt. Mir gelang es nur selten dich darin zu schlagen.
+<<add_identity 8>>
 <<change_scene 3>>
 ===
 
-title: After_Memory_Ichika
+title: Ichika_After_Memory
 ---
 Frau: Du hast es geschafft!
 *Sie umarmt dich innig und flüstert in dein Ohr*
 Frau: Lass dich nun vom Licht zurückbringen zu uns, Genki.
 Maigo: Mein... Name ist... Genki. Und du bist meine Frau Ichika. Ich... ich erinnere mich!
+<<change_scene 0>>
 ===
 

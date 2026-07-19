@@ -1,7 +1,7 @@
 title: Dialog_Daichi
 when: always
 ---
-Mann: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
+Daichi: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
 ===
 
 title: Dialog_Daichi
@@ -16,7 +16,7 @@ Ein Mann, Mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 		Maigo: Ich weiß, weder warum ich hier bin noch wo genau...
 		Mann: Ich freue mich dich hier zu treffen.
 		<<jump Daichi_Unknown>>
-	-> *du atmest tief ein* Entschuldige, das war ein bisschen schroff.
+	-> *du atmest tief ein* Entschuldige, das war schon sehr schroff.
 		Mann: Schon in Ordnung. Du erinnerst dich wirklich nicht an mich...
 		<<jump Daichi_Unknown>>
 -> Endlich jemand mit dem ich sprechen kann!
@@ -53,22 +53,24 @@ title: Daichi_Unknown
 
 title: Daichi_Maigo
 ---
--> Maigo... das ist mein Name. Glaube ich.
-	Mann: So habe ich dich immer gerufen, wenn wir draußen 'Verstecken' spielten. Wir haben viel zusammen erlebt. Kleine und große Abenteuer.
-	Maigo: Wie heißt du eigentlich?
-	Mann: Ich bin Daichi.
-	Maigo: Verflucht nochmal, ich erinnere mich nicht an dich. 'Abenteuer' sagtest du?
-	Daichi: Ich weiß noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, ...
-	Diachi: ... die Vögel geheime Spione, Baumhäuser unsere Burgen... Wir haben ständig versucht den anderen zu übertrumpfen...
-	Daichi: ... und je älter wir wurden, desto größer und gefährlicher wurden unsere Abenteuer... Du wirst bald sehen, was ich meine.
-	Daichi: Aber sei beruhigt, ich werde dich ein wenig an die Hand nehmen...
-	<<change_scene 1>>
-	<<wait 3>>
-	Daichi: Du warst der Überzeugung mich diesmal zu besiegen im Glühwürmchen fangen...
-	Daichi: Mein Rekord lag bei 5!
+Maigo: Maigo... das ist mein Name. Glaube ich.
+Mann: So habe ich dich immer gerufen, wenn wir draußen 'Verstecken' spielten. Wir haben viel zusammen erlebt. Kleine und große Abenteuer.
+Maigo: Wie heißt du eigentlich?
+Mann: Ich bin Daichi.
+Maigo: Verflucht nochmal, ich erinnere mich nicht an dich. 'Abenteuer' sagtest du?
+Daichi: Ich weiß noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, ...
+Diachi: ... die Vögel geheime Spione, Baumhäuser unsere Burgen... Wir haben ständig versucht den anderen zu übertrumpfen ...
+Daichi: ... und je älter wir wurden, desto größer und gefährlicher wurden unsere Abenteuer... Du wirst bald sehen, was ich meine.
+Daichi: Aber sei beruhigt, ich werde dich ein wenig an die Hand nehmen...
+<<add_identity 8>>
+<<change_scene 1>>
+<<wait 3>>
+Daichi: Du warst der Überzeugung mich diesmal zu besiegen im Glühwürmchen fangen...
+Daichi: Mein Rekord lag bei 5!
 ===
 
 title: Daichi_After_Memory
 ---
 Daichi: Bitte gib nicht auf Maigo, ich möchte mit dir noch viel mehr erleben. Beste Freunde lassen sich nie im Stich!
+<<add_identity 12>>
 ===

@@ -1,4 +1,10 @@
 title: Dialog_Hikari
+when: always
+---
+Hikari: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
+===
+
+title: Dialog_Hikari
 when: once
 ---
 Ein Mädchen, circa 12 Jahre alt, lächelt dich frech an.
@@ -71,6 +77,7 @@ Hikari: Damals auf dem Frühlingsfest bei uns im Dorf, da sind wir zusammen auf 
 Hikari: Ich war noch echt klein... vielleicht sechs Jahre alt und du gerade fertig mit der Schule. Mein Aufpasser.
 Hikari: Bei all den Girlanden und Leckereien war ich total abgelenkt und hab dich ins Mais-Labyrinth gezerrt. Du hattest darauf keine Lust.
 Hikari: Am Anfang war es echt lustig durch die Gänge zu laufen, aber als ich dann Verstecken spielen wollte, konnte ich dich leider nicht mehr finden!
+<<add_identity 8>>
 <<change_scene 2>>
 <<wait 3>>
 Maigo: Verdammt, wo ist Hikari wieder abgeblieben?

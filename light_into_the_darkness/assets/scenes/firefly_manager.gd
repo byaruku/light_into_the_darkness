@@ -20,4 +20,5 @@ func _on_firefly_collected(_firefly):
 	firefly_ui.add_firefly()
 	
 	if collected >= target_amount:
+		IdentityManager.add_progress(12)
 		self.queue_free()

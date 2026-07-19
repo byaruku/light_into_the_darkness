@@ -16,7 +16,7 @@ Maigo: Versprochen.
 Hikari: Gut. Dann darfst du heute sogar entscheiden, was wir auf dem Fest als Nächstes machen.
 Maigo: Das ist aber großzügig.
 Hikari: Nur heute! Und nur, weil ich dich vermisst habe.
-<<add_identity 20>>
+<<add_identity 12>>
 <<change_scene 0>>
 <<wait 3>>
 Hikari: Danke, dass du immer für mich da bist, großer Bruder.

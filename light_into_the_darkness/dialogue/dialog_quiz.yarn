@@ -48,6 +48,7 @@ title: Result
 ---
 <<if $selected is $answer>>
 	Ichika: Das ist richtig.
+	<<add_identity 2>>
 <<else>>
 	Ichika: Leider falsch.
 <<endif>>

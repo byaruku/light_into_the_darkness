@@ -5,7 +5,5 @@ extends Resource
 @export var yarn_node: String
 @export var icon: Texture2D
 
-@export var identity_reward := 0
-
 @export var boosted_mask: MaskManager.MaskType
 @export var mask_charge_reward := 1
