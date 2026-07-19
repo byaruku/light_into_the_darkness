@@ -30,7 +30,7 @@ Ein Mann, Mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 title: Daichi_Unknown
 ---
 -> Wir kennen uns?
-	Mann: Ja, wir haben viel zusammen erlebt.
+	Mann: Hey, zusammen waren wir unschlagbar.
 	-> Wovon sprichst du?
 		Mann: Wir haben viel zusammen erlebt, Maigo.
 		<<jump Daichi_Maigo>>

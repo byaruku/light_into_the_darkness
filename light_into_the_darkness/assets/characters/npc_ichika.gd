@@ -1,11 +1,36 @@
 class_name NPCIchika
 extends NPC
 
-@export var question_count: int
+@export var question_count := 3
+@export_file("*.json") var quiz_data_path: String
+
+var quiz_data
 
 
 func _ready() -> void:
 	super._ready()
+	
+	if not quiz_data_path:
+		push_error("No path to the quiz-data-file set.")
+		return
+	
+	var quiz_file = ResourceLoader.load(quiz_data_path)
+	if not quiz_file:
+		push_error("Error while loading the quiz-data: " + quiz_data_path)
+		return
+	
+	var file = FileAccess.open(quiz_data_path, FileAccess.READ)
+	if not file:
+		push_error("Error while opening the quiz-data.")
+		return
+	
+	var json_string = file.get_as_text()
+	file.close()
+	
+	quiz_data = JSON.parse_string(json_string)
+	if not quiz_data is Array:
+		push_error("Invaild quiz-data-format: Expected format is an array.")
+		quiz_data = []
 
 
 func interact() -> void:
@@ -13,19 +38,19 @@ func interact() -> void:
 		return
 		
 	state = State.DIALOG
-	var questions = QuizData.get_questions()
-	questions.shuffle()
+	quiz_data.shuffle()
 	
-	for i in range(question_count):
+	for i in range(min(question_count, quiz_data.size())):
 		var runner = DialogueManager.dialogue_runner
-		var question = questions[i]
+		var question = quiz_data[i]
 		
-		runner.variable_storage.set_value("$question", question["question"])
-		runner.variable_storage.set_value("$answer0", question["answer"][0])
-		runner.variable_storage.set_value("$answer1", question["answer"][1])
-		runner.variable_storage.set_value("$answer2", question["answer"][2])
-		runner.variable_storage.set_value("$answer3", question["answer"][3])
-		runner.variable_storage.set_value("$correct", question["correct"])
+		for j in range(question["question"].size()):
+			runner.variable_storage.set_value("$line" + str(j), question["question"][j])
+		
+		for j in range(question["options"].size()):
+			runner.variable_storage.set_value("$option" + str(j), question["options"][j])
+		
+		runner.variable_storage.set_value("$answer", int(question["answer"]))
 		runner.variable_storage.set_value("$selected", -1)
 		
 		await DialogueManager.start_dialogue(yarn_node)

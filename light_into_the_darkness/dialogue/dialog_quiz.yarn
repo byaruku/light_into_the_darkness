@@ -1,32 +1,52 @@
 title: StartQuiz
 ---
-<<declare $question = "text">>
-<<declare $answer0 = "text">>
-<<declare $answer1 = "text">>
-<<declare $answer2 = "text">>
-<<declare $answer3 = "text">>
+<<declare $line0 = "text">>
+<<declare $line1 = "text">>
+<<declare $line2 = "text">>
+<<declare $line3 = "text">>
+<<declare $line4 = "text">>
+<<declare $line5 = "text">>
+<<declare $option0 = "text">>
+<<declare $option1 = "text">>
+<<declare $option2 = "text">>
+<<declare $option3 = "text">>
 
-<<declare $correct = 0>>
+<<declare $answer = 0>>
 <<declare $selected = -1>>
 
-Ichika: {$question}
--> {$answer0}
+Ichika: {$line0}
+<<if $line1 neq "text">>
+	Ichika: {$line1}
+	<<if $line2 neq "text">>
+		Ichika: {$line2}
+		<<if $line3 neq "text">>
+			Ichika: {$line3}
+			<<if $line4 neq "text">>
+				Ichika: {$line4}
+				<<if $line5 neq "text">>
+					Ichika: {$line5}
+				<<endif>>
+			<<endif>>
+		<<endif>>
+	<<endif>>
+<<endif>>
+-> {$option0}
 	<<set $selected to 0>>
 	<<jump Result>>
--> {$answer1}
+-> {$option1}
 	<<set $selected to 1>>
 	<<jump Result>>
--> {$answer2}
+-> {$option2}
 	<<set $selected to 2>>
 	<<jump Result>>
--> {$answer3}
+-> {$option3}
 	<<set $selected to 3>>
 	<<jump Result>>
 ===
 
 title: Result
 ---
-<<if $selected is $correct>>
+<<if $selected is $answer>>
 	Ichika: Das ist richtig.
 <<else>>
 	Ichika: Leider falsch.
