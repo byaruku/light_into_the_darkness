@@ -86,11 +86,21 @@ func change_scene(destination: Portal.Destination):
 	
 	await Fader.fade_in(1.0)
 	
+	if PauseManager.is_open:
+		PauseManager.resume()
+	
 	if current_scene:
 		previous_scene_destination = current_scene_destination
 		current_scene.queue_free()
+		current_scene = null
+		
+	var path = scene_paths[destination]
+	ResourceLoader.load_threaded_request(path)
 	
-	var packed = load(scene_paths[destination])
+	while ResourceLoader.load_threaded_get_status(path) != ResourceLoader.THREAD_LOAD_LOADED:
+		await get_tree().process_frame
+	
+	var packed: PackedScene = ResourceLoader.load_threaded_get(path)
 	current_scene = packed.instantiate()
 	current_scene_container.add_child(current_scene)
 	current_scene_destination = destination
