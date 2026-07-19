@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://da2fudnmw43ql"]
+[gd_scene format=3 uid="uid://c8cy888orwwdf"]
 
-[ext_resource type="Script" uid="uid://tjh1gb5dopuc" path="res://assets/characters/npc.gd" id="1_255c5"]
-[ext_resource type="Texture2D" uid="uid://bv7v7ds1lk04l" path="res://assets/art/characters/Ichika/Ichika.png" id="2_255c5"]
-[ext_resource type="Script" uid="uid://cjbjxwibnud8v" path="res://assets/characters/npc_interactable.gd" id="3_bv0pn"]
+[ext_resource type="Script" uid="uid://2cesct5jtinf" path="res://assets/characters/npc_memory_ichika.gd" id="1_mttar"]
+[ext_resource type="Texture2D" uid="uid://bv7v7ds1lk04l" path="res://assets/art/characters/Ichika/Ichika.png" id="2_kgabw"]
+[ext_resource type="Script" uid="uid://cjbjxwibnud8v" path="res://assets/characters/npc_interactable.gd" id="3_ojwdy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysycn"]
 radius = 3.0
@@ -65,12 +65,15 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 [node name="NPC_Ichika" type="CharacterBody2D" unique_id=1705600323]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_255c5")
-yarn_node = "Dialog_Ichika"
+script = ExtResource("1_mttar")
+question_count = 6
+quiz_data_path = "res://dialogue/quiz_data.json"
+yarn_node_after_quiz = "Ichika_After_Memory"
+yarn_node = "StartQuiz"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
 texture_filter = 1
-texture = ExtResource("2_255c5")
+texture = ExtResource("2_kgabw")
 offset = Vector2(0, -8)
 hframes = 2
 
@@ -81,7 +84,7 @@ shape = SubResource("CapsuleShape2D_ysycn")
 [node name="InteractionArea" type="Area2D" parent="." unique_id=537755715]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("3_bv0pn")
+script = ExtResource("3_ojwdy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1505010348]
 shape = SubResource("RectangleShape2D_mvr7h")

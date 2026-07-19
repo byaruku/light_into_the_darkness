@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bqb7vmmsgg413"]
+
+[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="1_yum6n"]
+[ext_resource type="PackedScene" uid="uid://c8cy888orwwdf" path="res://assets/characters/npc_memory_ichika.tscn" id="2_ckks0"]
+[ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="3_ytoyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sour4"]
+
+[node name="Memory3" type="Node2D" unique_id=2140256910]
+y_sort_enabled = true
+
+[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_yum6n")]
+
+[node name="NPC_Ichika" parent="." unique_id=1087910917 instance=ExtResource("2_ckks0")]
+position = Vector2(0, -86)
+
+[node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("3_ytoyc")]
+portal_id = 3
+spawn_marker = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=1999937160]
+shape = SubResource("RectangleShape2D_sour4")
+disabled = true
+
+[node name="Marker2D" type="Marker2D" parent="Portal" unique_id=728674983]

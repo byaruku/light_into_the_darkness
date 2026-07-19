@@ -3,6 +3,7 @@ extends NPC
 
 @export var question_count := 3
 @export_file("*.json") var quiz_data_path: String
+@export var yarn_node_after_quiz: String
 
 var quiz_data
 
@@ -53,7 +54,10 @@ func interact() -> void:
 		runner.variable_storage.set_value("$answer", int(question["answer"]))
 		runner.variable_storage.set_value("$selected", -1)
 		
-		await DialogueManager.start_dialogue(yarn_node)
+		DialogueManager.start_dialogue(yarn_node)
+		await DialogueManager.on_dialog_finished
+	DialogueManager.start_dialogue(yarn_node_after_quiz)
+	await DialogueManager.on_dialog_finished
 	state = State.IDLE
 
 

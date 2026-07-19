@@ -9,6 +9,7 @@ main_menu_packed = ExtResource("2_af6ij")
 town_scene = "uid://c4hyx1pkcoxx4"
 memory_1_scene = "uid://th33627mauxn"
 memory_2_scene = "uid://bnhntpm7tdkm1"
+memory_3_scene = "uid://bqb7vmmsgg413"
 test_scene = "uid://d0xljghkfa0h5"
 test_memory_scene = "uid://ccjo8cdqdc021"
 
