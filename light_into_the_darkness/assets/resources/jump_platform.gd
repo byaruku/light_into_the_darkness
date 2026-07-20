@@ -1,6 +1,7 @@
 class_name JumpPlatform
 extends StandableSurface
 
+
 func _ready():
 	super._ready()
 	

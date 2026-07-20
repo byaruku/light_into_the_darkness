@@ -9,7 +9,6 @@ radius = 8.0
 height = 42.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij7ks"]
-radius = 8.0
 height = 42.0
 
 [sub_resource type="Animation" id="Animation_xorct"]

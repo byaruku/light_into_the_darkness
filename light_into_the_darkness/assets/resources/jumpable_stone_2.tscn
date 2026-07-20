@@ -9,10 +9,12 @@ radius = 6.0
 height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d62ch"]
-height = 26.0
+radius = 12.0
+height = 32.0
 
 [node name="Stone" type="Node2D" unique_id=674404847]
 script = ExtResource("1_5ymvq")
+height_level = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023484231]
 texture_filter = 1
@@ -46,10 +48,10 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_d62ch")
 
 [node name="Outline" type="StaticBody2D" parent="." unique_id=2090061797]
-visible = false
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Outline" unique_id=1780265669]
 position = Vector2(0, -2)
 rotation = 1.5707964
-polygon = PackedVector2Array(8, -2.0000002, 3.0000005, 13, -1.9999995, 13, -4.9999995, 12, -9, 9.000001, -10, 4.0000005, -9, -3.9999995, -10, -7.9999995, -5.0000005, -13, -3.0000005, -12, -1.0000005, -12, -1.0000005, -11, -3.0000005, -11, -5.0000005, -12, -9, -7.9999995, -8, -3.9999995, -9, 4.0000005, -8, 8, -4.9999995, 11, -1.9999995, 12, 2.0000005, 12, 7, -2.0000002, 7.9999995, -12, 6.9999995, -13, 1.9999994, -13, -1.0000005, -11, -1.0000005, -12, 1.9999994, -14, 6.9999995, -14, 9, -12)
+polygon = PackedVector2Array(8, -2.0000002, 3.0000005, 13, -1.9999995, 13, -4.9999995, 12, -9, 9.000001, -10, 4.0000005, -9, -3.9999995, -10, -7.9999995, -5.0000005, -14, 6.9999995, -14, 6.9999995, -13, -5.0000005, -13, -9, -7.9999995, -8, -3.9999995, -9, 4.0000005, -8, 8, -4.9999995, 11, -1.9999995, 12, 2.0000005, 12, 7, -2.0000002, 7.9999995, -12, 6.9999995, -13, 6.9999995, -14, 9, -12)
