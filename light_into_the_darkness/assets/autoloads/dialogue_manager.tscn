@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bnprmuw8j78b8" path="res://assets/art/ui/dialog/Dialog overlay_without_name.png" id="4_65wob"]
 [ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="4_egk5t"]
 [ext_resource type="Texture2D" uid="uid://cqwhkrufnc5qj" path="res://assets/art/ui/dialog/Dialog overlay_name_panel.png" id="6_4mclk"]
+[ext_resource type="Texture2D" uid="uid://dmyh0o53h0n4j" path="res://assets/art/ui/dialog/Dialog overlay_very_big_without_name.png" id="7_4mclk"]
 [ext_resource type="Texture2D" uid="uid://bqelfbg5swxaj" path="res://assets/art/ui/dialog/Dialog overlay_groß_without_name.png" id="7_65wob"]
 [ext_resource type="Texture2D" uid="uid://cl57w8vtc5746" path="res://assets/art/clues/background 64_64.png" id="9_4mclk"]
 
 [node name="DialogueManager" type="Node" unique_id=517957820 node_paths=PackedStringArray("portrait_sprite")]
 script = ExtResource("1_lq6ii")
 portrait_sprite = NodePath("CanvasLayer/Portrait")
+option_texture_small = ExtResource("7_65wob")
+option_texture_big = ExtResource("7_4mclk")
 
 [node name="YarnDialogueRunner" type="Node" parent="." unique_id=766232703 node_paths=PackedStringArray("presenters")]
 script = ExtResource("2_lq6ii")
@@ -95,7 +98,8 @@ anchor_bottom = 1.0
 offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_65wob")
+size_flags_vertical = 10
+texture = ExtResource("7_4mclk")
 stretch_mode = 2
 script = ExtResource("4_egk5t")
 options_container = NodePath("OptionsContainer")
@@ -105,7 +109,7 @@ layout_mode = 0
 offset_left = 15.0
 offset_top = 9.0
 offset_right = 145.0
-offset_bottom = 45.0
+offset_bottom = 81.0
 alignment = 1
 
 [node name="Portrait" type="Sprite2D" parent="CanvasLayer" unique_id=64440815]
