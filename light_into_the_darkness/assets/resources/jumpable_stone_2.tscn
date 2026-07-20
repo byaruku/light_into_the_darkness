@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bd2bm0il7tfrt"]
+
+[ext_resource type="Script" uid="uid://dbp0s03mkf8rx" path="res://assets/resources/jump_platform.gd" id="1_5ymvq"]
+[ext_resource type="Texture2D" uid="uid://deo4i45bxkuig" path="res://assets/art/environment/props.png" id="2_whg72"]
+[ext_resource type="Script" uid="uid://cqcqt1hpoq0rk" path="res://assets/resources/platform_landing.gd" id="3_4eupg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uv1pw"]
+radius = 6.0
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d62ch"]
+height = 26.0
+
+[node name="Stone" type="Node2D" unique_id=674404847]
+script = ExtResource("1_5ymvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023484231]
+texture_filter = 1
+texture = ExtResource("2_whg72")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1355700538]
+visible = false
+position = Vector2(0, -3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=504127809]
+visible = false
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=446186585]
+position = Vector2(1, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_uv1pw")
+
+[node name="LandingBody" type="StaticBody2D" parent="." unique_id=1283073424]
+visible = false
+collision_layer = 240
+collision_mask = 0
+script = ExtResource("3_4eupg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandingBody" unique_id=1171565593]
+position = Vector2(1, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d62ch")
+
+[node name="Outline" type="StaticBody2D" parent="." unique_id=2090061797]
+visible = false
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Outline" unique_id=1780265669]
+position = Vector2(0, -2)
+rotation = 1.5707964
+polygon = PackedVector2Array(8, -2.0000002, 3.0000005, 13, -1.9999995, 13, -4.9999995, 12, -9, 9.000001, -10, 4.0000005, -9, -3.9999995, -10, -7.9999995, -5.0000005, -13, -3.0000005, -12, -1.0000005, -12, -1.0000005, -11, -3.0000005, -11, -5.0000005, -12, -9, -7.9999995, -8, -3.9999995, -9, 4.0000005, -8, 8, -4.9999995, 11, -1.9999995, 12, 2.0000005, 12, 7, -2.0000002, 7.9999995, -12, 6.9999995, -13, 1.9999994, -13, -1.0000005, -11, -1.0000005, -12, 1.9999994, -14, 6.9999995, -14, 9, -12)

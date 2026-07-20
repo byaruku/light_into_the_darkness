@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxf5wuiairo6f"
-path="res://.godot/imported/vegetation.png-6e3af74ac3dbacd679c65488173851d4.ctex"
+uid="uid://dmyh0o53h0n4j"
+path="res://.godot/imported/Dialog overlay_very_big_without_name.png-5aee70d4cbf076cf128a25bddcf544e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/environment/vegetation.png"
-dest_files=["res://.godot/imported/vegetation.png-6e3af74ac3dbacd679c65488173851d4.ctex"]
+source_file="res://assets/art/ui/dialog/Dialog overlay_very_big_without_name.png"
+dest_files=["res://.godot/imported/Dialog overlay_very_big_without_name.png-5aee70d4cbf076cf128a25bddcf544e5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxf5wuiairo6f"
-path="res://.godot/imported/vegetation.png-6e3af74ac3dbacd679c65488173851d4.ctex"
+uid="uid://bdlkjxm4e6ep7"
+path="res://.godot/imported/objects_16_16.png-97f9762ff299ccc2b8c30b6c49403d52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/environment/vegetation.png"
-dest_files=["res://.godot/imported/vegetation.png-6e3af74ac3dbacd679c65488173851d4.ctex"]
+source_file="res://assets/art/environment/objects_16_16.png"
+dest_files=["res://.godot/imported/objects_16_16.png-97f9762ff299ccc2b8c30b6c49403d52.ctex"]
 
 [params]
 
