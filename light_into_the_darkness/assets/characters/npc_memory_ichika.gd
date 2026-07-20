@@ -39,6 +39,7 @@ func interact() -> void:
 		return
 		
 	state = State.DIALOG
+	DialogueManager.switch_option_texture(false)
 	quiz_data.shuffle()
 	
 	for i in range(min(question_count, quiz_data.size())):
@@ -56,6 +57,7 @@ func interact() -> void:
 		
 		DialogueManager.start_dialogue(yarn_node)
 		await DialogueManager.on_dialog_finished
+	DialogueManager.switch_option_texture(true)
 	DialogueManager.start_dialogue(yarn_node_after_quiz)
 	await DialogueManager.on_dialog_finished
 	state = State.IDLE
