@@ -10,6 +10,40 @@ height = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_1a4b3"]
 radius = 7.0
 
+[sub_resource type="Animation" id="Animation_4a34q"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ib261"]
+_data = {
+&"idle": SubResource("Animation_4a34q")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4a34q"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ib261"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cueys"]
+states/Start/position = Vector2(199, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_4a34q")
+states/idle/position = Vector2(341, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ib261")]
+graph_offset = Vector2(-44, -33)
+
 [node name="Dog" type="CharacterBody2D" unique_id=1973020385]
 collision_layer = 2
 collision_mask = 235
@@ -38,5 +72,12 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea" unique_id=1291424385]
 shape = SubResource("CircleShape2D_1a4b3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1737598619]
+libraries/ = SubResource("AnimationLibrary_ib261")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1296211354]
+tree_root = SubResource("AnimationNodeStateMachine_cueys")
+anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="body_entered" from="TouchArea" to="." method="_on_touch_area_body_entered"]

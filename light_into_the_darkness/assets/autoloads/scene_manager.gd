@@ -57,7 +57,6 @@ func load_main_menu():
 	
 	main_menu.new_game_pressed.connect(new_game)
 	main_menu.settings_pressed.connect(settings_open)
-	main_menu.about_pressed.connect(about_open)
 	main_menu.exit_pressed.connect(exit_game)
 	
 	current_scene_container.add_child(main_menu)
@@ -76,10 +75,6 @@ func new_game():
 
 func settings_open():
 	PauseManager.settings()
-
-
-func about_open():
-	pass
 
 
 func exit_game():

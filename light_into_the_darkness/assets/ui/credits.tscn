@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://lpfh8bib22ek"]
+
+[ext_resource type="Script" uid="uid://tf80jmn2t4r2" path="res://assets/ui/credits.gd" id="1_5v8ml"]
+[ext_resource type="Texture2D" uid="uid://d3q56c1s3t5ny" path="res://assets/art/ui/4_centered_text_with_hand.png" id="2_hj0bn"]
+
+[node name="Credits" type="CanvasLayer" unique_id=1987052098]
+script = ExtResource("1_5v8ml")
+
+[node name="Control" type="Control" parent="." unique_id=227801853]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1801416037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=767337305]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=676998441]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=492296954]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1389213719]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1553527618]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+bbcode_enabled = true
+text = "[b]Credits
+Licht Ins Dunkle[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1421083985]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_hj0bn")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=991718268]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/MarginContainer" unique_id=412232415]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 6
+theme_override_font_sizes/bold_font_size = 6
+bbcode_enabled = true
+text = "[b]Game Concept[/b]
+Bjark Hassert
+
+[b]Programming (Gameplay, Systems)[/b]
+Bjark Hassert
+
+[b]Level Design[/b]
+Bjark Hassert
+Béla Max Backhauß
+
+[b]Writing[/b]
+Béla Max Backhauß
+
+[b]Narrative Design[/b]
+Béla Max Backhauß
+
+[b]Artwork & Animation[/b]
+Janna-Lynn van Bernem
+
+[b]Additional Artwork[/b]
+Bjark Hassert
+Thore Komorowski
+
+[b]Music[/b]
+Thore Komorowski
+
+[b]Playtesting[/b]
+X, X, X – danke!
+
+Dieses Spiel ist entstanden im Rahmen des Kurses ‘Game Development Sessions‘ von Johannes Wolf & Jonas Mumm – danke!
+
+
+[b]Created with[/b]
+Godot, FL Studio, Pixelorama, Paint, Twinery & YarnSpinner
+
+
+[b]Assets by[/b]
+X
+X
+X
+(Sounds, Texturen, Fonts)"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1122515811]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "Zurück"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
