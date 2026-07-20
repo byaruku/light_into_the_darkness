@@ -4,14 +4,11 @@ signal on_show_dialog
 signal on_dialog_finished
 
 @export var portrait_sprite: Sprite2D
-@export var option_texture_small: Texture2D
-@export var option_texture_big: Texture2D
 
 @onready var dialogue_runner: YarnDialogueRunner = $YarnDialogueRunner
 
 
 func _ready() -> void:
-	switch_option_texture(true)
 	dialogue_runner.add_command("show_portrait", show_portrait)
 	dialogue_runner.add_command("hide_portrait", hide_portrait)
 	dialogue_runner.add_command("change_scene", change_scene)
@@ -49,15 +46,3 @@ func change_scene(destination: String) -> void:
 
 func add_identity(amount: String):
 	IdentityManager.add_progress(int(amount))
-	
-
-func switch_option_texture(small: bool):
-	var option_presenter := $CanvasLayer/OptionsPresenter
-	
-	if small:
-		option_presenter.texture = option_texture_small
-		option_presenter.options_container.size = Vector2(130, 36)
-		
-	else:
-		option_presenter.texture = option_texture_big
-		option_presenter.options_container.size = Vector2(130, 72)
