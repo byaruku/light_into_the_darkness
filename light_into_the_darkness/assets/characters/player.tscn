@@ -718,10 +718,12 @@ hframes = 6
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_8c6ij")
 
 [node name="ScareArea" type="Area2D" parent="." unique_id=1316055121]
+visible = false
 position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 2
@@ -731,6 +733,7 @@ monitoring = false
 shape = SubResource("CircleShape2D_ipexx")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1886363270]
+visible = false
 position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 4
@@ -739,6 +742,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_2xlmi")
 
 [node name="StandCheckArea" type="Area2D" parent="." unique_id=1186561357]
+visible = false
 position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 8
@@ -747,6 +751,7 @@ collision_mask = 8
 shape = SubResource("RectangleShape2D_eitfq")
 
 [node name="JumpCheckArea" type="Area2D" parent="." unique_id=183415535]
+visible = false
 position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 240

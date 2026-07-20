@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ygpcmo4uac0l"]
+
+[ext_resource type="Script" uid="uid://bdrqtay7q71fy" path="res://assets/autoloads/audio_manager.gd" id="1_4qkwf"]
+[ext_resource type="AudioStream" uid="uid://b47gpsxqdk54f" path="res://assets/audio/music/Main Menu.mp3" id="2_gucu8"]
+[ext_resource type="AudioStream" uid="uid://bkvfu0r4rx24g" path="res://assets/audio/music/Prototyp_Main_Area.mp3" id="3_m81wf"]
+[ext_resource type="AudioStream" uid="uid://batl8s742q1ex" path="res://assets/audio/music/Memory1_1.mp3" id="4_ccv74"]
+[ext_resource type="AudioStream" uid="uid://bjrr2njf2gjxp" path="res://assets/audio/music/Memory1_2.mp3" id="5_r38nd"]
+[ext_resource type="AudioStream" uid="uid://clw017njrvq6w" path="res://assets/audio/music/Memory2.mp3" id="6_s2w62"]
+[ext_resource type="AudioStream" uid="uid://bgk4e0ey6k7v" path="res://assets/audio/music/Memory3.mp3" id="7_wbcqq"]
+
+[node name="AudioManager" type="Node" unique_id=1378348112]
+script = ExtResource("1_4qkwf")
+main_menu_music = ExtResource("2_gucu8")
+town_music = ExtResource("3_m81wf")
+memory_1_part_1_music = ExtResource("4_ccv74")
+memory_1_part_2_music = ExtResource("5_r38nd")
+memory_2_music = ExtResource("6_s2w62")
+memory_3_music = ExtResource("7_wbcqq")
+
+[node name="MusicPlayerA" type="AudioStreamPlayer" parent="." unique_id=1243203753]
+bus = &"Music"
+
+[node name="MusicPlayerB" type="AudioStreamPlayer" parent="." unique_id=415275022]
+bus = &"Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2136611540]
+bus = &"SFX"

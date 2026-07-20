@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="2_kxu4k"]
 [ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="3_g0a82"]
 [ext_resource type="PackedScene" uid="uid://dtkoc5w80bcpb" path="res://assets/characters/npc_hikari.tscn" id="4_kxu4k"]
-[ext_resource type="AudioStream" uid="uid://bkvfu0r4rx24g" path="res://assets/audio/music/Prototyp_Main_Area.mp3" id="4_up3ox"]
 [ext_resource type="PackedScene" uid="uid://yu2kekqsun51" path="res://assets/characters/npc_daichi.tscn" id="6_3rras"]
 [ext_resource type="PackedScene" uid="uid://da2fudnmw43ql" path="res://assets/characters/npc_ichika.tscn" id="6_g0a82"]
 
@@ -78,12 +77,6 @@ sources/0 = SubResource("TileSetAtlasSource_7d3hr")
 [node name="Main_Area" type="Node2D" unique_id=712179779]
 y_sort_enabled = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1610638562]
-stream = ExtResource("4_up3ox")
-volume_db = -70.0
-autoplay = true
-bus = &"Music"
-
 [node name="GroundTexture" type="PointLight2D" parent="." unique_id=1901140501]
 visibility_layer = 0
 position = Vector2(0, -89)
@@ -133,4 +126,4 @@ position = Vector2(165, 95)
 shape = SubResource("RectangleShape2D_7d3hr")
 
 [node name="Marker2D" type="Marker2D" parent="Portal" unique_id=39963701]
-position = Vector2(165, -44)
+position = Vector2(165, 68)

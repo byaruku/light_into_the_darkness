@@ -49,6 +49,7 @@ func return_to_main_menu():
 
 func load_main_menu():
 	GameManager.state_machine.push(MainMenuState.new())
+	AudioManager.play_music_for(Portal.Destination.TOWN, 0)
 	
 	CameraManager.switch_to(center_view)
 	
@@ -90,6 +91,8 @@ func change_scene(destination: Portal.Destination):
 	
 	await Fader.fade_in(1.0)
 	
+	AudioManager.play_music_for(destination)
+	
 	if PauseManager.is_open:
 		PauseManager.resume()
 	
@@ -119,7 +122,7 @@ func change_scene(destination: Portal.Destination):
 
 	GameManager.is_in_memory = destination > 0
 	
-	if not GameManager.is_in_memory:
+	if not GameManager.is_in_memory and GameManager.player_position != Vector2.ZERO:
 		GameManager.player.global_position = GameManager.player_position
 	
 	CameraManager.switch_to(GameManager.player.global_position)

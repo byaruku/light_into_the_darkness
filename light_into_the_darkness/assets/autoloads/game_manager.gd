@@ -38,6 +38,8 @@ func clear_data():
 		MaskManager.MaskType.RAGE: 1,
 		MaskManager.MaskType.JOY: 1
 	}
+	player_position = Vector2.ZERO
+	AudioManager.clear_data()
 	ClouManager.clear_data()
 	IdentityManager.clear_data()
 
