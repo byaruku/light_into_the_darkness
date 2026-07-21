@@ -10,10 +10,13 @@ enum State {
 @export var speed := 70.0
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_playback: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
 
 var player: Player
 
 var state := State.CHASE
+var facing_direction := Vector2.DOWN
 
 var chase_direction := Vector2.ZERO
 var chase_timer := 0.0
@@ -25,32 +28,22 @@ var flee_retarget_timer := 0.0
 
 
 func _ready():
+	while GameManager.player == null:
+		await get_tree().process_frame
 	player = GameManager.player
+	animation_tree.active = true
 
 
 func _physics_process(delta: float) -> void:
-	if GameManager.state_machine.current_state is PauseState:
-		return
-	
-	match state:
-		State.WANDER:
-			pass
-		State.CHASE:
-			chase_player()
+	if GameManager.state_machine.current_state is FreeRoamState:
+		match state:
+			State.WANDER, State.CHASE:
+				chase_player()
+			
+			State.FLEE:
+				update_flee(delta)
 		
-		State.FLEE:
-			flee_timer -= delta
-			flee_retarget_timer -= delta
-			
-			if flee_retarget_timer <= 0:
-				update_flee_direction()
-				flee_retarget_timer = randf_range(0.3, 0.8)
-			
-			velocity = flee_direction * speed * 2
-			move_and_slide()
-			
-			if flee_timer <= 0:
-				state = State.CHASE
+		update_animation()
 
 
 func _on_touch_area_body_entered(body: Node2D) -> void:
@@ -61,11 +54,34 @@ func _on_touch_area_body_entered(body: Node2D) -> void:
 func chase_player():
 	navigation_agent.target_position = player.global_position
 	
+	if navigation_agent.is_navigation_finished():
+		velocity = Vector2.ZERO
+		return
+	
 	var next_position = navigation_agent.get_next_path_position()
 	var direction = global_position.direction_to(next_position)
 	
+	update_facing_direction_from_vector(direction)
+	
 	velocity = direction * speed
 	move_and_slide()
+
+
+func update_flee(delta):
+	flee_timer -= delta
+	flee_retarget_timer -= delta
+
+	if flee_retarget_timer <= 0:
+		update_flee_direction()
+		flee_retarget_timer = randf_range(0.3, 0.8)
+
+	update_facing_direction_from_vector(flee_direction)
+
+	velocity = flee_direction * speed * 2
+	move_and_slide()
+
+	if flee_timer <= 0:
+		state = State.CHASE
 
 
 func flee_from(source: Vector2):
@@ -81,3 +97,34 @@ func update_flee_direction():
 	var dir = (global_position - flee_source).normalized()
 	var angle_offset = deg_to_rad(randf_range(-45.0, 45.0))
 	flee_direction = dir.rotated(angle_offset)
+
+
+func update_animation() -> void:
+	animation_tree.set("parameters/walk/blend_position", facing_direction)
+	animation_tree.set("parameters/run/blend_position", facing_direction)
+	
+	if velocity.length() < 5:
+		animation_playback.travel("idle")
+		return
+	
+	match state:
+		State.WANDER:
+			animation_playback.travel("walk")
+		State.CHASE, State.FLEE:
+			animation_playback.travel("run")
+
+
+func update_facing_direction_from_vector(dir: Vector2):
+	if dir == Vector2.ZERO:
+		return
+
+	if abs(dir.x) > abs(dir.y):
+		if dir.x > 0:
+			facing_direction = Vector2.RIGHT
+		else:
+			facing_direction = Vector2.LEFT
+	else:
+		if dir.y > 0:
+			facing_direction = Vector2.DOWN
+		else:
+			facing_direction = Vector2.UP
