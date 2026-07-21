@@ -19,6 +19,11 @@ func _ready() -> void:
 	mask_manager.mask_started.connect(_on_mask_started)
 	mask_manager.mask_ended.connect(_on_mask_ended)
 	mask_manager.charges_changed.connect(_on_charges_changed)
+	mask_manager.added_mask.connect(_on_added_mask)
+	rage_slot.hide()
+	joy_slot.hide()
+	for mask in GameManager.masks:
+		_on_added_mask(mask.mask_type)
 	
 	update_ui()
 
@@ -30,7 +35,7 @@ func _process(_delta: float) -> void:
 	
 	var enabled = GameManager.is_in_memory
 	
-	for mask in mask_manager.masks:
+	for mask in GameManager.masks:
 		var slot = get_slot(mask.mask_type)
 		slot.modulate.a = 1.0 if enabled else 0.3
 	
@@ -38,7 +43,7 @@ func _process(_delta: float) -> void:
 
 
 func update_ui():
-	for mask in mask_manager.masks:
+	for mask in GameManager.masks:
 		var slot = get_slot(mask.mask_type)
 		slot.set_charges(GameManager.mask_charges[mask.mask_type])
 
@@ -90,3 +95,11 @@ func check_mask_warning():
 	if time_left != last_warning_second:
 		last_warning_second = time_left
 		play_mask_pulse(mask_manager.active_mask.mask_type)
+
+
+func _on_added_mask(mask_type: MaskManager.MaskType):
+	if mask_type == MaskManager.MaskType.RAGE:
+		rage_slot.show()
+	elif mask_type == MaskManager.MaskType.JOY:
+		joy_slot.show()
+	update_ui()

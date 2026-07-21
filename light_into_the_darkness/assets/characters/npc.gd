@@ -2,6 +2,8 @@ class_name NPC
 extends CharacterBody2D
 
 @export var yarn_node: String
+@export var yarn_node_after_memory: String
+@export var memory: Portal.Destination
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_playback: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
@@ -26,7 +28,8 @@ func interact() -> void:
 		return
 		
 	state = State.DIALOG
-	DialogueManager.start_dialogue(yarn_node)
+	var node = yarn_node_after_memory if GameManager.memory_completed[memory] else yarn_node
+	DialogueManager.start_dialogue(node)
 	await DialogueManager.on_dialog_finished
 	state = State.IDLE
 

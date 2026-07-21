@@ -1,11 +1,9 @@
-title: Dialog_Hikari
-when: always
+title: Dialog_Hikari_After_Memory
 ---
-Hikari: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
+Hikari: Viel Glück Maigo, ich glaube an dich.
 ===
 
 title: Dialog_Hikari
-when: once
 ---
 Ein Mädchen, circa 12 Jahre alt, lächelt dich frech an.
 

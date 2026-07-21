@@ -9,8 +9,7 @@ enum MaskType {
 signal mask_started(mask)
 signal mask_ended(mask)
 signal charges_changed(mask_type, charges)
-
-@export var masks: Array[MaskAbility]
+signal added_mask(mask_type)
 
 var active_mask: MaskAbility
 var active_mask_time_left := 0.0
@@ -44,7 +43,7 @@ func use_mask(mask: MaskAbility):
 
 
 func get_mask(mask_type: MaskType) -> MaskAbility:
-	for mask in masks:
+	for mask in GameManager.masks:
 		if mask.mask_type == mask_type:
 			return mask
 	return null
@@ -62,6 +61,8 @@ func can_use(mask: MaskAbility) -> bool:
 
 func add_charge(mask_type: MaskType, amount: int = 1):
 	var mask = get_mask(mask_type)
+	if mask == null:
+		return
 	GameManager.mask_charges[mask.mask_type] += amount
 	charges_changed.emit(mask_type, GameManager.mask_charges[mask.mask_type])
 	print(mask.mask_name, " ", GameManager.mask_charges[mask.mask_type])
@@ -74,3 +75,8 @@ func force_end_mask():
 	active_mask.deactivate(player)
 	mask_ended.emit(active_mask)
 	active_mask = null
+
+
+func add_mask(mask: MaskAbility):
+	GameManager.masks.append(mask)
+	added_mask.emit(mask.mask_type)

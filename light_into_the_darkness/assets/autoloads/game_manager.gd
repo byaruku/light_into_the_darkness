@@ -6,10 +6,19 @@ var player: Player
 
 var player_position : Vector2
 var is_in_memory := false
+var tutorial_finished := false
+
+var masks: Array[MaskAbility]
 
 var mask_charges := {
 	MaskManager.MaskType.RAGE: 1,
 	MaskManager.MaskType.JOY: 1
+}
+
+var memory_completed := {
+	Portal.Destination.MEMORY_1: false,
+	Portal.Destination.MEMORY_2: false,
+	Portal.Destination.MEMORY_3: false
 }
 
 func  _ready() -> void:
@@ -34,9 +43,15 @@ func _process(delta: float) -> void:
 
 func clear_data():
 	is_in_memory = false
+	tutorial_finished = false
 	mask_charges = {
 		MaskManager.MaskType.RAGE: 1,
 		MaskManager.MaskType.JOY: 1
+	}
+	memory_completed = {
+		Portal.Destination.MEMORY_1: false,
+		Portal.Destination.MEMORY_2: false,
+		Portal.Destination.MEMORY_3: false
 	}
 	player_position = Vector2.ZERO
 	AudioManager.clear_data()

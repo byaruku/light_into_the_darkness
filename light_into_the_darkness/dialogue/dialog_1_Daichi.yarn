@@ -1,11 +1,9 @@
-title: Dialog_Daichi
-when: always
+title: Dialog_Daichi_After_Memory
 ---
-Daichi: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
+Daichi: Es ist Zeit weiterzugehen, Maigo.
 ===
 
 title: Dialog_Daichi
-when: once
 ---
 Ein Mann, Mitte 30 mit freundlichen Augen und Bart blickt dich neugierig an.
 
@@ -59,7 +57,7 @@ Maigo: Wie heißt du eigentlich?
 Mann: Ich bin Daichi.
 Maigo: Verflucht nochmal, ich erinnere mich nicht an dich. 'Abenteuer' sagtest du?
 Daichi: Ich weiß noch, wie wir damals als Kinder im Wald gespielt haben – Die Bäume waren gefährliche Riesen, ...
-Diachi: ... die Vögel geheime Spione, Baumhäuser unsere Burgen... Wir haben ständig versucht den anderen zu übertrumpfen ...
+Daichi: ... die Vögel geheime Spione, Baumhäuser unsere Burgen... Wir haben ständig versucht den anderen zu übertrumpfen ...
 Daichi: ... und je älter wir wurden, desto größer und gefährlicher wurden unsere Abenteuer... Du wirst bald sehen, was ich meine.
 Daichi: Aber sei beruhigt, ich werde dich ein wenig an die Hand nehmen...
 <<add_identity 8>>

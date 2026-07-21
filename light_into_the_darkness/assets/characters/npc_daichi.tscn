@@ -67,6 +67,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_vy6l7")
 yarn_node = "Dialog_Daichi"
+yarn_node_after_memory = "Dialog_Daichi_After_Memory"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
 light_mask = 4

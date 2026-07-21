@@ -6,8 +6,7 @@ extends Node
 @export_file("*.tscn") var memory_1_scene: String
 @export_file("*.tscn") var memory_2_scene: String
 @export_file("*.tscn") var memory_3_scene: String
-@export_file("*.tscn") var test_scene: String
-@export_file("*.tscn") var test_memory_scene: String
+@export_file("*.tscn") var end_scene: String
 
 @export var center_view: Vector2 = Vector2(80, 72)
 
@@ -28,8 +27,7 @@ func _ready():
 	scene_paths[Portal.Destination.MEMORY_1] = memory_1_scene
 	scene_paths[Portal.Destination.MEMORY_2] = memory_2_scene
 	scene_paths[Portal.Destination.MEMORY_3] = memory_3_scene
-	scene_paths[Portal.Destination.TEST] = test_scene
-	scene_paths[Portal.Destination.TEST_MEMORY] = test_memory_scene
+	scene_paths[Portal.Destination.END] = end_scene
 
 
 func return_to_main_menu():
@@ -94,6 +92,10 @@ func change_scene(destination: Portal.Destination):
 	if current_scene:
 		previous_scene_destination = current_scene_destination
 		current_scene.queue_free()
+		if current_scene_destination > 0:
+			GameManager.memory_completed[current_scene_destination] = true
+			if current_scene_destination == Portal.Destination.MEMORY_3:
+				destination = Portal.Destination.END
 		current_scene = null
 		
 	var path = scene_paths[destination]
@@ -106,9 +108,6 @@ func change_scene(destination: Portal.Destination):
 	current_scene = packed.instantiate()
 	current_scene_container.add_child(current_scene)
 	current_scene_destination = destination
-
-	await get_tree().process_frame
-	await get_tree().process_frame
 
 	var portal = find_destination_portal(destination)
 

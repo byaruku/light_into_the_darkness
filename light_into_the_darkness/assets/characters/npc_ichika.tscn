@@ -67,6 +67,8 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_255c5")
 yarn_node = "Dialog_Ichika"
+yarn_node_after_memory = "Dialog_Ichika"
+memory = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211416536]
 texture_filter = 1

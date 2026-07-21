@@ -1,11 +1,4 @@
 title: Dialog_Ichika
-when: always
----
-Ichika: Ich habe dir alles gesagt, was ich dich weiß, den Rest musst du selbst herausfinden.
-===
-
-title: Dialog_Ichika
-when: once
 ---
 Eine Frau, Anfang 30, blickt dich neugierig an, sie strahlt.
 
@@ -78,8 +71,7 @@ title: Ichika_After_Memory
 ---
 Frau: Du hast es geschafft!
 *Sie umarmt dich innig und flüstert in dein Ohr*
-Frau: Lass dich nun vom Licht zurückbringen zu uns, Genki.
-Maigo: Mein... Name ist... Genki. Und du bist meine Frau Ichika. Ich... ich erinnere mich!
+Frau: Lass dich nun vom Licht zurückbringen zu uns.
 <<change_scene 0>>
 ===
 

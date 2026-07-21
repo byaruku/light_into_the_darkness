@@ -1,0 +1,111 @@
+title: Tutorial
+---
+*Du öffnest deine schweren Augen und reibst sie mit beiden Händen*
+Wo zur Hölle bin ich?!
+*Du blickst an dir herunter* ... du trägst bequeme Kleidung. Dein Körper kommt dir vertraut vor... doch sonst herrscht in deinem Kopf seltsame Leere.
+Auch mit einiger Anstrengung kannst du dir einfach keinen Reim aus deiner Lage machen, geschweige denn dir erklären, wo du bist.
+Du: Mein Name... muss... Maigo sein!
+Maigo: Wenigstens... fällt mir mein Name ein. Ich sollte ein paar Schritte laufen, vielleicht kann ich mich dann orientieren.
+Mit „W“ „A“ „S“ „D“ bewegst du dich.
+===
+
+title: Tutorial_Crouch
+---
+Maigo: Die Säulen sind umgestürzt... Ich sollte versuchen unter der Säule durchzukrabbeln.
+Mit „C“ kannst du dich ducken.
+===
+
+title: Tutorial_Jump
+---
+Maigo: Noch eine umgestürzte Säule, da ist nur kein Platz für mich zum krabbeln, ich muss wohl darüberspringen.
+Mit „Leertaste“ springst du.
+===
+
+title: Tutorial_Interact
+---
+Auf dem Boden liegen zwei seltsam aussehende Masken.
+Mit „F“ interagierst du mit Objekten.
+===
+
+title: Tutorial_Rage_Mask
+---
+Als du die Maske aufhebst, durchfährt dich ein warmes Gefühl, das dir in den Kopf steigt..., du spürst Wut in dir. Aber auch einen Drang, zur Tat zu schreiten.
+===
+
+title: Tutorial_Joy_Mask
+---
+Du hebst die Maske auf... du spürst Gänsehaut an deinem ganzen Körper. Du musst plötzlich Lächeln. Ein Energieschub durchfährt dich.
+===
+
+title: Tutorial_NPC
+---
+Mit „F“ sprichst du jemanden an.
+===
+
+title: First_Daichi
+---
+Maigo: Ich sollte vielleicht zuerst mit dem Mann hier im Raum sprechen.
+===
+
+title: Firefly_Barrier
+---
+Maigo: Ich habe noch nicht genug Glühwürmchen gefangen. Dieses Mal werde ich mehr haben als Daichi!
+===
+
+title: Trigger_Dog
+---
+Daichi: Wie oft habe ich dich gewarnt diese Abkürzung nach Hause zu nehmen. Aber du wolltest mir ja nicht glauben das dort nun dieser tollwütige Hund auf Mäusejagd geht... 
+Daichi: Wie gut das wir rausfanden das er Wasser hasst!
+===
+
+title: Trigger_River
+---
+Daichi: Der Fluß ist deine Rettung, aber die Strömung stark genug um dir neue Probleme zu machen, jetzt keinen falschen Schritt, Maigo!
+<<add_identity 12>>
+===
+
+title: First_Hikari
+---
+Maigo: Ich sollte vielleicht zuerst mit dem Mädchen hier im Raum sprechen.
+===
+
+title: Labyrinth_Exit
+---
+Maigo: Ich habe Hikari noch nicht gefunden. Ich kann hier noch nicht raus!
+===
+
+title: Trigger_Park
+---
+Maigo: Das ist die falsche Richtung.
+===
+
+title: End
+---
+<<declare $identity = -1>>
+
+Du wachst in einem hellen, weißen Raum auf. Es riecht nach Krankenhaus. Alles verschwommen, dein Schädel dröhnt. Du reibst dir die Augen.
+Eine junge Frau hält deine Hand, schaut dich überrascht an und wischt sie die Tränen aus den Augen.
+Ichika: Mein Gott! Du bist erwacht! *sie schluchzt und legt ihren Kopf auf deine Brust*
+Du spürst ihre warme Berührung und dir steigen Tränen in die Augen. Du schließt die Augen und dir wird klar:
+<<if $identity > 80>>
+	Ichika, wie ich ihre Umarmung vermisste... ich erinnere mich! Mein Name ist Satoru. Ich bin nicht mehr „Maigo“, ein Verlorener. Als Maigo erkämpfte ich mir einen Weg an die Oberfläche.
+	Ein Kampf um meine Identität, um meine Erinnerungen. Jetzt bin ich hier, doch so viele Tränen wurden meinetwegen vergossen.
+	Meine Leidenschaft für schnelle Motorräder muss zu einem schweren Unfall und einer Amnesie geführt haben, da bin ich mir sicher.
+	Ichika hat immer gepredigt ich solle doch nicht so schnell fahren. Am Ende hatte sie wieder recht.
+	Doch obwohl ich die ganze Zeit hier in diesem Bett lag, werde ich das Gefühl nicht los, dass ich auf einer anderen Ebene... irgendwo in meinem Kopf... für dieses Erwachen alles gegeben habe.
+	Über all das zuletzt Erlebte auf dieser Ebene hängt ein Schleier... es engleitet mir schon wie bei einem Traum.
+	Doch am Ende waren es wohl all diese Prüfungen, Spiegel meiner Vergangenheit, die mich Schritt für Schritt zurückführten.
+	Daichi, Hikari, Ichika... sie haben mich begleitet und an mich geglaubt. Was wäre ich nur ohne meine Liebsten?
+<<elseif $identity > 55>>
+	Diese Frau kommt mir seltsam vertraut vor. Ich glaube sie heißt Ichika. Es fühlt sich an wie aus einem Traum zu erwachen, sie kam auch darin vor.
+	Ich glaube sie hat etwas mit meinem Erwachen zu tun. Ich habe dort noch zwei andere Vertraute gesehen, die mir halfen.
+	Vielleicht sind Sie, Daichi und Hikari, diejenigen die mir halfen zu erwachen...
+	Warum bin ich in diesem Krankenhaus? Warum fühle ich mich so verbunden mit dem Verlorenen aus meinem „Traum“, mit „Maigo“?
+	Ich werde nach Antworten suchen und ich werde sie finden.
+<<else>>
+	Diese Frau muss mir sehr nah stehen. Sonst würde sie sich doch nicht so freuen mich zu sehen.
+	Was hat mich in dieses Krankenhaus gebracht? Warum schwirrt mir „Maigo“ im Kopf herum? Was für ein seltsamer Name.
+	Alles fühlt sich an wie in einem Traum. Diese Erinnerungen, diese Aufgaben die ich meisterte. Das müssen Szenen aus meinem Leben gewesen sein. Warum fühlen sie sich dann so fremd an?
+	Ich hoffe mithilfe dieser Frau werde ich es schaffen können ins Leben zurückzukommen. Ich muss verstehen, wer ich bin und was mich hierherbrachte.
+<<endif>>
+===
