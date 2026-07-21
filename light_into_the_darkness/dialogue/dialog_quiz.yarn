@@ -52,4 +52,15 @@ title: Result
 <<else>>
 	Ichika: Leider falsch.
 <<endif>>
+
+<<set $line0 = "text">>
+<<set $line1 = "text">>
+<<set $line2 = "text">>
+<<set $line3 = "text">>
+<<set $line4 = "text">>
+<<set $line5 = "text">>
+<<set $option0 = "text">>
+<<set $option1 = "text">>
+<<set $option2 = "text">>
+<<set $option3 = "text">>
 ===

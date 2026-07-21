@@ -165,7 +165,7 @@ shape = SubResource("RectangleShape2D_vnkqm")
 disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="Portal" unique_id=913913488]
-position = Vector2(80, 64)
+position = Vector2(80, 72)
 
 [node name="Player" parent="." unique_id=1705600323 instance=ExtResource("5_2rmcm")]
 
@@ -247,7 +247,7 @@ position = Vector2(18, -31)
 position = Vector2(18, -47)
 
 [node name="TriggerArea" parent="." unique_id=1692687319 instance=ExtResource("13_hc5is")]
-position = Vector2(80, 64)
+position = Vector2(80, 72)
 yarn_node = "Tutorial"
 
 [node name="TriggerArea2" parent="." unique_id=1333619344 instance=ExtResource("13_hc5is")]

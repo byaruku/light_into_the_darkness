@@ -86,7 +86,7 @@ title: End
 Du wachst in einem hellen, weißen Raum auf. Es riecht nach Krankenhaus. Alles verschwommen, dein Schädel dröhnt. Du reibst dir die Augen.
 Eine junge Frau hält deine Hand, schaut dich überrascht an und wischt sie die Tränen aus den Augen.
 Ichika: Mein Gott! Du bist erwacht! *sie schluchzt und legt ihren Kopf auf deine Brust*
-Du spürst ihre warme Berührung und dir steigen Tränen in die Augen. Du schließt die Augen und dir wird klar:
+: Du spürst ihre warme Berührung und dir steigen Tränen in die Augen. Du schließt die Augen und dir wird klar:
 <<if $identity > 80>>
 	Ichika, wie ich ihre Umarmung vermisste... ich erinnere mich! Mein Name ist Satoru. Ich bin nicht mehr „Maigo“, ein Verlorener. Als Maigo erkämpfte ich mir einen Weg an die Oberfläche.
 	Ein Kampf um meine Identität, um meine Erinnerungen. Jetzt bin ich hier, doch so viele Tränen wurden meinetwegen vergossen.
