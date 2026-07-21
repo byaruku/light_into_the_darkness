@@ -68,7 +68,7 @@ func return_main_menu():
 
 func leave_memory():
 	if await ask_confirmation(
-		"Diese Erinnerung wird verblassen. Du kannst nicht zu ihr zurückkehren."
+		"Diese Welt wird verblassen. Du kannst nicht zu ihr zurückkehren."
 	):
 		resume()
 		SceneManager.leave_memory()

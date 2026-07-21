@@ -44,7 +44,7 @@ text = "Optionen"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
-text = "Erinnerung verlassen"
+text = "Welt verlassen"
 
 [node name="Spacer" type="Control" parent="Panel/MarginContainer/VBoxContainer" unique_id=2070058964]
 visible = false
