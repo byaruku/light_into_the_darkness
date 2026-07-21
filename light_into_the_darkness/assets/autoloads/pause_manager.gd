@@ -83,6 +83,7 @@ func ask_confirmation(message: String) -> bool:
 	
 	return result
 
+
 func _on_settings_closed():
 	if is_open:
 		pause_menu.show()
