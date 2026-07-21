@@ -1,24 +1,26 @@
 extends CanvasLayer
 
-@onready var rect = $ColorRect
+@onready var sprite := $Sprite2D
+@onready var animation_player := $AnimationPlayer
 
 
 func _ready() -> void:
-	fade_out(0)
+	sprite.hide()
+	fade_out()
 
-func fade_in(time: float):
-	rect.show()
+func fade_in():
+	sprite.show()
+	
 	var tween = create_tween()
-
-	tween.tween_property(rect, "modulate:a", 1.0, time)
-
+	tween.tween_property(sprite, "modulate:a", 1.0, 1.9)
+	animation_player.play("portal_open")
 	await tween.finished
 
 
-func fade_out(time: float):
+func fade_out():
 	var tween = create_tween()
-
-	tween.tween_property(rect, "modulate:a", 0.0, time)
-
+	tween.tween_property(sprite, "modulate:a", 0.0, 1.9)
+	animation_player.play("portal_close")
 	await tween.finished
-	rect.hide()
+	
+	sprite.hide()

@@ -32,7 +32,7 @@ func _ready():
 
 func return_to_main_menu():
 	GameManager.state_machine.push(PauseState.new())
-	await Fader.fade_in(1.0)
+	await Fader.fade_in()
 	
 	if current_scene:
 		current_scene.queue_free()
@@ -42,7 +42,7 @@ func return_to_main_menu():
 	GameManager.state_machine.pop()
 	load_main_menu()
 	
-	await Fader.fade_out(1.0)
+	await Fader.fade_out()
 
 
 func load_main_menu():
@@ -62,7 +62,7 @@ func load_main_menu():
 
 
 func new_game():
-	await Fader.fade_in(1.0)
+	await Fader.fade_in()
 	
 	GameManager.state_machine.pop()
 	main_menu.queue_free()
@@ -82,7 +82,7 @@ func exit_game():
 func change_scene(destination: Portal.Destination):
 	GameManager.state_machine.push(PauseState.new())
 	
-	await Fader.fade_in(1.0)
+	await Fader.fade_in()
 	
 	AudioManager.play_music_for(destination)
 	
@@ -122,7 +122,7 @@ func change_scene(destination: Portal.Destination):
 	CameraManager.switch_to(GameManager.player.global_position)
 	CameraManager.follow_node(GameManager.player)
 
-	await Fader.fade_out(1.0)
+	await Fader.fade_out()
 
 	GameManager.state_machine.pop()
 
