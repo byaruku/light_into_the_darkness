@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bguhha3eddv7r"]
+
+[ext_resource type="Texture2D" uid="uid://n2ktlukndbyb" path="res://assets/art/environment/column_big_without_light.png" id="1_ibn7s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cueys"]
+radius = 2.0
+
+[node name="Column" type="Node2D" unique_id=490803908]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=596698223]
+position = Vector2(0, -30)
+texture = ExtResource("1_ibn7s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=763336188]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1388967811]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_cueys")

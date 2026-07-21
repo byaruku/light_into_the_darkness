@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpbvlu5dwj0ta"]
+
+[ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="1_lr8vg"]
+[ext_resource type="PackedScene" uid="uid://bxkgop2wctqvx" path="res://assets/resources/trigger_area.tscn" id="2_dq2tk"]
+[ext_resource type="Script" uid="uid://ldmc37neujyj" path="res://assets/resources/trigger_end.gd" id="3_atctt"]
+
+[node name="End" type="Node2D" unique_id=2045948281]
+
+[node name="Player" parent="." unique_id=1705600323 instance=ExtResource("1_lr8vg")]
+
+[node name="TriggerArea" parent="." unique_id=1692687319 instance=ExtResource("2_dq2tk")]
+script = ExtResource("3_atctt")
+yarn_node = "End"
+one_shot = null
+active = null
+has_collision = null

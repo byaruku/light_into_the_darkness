@@ -6,8 +6,7 @@ enum Destination {
 	MEMORY_1,
 	MEMORY_2,
 	MEMORY_3,
-	TEST,
-	TEST_MEMORY
+	END
 }
 
 @export var portal_id: Destination

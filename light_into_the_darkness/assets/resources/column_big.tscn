@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c13h0qpdoaon1"]
+
+[ext_resource type="Texture2D" uid="uid://caery0n1kllfe" path="res://assets/art/environment/column_big.png" id="1_vp3b0"]
+[ext_resource type="Texture2D" uid="uid://c2v4agqnu8wmc" path="res://assets/art/ui/masks/background 64_64.png" id="2_5l7iq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cueys"]
+radius = 2.0
+
+[node name="Column" type="Node2D" unique_id=490803908]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=596698223]
+position = Vector2(0, -30)
+texture = ExtResource("1_vp3b0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=763336188]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1388967811]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_cueys")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1699124624]
+position = Vector2(0, -26)
+texture = ExtResource("2_5l7iq")

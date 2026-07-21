@@ -6,11 +6,10 @@
 [node name="SceneManager" type="Node" unique_id=1363815216]
 script = ExtResource("1_af6ij")
 main_menu_packed = ExtResource("2_af6ij")
-town_scene = "uid://c4hyx1pkcoxx4"
+town_scene = "uid://cbha8otl260ss"
 memory_1_scene = "uid://th33627mauxn"
 memory_2_scene = "uid://bnhntpm7tdkm1"
 memory_3_scene = "uid://bqb7vmmsgg413"
-test_scene = "uid://d0xljghkfa0h5"
-test_memory_scene = "uid://ccjo8cdqdc021"
+end_scene = "uid://cpbvlu5dwj0ta"
 
 [node name="CurrentSceneContainer" type="Node" parent="." unique_id=1140696747]
