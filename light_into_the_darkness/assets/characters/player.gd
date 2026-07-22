@@ -22,6 +22,14 @@ const LAYER_CROUCH = 4
 @export var jump_distance := 8
 @export var jump_duration := 0.25
 
+@export_category("Audio")
+@export var footsteps: Array[AudioStream]
+
+@onready var audio_footsteps := $Audio/Footsteps
+@onready var audio_jump := $Audio/Jump
+@onready var audio_crouch := $Audio/Crouch
+@onready var audio_actions := $Audio/Actions
+
 var movement_state = MovementState.IDLE
 var action_state = ActionState.NORMAL
 
@@ -348,7 +356,7 @@ func break_object():
 
 
 func _on_scare_area_body_entered(body: Node2D) -> void:
-	if body is Enemy:
+	if body is Dog:
 		body.flee_from(global_position)
 
 
@@ -445,3 +453,9 @@ func cutscene_walk_to(target_position: Vector2):
 		await  get_tree().physics_frame
 		
 	velocity = Vector2.ZERO
+
+
+func play_footstep():
+	audio_footsteps.stream = footsteps.pick_random()
+	audio_footsteps.pitch_scale = randf_range(0.95, 1.05)
+	audio_footsteps.play()

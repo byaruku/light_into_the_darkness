@@ -1,4 +1,4 @@
-class_name Enemy
+class_name Dog
 extends CharacterBody2D
 
 enum State {
@@ -7,11 +7,18 @@ enum State {
 	FLEE
 }
 
+@export_category("Stats")
 @export var speed := 70.0
+
+@export_category("Audio")
+@export var barks: Array[AudioStream]
+@export var bark_interval := Vector2(2.0, 5.0)
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_playback: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
+@onready var bark_audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var bark_timer: Timer = $BarkTimer
 
 var player: Player
 
@@ -32,6 +39,7 @@ func _ready():
 		await get_tree().process_frame
 	player = GameManager.player
 	animation_tree.active = true
+	enter_chase()
 
 
 func _physics_process(delta: float) -> void:
@@ -49,6 +57,13 @@ func _physics_process(delta: float) -> void:
 func _on_touch_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		GameManager.leave_memory()
+
+
+func enter_chase():
+	state = State.CHASE
+	
+	bark_timer.wait_time = randf_range(1.0, 3.0)
+	bark_timer.start()
 
 
 func chase_player():
@@ -81,7 +96,7 @@ func update_flee(delta):
 	move_and_slide()
 
 	if flee_timer <= 0:
-		state = State.CHASE
+		enter_chase()
 
 
 func flee_from(source: Vector2):
@@ -128,3 +143,23 @@ func update_facing_direction_from_vector(dir: Vector2):
 			facing_direction = Vector2.DOWN
 		else:
 			facing_direction = Vector2.UP
+
+
+func _on_bark_timer_timeout() -> void:
+	if state == State.FLEE:
+		return
+	
+	if randf() < 0.6:
+		bark_audio.stream = barks.pick_random()
+		bark_audio.pitch_scale = randf_range(0.95, 1.05)
+		bark_audio.play()
+	
+	schedule_next_bark()
+
+
+func schedule_next_bark():
+	bark_timer.wait_time = randf_range(
+		bark_interval.x,
+		bark_interval.y
+	)
+	bark_timer.start()
