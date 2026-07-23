@@ -1,5 +1,7 @@
 extends Node
 
+signal clear_mask_data
+
 var state_machine : StateMachine
 
 var player: Player
@@ -45,8 +47,8 @@ func clear_data():
 	is_in_memory = false
 	tutorial_finished = false
 	mask_charges = {
-		MaskManager.MaskType.RAGE: 1,
-		MaskManager.MaskType.JOY: 1
+		MaskManager.MaskType.RAGE: 0,
+		MaskManager.MaskType.JOY: 0
 	}
 	memory_completed = {
 		Portal.Destination.MEMORY_1: false,
@@ -56,6 +58,7 @@ func clear_data():
 	player_position = Vector2.ZERO
 	AudioManager.clear_data()
 	ClouManager.clear_data()
+	clear_mask_data.emit()
 	IdentityManager.clear_data()
 
 

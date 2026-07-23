@@ -36,10 +36,10 @@ func return_to_main_menu():
 	
 	if current_scene:
 		current_scene.queue_free()
-
+	
+	GameManager.state_machine.pop()
 	GameManager.player = null
 	GameManager.clear_data()
-	GameManager.state_machine.pop()
 	load_main_menu()
 	
 	await Fader.fade_out()

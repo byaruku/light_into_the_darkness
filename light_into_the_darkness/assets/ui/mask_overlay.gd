@@ -21,12 +21,12 @@ func _ready() -> void:
 	mask_manager.mask_ended.connect(_on_mask_ended)
 	mask_manager.charges_changed.connect(_on_charges_changed)
 	mask_manager.added_mask.connect(_on_added_mask)
-	rage_slot.hide()
-	joy_slot.hide()
+	GameManager.clear_mask_data.connect(_on_clear_data)
+	
 	for mask in GameManager.masks:
 		_on_added_mask(mask.mask_type)
 	
-	update_ui()
+	_on_clear_data()
 
 
 func _process(_delta: float) -> void:
@@ -47,6 +47,13 @@ func update_ui():
 	for mask in GameManager.masks:
 		var slot = get_slot(mask.mask_type)
 		slot.set_charges(GameManager.mask_charges[mask.mask_type])
+
+
+func _on_clear_data():
+	rage_slot.hide()
+	joy_slot.hide()
+	
+	update_ui()
 
 
 func get_slot(type):

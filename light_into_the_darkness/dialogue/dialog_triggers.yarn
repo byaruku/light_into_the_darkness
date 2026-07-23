@@ -30,11 +30,13 @@ Mit „F“ interagierst du mit Objekten.
 title: Tutorial_Rage_Mask
 ---
 Als du die Maske aufhebst, durchfährt dich ein warmes Gefühl, das dir in den Kopf steigt..., du spürst Wut in dir. Aber auch einen Drang, zur Tat zu schreiten.
+<<add_charge 0>>
 ===
 
 title: Tutorial_Joy_Mask
 ---
 Du hebst die Maske auf... du spürst Gänsehaut an deinem ganzen Körper. Du musst plötzlich Lächeln. Ein Energieschub durchfährt dich.
+<<add_charge 1>>
 ===
 
 title: Tutorial_NPC

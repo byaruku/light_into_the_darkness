@@ -1,7 +1,7 @@
 class_name IconFireFly
 extends Node2D
 
-@export var speed := 20.0
+@export var speed := 40.0
 @export var pause_time := Vector2(0.3, 1.2)
 
 var container: Control
