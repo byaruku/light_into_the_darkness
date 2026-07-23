@@ -14,7 +14,6 @@ enum ActionState {
 
 const LAYER_CROUCH = 4
 
-
 @export_category("Stats")
 @export var speed := 100.0
 @export var crouch_speed := 25.0
@@ -24,11 +23,7 @@ const LAYER_CROUCH = 4
 
 @export_category("Audio")
 @export var footsteps: Array[AudioStream]
-
-@onready var audio_footsteps := $Audio/Footsteps
-@onready var audio_jump := $Audio/Jump
-@onready var audio_crouch := $Audio/Crouch
-@onready var audio_actions := $Audio/Actions
+@export var jumps: Array[AudioStream]
 
 var movement_state = MovementState.IDLE
 var action_state = ActionState.NORMAL
@@ -59,6 +54,11 @@ var direction_offsets = {
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_playback: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
+
+@onready var audio_footsteps := $Audio/Footsteps
+@onready var audio_jump := $Audio/Jump
+@onready var audio_crouch := $Audio/Crouch
+@onready var audio_actions := $Audio/Actions
 
 
 func _ready() -> void:
@@ -459,3 +459,15 @@ func play_footstep():
 	audio_footsteps.stream = footsteps.pick_random()
 	audio_footsteps.pitch_scale = randf_range(0.95, 1.05)
 	audio_footsteps.play()
+
+
+func play_crouchstep():
+	audio_crouch.stream = footsteps.pick_random()
+	audio_crouch.pitch_scale = randf_range(0.95, 1.05)
+	audio_crouch.play()
+
+
+func play_jump():
+	audio_jump.stream = jumps.pick_random()
+	audio_jump.pitch_scale = randf_range(0.95, 1.05)
+	audio_jump.play()

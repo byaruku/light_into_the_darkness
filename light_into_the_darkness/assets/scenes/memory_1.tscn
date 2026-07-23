@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dkpa6826ayhpr" path="res://assets/scenes/firefly_manager.tscn" id="5_xijwp"]
 [ext_resource type="PackedScene" uid="uid://07n4qnbgn7i6" path="res://assets/characters/dog.tscn" id="5_yq7w0"]
 [ext_resource type="PackedScene" uid="uid://dmuk55x83y0tn" path="res://assets/resources/firefly.tscn" id="6_1tox4"]
+[ext_resource type="AudioStream" uid="uid://7lvyqovwqoqx" path="res://assets/audio/sfx/ambience/forest.mp3" id="6_pbcd5"]
 [ext_resource type="PackedScene" uid="uid://iih3plfx4fwd" path="res://assets/resources/log_spawner.tscn" id="7_1tox4"]
+[ext_resource type="AudioStream" uid="uid://c8tbue611b03a" path="res://assets/audio/sfx/ambience/river.mp3" id="7_pbcd5"]
 [ext_resource type="PackedScene" uid="uid://5bwj2w7irgwt" path="res://assets/resources/log_kill_area.tscn" id="8_dvsov"]
 [ext_resource type="PackedScene" uid="uid://ce1oyuaw6rg5a" path="res://assets/resources/clou.tscn" id="10_6h3r3"]
 [ext_resource type="PackedScene" uid="uid://bxkgop2wctqvx" path="res://assets/resources/trigger_area.tscn" id="10_rvpmw"]
@@ -1039,6 +1041,59 @@ metadata/_custom_type_script = "uid://o2t7b8wepgv8"
 
 [node name="Memory1" type="Node2D" unique_id=226183257]
 y_sort_enabled = true
+
+[node name="Audio" type="Node2D" parent="." unique_id=1903872799]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1290079844]
+stream = ExtResource("6_pbcd5")
+volume_db = -80.0
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio" unique_id=678669908]
+position = Vector2(6248, 2024)
+stream = ExtResource("7_pbcd5")
+volume_db = -75.0
+autoplay = true
+max_distance = 2500.0
+attenuation = 2.0000005
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Audio" unique_id=470518903]
+position = Vector2(6248, 2984)
+stream = ExtResource("7_pbcd5")
+volume_db = -75.0
+autoplay = true
+max_distance = 2500.0
+attenuation = 2.0000005
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="Audio" unique_id=1902746804]
+position = Vector2(6248, 4040)
+stream = ExtResource("7_pbcd5")
+volume_db = -75.0
+autoplay = true
+max_distance = 2500.0
+attenuation = 2.0000005
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="Audio" unique_id=1288416387]
+position = Vector2(6248, 5000)
+stream = ExtResource("7_pbcd5")
+volume_db = -75.0
+autoplay = true
+max_distance = 2500.0
+attenuation = 2.0000005
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="Audio" unique_id=1937586246]
+position = Vector2(6536, 5960)
+stream = ExtResource("7_pbcd5")
+volume_db = -75.0
+autoplay = true
+max_distance = 2500.0
+attenuation = 2.0000005
+bus = &"SFX"
 
 [node name="Layers" type="Node2D" parent="." unique_id=1891386645]
 y_sort_enabled = true

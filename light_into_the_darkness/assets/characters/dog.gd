@@ -12,7 +12,7 @@ enum State {
 
 @export_category("Audio")
 @export var barks: Array[AudioStream]
-@export var bark_interval := Vector2(2.0, 5.0)
+@export var bark_interval := Vector2(3.0, 7.0)
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var animation_tree: AnimationTree = $AnimationTree

@@ -22,6 +22,3 @@ bus = &"Music"
 
 [node name="MusicPlayerB" type="AudioStreamPlayer" parent="." unique_id=415275022]
 bus = &"Music"
-
-[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2136611540]
-bus = &"SFX"

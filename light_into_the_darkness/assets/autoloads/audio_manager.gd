@@ -12,7 +12,6 @@ extends Node
 
 @onready var current_player := $MusicPlayerA
 @onready var inactive_player := $MusicPlayerB
-@onready var sfx_player := $SFXPlayer
 
 
 func play_music_for(destination: Portal.Destination = , part: int = 1):
@@ -31,11 +30,6 @@ func play_music_for(destination: Portal.Destination = , part: int = 1):
 			fade_to(memory_2_music)
 		Portal.Destination.MEMORY_3:
 			fade_to(memory_3_music)
-
-
-func play_sfx(stream: AudioStream):
-	sfx_player.stream = stream
-	sfx_player.play()
 
 
 func fade_to(stream: AudioStream):

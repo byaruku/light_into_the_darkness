@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://bqb7vmmsgg413"]
 
+[ext_resource type="AudioStream" uid="uid://b7safe0ug4uuk" path="res://assets/audio/sfx/ambience/grassland.mp3" id="1_vl7uo"]
 [ext_resource type="Texture2D" uid="uid://c3g5r3plya6xm" path="res://assets/art/environment/Forest_16_16.png" id="1_ytoyc"]
 [ext_resource type="PackedScene" uid="uid://bajm7x53jbj07" path="res://assets/characters/player.tscn" id="1_yum6n"]
 [ext_resource type="PackedScene" uid="uid://c8cy888orwwdf" path="res://assets/characters/npc_memory_ichika.tscn" id="2_ckks0"]
 [ext_resource type="Texture2D" uid="uid://s8x8wenijlyb" path="res://assets/art/environment/pathway_16_16.png" id="2_sour4"]
-[ext_resource type="Texture2D" uid="uid://bxf5wuiairo6f" path="res://assets/art/environment/vegetation.png" id="3_sour4"]
+[ext_resource type="Texture2D" uid="uid://bxf5wuiairo6f" path="res://assets/art/environment/Vegetation.png" id="3_sour4"]
 [ext_resource type="PackedScene" uid="uid://ddepuwf6jfooj" path="res://assets/resources/portal.tscn" id="3_ytoyc"]
 [ext_resource type="Texture2D" uid="uid://deo4i45bxkuig" path="res://assets/art/environment/props.png" id="4_ywc53"]
 [ext_resource type="Texture2D" uid="uid://bdlkjxm4e6ep7" path="res://assets/art/environment/objects_16_16.png" id="5_yxtdl"]
@@ -1064,6 +1065,12 @@ sources/2 = SubResource("TileSetAtlasSource_gybe1")
 
 [node name="Memory3" type="Node2D" unique_id=2140256910]
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1218489825]
+stream = ExtResource("1_vl7uo")
+volume_db = -75.0
+autoplay = true
+bus = &"SFX"
 
 [node name="Layers" type="Node2D" parent="." unique_id=1104229654]
 y_sort_enabled = true

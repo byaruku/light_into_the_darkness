@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bnhntpm7tdkm1"]
 
+[ext_resource type="AudioStream" uid="uid://drp4x2dgeest5" path="res://assets/audio/sfx/ambience/maze.mp3" id="1_8rhti"]
 [ext_resource type="Texture2D" uid="uid://lavmqg4tna3c" path="res://assets/art/environment/corn_field_24_24.png" id="1_xyv71"]
 [ext_resource type="Texture2D" uid="uid://bmwygi337w4xy" path="res://assets/art/environment/low_grass_16_16.png" id="2_mt1it"]
 [ext_resource type="Script" uid="uid://bdm661i5yvng8" path="res://assets/resources/height_tile_map_layer.gd" id="3_8rhti"]
@@ -691,7 +692,6 @@ script = ExtResource("8_l5ktk")
 clou_id = "Diary"
 yarn_node = "Clou_Diary"
 icon = ExtResource("7_bwa21")
-identity_reward = 5
 metadata/_custom_type_script = "uid://o2t7b8wepgv8"
 
 [sub_resource type="Resource" id="Resource_cdkxu"]
@@ -699,12 +699,17 @@ script = ExtResource("8_l5ktk")
 clou_id = "Pizza_Box"
 yarn_node = "Clou_Pizza_Box"
 icon = ExtResource("9_obfid")
-identity_reward = 5
 boosted_mask = 1
 metadata/_custom_type_script = "uid://o2t7b8wepgv8"
 
 [node name="Memory2" type="Node2D" unique_id=797532986]
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=696161185]
+stream = ExtResource("1_8rhti")
+volume_db = -80.0
+autoplay = true
+bus = &"SFX"
 
 [node name="Layers" type="Node2D" parent="." unique_id=2119128366]
 y_sort_enabled = true

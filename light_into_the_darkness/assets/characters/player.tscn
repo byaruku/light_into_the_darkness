@@ -1,9 +1,34 @@
 [gd_scene format=3 uid="uid://bajm7x53jbj07"]
 
 [ext_resource type="Script" uid="uid://o52hwfds5h44" path="res://assets/characters/player.gd" id="1_s027a"]
+[ext_resource type="AudioStream" uid="uid://b2nltuy8lva6d" path="res://assets/audio/sfx/footsteps/footstep01.wav" id="2_40r61"]
 [ext_resource type="Script" uid="uid://dbkgu6o2hwqnk" path="res://assets/masks/mask_manager.gd" id="2_eitfq"]
 [ext_resource type="PackedScene" uid="uid://52x1sqracaon" path="res://assets/ui/mask_overlay.tscn" id="2_sqwyp"]
+[ext_resource type="AudioStream" uid="uid://6cgbh4r2d880" path="res://assets/audio/sfx/footsteps/footstep02.wav" id="3_skp7j"]
+[ext_resource type="AudioStream" uid="uid://ckngtk2kgfb2s" path="res://assets/audio/sfx/footsteps/footstep03.wav" id="4_5refc"]
+[ext_resource type="AudioStream" uid="uid://c1p7qlnapi7uq" path="res://assets/audio/sfx/footsteps/footstep04.wav" id="5_c7pp8"]
+[ext_resource type="AudioStream" uid="uid://ii2rglftivdr" path="res://assets/audio/sfx/footsteps/footstep05.wav" id="6_40r61"]
 [ext_resource type="Texture2D" uid="uid://uso6b0bqsc3f" path="res://assets/art/characters/Maigo/Maigo_comp_shaded_18x18.png" id="7_5rkq3"]
+[ext_resource type="AudioStream" uid="uid://88u46snyv1ya" path="res://assets/audio/sfx/footsteps/footstep06.wav" id="7_skp7j"]
+[ext_resource type="AudioStream" uid="uid://gxa77gr1vma1" path="res://assets/audio/sfx/footsteps/footstep07.wav" id="8_5refc"]
+[ext_resource type="AudioStream" uid="uid://bsvqpkomvn40b" path="res://assets/audio/sfx/footsteps/footstep08.wav" id="9_c7pp8"]
+[ext_resource type="AudioStream" uid="uid://kqp677tba50w" path="res://assets/audio/sfx/footsteps/footstep09.wav" id="10_m3ey1"]
+[ext_resource type="AudioStream" uid="uid://dg4nx5ix6l6wj" path="res://assets/audio/sfx/footsteps/footstep10.wav" id="11_nwtm7"]
+[ext_resource type="AudioStream" uid="uid://bcyv6lcbpnk0w" path="res://assets/audio/sfx/footsteps/footstep11.wav" id="12_jr5ps"]
+[ext_resource type="AudioStream" uid="uid://bvkyfnsai45as" path="res://assets/audio/sfx/footsteps/footstep12.wav" id="13_006uc"]
+[ext_resource type="AudioStream" uid="uid://7dpc8vi5486r" path="res://assets/audio/sfx/footsteps/footstep13.wav" id="14_bl6m5"]
+[ext_resource type="AudioStream" uid="uid://dugbq5hd46l5j" path="res://assets/audio/sfx/footsteps/footstep14.wav" id="15_vtl1g"]
+[ext_resource type="AudioStream" uid="uid://urtck8w2pmwb" path="res://assets/audio/sfx/footsteps/footstep15.wav" id="16_u7m25"]
+[ext_resource type="AudioStream" uid="uid://774rfehh6lem" path="res://assets/audio/sfx/footsteps/footstep16.wav" id="17_oqvqo"]
+[ext_resource type="AudioStream" uid="uid://b1cra1eaxfqex" path="res://assets/audio/sfx/footsteps/footstep17.wav" id="18_jvc4d"]
+[ext_resource type="AudioStream" uid="uid://cfof8sdyh3bn4" path="res://assets/audio/sfx/footsteps/footstep18.wav" id="19_iykae"]
+[ext_resource type="AudioStream" uid="uid://cibmg5uvxghjn" path="res://assets/audio/sfx/footsteps/footstep19.wav" id="20_05dts"]
+[ext_resource type="AudioStream" uid="uid://blfavx8oiek55" path="res://assets/audio/sfx/footsteps/footstep20.wav" id="21_tcyhb"]
+[ext_resource type="AudioStream" uid="uid://duowxims6wm3u" path="res://assets/audio/sfx/jumps/jump01.wav" id="22_jr5ps"]
+[ext_resource type="AudioStream" uid="uid://cijvu33hw46co" path="res://assets/audio/sfx/jumps/jump02.wav" id="23_006uc"]
+[ext_resource type="AudioStream" uid="uid://hy524bevira1" path="res://assets/audio/sfx/jumps/jump03.wav" id="24_bl6m5"]
+[ext_resource type="AudioStream" uid="uid://dm6dvosm1wjgr" path="res://assets/audio/sfx/jumps/jump04.wav" id="25_vtl1g"]
+[ext_resource type="AudioStream" uid="uid://ocgpn1hirccc" path="res://assets/audio/sfx/jumps/jump05.wav" id="26_u7m25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8c6ij"]
 size = Vector2(12, 8)
@@ -40,6 +65,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [31, 32]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_crouchstep"
+}, {
+"args": [],
+"method": &"play_crouchstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_c7pp8"]
 resource_name = "crouch D"
@@ -57,6 +99,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [34, 35]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_crouchstep"
+}, {
+"args": [],
+"method": &"play_crouchstep"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_m3ey1"]
@@ -76,6 +135,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [25, 26]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_crouchstep"
+}, {
+"args": [],
+"method": &"play_crouchstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_nwtm7"]
 resource_name = "crouch W"
@@ -93,6 +169,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [28, 29]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_crouchstep"
+}, {
+"args": [],
+"method": &"play_crouchstep"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_5rkq3"]
@@ -255,21 +348,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [22]
 }
-tracks/1/type = "audio"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Audio/Jump")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": null
-}],
-"times": PackedFloat32Array(0.3)
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_jump"
+}]
 }
-tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ryiip"]
 resource_name = "jump D"
@@ -286,6 +378,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [23]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_jump"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_ufose"]
@@ -304,6 +410,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [20]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_jump"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8jsyl"]
 resource_name = "jump W"
@@ -321,12 +441,26 @@ tracks/0/keys = {
 "update": 1,
 "values": [21]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_jump"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_kk33c"]
 resource_name = "run A"
 length = 0.3
 loop_mode = 1
-step = 0.1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -339,12 +473,29 @@ tracks/0/keys = {
 "update": 1,
 "values": [15, 16]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_drrhh"]
 resource_name = "run D"
 length = 0.3
 loop_mode = 1
-step = 0.1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -357,12 +508,29 @@ tracks/0/keys = {
 "update": 1,
 "values": [18, 19]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_aw78p"]
 resource_name = "run S"
 length = 0.3
 loop_mode = 1
-step = 0.1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -374,6 +542,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [9, 10]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_7868f"]
@@ -392,6 +577,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [12, 13]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_5uaii"]
@@ -446,6 +648,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [18, 19]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_svkqu"]
 resource_name = "walk S"
@@ -464,6 +683,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [9, 10]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_2qap7"]
 resource_name = "walk W"
@@ -481,6 +717,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [12, 13]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8sknh"]
@@ -720,6 +973,8 @@ graph_offset = Vector2(-18.980034, -41)
 collision_layer = 17
 collision_mask = 15
 script = ExtResource("1_s027a")
+footsteps = Array[AudioStream]([ExtResource("2_40r61"), ExtResource("3_skp7j"), ExtResource("4_5refc"), ExtResource("5_c7pp8"), ExtResource("6_40r61"), ExtResource("7_skp7j"), ExtResource("8_5refc"), ExtResource("9_c7pp8"), ExtResource("10_m3ey1"), ExtResource("11_nwtm7"), ExtResource("12_jr5ps"), ExtResource("13_006uc"), ExtResource("14_bl6m5"), ExtResource("15_vtl1g"), ExtResource("16_u7m25"), ExtResource("17_oqvqo"), ExtResource("18_jvc4d"), ExtResource("19_iykae"), ExtResource("20_05dts"), ExtResource("21_tcyhb")])
+jumps = Array[AudioStream]([ExtResource("22_jr5ps"), ExtResource("23_006uc"), ExtResource("24_bl6m5"), ExtResource("25_vtl1g"), ExtResource("26_u7m25")])
 
 [node name="MaskManager" type="Node" parent="." unique_id=760642046]
 script = ExtResource("2_eitfq")
@@ -733,6 +988,7 @@ texture = ExtResource("7_5rkq3")
 offset = Vector2(0, -7)
 hframes = 6
 vframes = 6
+frame = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
 visible = false
@@ -793,12 +1049,15 @@ parameters/walk/blend_position = Vector2(0, 0)
 [node name="Audio" type="Node2D" parent="." unique_id=854120900]
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="Audio" unique_id=1987167838]
+volume_db = -40.0
 bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="Audio" unique_id=574518416]
+volume_db = -70.0
 bus = &"SFX"
 
 [node name="Crouch" type="AudioStreamPlayer2D" parent="Audio" unique_id=694751967]
+volume_db = -50.0
 bus = &"SFX"
 
 [node name="Actions" type="AudioStreamPlayer2D" parent="Audio" unique_id=1610124797]

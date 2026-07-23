@@ -2,6 +2,7 @@ class_name MaskOverlay
 extends CanvasLayer
 
 @onready var animation_playback = $AnimationPlayer
+@onready var audio_pulse = $AudioStreamPlayer
 
 @onready var rage_slot = $MarginContainer/HBoxContainer/RageSlot
 @onready var joy_slot = $MarginContainer/HBoxContainer/JoySlot
@@ -103,3 +104,7 @@ func _on_added_mask(mask_type: MaskManager.MaskType):
 	elif mask_type == MaskManager.MaskType.JOY:
 		joy_slot.show()
 	update_ui()
+
+
+func play_time_up():
+	audio_pulse.play()
