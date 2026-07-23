@@ -15,13 +15,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Control" unique_id=1801416037]
+[node name="Panel" type="ColorRect" parent="Control" unique_id=2010761839]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.078431375, 0.0627451, 0.07450981, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=767337305]
 layout_mode = 1
@@ -103,21 +104,25 @@ Thore Komorowski
 [b]Music[/b]
 Thore Komorowski
 
-[b]Playtesting[/b]
-X, X, X – danke!
+[b]SFX[/b]
+Bjark Hassert
+Thore Komorowski
 
-Dieses Spiel ist entstanden im Rahmen des Kurses ‘Game Development Sessions‘ von Johannes Wolf & Jonas Mumm – danke!
+[b]Playtesting[/b]
+Danke!
+
+Dieses Spiel ist entstanden im Rahmen des Kurses ‘Game Development Sessions‘ von Johannes Wolf und Jonas Mumm – danke!
 
 
 [b]Created with[/b]
-Godot, FL Studio, Pixelorama, Paint, Twinery & YarnSpinner
+Godot 4.7, FL Studio, Audacity, Pixelorama, Paint, Twinery & YarnSpinner 3.2.0-alpha
 
 
 [b]Assets by[/b]
-X
-X
-X
-(Sounds, Texturen, Fonts)"
+Taira Komori – SFX
+
+[b]Licence[/b]
+Licht Ins Dunkle © 2026 by Bjark Hassert, Béla Backhauß, Janna-Lynn van Bernen, Thore Komorowski is licensed under CC BY-NC-ND 4.0."
 horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1122515811]

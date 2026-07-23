@@ -1181,22 +1181,28 @@ data = SubResource("Resource_rvpmw")
 [node name="FireflyManager" parent="." unique_id=580464065 instance=ExtResource("5_xijwp")]
 
 [node name="Firefly" parent="FireflyManager" unique_id=352389905 instance=ExtResource("6_1tox4")]
-position = Vector2(322, 382)
+position = Vector2(440, 408)
+move_radius = 200.0
 
 [node name="Firefly2" parent="FireflyManager" unique_id=516894980 instance=ExtResource("6_1tox4")]
-position = Vector2(1197, 299)
+position = Vector2(408, 1176)
+move_radius = 300.0
 
 [node name="Firefly3" parent="FireflyManager" unique_id=426069506 instance=ExtResource("6_1tox4")]
-position = Vector2(1020, 624)
+position = Vector2(1112, 504)
+move_radius = 300.0
 
 [node name="Firefly4" parent="FireflyManager" unique_id=1799006863 instance=ExtResource("6_1tox4")]
-position = Vector2(1709, 353)
+position = Vector2(1608, 600)
+move_radius = 300.0
 
 [node name="Firefly5" parent="FireflyManager" unique_id=439536458 instance=ExtResource("6_1tox4")]
-position = Vector2(2504, 492)
+position = Vector2(2072, 488)
+move_radius = 250.0
 
 [node name="Firefly6" parent="FireflyManager" unique_id=1628224786 instance=ExtResource("6_1tox4")]
-position = Vector2(2271, 920)
+position = Vector2(2200, 744)
+move_radius = 200.0
 
 [node name="FireflyBarrier" parent="FireflyManager" unique_id=1692687319 instance=ExtResource("10_rvpmw")]
 position = Vector2(720, 1312.0001)

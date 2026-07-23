@@ -1109,4 +1109,5 @@ position = Vector2(464, 704)
 position = Vector2(448, 768)
 scale = Vector2(10, 1)
 yarn_node = "Trigger_Park"
+one_shot = false
 has_collision = true

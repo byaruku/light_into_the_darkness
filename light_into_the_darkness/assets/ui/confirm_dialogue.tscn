@@ -5,7 +5,7 @@
 [node name="ConfirmDialogue" type="CanvasLayer" unique_id=683585409]
 script = ExtResource("1_je1j4")
 
-[node name="Panel" type="Panel" parent="." unique_id=1986068103]
+[node name="Panel" type="ColorRect" parent="." unique_id=1698811959]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -17,6 +17,7 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.078431375, 0.0627451, 0.07450981, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=720316345]
 layout_mode = 1
