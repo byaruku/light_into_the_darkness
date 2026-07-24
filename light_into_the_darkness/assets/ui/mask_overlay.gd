@@ -23,10 +23,12 @@ func _ready() -> void:
 	mask_manager.added_mask.connect(_on_added_mask)
 	GameManager.clear_mask_data.connect(_on_clear_data)
 	
+	if !GameManager.memory_completed[Portal.Destination.TOWN]:
+		rage_slot.hide()
+		joy_slot.hide()
+	
 	for mask in GameManager.masks:
 		_on_added_mask(mask.mask_type)
-	
-	_on_clear_data()
 
 
 func _process(_delta: float) -> void:

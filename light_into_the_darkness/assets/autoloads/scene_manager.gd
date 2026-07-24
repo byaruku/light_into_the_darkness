@@ -94,7 +94,9 @@ func change_scene(destination: Portal.Destination):
 		current_scene.queue_free()
 		if current_scene_destination > 0:
 			GameManager.memory_completed[current_scene_destination] = true
-			if current_scene_destination == Portal.Destination.MEMORY_3:
+			if current_scene_destination == Portal.Destination.MEMORY_1:
+				GameManager.memory_completed[Portal.Destination.TOWN] = true
+			elif current_scene_destination == Portal.Destination.MEMORY_3:
 				destination = Portal.Destination.END
 		current_scene = null
 		

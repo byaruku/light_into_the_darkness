@@ -13,6 +13,7 @@ func _ready() -> void:
 	$AnimationPlayer.seek(randf() * $AnimationPlayer.current_animation_length, true)
 	
 	container = get_parent()
+	choose_target()
 
 
 func _process(delta: float) -> void:

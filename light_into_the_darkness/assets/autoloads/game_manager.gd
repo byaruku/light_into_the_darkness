@@ -18,6 +18,7 @@ var mask_charges := {
 }
 
 var memory_completed := {
+	Portal.Destination.TOWN: false,
 	Portal.Destination.MEMORY_1: false,
 	Portal.Destination.MEMORY_2: false,
 	Portal.Destination.MEMORY_3: false
