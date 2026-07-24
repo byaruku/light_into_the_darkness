@@ -23,8 +23,9 @@ func _ready() -> void:
 	mask_manager.added_mask.connect(_on_added_mask)
 	GameManager.clear_mask_data.connect(_on_clear_data)
 	
-	if !GameManager.memory_completed[Portal.Destination.TOWN]:
+	if str(MaskManager.MaskType.RAGE) not in ClouManager.collected_clous:
 		rage_slot.hide()
+	if str(MaskManager.MaskType.JOY) not in ClouManager.collected_clous:
 		joy_slot.hide()
 	
 	for mask in GameManager.masks:

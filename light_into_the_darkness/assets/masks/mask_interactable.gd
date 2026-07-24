@@ -5,13 +5,15 @@ extends Interactable
 
 
 func _ready() -> void:
-	if GameManager.memory_completed[Portal.Destination.TOWN]:
+	if str(mask.mask_type) in ClouManager.collected_clous:
 		get_parent().queue_free()
 
 
 func interact():
+	GameManager.player.mask_manager.add_mask(mask)
+	
 	DialogueManager.start_dialogue(yarn_node)
 	await DialogueManager.on_dialog_finished
 	
-	GameManager.player.mask_manager.add_mask(mask)
+	ClouManager.collected_clous.append(str(mask.mask_type))
 	get_parent().queue_free()

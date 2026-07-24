@@ -38,7 +38,6 @@ func return_to_main_menu():
 		current_scene.queue_free()
 	
 	GameManager.state_machine.pop()
-	GameManager.player = null
 	GameManager.clear_data()
 	load_main_menu()
 	
@@ -65,7 +64,8 @@ func new_game():
 	await Fader.fade_in()
 	
 	GameManager.state_machine.pop()
-	main_menu.queue_free()
+	if current_scene_container.get_children().size() != 0:
+		main_menu.queue_free()
 	
 	GameManager.state_machine.push(FreeRoamState.new())
 	change_scene(Portal.Destination.TOWN)

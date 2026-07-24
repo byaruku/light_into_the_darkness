@@ -13,8 +13,8 @@ var tutorial_finished := false
 var masks: Array[MaskAbility]
 
 var mask_charges := {
-	MaskManager.MaskType.RAGE: 1,
-	MaskManager.MaskType.JOY: 1
+	MaskManager.MaskType.RAGE: 0,
+	MaskManager.MaskType.JOY: 0
 }
 
 var memory_completed := {
@@ -45,13 +45,16 @@ func _process(delta: float) -> void:
 
 
 func clear_data():
+	player = null
 	is_in_memory = false
 	tutorial_finished = false
+	masks = []
 	mask_charges = {
 		MaskManager.MaskType.RAGE: 0,
 		MaskManager.MaskType.JOY: 0
 	}
 	memory_completed = {
+		Portal.Destination.TOWN: false,
 		Portal.Destination.MEMORY_1: false,
 		Portal.Destination.MEMORY_2: false,
 		Portal.Destination.MEMORY_3: false
