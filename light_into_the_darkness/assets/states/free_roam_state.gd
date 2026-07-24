@@ -17,6 +17,7 @@ func execute(delta):
 	game_manager.player.handle_update(delta)
 	
 	if Input.is_action_just_pressed("ui_cancel"):
+		AudioManager.play_ui_back()
 		PauseManager.toggle_pause()
 
 

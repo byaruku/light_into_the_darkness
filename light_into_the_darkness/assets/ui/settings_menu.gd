@@ -9,9 +9,19 @@ signal closed
 @export var fullscreen_button: CheckButton
 @export var vsync_button: CheckButton
 
+@onready var buttons: Array = [
+	fullscreen_button,
+	vsync_button,
+	$Control/VBoxContainer/SaveAndBackButton
+]
+
 
 func _ready() -> void:
 	hide()
+	for button in buttons:
+		button.focus_entered.connect(AudioManager.play_ui_hover)
+		button.mouse_entered.connect(AudioManager.play_ui_hover)
+		button.pressed.connect(AudioManager.play_ui_select)
 
 
 func show_menu():
@@ -34,14 +44,17 @@ func close_menu():
 
 func _on_master_slider_value_changed(value: float) -> void:
 	SettingsManager.set_master_volume(value)
+	AudioManager.play_ui_select()
 
 
 func _on_music_slider_value_changed(value: float) -> void:
 	SettingsManager.set_music_volume(value)
+	AudioManager.play_ui_select()
 
 
 func _on_sfx_slider_value_changed(value: float) -> void:
 	SettingsManager.set_sfx_volume(value)
+	AudioManager.play_ui_select()
 
 
 func _on_fullscreen_button_toggled(enabled: bool) -> void:

@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://bjrr2njf2gjxp" path="res://assets/audio/music/Memory1_2.mp3" id="5_r38nd"]
 [ext_resource type="AudioStream" uid="uid://clw017njrvq6w" path="res://assets/audio/music/Memory2.mp3" id="6_s2w62"]
 [ext_resource type="AudioStream" uid="uid://bgk4e0ey6k7v" path="res://assets/audio/music/Memory3.mp3" id="7_wbcqq"]
+[ext_resource type="AudioStream" uid="uid://caphcssjb2bx4" path="res://assets/audio/sfx/ui/menu_nav.mp3" id="8_r38nd"]
+[ext_resource type="AudioStream" uid="uid://ceencjl3u4hfw" path="res://assets/audio/sfx/ui/menu_select.mp3" id="9_s2w62"]
+[ext_resource type="AudioStream" uid="uid://qma4737rw2hj" path="res://assets/audio/sfx/ui/menu_cancel.mp3" id="10_wbcqq"]
 
 [node name="AudioManager" type="Node" unique_id=1378348112]
 script = ExtResource("1_4qkwf")
@@ -16,9 +19,16 @@ memory_1_part_1_music = ExtResource("4_ccv74")
 memory_1_part_2_music = ExtResource("5_r38nd")
 memory_2_music = ExtResource("6_s2w62")
 memory_3_music = ExtResource("7_wbcqq")
+ui_hover_sound = ExtResource("8_r38nd")
+ui_select_sound = ExtResource("9_s2w62")
+ui_back_sound = ExtResource("10_wbcqq")
 
 [node name="MusicPlayerA" type="AudioStreamPlayer" parent="." unique_id=1243203753]
 bus = &"Music"
 
 [node name="MusicPlayerB" type="AudioStreamPlayer" parent="." unique_id=415275022]
 bus = &"Music"
+
+[node name="UIPlayer" type="AudioStreamPlayer" parent="." unique_id=473137323]
+volume_db = -80.0
+bus = &"SFX"

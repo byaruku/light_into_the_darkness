@@ -8,10 +8,20 @@ extends Node
 @export var memory_2_music: AudioStream
 @export var memory_3_music: AudioStream
 
+@export_category("UI")
+@export var ui_hover_sound: AudioStream
+@export var ui_select_sound: AudioStream
+@export var ui_back_sound: AudioStream
+
 @export var fade_time := 2.0
 
 @onready var current_player := $MusicPlayerA
 @onready var inactive_player := $MusicPlayerB
+@onready var ui_player := $UIPlayer
+
+
+func _ready() -> void:
+	ui_player.volume_db = -85
 
 
 func play_music_for(destination: Portal.Destination = , part: int = 1):
@@ -72,6 +82,21 @@ func fade_to(stream: AudioStream):
 	var temp = current_player
 	current_player = inactive_player
 	inactive_player = temp
+
+
+func play_ui_hover():
+	ui_player.stream = ui_hover_sound
+	ui_player.play()
+
+
+func play_ui_select():
+	ui_player.stream = ui_select_sound
+	ui_player.play()
+
+
+func play_ui_back():
+	ui_player.stream = ui_back_sound
+	ui_player.play()
 
 
 func clear_data():

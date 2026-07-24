@@ -15,6 +15,10 @@ signal main_menu_pressed
 
 func _ready() -> void:
 	hide()
+	for button in buttons:
+		button.focus_entered.connect(AudioManager.play_ui_hover)
+		button.mouse_entered.connect(AudioManager.play_ui_hover)
+		button.pressed.connect(AudioManager.play_ui_select)
 
 
 func show_menu():

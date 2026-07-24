@@ -16,6 +16,11 @@ func _ready() -> void:
 	buttons.append($MarginContainer/VBoxContainer/CreditsButton)
 	buttons.append($MarginContainer/VBoxContainer/ExitButton)
 	
+	for button in buttons:
+		button.focus_entered.connect(AudioManager.play_ui_hover)
+		button.mouse_entered.connect(AudioManager.play_ui_hover)
+		button.pressed.connect(AudioManager.play_ui_select)
+	
 	credits = credits_scene.instantiate()
 	get_tree().root.add_child.call_deferred(credits)
 	
