@@ -227,6 +227,8 @@ func start_jump():
 	# Jump on and of plattform
 	if target_platform:
 		var height_diff = target_platform.height_level - get_current_height()
+		if target_platform is MovingLog and target_platform == current_surface:
+			return
 		
 		if ((height_diff > 0 and height_diff <= jump_height) or target_platform is MovingLog) and target_platform.allow_jump_on:
 			jump_to_platform(target_platform)
@@ -235,6 +237,9 @@ func start_jump():
 		if height_diff < 0 and abs(height_diff) <= jump_height and target_platform.allow_jump_down:
 			jump_down(target_platform)
 			return
+	
+	if current_surface is MovingLog:
+		return
 	
 	normal_jump()
 
