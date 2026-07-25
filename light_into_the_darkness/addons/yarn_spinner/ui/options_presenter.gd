@@ -258,6 +258,11 @@ func _get_pooled_button() -> BaseButton:
 
 	if button == null:
 		button = Button.new()
+		button.add_theme_font_size_override("font_size", 4)
+		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		button.focus_entered.connect(AudioManager.play_ui_hover)
+		button.mouse_entered.connect(AudioManager.play_ui_hover)
+		button.pressed.connect(AudioManager.play_ui_select)
 
 	return button
 
@@ -284,8 +289,7 @@ func _create_option_buttons() -> void:
 			# Only apply default styling when no custom button scene is set.
 			# When using a custom scene, respect its existing theme/size.
 			if option_button_scene == null:
-				button.add_theme_font_size_override("font_size", 4)
-				button.autowrap_mode = TextServer.AUTOWRAP_WORD
+				pass
 		elif button.has_method("set_option_text"):
 			button.set_option_text(option.get_plain_text())
 
@@ -315,7 +319,12 @@ func _select_option(index: int) -> void:
 	var option := _current_options[index]
 	if not option.is_available:
 		return
-
+	
+	DialogLogManager.add_entry(
+			"Maigo",
+			option.get_plain_text()
+		)
+	
 	_selected_index = index
 	_is_showing_options = false
 	_set_presenter_visible(false)

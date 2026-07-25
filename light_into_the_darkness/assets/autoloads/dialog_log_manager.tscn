@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cym8jw6keymx1"]
+
+[ext_resource type="Script" uid="uid://cvfpgsgbpdwlf" path="res://assets/autoloads/dialog_log_manager.gd" id="1_obyct"]
+[ext_resource type="PackedScene" uid="uid://bcyhp2tegh63k" path="res://assets/ui/dialog_log_ui.tscn" id="2_e7csn"]
+
+[node name="DialogLogManager" type="Node" unique_id=1209677690]
+script = ExtResource("1_obyct")
+log_ui_scene = ExtResource("2_e7csn")
