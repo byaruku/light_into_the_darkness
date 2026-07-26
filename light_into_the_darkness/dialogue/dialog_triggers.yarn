@@ -57,7 +57,19 @@ Maigo: Ich sollte vielleicht zuerst mit dem Mann hier im Raum sprechen.
 
 title: Firefly_Barrier
 ---
-Maigo: Ich habe noch nicht genug Glühwürmchen gefangen. Dieses Mal werde ich mehr haben als Daichi!
+Maigo: Ich habe noch nicht genug Glühwürmchen gefangen.
+Maigo: Sollte ich trotzdem jetzt schon nach Hause?
+-> Nein
+	Maigo: Dieses Mal werde ich mehr haben als Daichi!
+-> Ja
+	Maigo: Vielleicht schlage ich seinen Rekord später nochmal.
+	<<destroy_firefly_manager>>
+	<<jump Way_Home>>
+===
+
+title: Way_Home
+---
+Maigo: Auf nach Hause über die Abkürzung durch den Wald!
 ===
 
 title: Trigger_Dog

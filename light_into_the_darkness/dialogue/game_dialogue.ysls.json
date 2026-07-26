@@ -47,6 +47,14 @@
       "language": "gdscript",
       "parameters": [],
       "yarnName": "change_animation"
+    },
+    {
+      "async": false,
+      "definitionName": "destroy_firefly_manager",
+      "fileName": "firefly_manager.gd",
+      "language": "gdscript",
+      "parameters": [],
+      "yarnName": "destroy_firefly_manager"
     }
   ],
   "functions": [],
