@@ -81,7 +81,7 @@ bbcode_enabled = true
 text = "[b]Game Concept[/b]
 Bjark Hassert
 
-[b]Programming (Gameplay, Systems)[/b]
+[b]Programming (Gameplay and Systems)[/b]
 Bjark Hassert
 
 [b]Level Design[/b]
@@ -109,20 +109,20 @@ Bjark Hassert
 Thore Komorowski
 
 [b]Playtesting[/b]
-Danke!
+Sirui, Raqhael, Hitonyx und Wibke – Danke!
 
-Dieses Spiel ist entstanden im Rahmen des Kurses ‘Game Development Sessions‘ von Johannes Wolf und Jonas Mumm – danke!
+Dieses Spiel ist entstanden im Rahmen des Kurses ‘Game Development Sessions‘ von Johannes Wolf und Jonas Mumm – Danke!
 
 
 [b]Created with[/b]
-Godot 4.7, FL Studio, Audacity, Pixelorama, Paint, Twinery & YarnSpinner 3.2.0-alpha
+Godot 4.7, FL Studio, Audacity, Pixelorama, Paint, Twinery und YarnSpinner 3.2.0-alpha
 
 
 [b]Assets by[/b]
 SFX by Taira Komori – https://taira-komori.net/freesounden.html
 
 [b]Licence[/b]
-Licht Ins Dunkle © 2026 by Bjark Hassert, Béla Backhauß, Janna-Lynn van Bernen, Thore Komorowski is licensed under CC BY-NC-ND 4.0."
+Licht Ins Dunkle © 2026 by Bjark Hassert, Béla Max Backhauß, Janna-Lynn van Bernen, Thore Komorowski is licensed under CC BY-NC-ND 4.0."
 horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1122515811]

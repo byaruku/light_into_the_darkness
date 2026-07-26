@@ -1171,7 +1171,7 @@ position = Vector2(2098.3125, 637.3413)
 [node name="Player" parent="." unique_id=1705600323 instance=ExtResource("4_xijwp")]
 
 [node name="ClouMotorsaw" parent="." unique_id=590297839 instance=ExtResource("10_6h3r3")]
-position = Vector2(1040, 1104)
+position = Vector2(2096, 136)
 data = SubResource("Resource_jixyl")
 
 [node name="ClouBinoculars" parent="." unique_id=611967538 instance=ExtResource("10_6h3r3")]
