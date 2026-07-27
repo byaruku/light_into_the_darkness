@@ -21,9 +21,11 @@ texture_filter = 1
 texture = ExtResource("2_f81rs")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1355700538]
+visible = false
 position = Vector2(0, -6)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=504127809]
+visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=446186585]
@@ -32,6 +34,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_uv1pw")
 
 [node name="LandingBody" type="StaticBody2D" parent="." unique_id=1283073424]
+visible = false
 collision_layer = 240
 collision_mask = 0
 script = ExtResource("3_76r7p")
@@ -42,6 +45,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_d62ch")
 
 [node name="Outline" type="StaticBody2D" parent="." unique_id=1627231125]
+visible = false
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Outline" unique_id=1711542466]

@@ -26,9 +26,11 @@ vframes = 2
 frame = 3
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=557944401]
+visible = false
 position = Vector2(0, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1479203135]
+visible = false
 collision_layer = 16
 collision_mask = 0
 
@@ -36,6 +38,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_xfnqy")
 
 [node name="Outline" type="StaticBody2D" parent="." unique_id=488755549]
+visible = false
 collision_layer = 0
 collision_mask = 0
 
@@ -43,6 +46,7 @@ collision_mask = 0
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
 
 [node name="LandingBody" type="StaticBody2D" parent="." unique_id=462227031]
+visible = false
 script = ExtResource("2_qp8lp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LandingBody" unique_id=2124454194]
