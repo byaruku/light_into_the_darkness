@@ -412,15 +412,6 @@ func set_height_collision(layer: int):
 		set_collision_mask_value(LAYER_CROUCH, true)
 
 
-func pause_player():
-	animation_tree.active = false
-
-
-func resume_player():
-	animation_tree.active = true
-	update_animation()
-
-
 func enable_joy_vision():
 	get_tree().call_group("joy_visible", "show_for_joy")
 

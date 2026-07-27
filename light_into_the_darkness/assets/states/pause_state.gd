@@ -3,10 +3,12 @@ extends BaseState
 
 func enter(_owner):
 	if GameManager.player:
-		GameManager.player.pause_player()
+		GameManager.player.movement_state = Player.MovementState.IDLE
+		GameManager.player.update_animation()
 	print("Pause enter")
 
 func exit():
 	if GameManager.player:
-		GameManager.player.resume_player()
+		GameManager.player.movement_state = Player.MovementState.IDLE
+		GameManager.player.update_animation()
 	print("Pause exit")
