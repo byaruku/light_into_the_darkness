@@ -1750,7 +1750,7 @@ position = Vector2(528, 905)
 position = Vector2(0, -19)
 
 [node name="FloorGround2" parent="Jumpable/CarWheel67" unique_id=255056764 instance=ExtResource("14_dg584")]
-position = Vector2(0, -9)
+position = Vector2(0, 13)
 
 [node name="CarWheel68" parent="Jumpable" unique_id=1603998930 instance=ExtResource("16_dwuyh")]
 position = Vector2(552, 697)
