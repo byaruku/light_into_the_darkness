@@ -3,7 +3,8 @@ extends CanvasLayer
 
 signal closed
 
-@onready var entries_container: VBoxContainer = $TextureRect/MarginContainer/Panel/EntiresContainer
+@onready var entries_container: VBoxContainer = $Dimmer/TextureRect/MarginContainer/Panel/EntiresContainer
+@onready var scroll_container: ScrollContainer = $Dimmer/TextureRect/MarginContainer/Panel
 
 
 func _ready() -> void:
@@ -11,8 +12,10 @@ func _ready() -> void:
 
 
 func show_log(entries: Array[DialogLogEntry]) -> void:
-	show()
 	refresh(entries)
+	await get_tree().process_frame
+	scroll_to_bottom()
+	show()
 
 
 func refresh(entries: Array[DialogLogEntry]) -> void:
@@ -26,16 +29,16 @@ func refresh(entries: Array[DialogLogEntry]) -> void:
 		label.bbcode_enabled = true
 		label.push_font_size(4)
 		
-		var speaker := entry.speaker_name
-		if speaker.strip_edges().is_empty():
+		var speaker := entry.speaker_name.strip_edges()
+		if speaker.is_empty():
 			speaker = "Erzähler"
 		
-		var prefix := "[b]%s[/b]\n" % speaker
-		if entry.is_choice:
-			prefix = "[color=khaki][b]%s[/b][/color]\n" % speaker
-		
-		label.append_text(prefix + entry.text)
+		label.append_text("[b]%s[/b]\n%s" % [speaker, entry.text])
 		entries_container.add_child(label)
+
+
+func scroll_to_bottom() -> void:
+	scroll_container.scroll_vertical = int(scroll_container.get_v_scroll_bar().max_value)
 
 
 func _unhandled_input(event: InputEvent) -> void:

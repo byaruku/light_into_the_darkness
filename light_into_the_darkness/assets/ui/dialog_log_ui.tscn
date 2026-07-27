@@ -7,8 +7,17 @@
 process_mode = 3
 script = ExtResource("1_57npd")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=646608800]
+[node name="Dimmer" type="Control" parent="." unique_id=668631829]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Dimmer" unique_id=646608800]
 texture_filter = 1
+layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -19,7 +28,7 @@ grow_vertical = 2
 texture = ExtResource("2_jq6y2")
 stretch_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=860735806]
+[node name="MarginContainer" type="MarginContainer" parent="Dimmer/TextureRect" unique_id=860735806]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,11 +40,12 @@ theme_override_constants/margin_top = 9
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 9
 
-[node name="Panel" type="ScrollContainer" parent="TextureRect/MarginContainer" unique_id=1425263637]
+[node name="Panel" type="ScrollContainer" parent="Dimmer/TextureRect/MarginContainer" unique_id=1425263637]
 layout_mode = 2
+mouse_filter = 0
 horizontal_scroll_mode = 0
 
-[node name="EntiresContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/Panel" unique_id=1157375208]
+[node name="EntiresContainer" type="VBoxContainer" parent="Dimmer/TextureRect/MarginContainer/Panel" unique_id=1157375208]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

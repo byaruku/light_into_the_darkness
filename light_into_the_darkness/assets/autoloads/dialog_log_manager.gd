@@ -29,14 +29,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 
-func add_entry(speaker_name: String, text: String, is_choice: bool = false) -> void:
+func add_entry(speaker_name: String, text: String) -> void:
 	if text.strip_edges().is_empty():
 		return
 	
 	var entry := DialogLogEntry.new()
 	entry.speaker_name = speaker_name
 	entry.text = text
-	entry.is_choice = is_choice
 	
 	entries.append(entry)
 	
@@ -44,6 +43,8 @@ func add_entry(speaker_name: String, text: String, is_choice: bool = false) -> v
 	
 	if is_open and log_ui:
 		log_ui.refresh(entries)
+		await get_tree().process_frame
+		log_ui.scroll_to_bottom()
 
 
 func toggle() -> void:

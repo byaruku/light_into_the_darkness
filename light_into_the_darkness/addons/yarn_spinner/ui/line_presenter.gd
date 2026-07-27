@@ -130,6 +130,8 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventMouseButton:
+		if DialogLogManager.is_open:
+			return
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if _is_fully_revealed:
 				_complete_line()

@@ -126,6 +126,8 @@ func change_scene(destination: Portal.Destination):
 
 	await Fader.fade_out()
 
+	while GameManager.state_machine.current_state is not PauseState:
+		await get_tree().process_frame
 	GameManager.state_machine.pop()
 
 
