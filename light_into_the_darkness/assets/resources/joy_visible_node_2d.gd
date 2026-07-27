@@ -1,5 +1,5 @@
-class_name JoyVisibleShader
-extends CanvasLayer
+class_name JoyVisibleNode2D
+extends Node2D
 
 
 func _ready() -> void:
