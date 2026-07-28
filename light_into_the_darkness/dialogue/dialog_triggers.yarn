@@ -1,7 +1,7 @@
 title: Tutorial
 ---
 *Du öffnest deine schweren Augen und reibst sie mit beiden Händen*
-Wo zur Hölle bin ich?!
+Du: Wo zur Hölle bin ich?!
 *Du blickst an dir herunter* ... du trägst bequeme Kleidung. Dein Körper kommt dir vertraut vor... doch sonst herrscht in deinem Kopf seltsame Leere.
 Auch mit einiger Anstrengung kannst du dir einfach keinen Reim aus deiner Lage machen, geschweige denn dir erklären, wo du bist.
 Du: Mein Name... muss... Maigo sein!
@@ -29,19 +29,25 @@ Mit „F“ interagierst du mit Objekten.
 
 title: Tutorial_Rage_Mask
 ---
-Als du die Maske aufhebst, durchfährt dich ein warmes Gefühl, das dir in den Kopf steigt..., du spürst Wut in dir. Aber auch einen Drang, zur Tat zu schreiten.
 <<add_charge 0>>
+Als du die Maske aufhebst, durchfährt dich ein warmes Gefühl, das dir in den Kopf steigt..., du spürst Wut in dir. Aber auch einen Drang, zur Tat zu schreiten.
+Maigo: Wenn ich die Maske aufsetze, fühle ich mich so als könnte ich durch Wände brechen und anderen Angst einjagen.
+Mit „1“ setzt du die Maske auf.
 ===
 
 title: Tutorial_Joy_Mask
 ---
-Du hebst die Maske auf... du spürst Gänsehaut an deinem ganzen Körper. Du musst plötzlich Lächeln. Ein Energieschub durchfährt dich.
 <<add_charge 1>>
+Du hebst die Maske auf... du spürst Gänsehaut an deinem ganzen Körper. Du musst plötzlich Lächeln. Ein Energieschub durchfährt dich.
+Maigo: Wenn ich die Maske aufsetze, dann fühle ich mich so leicht und voller Energie, als könnte ich überall hin und alles sehen.
+Mit „2“ setzt du die Maske auf.
 ===
 
 title: Tutorial_NPC
 ---
 Mit „F“ sprichst du jemanden an.
+Maigo: Ich sollte mir alles aufschreiben, damit ich nichts vergesse.
+Mit „L“ öffnest du den Dialogverlauf.
 ===
 
 title: First_Daichi
@@ -51,7 +57,19 @@ Maigo: Ich sollte vielleicht zuerst mit dem Mann hier im Raum sprechen.
 
 title: Firefly_Barrier
 ---
-Maigo: Ich habe noch nicht genug Glühwürmchen gefangen. Dieses Mal werde ich mehr haben als Daichi!
+Maigo: Ich habe noch nicht genug Glühwürmchen gefangen.
+Maigo: Sollte ich trotzdem jetzt schon nach Hause?
+-> Nein
+	Maigo: Dieses Mal werde ich mehr haben als Daichi!
+-> Ja
+	Maigo: Vielleicht schlage ich seinen Rekord später nochmal.
+	<<destroy_firefly_manager>>
+	<<jump Way_Home>>
+===
+
+title: Way_Home
+---
+Maigo: Auf nach Hause über die Abkürzung durch den Wald!
 ===
 
 title: Trigger_Dog

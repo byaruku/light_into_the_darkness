@@ -12,6 +12,7 @@ extends Node
 @export var ui_hover_sound: AudioStream
 @export var ui_select_sound: AudioStream
 @export var ui_back_sound: AudioStream
+@export var dialog_finish_sound: AudioStream
 
 @export var fade_time := 2.0
 
@@ -98,6 +99,10 @@ func play_ui_back():
 	ui_player.stream = ui_back_sound
 	ui_player.play()
 
+
+func play_dialog_finish():
+	ui_player.stream = dialog_finish_sound
+	ui_player.play()
 
 func clear_data():
 	current_player.stop()

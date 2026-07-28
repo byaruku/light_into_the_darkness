@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl2n6qnbgw3cs"
-path="res://.godot/imported/Dialog overlay.png-ac6345ef58ba43097cc9a3c8a8f184c3.ctex"
+uid="uid://byibv524stiou"
+path="res://.godot/imported/arrow.png-911ba6cbaee61b428e4a3d3f9b0cdf76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ui/dialog/Dialog overlay.png"
-dest_files=["res://.godot/imported/Dialog overlay.png-ac6345ef58ba43097cc9a3c8a8f184c3.ctex"]
+source_file="res://assets/art/environment/arrow.png"
+dest_files=["res://.godot/imported/arrow.png-911ba6cbaee61b428e4a3d3f9b0cdf76.ctex"]
 
 [params]
 

@@ -26,7 +26,6 @@ presenters = [NodePath("../CanvasLayer/LinePresenter"), NodePath("../CanvasLayer
 
 [node name="LinePresenter" type="TextureRect" parent="CanvasLayer" unique_id=1954899617 node_paths=PackedStringArray("text_label", "character_label", "character_container")]
 visible = false
-texture_filter = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -43,6 +42,7 @@ character_container = NodePath("CharacterContainer")
 characters_per_second = 60.0
 
 [node name="CharacterContainer" type="TextureRect" parent="CanvasLayer/LinePresenter" unique_id=219708584]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -74,7 +74,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextLabel" type="RichTextLabel" parent="CanvasLayer/LinePresenter" unique_id=1052021863]
-clip_contents = false
 layout_mode = 0
 offset_left = 15.0
 offset_top = 9.0
@@ -83,9 +82,7 @@ offset_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 4
-fit_content = true
 scroll_active = false
-autowrap_mode = 2
 vertical_alignment = 1
 
 [node name="OptionsPresenter" type="TextureRect" parent="CanvasLayer" unique_id=1868289732 node_paths=PackedStringArray("options_container")]

@@ -130,6 +130,8 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventMouseButton:
+		if DialogLogManager.is_open:
+			return
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if _is_fully_revealed:
 				_complete_line()
@@ -253,6 +255,13 @@ func _reveal_words(progress: float) -> void:
 func _on_typewriter_complete() -> void:
 	_is_fully_revealed = true
 	line_finished.emit(_current_line)
+	
+	if _current_line != null:
+		DialogLogManager.add_entry(
+			_current_line.character_name,
+			_current_line.get_plain_text()
+		)
+		AudioManager.play_dialog_finish()
 
 	if continue_indicator != null:
 		continue_indicator.visible = true

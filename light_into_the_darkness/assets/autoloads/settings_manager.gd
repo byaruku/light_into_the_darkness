@@ -79,37 +79,41 @@ func load_settings():
 	var config = ConfigFile.new()
 	
 	if config.load("user://settings.cfg") != OK:
-		return
-	
-	master_volume = config.get_value(
-		"audio",
-		"master",
-		100.0
-	)
-	
-	music_volume = config.get_value(
-		"audio",
-		"music",
-		100.0
-	)
-	
-	sfx_volume = config.get_value(
-		"audio",
-		"sfx",
-		100.0
-	)
-	
-	fullscreen = config.get_value(
-		"graphics",
-		"fullscreen",
-		true
-	)
-	
-	vsync = config.get_value(
-		"graphics",
-		"vsync",
-		true
-	)
+		master_volume = 100
+		music_volume = 100
+		sfx_volume = 100
+		fullscreen = true
+		vsync = true
+	else:
+		master_volume = config.get_value(
+			"audio",
+			"master",
+			100.0
+		)
+		
+		music_volume = config.get_value(
+			"audio",
+			"music",
+			100.0
+		)
+		
+		sfx_volume = config.get_value(
+			"audio",
+			"sfx",
+			100.0
+		)
+		
+		fullscreen = config.get_value(
+			"graphics",
+			"fullscreen",
+			true
+		)
+		
+		vsync = config.get_value(
+			"graphics",
+			"vsync",
+			true
+		)
 	
 	apply_settings()
 

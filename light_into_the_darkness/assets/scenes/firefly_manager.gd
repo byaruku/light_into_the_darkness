@@ -9,6 +9,8 @@ var collected := 0
 
 
 func _ready() -> void:
+	DialogueManager.dialogue_runner.add_command("destroy_firefly_manager", destroy_self)
+	
 	for child in get_children():
 		if child is Firefly:
 			child.collected.connect(_on_firefly_collected)
@@ -21,4 +23,9 @@ func _on_firefly_collected(_firefly):
 	
 	if collected >= target_amount:
 		IdentityManager.add_progress(12)
-		self.queue_free()
+		DialogueManager.start_dialogue("Way_Home")
+		destroy_self()
+
+
+func destroy_self() -> void:
+	self.queue_free()

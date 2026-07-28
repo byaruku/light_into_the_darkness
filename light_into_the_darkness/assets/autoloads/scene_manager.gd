@@ -125,7 +125,7 @@ func change_scene(destination: Portal.Destination):
 	CameraManager.follow_node(GameManager.player)
 
 	await Fader.fade_out()
-
+	
 	GameManager.state_machine.pop()
 
 
