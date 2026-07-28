@@ -223,5 +223,20 @@
             "25 Paare"
         ],
         "answer": "2"
+    },
+    {
+        "question": [
+            "Für die meisten Menschen des 19. Jahrheunderts war der Genuss von Fleisch etwas ganz Besonderes.",
+            "Typischerweise war Sonntag der einzige Wochentag, an dem sie Fleisch aßen und damit die Tradition des Sonntagsbratens begründeten.",
+            "Ein Fleischer auf dem Markt hoffte, eines Tages einmal alle seine Würste und Schweinepasten loszuwerden.",
+            "Er hatte insgesamt 140 Würste und Pasten zu verkaufen, und zwar anderthalbmal so viele Würste wie Pasten. Weißt du, wie viele Würste er hat?"
+        ],
+        "options": [
+            "93",
+            "70",
+            "105",
+            "112"
+        ],
+        "answer": "2"
     }
 ]
