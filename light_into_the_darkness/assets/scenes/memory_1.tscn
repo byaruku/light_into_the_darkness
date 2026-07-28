@@ -1155,10 +1155,10 @@ position = Vector2(6176, 5040)
 position = Vector2(6304, 3072)
 
 [node name="Stone11" parent="Jumpable" unique_id=1712717004 instance=ExtResource("20_jwy0o")]
-position = Vector2(6272, 4240)
+position = Vector2(6256, 4240)
 
 [node name="Stone12" parent="Jumpable" unique_id=559056953 instance=ExtResource("20_jwy0o")]
-position = Vector2(6320, 4592)
+position = Vector2(6304, 4592)
 
 [node name="Stone13" parent="Jumpable" unique_id=1759207941 instance=ExtResource("20_jwy0o")]
 position = Vector2(6224, 3872)
@@ -1171,6 +1171,42 @@ position = Vector2(6128, 2864)
 
 [node name="Stone16" parent="Jumpable" unique_id=119201612 instance=ExtResource("20_jwy0o")]
 position = Vector2(6032, 2032)
+
+[node name="Stone17" parent="Jumpable" unique_id=265011173 instance=ExtResource("19_ksvyp")]
+position = Vector2(6304, 5200)
+
+[node name="Stone18" parent="Jumpable" unique_id=761394640 instance=ExtResource("19_ksvyp")]
+position = Vector2(6176, 3728)
+
+[node name="Stone19" parent="Jumpable" unique_id=1071967820 instance=ExtResource("19_ksvyp")]
+position = Vector2(6432, 3232)
+
+[node name="Stone20" parent="Jumpable" unique_id=397464844 instance=ExtResource("19_ksvyp")]
+position = Vector2(6432, 3760)
+
+[node name="Stone21" parent="Jumpable" unique_id=653111068 instance=ExtResource("19_ksvyp")]
+position = Vector2(6304, 3568)
+
+[node name="Stone22" parent="Jumpable" unique_id=203963936 instance=ExtResource("19_ksvyp")]
+position = Vector2(6304, 4208)
+
+[node name="Stone23" parent="Jumpable" unique_id=373704419 instance=ExtResource("19_ksvyp")]
+position = Vector2(6192, 4464)
+
+[node name="Stone24" parent="Jumpable" unique_id=4372340 instance=ExtResource("19_ksvyp")]
+position = Vector2(6224, 5536)
+
+[node name="Stone25" parent="Jumpable" unique_id=467554078 instance=ExtResource("19_ksvyp")]
+position = Vector2(6016, 5488)
+
+[node name="Stone26" parent="Jumpable" unique_id=1511427786 instance=ExtResource("19_ksvyp")]
+position = Vector2(6608, 6112)
+
+[node name="Stone27" parent="Jumpable" unique_id=1704681152 instance=ExtResource("19_ksvyp")]
+position = Vector2(6448, 5584)
+
+[node name="Stone28" parent="Jumpable" unique_id=670652467 instance=ExtResource("19_ksvyp")]
+position = Vector2(6016, 4160)
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("4_o1w71")]
 portal_id = 1
@@ -1375,7 +1411,7 @@ position = Vector2(0, 2176)
 position = Vector2(5256, 552)
 
 [node name="LogKillArea" parent="Spawner/LogSpawner21" unique_id=815571968 instance=ExtResource("8_dvsov")]
-position = Vector2(0, 4220)
+position = Vector2(0, 2544)
 
 [node name="LogSpawner22" parent="Spawner" unique_id=1061938052 instance=ExtResource("7_1tox4")]
 position = Vector2(5272, 552)
@@ -1387,7 +1423,7 @@ position = Vector2(0, 2544)
 position = Vector2(5288, 552)
 
 [node name="LogKillArea" parent="Spawner/LogSpawner23" unique_id=1203592143 instance=ExtResource("8_dvsov")]
-position = Vector2(0, 2544)
+position = Vector2(0, 3516)
 
 [node name="LogSpawner24" parent="Spawner" unique_id=754542648 instance=ExtResource("7_1tox4")]
 position = Vector2(5304, 552)
@@ -1405,7 +1441,7 @@ position = Vector2(0, 908)
 position = Vector2(5336, 552)
 
 [node name="LogKillArea" parent="Spawner/LogSpawner26" unique_id=1010816068 instance=ExtResource("8_dvsov")]
-position = Vector2(0, 2896)
+position = Vector2(0, 3920)
 
 [node name="LogSpawner27" parent="Spawner" unique_id=1620132301 instance=ExtResource("7_1tox4")]
 position = Vector2(5352, 552)
