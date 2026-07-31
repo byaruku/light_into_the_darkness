@@ -719,7 +719,7 @@ y_sort_enabled = true
 
 [node name="ColorRect" type="CanvasModulate" parent="." unique_id=1667906635]
 z_index = 2
-color = Color(0.1428257, 0.13335153, 0.20285092, 1)
+color = Color(0.48899934, 0.39875868, 0.62458503, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=696161185]
 stream = ExtResource("1_8rhti")
