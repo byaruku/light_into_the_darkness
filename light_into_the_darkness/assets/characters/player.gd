@@ -15,8 +15,8 @@ enum ActionState {
 const LAYER_CROUCH = 4
 
 @export_category("Stats")
-@export var speed := 100.0
-@export var crouch_speed := 25.0
+@export var speed := 60.0
+@export var crouch_speed := 30.0
 @export var jump_height := 1
 @export var jump_distance := 8
 @export var jump_duration := 0.25
