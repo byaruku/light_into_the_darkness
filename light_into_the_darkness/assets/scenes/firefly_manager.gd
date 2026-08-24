@@ -19,10 +19,11 @@ func _ready() -> void:
 func _on_firefly_collected(_firefly):
 	collected += 1
 	
+	IdentityManager.add_progress(2)
+	
 	firefly_ui.add_firefly()
 	
 	if collected >= target_amount:
-		IdentityManager.add_progress(12)
 		DialogueManager.start_dialogue("Way_Home")
 		destroy_self()
 
