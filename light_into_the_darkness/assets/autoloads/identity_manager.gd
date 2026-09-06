@@ -21,10 +21,7 @@ func add_progress(amount: int):
 		max_identity
 	)
 	
-	identity_changed.emit(
-		current_identity,
-		max_identity
-	)
+	identity_changed.emit(current_identity)
 	
 	if current_identity >= max_identity:
 		identity_completed.emit()
