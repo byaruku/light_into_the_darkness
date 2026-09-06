@@ -7,8 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://8xnjt0s8d47i" path="res://assets/audio/sfx/dog/dog3.mp3" id="4_6cmtu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n1s3g"]
-radius = 2.5
-height = 12.0
+radius = 3.0
+height = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1a4b3"]
 radius = 7.0
@@ -294,13 +294,13 @@ vframes = 13
 frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1931449054]
-rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_n1s3g")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=501894280]
-path_desired_distance = 10.0
-target_desired_distance = 2.0
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 avoidance_enabled = true
+radius = 9.0
 
 [node name="TouchArea" type="Area2D" parent="." unique_id=530865]
 collision_layer = 0

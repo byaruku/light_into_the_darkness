@@ -31,7 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://ocgpn1hirccc" path="res://assets/audio/sfx/jumps/jump05.wav" id="26_u7m25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8c6ij"]
-size = Vector2(12, 8)
+size = Vector2(10, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ipexx"]
 radius = 80.0
@@ -991,7 +991,6 @@ vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972021530]
 visible = false
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_8c6ij")
 
 [node name="ScareArea" type="Area2D" parent="." unique_id=1316055121]
