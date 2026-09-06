@@ -110,9 +110,12 @@ func change_scene(destination: Portal.Destination):
 	current_scene = packed.instantiate()
 	current_scene_container.add_child(current_scene)
 	current_scene_destination = destination
-
+	
+	if current_scene.has_signal("spawner_ready"):
+		await current_scene.spawner_ready
+	
 	var portal = find_destination_portal(destination)
-
+	
 	if portal:
 		GameManager.player.global_position = portal.spawn_marker.global_position
 

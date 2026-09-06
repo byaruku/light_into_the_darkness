@@ -18,10 +18,13 @@ var waiting := false
 func _ready() -> void:
 	$AnimationPlayer.seek(randf() * $AnimationPlayer.current_animation_length, true)
 	
+	start_glow()
+
+
+func start() -> void:
 	origin = global_position
 	
 	choose_target()
-	start_glow()
 
 
 func _process(delta: float) -> void:

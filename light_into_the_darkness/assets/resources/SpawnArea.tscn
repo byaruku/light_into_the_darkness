@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dwdk0uqbkkeph"]
+
+[ext_resource type="Script" uid="uid://da0x6m3d2p2lw" path="res://assets/resources/spawn_area.gd" id="1_ebysd"]
+
+[node name="SpawnArea" type="Area2D" unique_id=1686243615]
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+monitoring = false
+monitorable = false
+script = ExtResource("1_ebysd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1215972457]
+polygon = PackedVector2Array(10, -10, 10, 10, -10, 10, -10, -10)
