@@ -34,7 +34,8 @@ func  _ready() -> void:
 	
 	DialogueManager.on_dialog_finished.connect(
 		func():
-			state_machine.pop()
+			while state_machine.current_state is not FreeRoamState:
+				state_machine.pop()
 	)
 	
 	DialogueManager.dialogue_runner.add_command("add_charge", add_mask_charge)

@@ -129,7 +129,8 @@ func change_scene(destination: Portal.Destination):
 
 	await Fader.fade_out()
 	
-	GameManager.state_machine.pop()
+	if GameManager.state_machine.current_state is PauseState:
+		GameManager.state_machine.pop()
 
 
 func find_destination_portal(destination: Portal.Destination):

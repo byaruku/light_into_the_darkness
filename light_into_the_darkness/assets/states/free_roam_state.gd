@@ -8,6 +8,7 @@ var game_manager: GameManager
 func enter(owner):
 	print("FreeRoam enter")
 	game_manager = owner
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
 func execute(delta):
@@ -22,4 +23,5 @@ func execute(delta):
 
 
 func exit():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	print("FreeRoam exit")

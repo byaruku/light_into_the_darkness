@@ -40,12 +40,14 @@ func pause():
 	
 	is_open = true
 	GameManager.state_machine.push(PauseState.new())
+	GameManager.state_machine.push(MenuState.new())
 	pause_menu.show_menu()
 
 
 func resume():
 	is_open = false
 	pause_menu.hide()
+	GameManager.state_machine.pop()
 	GameManager.state_machine.pop()
 
 

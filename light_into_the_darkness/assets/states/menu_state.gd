@@ -1,14 +1,12 @@
-class_name MainMenuState
+class_name MenuState
 extends BaseState
 
 
 func enter(_owner):
 	print("MainMenu enter")
-	IdentityManager.identity_bar.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func exit():
-	IdentityManager.identity_bar.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	print("MainMenu exit")
+	print("Menu exit")

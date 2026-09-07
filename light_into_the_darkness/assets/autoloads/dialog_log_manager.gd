@@ -58,14 +58,19 @@ func open() -> void:
 	if log_ui == null:
 		return
 	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	is_open = true
 	log_ui.show_log(entries)
+	log_ui.scroll_to_bottom()
 	log_opened.emit()
 
 
 func close() -> void:
 	if log_ui == null:
 		return
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	is_open = false
 	log_ui.hide()
