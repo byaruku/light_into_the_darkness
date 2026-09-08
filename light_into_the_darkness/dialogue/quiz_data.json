@@ -51,37 +51,6 @@
     },
     {
         "question": [
-            "Bevor du dich auf deine Weltreise begibst, musst du noch einige wichtige Besorgungen machen.",
-            "Du brauchst Rasierzeug und einen kleinen Koffer. Für den Einkauf und das Taxi hast du eine Ein-Pfund-Note mitgenommen.",
-            "Vier Viertelpennys ergeben einen Penny (1 d), zwei halbe Pennys ergeben ebenfalls einen Penny, 12 Pennys ergeben einen Schilling (1 s), und 20 Schillinge ergeben ein Pfund (£ 1).",
-            "Es kosten drei Rasierpinsel: 5 d und 1 halber Penny pro Pinsel, eine Rasiercreme: 8 d und ein Viertelpenny, ein kleiner Koffer: 10 s und 9 d und das Taxi: 1 s und 6 d.",
-            "Wie viel bleibt dir von dem Pfund übrig?"
-        ],
-        "options": [
-            "6 s, 2 d und 1 halber Penny",
-            "5 s, 11 d und 1 Viertelpenny",
-            "5 s, 8 d und 1 Viertelpenny",
-            "5 s, 9 d und 1 halber Penny"
-        ],
-        "answer": "2"
-    },
-    {
-        "question": [
-            "Goku war schon immer eine Art Überflieger gewesen, und jetzt war er im wahrsten Sinner des Wortes in neue Höhen aufgestiegen, ...",
-            "... denn er hatte einen Wettbewerb gewonnen, bei dem es darum ging, wer am höchsten Fliegen konnte.",
-            "Der Drittplatzierte hatte eine Höhe von 8 Metern über den Boden erreicht. Der Zweitplatzierte hatte 20 Prozent mehr erreicht, und Goku hatte dessen Ergebnis wiederum um 25 Prozent übertroffen.",
-            "Welche Höhe hat Goku erreicht?"
-        ],
-        "options": [
-            "12 Metern",
-            "13 Metern",
-            "14 Metern",
-            "15 Metern"
-        ],
-        "answer": "0"
-    },
-    {
-        "question": [
             "Beniko hatte mit ihren reichen Schwestern Ibuki und Chibiusa eifrig die Welt bereist.",
             "Doch der ständige Wechsel von Stadt zu Stadt und Land zu Land hatte ihr Zeitgefühl völlig durcheinandergebracht, und sie wusste nicht mehr, welcher Tag gerade war.",
             "Sie fragte Chibiusa danach, und ihre schelmische Schwester gab ihr folgende Antwort:",
@@ -126,23 +95,6 @@
             "NBJHP",
             "NCJIP",
             "HCLCI"
-        ],
-        "answer": "0"
-    },
-    {
-        "question": [
-            "Während Detectiv Conan dich und Daichi auf einer belebten Straße heimlich verfolgte, ...",
-            "... kam er ganz unerwartet mit einem Fremden ins Gespräch und stand ein paar Minuten mit ihm vor einem Café. Seine Zielperson verlor er derweil aus den Augen.",
-            "Um sich euch wieder zu nähren, lief er euch in einem Tempo von zehn Kilometern pro Stunde hinterher.",
-            "Doch nach einem Kilometer im Dauerlauf konnte er euch noch immer weder sehen noch hören.",
-            "Da er inzwischen Durst bekommen hatte, ging er traurig zu dem Café zurück, um etwas zu trinken.",
-            "Seine Geschwindigkeit beim Gehen betrug vier Kilometer pro Stunde. Wie lange war er also insgesamt gelaufen und gegangen?"
-        ],
-        "options": [
-            "21 Minuten",
-            "90 Minuten",
-            "40 Minuten",
-            "36 Minuten"
         ],
         "answer": "0"
     },
@@ -195,20 +147,6 @@
     },
     {
         "question": [
-            "Nachdem du im Reform Club eine ausgefallene Wette über 20000 Yen abgeschlossen hattest, bot dir ein Mitglied des Clubs eine weitere Wette an.",
-            "Sie war ganz einfach: Wenn du annahmst, solltest du 1000 Yen setzen, dann mit zwei Würfeln würfeln, und wenn die Summe der beiden gewürfelten Zahlen größer als sieben war, ...",
-            "... hättest du 2000 Yen gewonnen. Wenn nicht, wäre sein Einsatz verloren. Hast du eine Gewinnchance von 50 Prozent oder mehr, wenn du die Wette annimmst?"
-        ],
-        "options": [
-            "Ja, sie beträgt eins zu zwei.",
-            "Nein, sie beträgt fünf zu achtzehn.",
-            "Nein, sie beträgt fünf zu zwölf.",
-            "Nein, sie beträgt sieben zu zwölf."
-        ],
-        "answer": "3"
-    },
-    {
-        "question": [
             "Kaum hatte Daichi das Haus seines neuen Freundes zum ersten Mal betreten, da war er auch schon eingeschüchtert durch die extreme Ordnung in deinem Leben.",
             "Jede Hose, jeder Mantel, jede Weste hatte eine eigene Nummer. Und diese Nummer fand sich dann auch in einem speziellen Verzeichnis wieder, in dem aufgeführt war, ...",
             "... wann das entsprechende Kleidungsstück weggelegt oder entnommen worden war und wann es das nächste Mal getragen werden sollte.",
@@ -238,5 +176,209 @@
             "112"
         ],
         "answer": "2"
+    },
+    {
+        "question":[
+            "Um deinen Computer zu schützen hast du ein Passwort aus vier Ziffern erstellt und dir einige Hinweise zum Lösen des Passworts aufgeschrieben.",
+            "Die erste und die letzte Ziffer ergeben 7.",
+            "Zwei Ziffern sind gerade und zwei ungerade.",
+            "Die zweite Ziffer ist größer als die dritte, und wenn man die beiden Ziffern miteinander multipliziert, kommt eine Zahl zwischen 21 und 25 heraus.",
+            "Die vierte Ziffer ist zwei weniger als die zweite.",
+            "Wie lautet das Passwort?"
+        ],
+        "options":[
+            "3, 6, 3, 4",
+            "4, 5, 5, 3",
+            "2, 7, 3, 5",
+            "1, 8, 3, 6"
+        ],
+        "answer": "3"
+    },
+    {
+        "question":[
+            "Wenn die MONGOLIA 60 Punkten entspricht, die RANGOON auf insgesamt 55 Punkte kommt und die CHINA auf 40, wie viele Punkte ist dann die CARNATIC wert?"
+        ],
+        "options": [
+            "55",
+            "60",
+            "65",
+            "70"
+        ],
+        "answer": "2"
+    },
+    {
+        "question":[
+            "In einer Reihe stehen sieben Elefanten. Daichi wollte auf dem schnellsten reiten. Welchen Elefanten hat Daichi anhand der Hinweise ausgewählt?",
+            "Neben dem ausgewähltem Elefanten stehen links und rechts weitere Elefanten, aber es ist nicht der Elefant, bei dem links und rechts jeweils die gleiche Anzahl weiterer Elefanten steht.",
+            "Auch nicht neben diesem, und auch ist es nicht der Elefant, auf dessen rechter Seite mehr Elefanten stehen als auf der linken."
+        ],
+        "options": [
+            "2. Elefant",
+            "4. Elefant",
+            "6. Elefant",
+            "7. Elefant"
+        ],
+        "answer": "2"
+    },
+    {
+        "question": [
+            "Aus den folgenden Hinweisen ergibt sich eine Zahl mit vier Ziffern, aber welche? Die vier Ziffern, aus denen die Zahl besteht, sind alle verschieden.",
+            "Die erste und die zweite Ziffer ergeben zusammen neun.",
+            "Multipliziert man die dritter und die vierte Ziffer, so ergibt es 21.",
+            "Die zweite Ziffer ist mehr als doppelt so hoch wie die dritte.",
+            "Welches besondere Ereignis war in diesem speziellen Jahr?"
+        ],
+        "options": [
+            "Die erste bemannte Mondlandung",
+            "Die erste Krönung einer Königin in Großbritannien",
+            "Die Gründung der Vereinten Nationen Amerika",
+            "Die Entdeckung Amerikas"
+        ],
+        "answer": "1"
+    },
+    {
+        "question":[
+            "Während du auf Daichi im ReformClub wartest, lenkt dich ein Spielkarten Rechenspiel ab, welches einige Mitglieder neben dir spielten.",
+            "Sie verwenden hierfür die Karten 2-9 sowie das Ass für die 1. Eines der Mitglieder legt aus Spielkarten folgende Rechnung:",
+            "Pik Ass, Karo 5 und Pik 6 mal Pik 4 gleich Herz 8, Herz 3 und Kreuz 2",
+            "Welche zwei Karten müssen die Plätze tauschen, damit die Rechnung aufgeht?"
+        ],
+        "options":[
+            "Pik Ass und Herz 3",
+            "Karo 5 und Kreuz 2",
+            "Pik 6 und Herz 8",
+            "Pik 4 und Herz 3"
+        ],
+        "answer": "2"
+    },
+    {
+        "question":[
+            "Du wirst losgeschickt, um verschiedene Besorgungen zu machen. Das erste Geschäft, das du ansteuertest, lag 1 km nörlich von deinem Haus.",
+            "Das zweite Geschäft lag 3 km östlich des ersten, das dritte 3 km südlich vom zweiten, das vierte 1 km westlich vom dritten und das fünfte 2 km nördlich des vierten.",
+            "In welche Richtung musst du dich nun wenden, um wieder nach Hause zu gelangen?"
+        ],
+        "options": [
+            "Norden",
+            "Osten",
+            "Süden",
+            "Westen"
+        ],
+        "answer": "3"
+    },
+    {
+        "question":[
+            "Du möchtest in deinem Urlaub als Erstes ins Hotelzimmer, um deine Koffer abzustellen, ...",
+            "... doch dann gibt dir der Rezeptionist einfach nur einen Schlüssel mit einem Zettel, als du dich vorstellst.",
+            "Auf dem Zettel steht wohl deine Zimmernummer, aber anstelle von einer Zahl steht da nur Text.",
+            "Die Zahl ist gerade, und alle drei Ziffern sind unterschiedlich. Die mittlere Ziffer ist größer als die anderen.",
+            "Alle drei Ziffern zusammen ergeben 16. Die Zahl enthält zwei aufeinanderfolgende Ziffern, die sich nur um den Wert Eins voneinander unterscheiden.",
+            "In welches Zimmer musst du gehen?"
+        ],
+        "options": [
+            "Zimmer 394",
+            "Zimmer 682",
+            "Zimmer 754",
+            "Zimmer 376"
+        ],
+        "answer": "3"
+    },
+    {
+        "question":[
+            "Kannst du herausfinden, wie der Zahlenwert einer jeden Figur errechnet wird und welche Zahl sich daher für deine Statue MAIGO ergibt?",
+            "TAISHI = 2, DAICHI = 602, NOBUNAGA = 0, IEYASU = 1, RYOMA = 1000"
+        ],
+        "options":[
+            "1001",
+            "500",
+            "105",
+            "0"
+        ],
+        "answer": "0"
+    },
+    {
+        "question":[
+            "Ich gab dir mal die Aufgabe so viele Tiere wie möglich aufzuschreiben, die mit den Buchstaben A, B, D, E, N, P, S und T beginnen.",
+            "Du solltest mit einem Tier mit A anfangen, dann eins mit B aufschreiben und so weiter und wenn du bei einem Tier mit T gefunden hattest, wieder bei A anfangen. So lange du kannst.",
+            "Nach einiger Zeit kamst du wieder zu mir und sagtest, dass du 150 Tiere aufgeschrieben hattest und fragtest mich, welchen Anfangsbuchstaben dein 150. Tier hat.",
+            "Kannst du dich noch erinnern?"
+        ],
+        "options":[
+            "B",
+            "E",
+            "P",
+            "T"
+        ],
+        "answer": "2"
+    },
+    {
+        "question":[
+            "Du wolltest wissen, ob die Wahrsagerin in der Stadt eine Schwindlerin ist oder nicht und beschließt sie zu testen.",
+            "Du warst entschlossen sie zu überführen und besuchtest sie im Laufe eines Jahres mehrfach, und zwar am 3. Januar, am 3. März, am 6. Mai, am 9. Juli und am 15. September.",
+            "An diesem Tag bast du die Wahrsagerin vorauszusagen, wann du wieder bei ihr erscheinen würdest.",
+            "An welchem Datum beschlosst du sie wieder zu besuchen?"
+        ],
+        "options":[
+            "3. Oktober",
+            "18. November",
+            "24. November",
+            "21. Dezember"
+        ],
+        "answer": "2"
+    },
+    {
+        "question":[
+            "Du brachtest Hikari deine liebsten Kartenspiele bei und unterrichteste sie gleichzeitig auch im Rechnen.",
+            "Du nahmst dein Spiel mit den üblichen 52 Karten zur Hand und sortiertest die roten Karten aus. Dann sagtest du zu Hikari:",
+            "Schau dir alle roten Karten auf dem Tisch an. Wenn du vier davon wegnimmst, wie viele Karten hast du dann?"
+        ],
+        "options":[
+            "0",
+            "4",
+            "22",
+            "48"
+        ],
+        "answer": "1"
+    },
+    {
+        "question":[
+            "In einem vornehmen Tokioer Restaurant versuchte der Küchenchef herauszufinden, wie viel er von jedem Gemüse vorrätig hatte.",
+            "Er wusste, dass er viel Spargel, viele Zwiebeln und viele Tomaten hatte, und plante, damit einen köstlichen Salat zuzubereiten, den er zusammen mit dem Hauptgang servieren wollte.",
+            "Er hatte allerdings Probleme mit den genauen Mengen. Er wusste, dass er insgesamt 200 Stück Gemüse hatte und 56 davon Tomaten sind.",
+            "Außerdem wusste er, dass drei Viertel Zwiebeln der doppelten Anzahl der Tomaten plus der halben Anzahl der Tomaten plus einem Viertel der Anzahl der Tomaten plus zwei entsprach.",
+            "Wie viel Selerie hatte er?"
+        ],
+        "options":[
+            "0",
+            "27",
+            "76",
+            "117"
+        ],
+        "answer": "0"
+    },
+    {
+        "question":[
+            "Wir treffen uns immer mit Daichi zu einer Tasse Tee. Leider haben sich die Arbeitszeiten von uns geändert.",
+            "Du arbeitest immer fünf Tage hintereinander und hast dann einen Tag frei, Daichis Arbeitsgeber gibt ihm jeden siebten Tag frei und ich bekomme jeden achten Tag frei.",
+            "Wie oft können wir uns also zum Tee treffen?"
+        ],
+        "options":[
+            "Alle 168 Tage",
+            "Alle 210 Tage",
+            "Alle 280 Tage",
+            "Alle 336 Tage"
+        ],
+        "answer": "0"
+    },
+    {
+        "question":[
+            "Wenn die MONGOLIA 36 Punkten entspricht, die RANGOON auf insgesamt 28 Punkte kommt und die CHINA auf 15, wie viele Punkte ist dann die HENRIETTA wert?"
+        ],
+        "options": [
+            "24",
+            "30",
+            "44",
+            "45"
+        ],
+        "answer": "3"
     }
 ]
