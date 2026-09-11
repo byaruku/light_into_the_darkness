@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://doowg78b45wik" path="res://assets/scenes/main_menu.gd" id="1_uu6ob"]
 [ext_resource type="PackedScene" uid="uid://lpfh8bib22ek" path="res://assets/ui/credits.tscn" id="2_v1ppo"]
+[ext_resource type="Texture2D" uid="uid://dwe0py78agbq7" path="res://assets/art/ui/background.png" id="3_obrqb"]
 
 [node name="MainMenu" type="Control" unique_id=961549512]
 layout_mode = 3
@@ -12,6 +13,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uu6ob")
 credits_scene = ExtResource("2_v1ppo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1266082311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.081955
+offset_right = 71.081955
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_obrqb")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1980161937]
 layout_mode = 1
