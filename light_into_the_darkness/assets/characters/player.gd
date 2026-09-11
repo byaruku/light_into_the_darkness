@@ -248,6 +248,24 @@ func jump_to_platform(platform: StandableSurface):
 	set_action_state(ActionState.JUMP)
 	$CollisionShape2D.disabled = true
 	
+	if platform is MovingLog and not platform.timer.is_stopped():
+		$CollisionShape2D.disabled = false
+		set_action_state(ActionState.NORMAL)
+		return
+	
+	current_surface = platform
+	
+	if current_surface:
+		if current_surface is not MovingLog:
+			get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", false)
+	else:
+		get_tree().call_group("Height" + str(0), "disable_static_body", false)
+	
+	if current_surface is not MovingLog:
+		get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", true)
+	
+	update_height_layer()
+	
 	if platform is MovingLog:
 		if platform.timer.is_stopped():
 			var tween = create_tween()
@@ -258,29 +276,12 @@ func jump_to_platform(platform: StandableSurface):
 				if current_surface is MovingLog:
 					current_surface.exited()
 			platform.entered()
-		else:
-			$CollisionShape2D.disabled = false
-			set_action_state(ActionState.NORMAL)
-			return
 	else:
 		var tween = create_tween()
 		tween.tween_property(self, "global_position", platform.get_landing_position(), jump_duration)
 		await tween.finished
 	
-	if current_surface:
-		if current_surface is not MovingLog:
-			get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", false)
-	else:
-		get_tree().call_group("Height" + str(0), "disable_static_body", false)
-	
-	current_surface = platform
-	
-	if current_surface is not MovingLog:
-		get_tree().call_group("Height" + str(current_surface.height_level), "disable_static_body", true)
-	
 	velocity = Vector2.ZERO
-	
-	update_height_layer()
 	
 	$CollisionShape2D.disabled = false
 	set_action_state(ActionState.NORMAL)
