@@ -70,7 +70,8 @@ func close() -> void:
 	if log_ui == null:
 		return
 	
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	if GameManager.state_machine.current_state is not DialogueState:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	is_open = false
 	log_ui.hide()
