@@ -1,7 +1,9 @@
 class_name SpawnerRow
 extends Node2D
 
-@export var spawner: Array[SpawnArea] = []
+
+@export var spawner: Array[Spawner] = []
+
 
 func spawn() -> void:
 	for s in spawner:

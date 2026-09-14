@@ -1,8 +1,6 @@
 class_name SpawnArea
-extends Area2D
+extends Spawner
 
-@export var objects : Array[Node2D] = []
-@export var min_distance := 100
 
 @onready var collision_polygon := $CollisionPolygon2D
 
@@ -11,8 +9,6 @@ var min_x : float
 var max_x : float
 var min_y : float
 var max_y : float
-
-var spawn_positions : Array[Vector2]= []
 
 
 func spawn_objects() -> void:
@@ -27,13 +23,13 @@ func spawn_objects() -> void:
 	
 	for object in objects:
 		var is_area_2d := object is Area2D
-		var spawn_position : Vector2 = find_valid_position(is_area_2d)
+		var spawn_position: Vector2 = find_valid_position(is_area_2d)
 		
 		spawn_positions.append(spawn_position)
 		
 		object.position = spawn_position
 	
-	await get_tree().process_frame
+	super.spawn_objects()
 
 
 func find_valid_position(is_area_2d: bool) -> Variant:
@@ -98,7 +94,3 @@ func get_random_point_in_polygon() -> Vector2:
 			return random_point
 	
 	return Vector2.ZERO
-
-
-func clear_spawn_positions() -> void:
-	spawn_positions.clear()
