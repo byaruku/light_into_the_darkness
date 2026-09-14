@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://da2fudnmw43ql" path="res://assets/characters/npc_ichika.tscn" id="8_ykx7e"]
 [ext_resource type="PackedScene" uid="uid://bguhha3eddv7r" path="res://assets/resources/column_big_without_light.tscn" id="9_11uik"]
 [ext_resource type="Script" uid="uid://dbp0s03mkf8rx" path="res://assets/resources/jump_platform.gd" id="10_av38p"]
+[ext_resource type="Texture2D" uid="uid://ctdqujam6rh58" path="res://assets/art/environment/column_big_without_light_45.png" id="10_gqqed"]
 [ext_resource type="Script" uid="uid://cqcqt1hpoq0rk" path="res://assets/resources/platform_landing.gd" id="11_1wbo6"]
 [ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground_horizontal.tscn" id="12_r8ajb"]
 [ext_resource type="PackedScene" uid="uid://bxkgop2wctqvx" path="res://assets/resources/trigger_area.tscn" id="13_hc5is"]
@@ -110,12 +111,12 @@ sources/0 = SubResource("TileSetScenesCollectionSource_a5qyv")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnkqm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cueys"]
-radius = 9.169525
-height = 48.065216
+radius = 9.0
+height = 56.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij7ks"]
 radius = 9.0
-height = 60.0
+height = 56.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd6b8"]
 radius = 9.0
@@ -164,25 +165,46 @@ memory = 2
 position = Vector2(560, 440)
 
 [node name="Column" parent="." unique_id=490803908 instance=ExtResource("9_11uik")]
-position = Vector2(391.99997, 104.000015)
-rotation = -0.32288882
+position = Vector2(369.99997, 104.000015)
+
+[node name="Sprite2D" parent="Column" index="0" unique_id=596698223]
+texture = ExtResource("10_gqqed")
+
+[node name="StaticBody2D2" parent="Column" index="1" unique_id=763336188]
+position = Vector2(21.00003, -9.000015)
+
+[node name="CollisionShape2D" parent="Column/StaticBody2D2" index="0" unique_id=1388967811]
+rotation = 0.7853982
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Column" unique_id=981069724]
+visible = false
+position = Vector2(21.00003, -9.000015)
+rotation = 5.497787
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Column/StaticBody2D" unique_id=888140423]
-position = Vector2(0.032460213, -28.460533)
+position = Vector2(5.2452087e-06, -29.698488)
 shape = SubResource("CapsuleShape2D_cueys")
 
 [node name="Column2" parent="." unique_id=2049839038 instance=ExtResource("9_11uik")]
-position = Vector2(392, 32.000008)
-rotation = 3.97586
+position = Vector2(392, 49)
+rotation = 4.712389
+
+[node name="Sprite2D" parent="Column2" index="0" unique_id=596698223]
+texture = ExtResource("10_gqqed")
+
+[node name="CollisionShape2D" parent="Column2/StaticBody2D2" parent_id_path=PackedInt32Array(2049839038, 763336188) index="0" unique_id=1388967811]
+position = Vector2(-21, -51)
+rotation = 0.7853982
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Column2" unique_id=2097174949]
+visible = false
+position = Vector2(21, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Column2/StaticBody2D" unique_id=1135142498]
-position = Vector2(0.05699539, -32.065926)
+position = Vector2(-21, -21.000008)
+rotation = 5.497787
 shape = SubResource("CapsuleShape2D_ij7ks")
 
 [node name="Column3" parent="." unique_id=1183598066 instance=ExtResource("9_11uik")]
@@ -275,3 +297,6 @@ memory = 2
 yarn_node = "First_Hikari"
 one_shot = false
 has_collision = true
+
+[editable path="Column"]
+[editable path="Column2"]
