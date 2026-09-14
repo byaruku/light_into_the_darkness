@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cq1umiiy2ybwe" path="res://assets/art/clues/clou_mark_16x16.png" id="2_qkst0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qkst0"]
-radius = 8.0
+radius = 1.0
 
 [sub_resource type="Animation" id="Animation_4ay85"]
 length = 0.001
