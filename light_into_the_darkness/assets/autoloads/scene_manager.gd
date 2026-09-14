@@ -20,6 +20,8 @@ var current_scene_destination: Portal.Destination
 
 var scene_paths := {}
 
+var wait_for_spawn = false
+
 
 func _ready():
 	load_main_menu()
@@ -109,10 +111,9 @@ func change_scene(destination: Portal.Destination):
 	var packed: PackedScene = ResourceLoader.load_threaded_get(path)
 	current_scene = packed.instantiate()
 	current_scene_container.add_child(current_scene)
+	while wait_for_spawn:
+		await get_tree().create_timer(0.1).timeout
 	current_scene_destination = destination
-	
-	if current_scene.has_signal("spawner_ready"):
-		await current_scene.spawner_ready
 	
 	var portal = find_destination_portal(destination)
 	

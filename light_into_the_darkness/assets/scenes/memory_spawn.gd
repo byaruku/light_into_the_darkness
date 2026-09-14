@@ -4,5 +4,6 @@ signal spawner_ready
 
 
 func _ready() -> void:
+	SceneManager.wait_for_spawn = true
 	await $SpawnerRow.spawn()
-	spawner_ready.emit()
+	SceneManager.wait_for_spawn = false

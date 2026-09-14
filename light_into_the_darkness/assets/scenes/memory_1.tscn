@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://th33627mauxn"]
 
-[ext_resource type="Script" uid="uid://dw3cq1wjp634v" path="res://assets/scenes/memory_1.gd" id="1_fntbw"]
+[ext_resource type="Script" uid="uid://dw3cq1wjp634v" path="res://assets/scenes/memory_spawn.gd" id="1_fntbw"]
 [ext_resource type="PackedScene" uid="uid://deyjndogalkq1" path="res://assets/resources/floor_ground_horizontal.tscn" id="2_fclgw"]
 [ext_resource type="Texture2D" uid="uid://bxf5wuiairo6f" path="res://assets/art/environment/Vegetation.png" id="3_e5tib"]
 [ext_resource type="Texture2D" uid="uid://c3g5r3plya6xm" path="res://assets/art/environment/Forest_16_16.png" id="4_1tox4"]
@@ -1178,7 +1178,7 @@ tree_count = 1000
 tile_map = NodePath("../Layers/NavigationRegion2D/PropsGround")
 navigation_region = NodePath("../Layers/NavigationRegion2D")
 start_position = NodePath("StartNode2D")
-goal_positions = [NodePath("../TriggerDog/Marker2D"), NodePath("GoalNode2D")]
+goal_positions = [NodePath("../TriggerDog/Marker2D"), NodePath("GoalNode2D"), NodePath("../Portal"), NodePath("../ClouMotorsaw")]
 min_distance = 0
 
 [node name="CollisionPolygon2D" parent="TreeSpawnArea" index="0" unique_id=1215972457]
@@ -1192,7 +1192,7 @@ position = Vector2(4360, 3496)
 
 [node name="SpawnerRow" type="Node2D" parent="." unique_id=1175970091 node_paths=PackedStringArray("spawner")]
 script = ExtResource("10_44dg6")
-spawner = [NodePath("../TreeSpawnArea"), NodePath("../SpawnArea"), NodePath("../FireflyManager/SpawnArea")]
+spawner = [NodePath("../FireflyManager/SpawnArea"), NodePath("../SpawnArea"), NodePath("../TreeSpawnArea")]
 
 [node name="Jumpable" type="Node2D" parent="." unique_id=1779379657]
 y_sort_enabled = true
