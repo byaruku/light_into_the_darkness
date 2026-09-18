@@ -1,9 +1,8 @@
 extends Node
 
 signal identity_changed(current, maximum)
-signal identity_completed
 
-@export var max_identity := 100
+@export var max_identity := 124
 
 @onready var identity_bar := $CanvasLayer/TextureRect
 
@@ -22,6 +21,3 @@ func add_progress(amount: int):
 	)
 	
 	identity_changed.emit(current_identity)
-	
-	if current_identity >= max_identity:
-		identity_completed.emit()

@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 
 func choose_target():
-	target = Vector2(randf_range(container.position.x, container.size.x), randf_range(container.position.y, container.size.y))
+	target = Vector2(randf_range(0, container.size.x), randf_range(0, container.size.y))
 
 
 func wait():
