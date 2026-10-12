@@ -80,6 +80,7 @@ Daichi: Wie gut das wir rausfanden das er Wasser hasst!
 
 title: Trigger_River
 ---
+Daichi: Nur noch zwischen den Bäumen hindurchkrabbeln und der Hund wird dich wenigstens erstmal in Ruhe lassen.
 Daichi: Der Fluß ist deine Rettung, aber die Strömung stark genug um dir neue Probleme zu machen, jetzt keinen falschen Schritt, Maigo!
 <<add_identity 12>>
 ===
@@ -128,4 +129,9 @@ Ichika: Mein Gott! Du bist erwacht! *sie schluchzt und legt ihren Kopf auf deine
 	Alles fühlt sich an wie in einem Traum. Diese Erinnerungen, diese Aufgaben die ich meisterte. Das müssen Szenen aus meinem Leben gewesen sein. Warum fühlen sie sich dann so fremd an?
 	Ich hoffe mithilfe dieser Frau werde ich es schaffen können ins Leben zurückzukommen. Ich muss verstehen, wer ich bin und was mich hierherbrachte.
 <<endif>>
+===
+
+title: Repeatablity
+---
+Da könnte vielleicht noch mehr sein, dass ich wissen könnte...
 ===

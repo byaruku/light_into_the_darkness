@@ -83,6 +83,7 @@ position = Vector2(104, 40)
 visible = false
 position = Vector2(80, 40)
 script = ExtResource("3_atctt")
+yarn = "Repeatablity"
 yarn_node = "End"
 
 [node name="Portal" parent="." unique_id=1973692871 node_paths=PackedStringArray("spawn_marker") instance=ExtResource("6_kneeu")]
