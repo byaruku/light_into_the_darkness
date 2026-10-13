@@ -1059,28 +1059,6 @@ texture = ExtResource("5_k6ur1")
 2:2/0/y_sort_origin = 5
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 5, 15, 5, 15, 11, -15, 11)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fntbw"]
-load_path = "res://.godot/imported/bush_16_16.png-1ff6273466469a7efc6860ebe496a261.ctex"
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kadem"]
-texture = SubResource("CompressedTexture2D_fntbw")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_pdtwv"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
@@ -1090,7 +1068,6 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_ksvyp")
 sources/1 = SubResource("TileSetAtlasSource_jwy0o")
 sources/2 = SubResource("TileSetAtlasSource_pbcd5")
-sources/3 = SubResource("TileSetAtlasSource_kadem")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idang"]
 texture = ExtResource("3_e5tib")
