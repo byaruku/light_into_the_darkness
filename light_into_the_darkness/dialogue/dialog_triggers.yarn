@@ -95,11 +95,6 @@ title: Labyrinth_Exit
 Maigo: Ich habe Hikari noch nicht gefunden. Ich kann hier noch nicht raus!
 ===
 
-title: Trigger_Park
----
-Maigo: Das ist die falsche Richtung.
-===
-
 title: End
 ---
 <<declare $identity = 0>>
