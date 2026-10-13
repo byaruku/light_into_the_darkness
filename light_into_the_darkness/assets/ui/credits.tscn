@@ -122,13 +122,36 @@ Godot 4.7, FL Studio, Audacity, Pixelorama, Paint, Twinery und YarnSpinner 3.2.0
 SFX by Taira Komori – https://taira-komori.net/freesounden.html
 
 [b]Licence[/b]
-Licht Ins Dunkel © 2026 by Bjark Hassert, Béla Max Backhauß, Janna-Lynn van Bernen, Thore Komorowski is licensed under CC BY-NC-ND 4.0."
+Licht Ins Dunkel © 2026 by Bjark Hassert, Béla Max Backhauß, Janna-Lynn van Bernen, Thore Komorowski is licensed under CC BY-NC-ND 4.0.
+
+[b]Kontakt[/b]
+Bjark Hassert:
+[url=mailto:bjark02h@gmail.com]bjark02h@gmail.com[/url]
+Béla Max Backhauß:
+[url=mailto:bela.backhauss@googlemail.com]bela.backhauss@googlemail.com[/url]"
 horizontal_alignment = 1
 
-[node name="BackButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1122515811]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1127584807]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1122515811]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 8
 text = "Zurück"
 
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[node name="FeedbackButton" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1447626826]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "Feedback geben"
+
+[node name="Spacer" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=346654602]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "Zurück"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/FeedbackButton" to="." method="_on_feedback_button_pressed"]
