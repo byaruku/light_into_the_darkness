@@ -1,5 +1,9 @@
 extends Node
 
+signal change_language()
+
+var language := "de"
+
 var master_volume := 100.0
 var music_volume := 100.0
 var sfx_volume := 100.0
@@ -10,6 +14,13 @@ var vsync := true
 
 func _ready() -> void:
 	load_settings()
+	
+	change_language.connect(set_language)
+
+
+func set_language():
+	language = DialogueManager.dialogue_runner.get_locale()
+	save_settings()
 
 
 func set_master_volume(value: float):
@@ -38,6 +49,12 @@ func set_sfx_volume(value: float):
 
 func save_settings():
 	var config = ConfigFile.new()
+	
+	config.set_value(
+		"language",
+		"language",
+		language
+	)
 	
 	config.set_value(
 		"audio",
@@ -79,12 +96,19 @@ func load_settings():
 	var config = ConfigFile.new()
 	
 	if config.load("user://settings.cfg") != OK:
+		language = "de"
 		master_volume = 100
 		music_volume = 100
 		sfx_volume = 100
 		fullscreen = true
 		vsync = true
 	else:
+		language = config.get_value(
+			"language",
+			"language",
+			"de"
+		)
+		
 		master_volume = config.get_value(
 			"audio",
 			"master",
@@ -119,6 +143,9 @@ func load_settings():
 
 
 func apply_settings():
+	DialogueManager.dialogue_runner.set_locale(language)
+	change_language.emit()
+	
 	set_master_volume(master_volume)
 	set_music_volume(music_volume)
 	set_sfx_volume(sfx_volume)

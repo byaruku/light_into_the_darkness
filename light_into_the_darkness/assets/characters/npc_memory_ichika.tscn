@@ -67,7 +67,8 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_mttar")
 question_count = 6
-quiz_data_path = "res://dialogue/quiz_data.json"
+quiz_data_path_de = "res://dialogue/quiz_data_de.json"
+quiz_data_path_en = "res://dialogue/quiz_data_en.json"
 yarn_node_after_quiz = "Ichika_After_Memory"
 yarn_node = "StartQuiz"
 

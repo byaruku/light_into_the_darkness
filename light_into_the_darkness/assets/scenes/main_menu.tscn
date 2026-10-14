@@ -3,8 +3,14 @@
 [ext_resource type="Script" uid="uid://doowg78b45wik" path="res://assets/scenes/main_menu.gd" id="1_uu6ob"]
 [ext_resource type="PackedScene" uid="uid://lpfh8bib22ek" path="res://assets/ui/credits.tscn" id="2_v1ppo"]
 [ext_resource type="Texture2D" uid="uid://dwe0py78agbq7" path="res://assets/art/ui/background.png" id="3_obrqb"]
+[ext_resource type="Texture2D" uid="uid://c5vcolr53dpnu" path="res://assets/art/ui/flags/de_flag.png" id="4_ej4af"]
+[ext_resource type="Texture2D" uid="uid://br51e20dkwans" path="res://assets/art/ui/flags/de_flag_hovered.png" id="5_tp4c4"]
+[ext_resource type="Texture2D" uid="uid://8hm8nke7oks6" path="res://assets/art/ui/flags/de_flag_selected.png" id="6_uek13"]
+[ext_resource type="Texture2D" uid="uid://cvdus8njuf4wa" path="res://assets/art/ui/flags/en_flag.png" id="7_tp4c4"]
+[ext_resource type="Texture2D" uid="uid://0f7it7q6g25v" path="res://assets/art/ui/flags/en_flag_hovered.png" id="8_4hf8p"]
+[ext_resource type="Texture2D" uid="uid://dd4sbo5obolad" path="res://assets/art/ui/flags/en_flag_selected.png" id="9_k5f6t"]
 
-[node name="MainMenu" type="Control" unique_id=961549512]
+[node name="MainMenu" type="Control" unique_id=961549512 node_paths=PackedStringArray("de_button", "en_button", "new_button", "setting_button", "credits_button", "exit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +19,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uu6ob")
 credits_scene = ExtResource("2_v1ppo")
+de_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/DeButton")
+en_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/EnButton")
+new_button = NodePath("MarginContainer/VBoxContainer/NewGameButton")
+setting_button = NodePath("MarginContainer/VBoxContainer/SettingButton")
+credits_button = NodePath("MarginContainer/VBoxContainer/CreditsButton")
+exit_button = NodePath("MarginContainer/VBoxContainer/ExitButton")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1266082311]
 layout_mode = 1
@@ -43,6 +55,27 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 alignment = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=877376236]
+layout_mode = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="DeButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1154052997]
+layout_mode = 2
+texture_normal = ExtResource("5_tp4c4")
+texture_pressed = ExtResource("4_ej4af")
+texture_hover = ExtResource("4_ej4af")
+texture_disabled = ExtResource("6_uek13")
+texture_focused = ExtResource("4_ej4af")
+
+[node name="EnButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=903118891]
+layout_mode = 2
+texture_normal = ExtResource("8_4hf8p")
+texture_pressed = ExtResource("7_tp4c4")
+texture_hover = ExtResource("7_tp4c4")
+texture_disabled = ExtResource("9_k5f6t")
+texture_focused = ExtResource("7_tp4c4")
+
 [node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1752979390]
 layout_mode = 2
 size_flags_vertical = 3
@@ -71,6 +104,8 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
 text = "Verlassen"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/DeButton" to="." method="_on_de_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SettingButton" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_pressed"]

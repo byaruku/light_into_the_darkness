@@ -2,36 +2,18 @@ class_name NPCIchika
 extends NPC
 
 @export var question_count := 3
-@export_file("*.json") var quiz_data_path: String
+@export_file("*_de.json") var quiz_data_path_de: String
+@export_file("*_en.json") var quiz_data_path_en: String
 @export var yarn_node_after_quiz: String
 
 var quiz_data
+var quiz_data_path: String
 
 
 func _ready() -> void:
+	load_quiz_data()
+	
 	super._ready()
-	
-	if not quiz_data_path:
-		push_error("No path to the quiz-data-file set.")
-		return
-	
-	var quiz_file = ResourceLoader.load(quiz_data_path)
-	if not quiz_file:
-		push_error("Error while loading the quiz-data: " + quiz_data_path)
-		return
-	
-	var file = FileAccess.open(quiz_data_path, FileAccess.READ)
-	if not file:
-		push_error("Error while opening the quiz-data.")
-		return
-	
-	var json_string = file.get_as_text()
-	file.close()
-	
-	quiz_data = JSON.parse_string(json_string)
-	if not quiz_data is Array:
-		push_error("Invaild quiz-data-format: Expected format is an array.")
-		quiz_data = []
 
 
 func interact() -> void:
@@ -66,3 +48,33 @@ func interact() -> void:
 
 func change_animation(animation_name: String):
 	super.change_animation(animation_name)
+
+
+func load_quiz_data():
+	var language = DialogueManager.dialogue_runner.get_locale()
+	if language == "de":
+		quiz_data_path = quiz_data_path_de
+	else:
+		quiz_data_path = quiz_data_path_en
+	
+	if not quiz_data_path:
+		push_error("No path to the quiz-data-file set.")
+		return
+	
+	var quiz_file = ResourceLoader.load(quiz_data_path)
+	if not quiz_file:
+		push_error("Error while loading the quiz-data: " + quiz_data_path)
+		return
+	
+	var file = FileAccess.open(quiz_data_path, FileAccess.READ)
+	if not file:
+		push_error("Error while opening the quiz-data.")
+		return
+	
+	var json_string = file.get_as_text()
+	file.close()
+	
+	quiz_data = JSON.parse_string(json_string)
+	if not quiz_data is Array:
+		push_error("Invaild quiz-data-format: Expected format is an array.")
+		quiz_data = []

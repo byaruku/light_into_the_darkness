@@ -1,0 +1,464 @@
+[
+  {
+    "question": [
+      "Two people are carrying the same burden. One puts it down, while the other keeps holding on to it. What is the difference between them?"
+    ],
+    "options": [
+      "Strength",
+      "Forgiveness",
+      "Age",
+      "Experience"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "What grows bigger the more you give it away?"
+    ],
+    "options": [
+      "Possessions",
+      "Love",
+      "Time",
+      "Energy"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "What holds people back more often than locked doors do?"
+    ],
+    "options": [
+      "Rain",
+      "Tiredness",
+      "Fear",
+      "Bad luck"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "What can you never take back, even though it is invisible?"
+    ],
+    "options": [
+      "Thoughts",
+      "Words",
+      "Memories",
+      "Dreams"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "What kind of wealth is given to everyone, yet no one knows how much of it they have?"
+    ],
+    "options": [
+      "Courage",
+      "Time",
+      "Hope",
+      "Talent"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "Beniko had travelled the world extensively with her wealthy sisters, Ibuki and Chibiusa.",
+      "But constantly moving from one city and country to another had completely thrown off her sense of time, and she no longer knew what day it was.",
+      "She asked Chibiusa, and her mischievous sister gave the following reply:",
+      "‘The day after the day before yesterday was Thursday, and the day before the day after tomorrow is Saturday. Do you know what day it is now?’",
+      "This only confused Beniko even more. Can you work out which day it is?"
+    ],
+    "options": [
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "Detective Conan and Daichi had just enjoyed a substantial lunch aboard the ship. As the sea was a little rough, neither of them fancied getting up to fetch the coffee.",
+      "Conan suggested settling the matter with two dice:",
+      "‘If you roll at least one five or six, you fetch the coffee; otherwise, I will. Is that fair?’",
+      "Daichi nodded smugly, thinking:",
+      "‘A die has six faces, so the chance of rolling a five or a six is only one in three. That improves my odds.’",
+      "But what is the actual probability that at least one of the two dice will show a five or a six? Is Daichi right?"
+    ],
+    "options": [
+      "Yes, it is one in three.",
+      "No, it is two in three.",
+      "No, it is one in nine.",
+      "No, it is five in nine."
+    ],
+    "answer": "3"
+  },
+  {
+    "question": [
+      "Detective Conan made brief notes about what you did on your journey and, above all, whom you met.",
+      "This was necessary in case those acquaintances became relevant in a trial that might take place ...",
+      "... after he had finally managed to take you to Nagasaki and hand you over to the authorities.",
+      "Conan wrote his notes in code so that anyone who happened to find them would not be able to work out what they were about.",
+      "If DAICHI = ECLGMO and HIKARI = IKNEWO, what code did he use for you in his notes?"
+    ],
+    "options": [
+      "NCLKT",
+      "NBJHP",
+      "NCJIP",
+      "HCLCI"
+    ],
+    "answer": "0"
+  },
+  {
+    "question": [
+      "The constant pressure of the schedule, along with the various mishaps during the journey, began to take their toll:",
+      "Sleeping in a different bed every night and with countless thoughts running through your head, you sometimes struggled to fall asleep.",
+      "One night, you decided to try the tried-and-tested method of counting sheep.",
+      "The following sequence shows how many sheep you counted without interruption before falling asleep each time. Can you find the next number? 5, 11, 23, 47, 95."
+    ],
+    "options": [
+      "189",
+      "191",
+      "193",
+      "195"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "During the nineteenth century, the idea of travelling around the world became increasingly popular and captured the imagination of many intrepid people.",
+      "The first round-the-world trip undertaken purely for tourism took place in 1872, the same year in which Yukichi Fukuzawa published ‘Gakumon no susume’ (‘An Encouragement of Learning’).",
+      "During the Meiji era, new railway lines were built at great speed, and travelling by train became part of everyday life.",
+      "Akindo, a shopkeeper, decided to spend the summer at the seaside resort of Okinawa.",
+      "He wanted to see whether the tourist trade there would be profitable enough to expand his empire and open another shop.",
+      "He boarded the train on 2 June and returned 79 days later. On what date did he return?"
+    ],
+    "options": [
+      "19 August",
+      "20 August",
+      "21 August",
+      "22 August"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "Electricity spread rapidly during the Meiji era. Towards the end of the nineteenth century, Tokyo acquired electric street lighting.",
+      "Has a light bulb gone on above your head? If so, try this brainteaser:",
+      "On 3 September, 27 street lamps were installed. That was more than the 16 installed on 2 August, but fewer than the 54 installed on 9 June.",
+      "How many lamps were installed on 5 September?"
+    ],
+    "options": [
+      "27",
+      "45",
+      "49",
+      "52"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "As soon as Daichi first entered his new friend’s house, he was intimidated by just how meticulously organised your life was.",
+      "Every pair of trousers, every coat and every waistcoat had its own number. That number was also recorded in a special register, which listed ...",
+      "... when the item had been put away or taken out, and when it was due to be worn next.",
+      "By contrast, Daichi’s belongings were jumbled together in several bags, waiting to be unpacked.",
+      "His sock bag contained seven pairs of blue socks, six pairs of grey socks and twelve pairs of black socks.",
+      "If he took pairs of socks out of the bag without looking, how many pairs would he have to take to be certain of having at least one pair of each colour?"
+    ],
+    "options": [
+      "14 pairs",
+      "19 pairs",
+      "20 pairs",
+      "25 pairs"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "For most people in the nineteenth century, eating meat was a special treat.",
+      "Typically, Sunday was the only day of the week on which they ate meat, giving rise to the tradition of the Sunday roast.",
+      "A butcher at the market hoped that one day he would sell all his sausages and pork pies.",
+      "He had 140 sausages and pork pies in total, and one and a half times as many sausages as pork pies. Do you know how many sausages he had?"
+    ],
+    "options": [
+      "93",
+      "70",
+      "105",
+      "112"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "To protect your computer, you created a four-digit password and wrote down a few clues to help you work it out.",
+      "The first and last digits add up to 7.",
+      "Two digits are even and two are odd.",
+      "The second digit is greater than the third, and their product is a number between 21 and 25.",
+      "The fourth digit is two less than the second.",
+      "What is the password?"
+    ],
+    "options": [
+      "3, 6, 3, 4",
+      "4, 5, 5, 3",
+      "2, 7, 3, 5",
+      "1, 8, 3, 6"
+    ],
+    "answer": "3"
+  },
+  {
+    "question": [
+      "If MONGOLIA is worth 60 points, RANGOON scores 55 points in total, and CHINA is worth 40, how many points is CARNATIC worth?"
+    ],
+    "options": [
+      "55",
+      "60",
+      "65",
+      "70"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "There are seven elephants standing in a row. Daichi wanted to ride the fastest one. Which elephant did he choose based on the clues?",
+      "There are other elephants on both the left and right of the chosen one, but it is not the elephant with the same number of elephants on either side.",
+      "It is not next to that elephant either, and it is not the elephant with more elephants to its right than to its left."
+    ],
+    "options": [
+      "2nd elephant",
+      "4th elephant",
+      "6th elephant",
+      "7th elephant"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "The following clues point to a four-digit number, but what is it? All four digits are different.",
+      "The first and second digits add up to nine.",
+      "The product of the third and fourth digits is 21.",
+      "The second digit is more than twice the third digit.",
+      "What significant event took place in that particular year?"
+    ],
+    "options": [
+      "The first crewed Moon landing",
+      "The first coronation of a queen in Great Britain",
+      "The founding of the United Nations of America",
+      "The discovery of America"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "While you wait for Daichi at the Reform Club, a card-based arithmetic puzzle played by some members nearby catches your attention.",
+      "They use cards numbered 2–9, as well as the ace to represent 1. One member lays out the following calculation using playing cards:",
+      "Ace of spades, 5 of diamonds and 6 of spades multiplied by 4 of spades equals 8 of hearts, 3 of hearts and 2 of clubs.",
+      "Which two cards must swap places to make the calculation correct?"
+    ],
+    "options": [
+      "Ace of spades and 3 of hearts",
+      "5 of diamonds and 2 of clubs",
+      "6 of spades and 8 of hearts",
+      "4 of spades and 3 of hearts"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "You are sent out to run a few errands. The first shop you visit is 1 km north of your house.",
+      "The second shop is 3 km east of the first, the third is 3 km south of the second, the fourth is 1 km west of the third, and the fifth is 2 km north of the fourth.",
+      "Which direction must you now head in to get back home?"
+    ],
+    "options": [
+      "North",
+      "East",
+      "South",
+      "West"
+    ],
+    "answer": "3"
+  },
+  {
+    "question": [
+      "The first thing you want to do on holiday is go to your hotel room and leave your suitcases there ...",
+      "... but when you introduce yourself, the receptionist simply hands you a key and a note.",
+      "The note seems to give your room number, but instead of digits it contains only text.",
+      "The number is even, and all three digits are different. The middle digit is greater than the other two.",
+      "The three digits add up to 16. The number contains two consecutive digits that differ by exactly one.",
+      "Which room should you go to?"
+    ],
+    "options": [
+      "Room 394",
+      "Room 682",
+      "Room 754",
+      "Room 376"
+    ],
+    "answer": "3"
+  },
+  {
+    "question": [
+      "Can you work out how the numerical value of each figure is calculated, and therefore what number your statue, MAIGO, represents?",
+      "TAISHI = 2, DAICHI = 602, NOBUNAGA = 0, IEYASU = 1, RYOMA = 1000"
+    ],
+    "options": [
+      "1001",
+      "500",
+      "105",
+      "0"
+    ],
+    "answer": "0"
+  },
+  {
+    "question": [
+      "I once asked you to write down as many animals as possible whose names begin with the letters A, B, D, E, N, P, S and T.",
+      "You were to start with an animal beginning with A, then write one beginning with B, and so on.",
+      "Once you had found an animal beginning with T, you were to start again at A. You were to continue for as long as you could.",
+      "After a while, you came back and told me you had written down 150 animals. You asked which letter the 150th animal began with.",
+      "Can you remember?"
+    ],
+    "options": [
+      "B",
+      "E",
+      "P",
+      "T"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "You wanted to find out whether the fortune-teller in town was a fraud, so you decided to put her to the test.",
+      "Determined to expose her, you visited her several times over the course of a year: on 3 January, 3 March, 6 May, 9 July and 15 September.",
+      "On this occasion, you challenged the fortune-teller to predict when you would visit her again.",
+      "On what date did you decide to visit her next?"
+    ],
+    "options": [
+      "3 October",
+      "18 November",
+      "24 November",
+      "21 December"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "You taught Hikari your favourite card games while also teaching her arithmetic.",
+      "You took a standard 52-card pack and removed all the red cards. Then you said to Hikari:",
+      "Look at all the red cards on the table. If you take four of them away, how many cards will you have?"
+    ],
+    "options": [
+      "0",
+      "4",
+      "22",
+      "48"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "In an upmarket restaurant in Tokyo, the head chef tried to work out how much of each vegetable he had in stock.",
+      "He knew he had plenty of asparagus, onions and tomatoes, and planned to make a delicious salad to serve with the main course.",
+      "However, he was unsure of the exact quantities. He knew he had 200 vegetables in total, 56 of which were tomatoes.",
+      "He also knew that three-quarters of the number of onions equalled twice the number of tomatoes, plus half the number of tomatoes, plus a quarter of the number of tomatoes, plus two.",
+      "How much celery did he have?"
+    ],
+    "options": [
+      "0",
+      "27",
+      "76",
+      "117"
+    ],
+    "answer": "0"
+  },
+  {
+    "question": [
+      "We always meet Daichi for a cup of tea. Unfortunately, our working schedules have changed.",
+      "You work for five days in a row and then have a day off. Daichi’s employer gives him every seventh day off, and I have every eighth day off.",
+      "How often can we all meet for tea?"
+    ],
+    "options": [
+      "Every 168 days",
+      "Every 210 days",
+      "Every 280 days",
+      "Every 336 days"
+    ],
+    "answer": "0"
+  },
+  {
+    "question": [
+      "If MONGOLIA is worth 36 points, RANGOON scores 28 points in total, and CHINA is worth 15, how many points is HENRIETTA worth?"
+    ],
+    "options": [
+      "24",
+      "30",
+      "44",
+      "45"
+    ],
+    "answer": "3"
+  },
+  {
+    "question": [
+      "I can exist only if you do not know that I exist. If you know that I exist, I can no longer exist. What am I?"
+    ],
+    "options": [
+      "A surprise",
+      "An illusion",
+      "A riddle",
+      "A mirage"
+    ],
+    "answer": "0"
+  },
+  {
+    "question": [
+      "We always sat to play cards on the four sides of a square table, labelled north, east, south and west.",
+      "No one sitting in the east is younger than you. Daichi sits in the south, but not opposite you. Either you or Hikari sits opposite me. You do not sit in the west.",
+      "Which side did you always sit on?"
+    ],
+    "options": [
+      "North",
+      "East",
+      "South",
+      "West"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": [
+      "In his paintings, an artist depicted objects that were red in real life as orange, painted green objects blue, and painted purple objects red.",
+      "Which colour did he use for objects that were blue in real life?"
+    ],
+    "options": [
+      "Orange",
+      "Green",
+      "Indigo",
+      "Violet"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": [
+      "After buying your first house, you went to a shop to buy something you needed for your new home.",
+      "In the shop, you discovered that both 3 and 7 cost 3 yen, while 18 cost a hefty 6 yen. How much did 121 cost?"
+    ],
+    "options": [
+      "1 yen",
+      "3 yen",
+      "6 yen",
+      "9 yen"
+    ],
+    "answer": "3"
+  },
+  {
+    "question": [
+      "A dartboard is numbered from 1 to 20, and each dart can score the single, double or treble value of the number it hits.",
+      "Hitting the outer bull scores 25 points, while hitting the inner bull, known as the bull’s-eye, scores 50 points.",
+      "A player throws three darts per turn and must finish the game on a double — in other words, bring their score down to zero.",
+      "What is the lowest three-digit score from which a player cannot finish?",
+      "For example, a player starting on 100 can finish in several ways, such as with a treble 20 and a double 20, or with two bull’s-eyes.",
+      "However, the combination 50, 25, 25 is not enough to finish, because the final score is a single."
+    ],
+    "options": [
+      "111",
+      "137",
+      "159",
+      "161"
+    ],
+    "answer": "2"
+  }
+]

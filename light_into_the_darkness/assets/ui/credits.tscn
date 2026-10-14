@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://tf80jmn2t4r2" path="res://assets/ui/credits.gd" id="1_5v8ml"]
 [ext_resource type="Texture2D" uid="uid://d3q56c1s3t5ny" path="res://assets/art/ui/4_centered_text_with_hand.png" id="2_hj0bn"]
 
-[node name="Credits" type="CanvasLayer" unique_id=1987052098]
+[node name="Credits" type="CanvasLayer" unique_id=1987052098 node_paths=PackedStringArray("back_button", "feedback_button", "space_button")]
 script = ExtResource("1_5v8ml")
+back_button = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer2/BackButton")
+feedback_button = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer2/FeedbackButton")
+space_button = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer2/Spacer")
 
 [node name="Control" type="Control" parent="." unique_id=227801853]
 texture_filter = 1
@@ -133,6 +136,7 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1127584807]
 layout_mode = 2
+alignment = 1
 
 [node name="BackButton" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1122515811]
 layout_mode = 2
@@ -147,11 +151,11 @@ theme_override_font_sizes/font_size = 8
 text = "Feedback geben"
 
 [node name="Spacer" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=346654602]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 8
-text = "Zurück"
+text = "             "
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/FeedbackButton" to="." method="_on_feedback_button_pressed"]

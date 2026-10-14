@@ -5,18 +5,26 @@ signal closed
 @export var master_slider: HSlider
 @export var music_slider: HSlider
 @export var sfx_slider: HSlider
+@export var master_label: Label
+@export var music_label: Label
+@export var sfx_label: Label
 
 @export var fullscreen_button: CheckButton
 @export var vsync_button: CheckButton
 
+@export var save_and_back_button: Button
+
 @onready var buttons: Array = [
 	fullscreen_button,
 	vsync_button,
-	$Control/VBoxContainer/SaveAndBackButton
+	save_and_back_button
 ]
 
 
 func _ready() -> void:
+	SettingsManager.change_language.connect(_on_language_change)
+	_on_language_change()
+	
 	hide()
 	for button in buttons:
 		button.focus_entered.connect(AudioManager.play_ui_hover)
@@ -40,6 +48,24 @@ func show_menu():
 func close_menu():
 	hide()
 	closed.emit()
+
+
+func _on_language_change() -> void:
+	var current: String = DialogueManager.dialogue_runner.get_locale()
+	if current == "de":
+		master_label.text = "Gesamt"
+		music_label.text = "Musik"
+		sfx_label.text = "SFX"
+		fullscreen_button.text = "Vollbild"
+		vsync_button.text = "VSync"
+		save_and_back_button.text = "Speichern und zurück"
+	else:
+		master_label.text = "Master"
+		music_label.text = "Music"
+		sfx_label.text = "SFX"
+		fullscreen_button.text = "Fullscreen"
+		vsync_button.text = "VSync"
+		save_and_back_button.text = "Save and back"
 
 
 func _on_master_slider_value_changed(value: float) -> void:

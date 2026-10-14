@@ -1,12 +1,26 @@
 {
-    "baseLanguage": "en",
+    "baseLanguage": "de",
     "projectFileVersion": 4,
     "sourceFiles": [
         "**/*.yarn"
     ],
     "editorOptions": {
         "yarnScriptEditor": {
-            "previewFontSize": 10
+            "previewFontSize": 8,
+            "characters": []
         }
-    }
+    },
+    "localisation": {
+        "de": {
+            "assets": "c:\\Users\\bjark\\OneDrive\\Desktop\\Programmieren\\light_into_the_darkness\\light_into_the_darkness\\dialogue"
+        },
+        "en": {
+            "assets": "c:\\Users\\bjark\\OneDrive\\Desktop\\Programmieren\\light_into_the_darkness\\light_into_the_darkness\\dialogue"
+        }
+    },
+    "projectName": "Licht Ins Dunkel",
+    "authorName": [
+        "Bjark Hassert",
+        "Béla Max Backhauß"
+    ]
 }

@@ -6,25 +6,25 @@ Du: Wo zur Hölle bin ich?!
 Auch mit einiger Anstrengung kannst du dir einfach keinen Reim aus deiner Lage machen, geschweige denn dir erklären, wo du bist.
 Du: Mein Name... muss... Maigo sein!
 Maigo: Wenigstens... fällt mir mein Name ein. Ich sollte ein paar Schritte laufen, vielleicht kann ich mich dann orientieren.
-Mit „W“ „A“ „S“ „D“ bewegst du dich.
+Mit ‚W‘ ‚A‘ ‚S‘ ‚D‘ bewegst du dich.
 ===
 
 title: Tutorial_Crouch
 ---
 Maigo: Die Säulen sind umgestürzt... Ich sollte versuchen unter der Säule durchzukrabbeln.
-Mit „C“ kannst du dich ducken.
+Mit ‚C‘ kannst du dich ducken.
 ===
 
 title: Tutorial_Jump
 ---
 Maigo: Noch eine umgestürzte Säule, da ist nur kein Platz für mich zum krabbeln, ich muss wohl darüberspringen.
-Mit „Leertaste“ springst du.
+Mit ‚Leertaste‘ springst du.
 ===
 
 title: Tutorial_Interact
 ---
 Auf dem Boden liegen zwei seltsam aussehende Masken.
-Mit „F“ interagierst du mit Objekten.
+Mit ‚F‘ interagierst du mit Objekten.
 ===
 
 title: Tutorial_Rage_Mask
@@ -32,7 +32,7 @@ title: Tutorial_Rage_Mask
 <<add_charge 0>>
 Als du die Maske aufhebst, durchfährt dich ein warmes Gefühl, das dir in den Kopf steigt..., du spürst Wut in dir. Aber auch einen Drang, zur Tat zu schreiten.
 Maigo: Wenn ich die Maske aufsetze, fühle ich mich so als könnte ich durch Wände brechen und anderen Angst einjagen.
-Mit „1“ setzt du die Maske auf.
+Mit ‚1‘ setzt du die Maske auf.
 ===
 
 title: Tutorial_Joy_Mask
@@ -40,14 +40,14 @@ title: Tutorial_Joy_Mask
 <<add_charge 1>>
 Du hebst die Maske auf... du spürst Gänsehaut an deinem ganzen Körper. Du musst plötzlich Lächeln. Ein Energieschub durchfährt dich.
 Maigo: Wenn ich die Maske aufsetze, dann fühle ich mich so leicht und voller Energie, als könnte ich überall hin und alles sehen.
-Mit „2“ setzt du die Maske auf.
+Mit ‚2‘ setzt du die Maske auf.
 ===
 
 title: Tutorial_NPC
 ---
-Mit „F“ sprichst du jemanden an.
+Mit ‚F‘ sprichst du jemanden an.
 Maigo: Ich sollte mir alles aufschreiben, damit ich nichts vergesse.
-Mit „L“ öffnest du den Dialogverlauf.
+Mit ‚L‘ öffnest du den Dialogverlauf.
 ===
 
 title: First_Daichi
@@ -104,7 +104,7 @@ Eine junge Frau hält deine Hand, schaut dich überrascht an und wischt sie die 
 Ichika: Mein Gott! Du bist erwacht! *sie schluchzt und legt ihren Kopf auf deine Brust*
 : Du spürst ihre warme Berührung und dir steigen Tränen in die Augen. Du schließt die Augen und dir wird klar:
 <<if number($identity) > 80>>
-	Ichika, wie ich ihre Umarmung vermisste... ich erinnere mich! Mein Name ist Satoru. Ich bin nicht mehr „Maigo“, ein Verlorener. Als Maigo erkämpfte ich mir einen Weg an die Oberfläche.
+	Ichika, wie ich ihre Umarmung vermisste... ich erinnere mich! Mein Name ist Satoru. Ich bin nicht mehr ‚Maigo‘, ein Verlorener. Als Maigo erkämpfte ich mir einen Weg an die Oberfläche.
 	Ein Kampf um meine Identität, um meine Erinnerungen. Jetzt bin ich hier, doch so viele Tränen wurden meinetwegen vergossen.
 	Meine Leidenschaft für schnelle Motorräder muss zu einem schweren Unfall und einer Amnesie geführt haben, da bin ich mir sicher.
 	Ichika hat immer gepredigt ich solle doch nicht so schnell fahren. Am Ende hatte sie wieder recht.
@@ -116,11 +116,11 @@ Ichika: Mein Gott! Du bist erwacht! *sie schluchzt und legt ihren Kopf auf deine
 	Diese Frau kommt mir seltsam vertraut vor. Ich glaube sie heißt Ichika. Es fühlt sich an wie aus einem Traum zu erwachen, sie kam auch darin vor.
 	Ich glaube sie hat etwas mit meinem Erwachen zu tun. Ich habe dort noch zwei andere Vertraute gesehen, die mir halfen.
 	Vielleicht sind Sie, Daichi und Hikari, diejenigen die mir halfen zu erwachen...
-	Warum bin ich in diesem Krankenhaus? Warum fühle ich mich so verbunden mit dem Verlorenen aus meinem „Traum“, mit „Maigo“?
+	Warum bin ich in diesem Krankenhaus? Warum fühle ich mich so verbunden mit dem Verlorenen aus meinem ‚Traum‘, mit ‚Maigo‘?
 	Ich werde nach Antworten suchen und ich werde sie finden.
 <<else>>
 	Diese Frau muss mir sehr nah stehen. Sonst würde sie sich doch nicht so freuen mich zu sehen.
-	Was hat mich in dieses Krankenhaus gebracht? Warum schwirrt mir „Maigo“ im Kopf herum? Was für ein seltsamer Name.
+	Was hat mich in dieses Krankenhaus gebracht? Warum schwirrt mir ‚Maigo‘ im Kopf herum? Was für ein seltsamer Name.
 	Alles fühlt sich an wie in einem Traum. Diese Erinnerungen, diese Aufgaben die ich meisterte. Das müssen Szenen aus meinem Leben gewesen sein. Warum fühlen sie sich dann so fremd an?
 	Ich hoffe mithilfe dieser Frau werde ich es schaffen können ins Leben zurückzukommen. Ich muss verstehen, wer ich bin und was mich hierherbrachte.
 <<endif>>

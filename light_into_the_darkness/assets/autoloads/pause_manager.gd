@@ -9,6 +9,9 @@ var confirm_dialog
 var settings_menu
 var is_open := false
 
+var leave_memory_message := ""
+var main_menu_message := ""
+
 
 func _ready() -> void:
 	pause_menu = pause_menu_scene.instantiate()
@@ -25,6 +28,19 @@ func _ready() -> void:
 	pause_menu.leave_memory_pressed.connect(leave_memory)
 	
 	settings_menu.closed.connect(_on_settings_closed)
+	
+	SettingsManager.change_language.connect(_on_language_change)
+	_on_language_change()
+
+
+func _on_language_change() -> void:
+	var current: String = DialogueManager.dialogue_runner.get_locale()
+	if current == "de":
+		leave_memory_message = "Diese Welt wird verblassen. Du kannst nicht zu ihr zurückkehren."
+		main_menu_message = "Dein Fortschritt geht verloren."
+	else:
+		leave_memory_message = "That world will fade away. You cannot return to it."
+		main_menu_message = "Your progress will be lost."
 
 
 func toggle_pause():
@@ -58,7 +74,7 @@ func settings():
 
 func return_main_menu():
 	if await ask_confirmation(
-		"Dein Fortschritt geht verloren."
+		main_menu_message
 	):
 		resume()
 		if GameManager.state_machine.current_state is FreeRoamState:
@@ -70,7 +86,7 @@ func return_main_menu():
 
 func leave_memory():
 	if await ask_confirmation(
-		"Diese Welt wird verblassen. Du kannst nicht zu ihr zurückkehren."
+		leave_memory_message
 	):
 		resume()
 		SceneManager.leave_memory()

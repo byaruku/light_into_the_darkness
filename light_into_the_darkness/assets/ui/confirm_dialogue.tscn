@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dmavd02xpnay" path="res://assets/ui/confirm_dialogue.gd" id="1_je1j4"]
 
-[node name="ConfirmDialogue" type="CanvasLayer" unique_id=683585409]
+[node name="ConfirmDialogue" type="CanvasLayer" unique_id=683585409 node_paths=PackedStringArray("message_label", "confirm_button", "cancel_button")]
 script = ExtResource("1_je1j4")
+message_label = NodePath("Panel/MarginContainer/VBoxContainer/MessageLabel")
+confirm_button = NodePath("Panel/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton")
+cancel_button = NodePath("Panel/MarginContainer/VBoxContainer/HBoxContainer/CancelButton")
 
 [node name="Panel" type="ColorRect" parent="." unique_id=1698811959]
 anchors_preset = 8

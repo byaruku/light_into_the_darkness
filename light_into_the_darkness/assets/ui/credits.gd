@@ -2,18 +2,34 @@ extends CanvasLayer
 
 signal closed
 
-@onready var back_button: Button = $Control/MarginContainer/VBoxContainer/HBoxContainer2/BackButton
-@onready var feedback_button: Button = $Control/MarginContainer/VBoxContainer/HBoxContainer2/FeedbackButton
+@export var back_button: Button
+@export var feedback_button: Button
+@export var space_button: Button
 
-var buttons: Array[Button]
+@onready var buttons: Array[Button] = [back_button, feedback_button]
+
 
 func _ready() -> void:
+	SettingsManager.change_language.connect(_on_language_change)
+	_on_language_change()
+	
 	hide()
-	buttons = [back_button, feedback_button]
 	for button in buttons:
 		button.focus_entered.connect(AudioManager.play_ui_hover)
 		button.mouse_entered.connect(AudioManager.play_ui_hover)
 		button.pressed.connect(AudioManager.play_ui_select)
+
+
+func _on_language_change() -> void:
+	var current: String = DialogueManager.dialogue_runner.get_locale()
+	if current == "de":
+		back_button.text = "Zurück"
+		feedback_button.text = "Feedback geben"
+		space_button.text = "Zurück"
+	else:
+		back_button.text = "Back"
+		feedback_button.text = "Give Feedback"
+		space_button.text = "Back"
 
 
 func show_credits():
