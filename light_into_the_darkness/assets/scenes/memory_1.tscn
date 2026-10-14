@@ -1352,6 +1352,7 @@ position = Vector2(4814, 6864)
 data = SubResource("Resource_rvpmw")
 
 [node name="FireflyManager" parent="." unique_id=580464065 instance=ExtResource("5_xijwp")]
+y_sort_enabled = false
 firefly_packed = ExtResource("6_1tox4")
 
 [node name="SpawnArea" parent="FireflyManager" unique_id=177856280 node_paths=PackedStringArray("objects") instance=ExtResource("17_pdtwv")]

@@ -8,7 +8,7 @@ enum State {
 }
 
 @export_category("Stats")
-@export var speed := 55.0
+@export var speed := 50.0
 
 @export_category("Audio")
 @export var barks: Array[AudioStream]
